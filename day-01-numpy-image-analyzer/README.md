@@ -9,12 +9,58 @@ Bu proje, harici görüntü işleme kütüphanelerine (OpenCV, Pillow vb.) bağ�
 
 ---
 
-## 📌 Proje Kapsamı ve Mimari Genel Bakış
+## 📖 Mentorluk Dersi ve Teorik Derinlik
 
-Dijital bir görüntü temelde $H \times W \times C$ boyutlarında bir tensördür:
-- **$H$ (Yükseklik - Height):** Matris satır sayısı (Y ekseni).
-- **$W$ (Genişlik - Width):** Matris sütun sayısı (X ekseni).
-- **$C$ (Kanal Sayısı - Channels):** Renk derinliği (Gri: 1, RGB: 3, RGBA: 4).
+### 1. Endüstrideki Yeri ve Çözdüğü Temel Problem
+Yapay zeka ve derin öğrenme modelleri (CNN'ler, Vision Transformer'lar, Difüzyon modelleri) "resimleri" görmez; yalnızca **sayılardan oluşan çok boyutlu tensörleri (N-boyutlu dizileri)** işler. 
+Endüstride görüntü işleme hatlarında yapılan en büyük hata, görselleri doğrudan harici kütüphanelerin kara kutu fonksiyonlarına bırakıp tensörün bellekteki düzenini, veri tipini ve sayısal sınırlarını göz ardı etmektir. 
+
+NumPy seviyesinde piksel matrislerini yönetebilmek; özel veri artırma (augmentation) hatları yazarken, medikal görüntülerde (16-bit DICOM) veya uydu görüntülerinde (çok bantlı multispektral) çalışırken ve çıkarım (inference) hızını optimize ederken hayati önem taşır.
+
+---
+
+### 2. Matematiksel ve Algoritmik Mantık
+
+#### A. Tensör Düzeni ve Boyutlar ($H \times W \times C$)
+Renkli bir dijital görüntü 3 boyutlu bir tensördür:
+- **$H$ (Yükseklik / Satır Sayısı - Y Ekseni):** Dikeydeki piksel adedi.
+- **$W$ (Genişlik / Sütun Sayısı - X Ekseni):** Yataydaki piksel adedi.
+- **$C$ (Kanal Sayısı - Renk Derinliği):** RGB için $3$ (Kırmızı, Yeşil, Mavi), Gri için $1$, Saydamlık varsa RGBA için $4$.
+
+Bellekte bu tensör ardışık baytlar halinde tutulur. NumPy'da varsayılan olarak **C-contiguous** (satır-öncelikli / row-major) bellek yerleşimi kullanılır:
+$$\text{Bellek Adresi}(y, x, c) = \text{Taban} + (y \cdot W \cdot C + x \cdot C + c) \times \text{Eleman\_Bayt\_Boyutu}$$
+
+#### B. Ağırlıklı Lüminans Gri Ton Dönüşümü (ITU-R BT.601)
+Bir RGB görseli gri seviyeye dönüştürürken üç kanalın basit aritmetik ortalamasını almak ($\frac{R+G+B}{3}$) insan gözünün biyolojik algısına uymaz. İnsan retinasındaki koni hücreleri yeşil ışığa son derece duyarlıyken, mavi ışığa karşı çok daha az hassastır. Bu sebeple endüstri standardı olan **ağırlıklı lüminans** formülü kullanılır:
+
+$$Y = 0.299 \cdot R + 0.587 \cdot G + 0.114 \cdot B$$
+
+#### C. Normalizasyon ve Standartlaştırma Dinamikleri
+Modellerin gradyan inişi (Gradient Descent) sırasında ağırlıklarının kararlı güncellenmesi için pikseller $[0, 255]$ tamsayı aralığından çıkarılmalıdır:
+1. **Min-Max Doğrusal Ölçekleme ($[0, 1]$ veya $[-1, 1]$):**
+   $$X_{\text{norm}} = a + \frac{X - X_{\min}}{(X_{\max} - X_{\min}) + \epsilon} \cdot (b - a)$$
+   *(Buradaki $\epsilon = 10^{-8}$, görsel tekdüze/tek renk olduğunda $0/0$ tanımsızlığını önler).*
+
+2. **Z-Skoru Standartlaştırması (Kanal Bazlı):**
+   Görselin ortalamasını $0$, standart sapmasını $1$ yapar ($N(0, 1)$):
+   $$Z_c = \frac{X_c - \mu_c}{\sigma_c + \epsilon}$$
+
+---
+
+### 3. Dikkat Edilmesi Gereken Kritik Tuzaklar
+
+1. **`uint8` Sayısal Taşması (Integer Overflow/Underflow):**
+   Piksel değerleri varsayılan olarak 8-bit işaretsiz tamsayıdır (`np.uint8`, aralık: $0-255$). Eğer iki pikseli toplar veya çarparsanız:
+   $$200 + 100 = 300 \xrightarrow{\text{uint8}} 300 \pmod{256} = 44$$
+   Parlaklaşması gereken piksel aniden simsiyah olur! Matematiksel işlem öncesinde veri tipi mutlaka `float32`'ye çevrilmeli ve işlem sonunda `np.clip(deger, 0, 255).astype(np.uint8)` uygulanmalıdır.
+2. **Görünüm (View) vs. Kopya (Copy) Farkı:**
+   `alt_matris = gorsel[0:50, 0:50]` ifadesi bellekte yeni bir dizi oluşturmaz, sadece orijinal dizinin bir **görünümünü (slice view)** referans alır. `alt_matris` üzerindeki bir değişiklik orijinal görseli de bozar. İzolasyon gerektiğinde daima `.copy()` kullanılmalıdır.
+3. **Sıfıra Bölme Hatası (Zero Division & NaN Üretimi):**
+   Tamamen siyah bir görselde veya sabit arka planda varyans sıfırdır ($\sigma = 0$). Paydaya küçük bir sayısal dengeleyici ($\epsilon = 10^{-7}$) eklenmezse tensör `NaN` veya `Inf` değerlerle dolar ve derin öğrenme modelini patlatır.
+
+---
+
+## 📌 Mimari Tasarım ve Akış Şeması
 
 ```
    Girdi Görsel Matrisi (H x W x C, uint8)
@@ -34,22 +80,85 @@ Dijital bir görüntü temelde $H \times W \times C$ boyutlarında bir tensörd�
 
 ---
 
-## 🧮 Matematiksel Temeller
+## 💻 Konsol Çalıştırma Çıktısı
 
-### 1. Ağırlıklı Lüminans Gri Ton Dönüşümü (ITU-R BT.601)
-İnsan gözü yeşil renge en yüksek, maviye ise en düşük fotoreseptör duyarlılığına sahiptir. Bu sebeple basit aritmetik ortalama yerine algısal ağırlıklandırma kullanılır:
+```text
+=================================================================
+>>> AŞAMA 1: Sentetik Test Görseli Üretimi ve Matris Boyutları
+=================================================================
+[+] Üretilen Görsel Şekli (Shape)    : (128, 128, 3) -> (Yükseklik, Genişlik, Kanal)
+[+] Veri Tipi (Dtype)                : uint8
+[+] Toplam Eleman Sayısı             : 49,152 değer
 
-$$Y = 0.299 \cdot R + 0.587 \cdot G + 0.114 \cdot B$$
+=================================================================
+>>> AŞAMA 2: Düşük Seviyeli Bellek Yerleşimi ve Strides (Adımlar)
+=================================================================
+  * boyut_sekli              : (128, 128, 3)
+  * adimlar_strides          : (384, 3, 1)
+  * c_surekli_mi             : True
 
-### 2. Min-Max Doğrusal Normalizasyonu
-Piksel değerlerini belirlenen $[a, b]$ aralığına ölçekler ($\epsilon = 10^{-8}$ sıfıra bölmeyi engeller):
+=================================================================
+>>> AŞAMA 5: Kapsamlı İstatistiksel Analiz Raporu
+=================================================================
+Genel Çözünürlük     : 128x128 (16,384 piksel)
+Bellek Tüketimi      : 48.00 KB
+-----------------------------------------------------------------
+Kanal      | Min   | Max   | Ortalama   | Medyan   | Std Sapma 
+-----------------------------------------------------------------
+Kirmizi    | 0     | 255   | 127.50     | 127.5    | 127.50    
+Yesil      | 0     | 255   | 127.50     | 127.5    | 127.50    
+Mavi       | 0     | 255   | 63.75      | 0.0      | 110.42    
+-----------------------------------------------------------------
 
-$$X_{\text{norm}} = a + \frac{X - X_{\min}}{(X_{\max} - X_{\min}) + \epsilon} \cdot (b - a)$$
+=================================================================
+>>> AŞAMA 6: Piksel Değer Normalizasyonu Deneyleri
+=================================================================
+[+] Min-Max [0, 1]  -> Min: 0.0000, Max: 1.0000, Veri Tipi: float32
+[+] Min-Max [-1, 1] -> Min: -1.0000, Max: 1.0000, Veri Tipi: float32
+[+] Z-Skoru (Kanal Bazlı):
+    - Kırmızı Z-Dağılımı -> Ortalama: 0.0000, Std Sapma: 1.0000
+    - Yeşil   Z-Dağılımı -> Ortalama: 0.0000, Std Sapma: 1.0000
+    - Mavi    Z-Dağılımı -> Ortalama: 0.0000, Std Sapma: 1.0000
 
-### 3. Z-Skoru Standartlaştırması (Kanal Bazlı)
-Dağılımı $\mu = 0$ ve $\sigma = 1$ olan standart normal dağılıma dönüştürür:
+=================================================================
+>>> AŞAMA 7: Sayısal Taşma (Overflow) Koruması Testi
+=================================================================
+[+] 1.5x Parlaklık Sonrası Max Değer: 255 (Taşma engellendi, 255'te sınırlandı)
+```
 
-$$Z_c = \frac{X_c - \mu_c}{\sigma_c + \epsilon}$$
+---
+
+## 🎯 Günün Alıştırması / Mini Görevi (Hands-on Challenge)
+
+🎯 **Görevin: Kontrast Germe (Contrast Stretching / Percentile Clipping)**
+
+Endüstride düşük kontrastlı veya çok karanlık çekilmiş görüntülerde (ör. güvenlik kameraları veya endüstriyel kalite kontrol bantları) dinamik aralığı artırmak için **yüzdelik tabanlı kontrast germe (Contrast Stretching)** uygulanır.
+
+### Görev Tanımı:
+[`src/goruntu_analizoru.py`](./src/goruntu_analizoru.py) içerisine şu imzaya sahip yeni bir metod eklemeni istiyorum:
+
+```python
+def kontrast_ger(
+    self,
+    alt_yuzdelik: float = 2.0,
+    ust_yuzdelik: float = 98.0
+) -> np.ndarray:
+```
+
+### Beklenen Mantık ve Kurallar:
+1. `np.percentile()` kullanarak görselin en alt %2'lik ve en üst %98'lik piksel eşik değerlerini ($P_{\text{alt}}$ ve $P_{\text{ust}}$) belirlemeli.
+2. Değerleri $[P_{\text{alt}}, P_{\text{ust}}]$ aralığına `np.clip()` ile kırpmalı (aykırı uç pikselleri elemek için).
+3. Ardından bu aralığı $[0, 255]$ aralığına doğrusal olarak yaymalı:
+   $$X_{\text{yeni}} = \frac{X_{\text{kirpilmis}} - P_{\text{alt}}}{P_{\text{ust}} - P_{\text{alt}} + \epsilon} \times 255$$
+4. Sonucu `uint8` tipinde döndürmeli.
+5. `alt_yuzdelik >= ust_yuzdelik` durumunda `ValueError` fırlatmalı.
+
+---
+
+## 🧠 Gün Sonu Kontrol Noktası & Mentorun Teknik Sorusu
+
+> **Teknik Soru:**  
+> Bir CNN (Evrişimli Sinir Ağı) modelini eğitirken görsel piksellerini doğrudan `[0, 255]` aralığında vermek yerine, neden **Z-Skoru Standartlaştırması** ($Z = \frac{X - \mu}{\sigma}$) uygulayarak veriyi sıfır merkezli (zero-centered) ve birim varyanslı hale getiririz? Bu işlemin ağırlık güncellemeleri (weight update) ve aktivasyon fonksiyonları (ör. Sigmoid, ReLU) üzerindeki etkisi nedir?
 
 ---
 
@@ -58,7 +167,7 @@ $$Z_c = \frac{X_c - \mu_c}{\sigma_c + \epsilon}$$
 ```
 day-01-numpy-image-analyzer/
 ├── LICENSE                     # Özel Tüm Hakları Saklıdır lisans dosyası
-├── README.md                   # Proje dokümantasyonu
+├── README.md                   # Proje ders ve teknik dokümantasyonu
 ├── gereksinimler.txt           # Python bağımlılıkları
 ├── ana_akis.py                 # Konsol çalıştırma betiği
 ├── src/
@@ -66,7 +175,7 @@ day-01-numpy-image-analyzer/
 │   ├── goruntu_analizoru.py    # NumPyGoruntuAnalizoru çekirdek sınıfı
 │   └── yardimcilar.py          # Sentetik görsel ve bellek araçları
 └── testler/
-    └── test_analizor.py        # Kapsamlı pytest birim testleri
+    └── test_analizor.py        # Kapsamlı pytest birim testleri (8 passed)
 ```
 
 ---

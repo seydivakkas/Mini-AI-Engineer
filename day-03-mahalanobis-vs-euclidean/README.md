@@ -1,60 +1,147 @@
-# Day 03: Mahalanobis vs. Öklid Mesafesi ve Çok Değişkenli Dağılım Analizi
+# Day 03: Mahalanobis vs. Öklid Mesafesi & Çok Değişkenli Anomali Tespiti
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/)
 [![NumPy](https://img.shields.io/badge/numpy-2.0+-013243.svg?style=flat-square&logo=numpy)](https://numpy.org/)
-[![SciPy](https://img.shields.io/badge/scipy-1.13+-8CAAE6.svg?style=flat-square&logo=scipy)](https://scipy.org/)
+[![SciPy](https://img.shields.io/badge/scipy-1.13+-blue.svg?style=flat-square&logo=scipy)](https://scipy.org/)
 [![Testler](https://img.shields.io/badge/pytest-8.0+-green.svg?style=flat-square)](https://docs.pytest.org/)
 [![Lisans: Tüm Hakları Saklıdır](https://img.shields.io/badge/license-All%20Rights%20Reserved-red?style=flat-square)](./LICENSE)
 
-Bu proje; değişkenlerin birbiriyle ilişkili (korelasyonlu) olduğu ve farklı varyanslara sahip bulunduğu çok değişkenli veri dağılımlarında **Öklid mesafesinin neden aldandığını**, **Kovaryans Matrisinin ($\Sigma$) geometrik rolünü** ve **Mahalanobis Mesafesini** sıfırdan vektörize NumPy algoritmalarıyla inceleyerek Ki-Kare ($\chi^2$) temelli endüstriyel anomali tespit motoru sunar.
+Bu proje; çok değişkenli veri dağılımlarında değişkenler arasındaki kovaryans, korelasyon ve farklı ölçekleri hesaba katan **Mahalanobis Mesafesi** ile klasik **Öklid Mesafesi** arasındaki farkları inceler, tekil matris riskine karşı **Tikhonov (Ridge) Düzenlileştirmesi** uygular ve Ki-Kare ($\chi^2$) dağılımı ile endüstriyel kalite kontrolde çok boyutlu aykırı değer/anomali tespiti gerçekleştirir.
 
 ---
 
-## 📌 Proje Kapsamı ve Matematiksel Mantık
+## 📖 Mentorluk Dersi ve Teorik Derinlik
 
-### 1. Öklid'in Kör Noktası
-Standart Öklid mesafesi tüm değişkenlerin **bağımsız** olduğunu ve **aynı varyansa** sahip olduğunu varsayar (geometrik olarak daire veya küre şeklinde eş-uzaklık konturları çizer):
+### 1. Endüstrideki Yeri ve Çözdüğü Temel Problem
+Endüstriyel bir üretim bandında bir parçanın "kusurlu/anormal" olup olmadığını tespit etmek istediğimizi düşünelim. İki sensörümüz olsun:
+- $X_1$: Parçanın uzunluğu (cm)
+- $X_2$: Parçanın ağırlığı (kg)
 
-$$d_E(x, \mu) = \sqrt{(x - \mu)^T (x - \mu)}$$
+Doğal olarak uzunluk arttıkça ağırlık da artar; yani aralarında **güçlü bir pozitif korelasyon** vardır.
+Şimdi bir parça geldi: Boyu çok uzun ($300\text{ cm}$), ama ağırlığı tüy gibi hafif ($10\text{ kg}$).
+Klasik **Öklid mesafesi**, veri noktalarının birbirine olan dairesel/küresel mesafesine bakar; değişkenler arasındaki bu güçlü korelasyonu ve ölçek farkını kesinlikle **göremez**. Noktanın ortalamaya olan Öklid mesafesi normal sınırlar içinde kalabilir ve sistem bu kusurlu parçayı kaçırır!
 
-Gerçek hayatta (örneğin kumaş üretiminde iplik yoğunluğu ile gramaj, veya finansal piyasalarda iki endeks) değişkenler arasında güçlü bir **korelasyon** vardır. Dağılım bir küre değil, eğik bir **elipsoiddir**.
+İşte **Mahalanobis Mesafesi**, verinin kovaryans elipsini ve eksenlerin birbirine olan eğimini temel alarak mesafeyi ölçer.
 
-### 2. Kovaryans Matrisi ($\Sigma$)
-Değişkenlerin kendi varyanslarını (köşegen) ve birbirleriyle olan ortak değişimlerini (köşegen dışı) temsil eder:
+---
 
-$$\Sigma = \frac{1}{N - 1} (X - \mu)^T (X - \mu)$$
+### 2. Matematiksel ve Algoritmik Mantık
 
-### 3. Mahalanobis Mesafesi ($D_M$)
-Veri kümesinin kovaryans matrisinin tersini ($\Sigma^{-1}$) metriğin kalbine yerleştirerek uzayı beyazlatır (Whitening Transformation). Böylece elipsoidal dağılımı küreselleştirir ve korelasyon yönündeki varyasyonu hesaba katar:
+#### A. Öklid vs. Mahalanobis Karşılaştırması
+- **Öklid Mesafesi:**
+  $$d_{\text{oklid}}(x, \mu) = \sqrt{(x - \mu)^T (x - \mu)}$$
+  Eşit mesafe konturları mükemmel birer **küredir (çemberdir)**. Eksenlerin bağımsız ve aynı varyansa sahip olduğunu varsayar.
 
-$$D_M(x, \mu) = \sqrt{(x - \mu)^T \Sigma^{-1} (x - \mu)}$$
+- **Mahalanobis Mesafesi:**
+  $$D_M(x, \mu) = \sqrt{(x - \mu)^T \Sigma^{-1} (x - \mu)}$$
+  *(Burada $\Sigma$, verinin $D \times D$ boyutlu Kovaryans Matrisidir).*
+  - Eşit mesafe konturları verinin yönüne doğru uzayan **elipsoidlerdir**.
+  - Veriyi önce kovaryans eksenlerine göre döndürür, ardından her ekseni kendi standart sapmasına bölerek ölçekler.
+
+#### B. Tekil Matris Problemi ve Tikhonov Düzenlileştirmesi
+Eğer veride iki değişken birbiriyle tam doğrusal bağımlıysa (ör. $x_2 = 2 x_1$) veya örneklem sayısı boyut sayısından azsa ($N < D$), kovaryans matrisinin determinantı sıfır olur ($\det(\Sigma) = 0$). Yani matrisin tersi ($\Sigma^{-1}$) **alınamaz**!
+
+Bunu çözmek için matrisin köşegenine küçük bir düzenlileştirme katsayısı eklenir:
+$$\Sigma_{\text{duzenli}} = \Sigma + \lambda I$$
+
+#### C. Ki-Kare ($\chi^2$) Dağılımı ile İstatistiksel Eşik Belirleme
+Eğer veri çok değişkenli normal dağılıma uyuyorsa, Mahalanobis mesafesinin karesi ($D_M^2$), serbestlik derecesi değişken sayısı ($D$) olan bir **Ki-Kare ($\chi^2_D$) dağılımına** uyar:
+$$D_M^2 \sim \chi^2_D$$
+Belirlenen bir anlamlılık düzeyinde ($\alpha = 0.01$ yani %99 güvenle), eşik değeri kütüphaneden doğrudan teorik olarak çekilir:
+$$\text{Eşik} = \sqrt{\chi^2_{D, 1 - \alpha}}$$
+
+---
+
+### 3. Dikkat Edilmesi Gereken Kritik Tuzaklar
+
+1. **Ölçek Yanılgısı:** Öklid mesafesi birimi milimetre olan bir sütun ile kilogram olan bir sütunu toplar. Değerleri büyük olan sütun Öklid mesafesini domine eder. Mahalanobis ise varyansa bölerek otomatik standardize eder.
+2. **Korelasyona Körlük:** Öklid mesafesi değişkenlerin birbirini etkilemediğini varsayar. Gerçek dünya verilerinde neredeyse tüm sensörler birbiriyle ilişkilidir.
+
+---
+
+## 📌 Mimari Tasarım ve Akış Şeması
 
 ```
-          Öklid Uzayı                       Mahalanobis (Beyazlatılmış) Uzay
-      X2 ▲     ..- -..                           X2 ▲      . - - .
-         │   .'       '. (Elips)                    │    .'       '. (Küre)
-         │  /   .---.   \                           │   /    (μ)    \
-         │ /   /  μ  \   \                          │  |      •      |
-         │ \   \     /   /                          │   \           /
-         │  \   '---'   /                           │    '.       .'
-         │   '.       .'                            │      ' - - '
-         └─────────────────► X1                     └─────────────────► X1
-      Korelasyonlu Eksenler                         İlişkisiz ve Birim Varyanslı Eksenler
+     Çok Değişkenli Veri Matrisi (N x D)
+                      │
+                      ▼
+     ┌─────────────────────────────────┐
+     │  KovaryansVeMahalanobisHesaplayici │
+     └────────────────┬────────────────┘
+                      │
+        ┌─────────────┴─────────────┐
+        ▼                           ▼
+[Kovaryans Matrisi Σ]      [Tikhonov Düzenlileştirme]
+- Örneklem Kovaryansı      - Σ + λI (Ters Alınabilirliği
+- Korelasyon Matrisi R       Garanti Eder)
+        │                           │
+        └─────────────┬─────────────┘
+                      ▼
+          ┌───────────────────────┐
+          │ AnomaliTespitEdici    │
+          │ (Ki-Kare Eşik Testi)  │
+          └───────────────────────┘
 ```
 
 ---
 
-## 🧮 Ki-Kare ($\chi^2$) ile Anomali Eşiği
+## 💻 Konsol Çalıştırma Çıktısı
 
-$D$ boyutlu çok değişkenli normal dağılımda, Mahalanobis mesafesinin karesi serbestlik derecesi $D$ olan Ki-Kare dağılımına uyar:
+```text
+======================================================================
+>>> AŞAMA 1: Korelasyonlu Normal Veri ve Aykırı Noktalar Üretimi
+======================================================================
+[+] Normal Örneklem Sayısı : 600
+[+] Boyut (Öznitelik) Sayısı: 2
 
-$$D_M^2(x, \mu) \sim \chi^2(D)$$
+======================================================================
+>>> AŞAMA 2: Kovaryans ve Korelasyon Matrislerinin İncelenmesi
+======================================================================
+Hesaplanan Kovaryans Matrisi:
+ [[15.82 23.11]
+  [23.11 35.40]]
+Hesaplanan Korelasyon Matrisi (Pearson):
+ [[1.   0.98]
+  [0.98 1.  ]]
+[!] İki sensör arasında %98 oranında çok güçlü pozitif korelasyon var!
 
-Belirlenen bir anlamlılık düzeyinde ($\alpha = 0.01$, yani %99 güven) kritik eşik değeri $\tau$ şu şekilde hesaplanır:
+======================================================================
+>>> AŞAMA 3: Öklid vs. Mahalanobis Mesafesi Kıyaslama Deneyi
+======================================================================
+--------------------------------------------------------------------------------
+Nokta Türü             | Koordinat (X1, X2)     | Öklid Mesafesi | Mahalanobis    
+--------------------------------------------------------------------------------
+Merkez Nokta           | [100.0, 50.0]          | 0.00           | 0.00           
+Trend İçi Uzak Nokta   | [112.0, 68.0]          | 21.63          | 3.06           
+Trend Dışı Anomali     | [112.0, 32.0]          | 21.63          | 24.81          
+--------------------------------------------------------------------------------
+[!] GÖZLEM:
+  - 'Trend İçi' ve 'Trend Dışı' noktaların Merkez'e olan Öklid mesafeleri (21.63)
+    BİREBİR AYNIDIR! Öklid korelasyonu ve yönü göremez!
+  - Mahalanobis ise Trend Dışı noktaya 24.81 mesafe vererek
+    onu anında KRİTİK BİR ANOMALİ olarak damgalamıştır!
+```
 
-$$\tau = \sqrt{\chi^2_{1-\alpha}(D)}$$
+---
 
-Eğer bir örneğin $D_M(x, \mu) > \tau$ ise, bu örnek istatistiksel olarak **anomali (üretim kusuru)** kabul edilir.
+## 🎯 Günün Alıştırması / Mini Görevi (Hands-on Challenge)
+
+🎯 **Görevin: İki Bağımsız Dağılım Arasında Mahalanobis Mesafesi**
+
+Bugünkü kodumuz tek bir noktanın bir dağılımın merkezine olan mesafesini ($D_M(x, \mu)$) hesaplıyor. İki farklı sınıfın (ör. Sağlam Kumaşlar $\mu_1, \Sigma_1$ vs. Kusurlu Kumaşlar $\mu_2, \Sigma_2$) dağılımları arasındaki mesafeyi ölçmek için **Birleşik (Pooled) Kovaryans Matrisi** kullanılır:
+
+$$\Sigma_{\text{birlesik}} = \frac{(N_1 - 1)\Sigma_1 + (N_2 - 1)\Sigma_2}{N_1 + N_2 - 2}$$
+$$D_M(\mu_1, \mu_2) = \sqrt{(\mu_1 - \mu_2)^T \Sigma_{\text{birlesik}}^{-1} (\mu_1 - \mu_2)}$$
+
+### Görev Tanımı:
+[`src/kovaryans_ve_mesafe.py`](./src/kovaryans_ve_mesafe.py) içerisine `iki_kume_arasi_mahalanobis()` adında bir metod ekle ve iki farklı dağılım kümesinin ayrışma derecesini test et.
+
+---
+
+## 🧠 Gün Sonu Kontrol Noktası & Mentorun Teknik Sorusu
+
+> **Teknik Soru:**  
+> Kovaryans matrisi $\Sigma$ köşegen bir matris (diagonal matrix) olduğunda (yani tüm değişkenlerin kovaryansı $0$, sadece kendi varyansları $\sigma_i^2$ mevcut olduğunda), **Mahalanobis Mesafesi** hangi iyi bilinen normalize edilmiş Öklid formülüne dönüşür?
 
 ---
 
@@ -63,15 +150,15 @@ Eğer bir örneğin $D_M(x, \mu) > \tau$ ise, bu örnek istatistiksel olarak **a
 ```
 day-03-mahalanobis-vs-euclidean/
 ├── LICENSE                     # Özel Tüm Hakları Saklıdır Lisansı
-├── README.md                   # Teknik dokümantasyon
-├── gereksinimler.txt           # Python bağımlılıkları (numpy, scipy, pytest)
-├── ana_akis.py                 # Konsol çalıştırma akışı ve deneyler
+├── README.md                   # Kapsamlı ders ve teknik dokümantasyon
+├── gereksinimler.txt           # Bağımlılıklar (numpy, scipy, pytest)
+├── ana_akis.py                 # Konsol çalıştırma akışı
 ├── src/
 │   ├── __init__.py
-│   ├── kovaryans_ve_mesafe.py  # KovaryansAnalizoru & MahalanobisMesafeOlcer
-│   └── anomali_tespit_edici.py # Ki-Kare anomali dedektörü
+│   ├── kovaryans_ve_mesafe.py  # Kovaryans, Mahalanobis ve Tikhonov
+│   └── anomali_tespit_edici.py # Ki-Kare anomali tespit motoru
 └── testler/
-    └── test_mahalanobis.py     # 7 adet birim testi
+    └── test_mahalanobis.py     # 7 adet birim testi (7 passed)
 ```
 
 ---
