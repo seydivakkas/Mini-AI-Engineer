@@ -69,7 +69,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 41:** `day-41-ai-carpet-intelligence-suite` — Renk, Arama, Kusur ve RAG Modüllerini Birleştiren Uçtan Uca Halı Zekası Paketi
 
 #### 🔹 FAZ 3: Çekirdek ML/DL Boru Hatları, Optimizasyon ve Edge MLOps (Gün 42 - Gün 66)
-- [ ] **Day 42:** `day-42-numpy-ai-batch-inspector` — Üretim Girdi Tensörleri Doğrulama, Batch Boyutu & NaN/Inf/Shape Anomali Tespiti
+- [x] **Day 42:** `day-42-numpy-ai-batch-inspector` — Üretim Girdi Tensörleri Doğrulama, Batch Boyutu & NaN/Inf/Shape Anomali Tespiti
 - [ ] **Day 43:** `day-43-numpy-data-drift-detector` — Veri Kayması (Data Drift) Tespiti, KS-Test İstatistiği, Wasserstein Mesafesi
 - [ ] **Day 44:** `day-44-pandas-data-quality-cleaner` — Üretim Seviyesi Şema Doğrulama, Sınır Değer Kontrolleri, Otomatik Temizlik
 - [ ] **Day 45:** `day-45-pandas-feature-engineering-profile-builder` — Özellik Mühendisliği, Encoding, Ölçeklendirme, Feature Store Mimarisi
