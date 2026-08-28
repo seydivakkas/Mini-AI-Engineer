@@ -105,7 +105,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 69:** `day-69-optimizer-scheduler-laboratory` — AdamW vs Lion Optimizer, CosineAnnealing, Linear Warmup & Weight Decay Dinamikleri
 - [x] **Day 70:** `day-70-modern-regularization-mixup-cutmix-label-smoothing` — Mixup, CutMix Veri Artırma ve Label Smoothing Cross-Entropy Düzenlileştirmesi
 - [x] **Day 71:** `day-71-fault-tolerant-resumable-training-engine` — Çökmeye Dayanıklı Checkpoint, State Restoration ve Devam Edebilir Eğitim Motoru
-- [ ] **Day 72:** `day-72-embedding-geometry` — t-SNE, UMAP Boyut İndirgeme, Temsil Uzayı Geometrisi & İzotropi Analizi
+- [x] **Day 72:** `day-72-embedding-geometry` — t-SNE, UMAP Boyut İndirgeme, Temsil Uzayı Geometrisi & İzotropi Analizi
 - [ ] **Day 73:** `day-73-simclr-from-scratch` — Sıfırdan SimCLR Temsil Öğrenimi, Artırma Çiftleri, NT-Xent (InfoNCE) Kaybı
 - [ ] **Day 74:** `day-74-supervised-contrastive-learning` — Etiketli Veride Supervised Contrastive (SupCon) Kaybı ile Sınıf Ayrıştırma
 - [ ] **Day 75:** `day-75-metric-learning-triplet-hard-negative` — Triplet Margin Loss, Hard/Semi-Hard Negative Mining Stratejileri
@@ -143,8 +143,8 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve 
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 71 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2 ve FAZ 3 TAMAMLANDI; FAZ 4 devam ediyor).
-- **Sıradaki Gün:** Gün 72 (`day-72-embedding-geometry` — t-SNE, UMAP Boyut İndirgeme, Temsil Uzayı Geometrisi & İzotropi Analizi).
+- **Tamamlanan:** Gün 01 - Gün 72 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2 ve FAZ 3 TAMAMLANDI; FAZ 4 devam ediyor).
+- **Sıradaki Gün:** Gün 73 (`day-73-simclr-from-scratch` — Sıfırdan SimCLR Temsil Öğrenimi, Artırma Çiftleri, NT-Xent (InfoNCE) Kaybı).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
