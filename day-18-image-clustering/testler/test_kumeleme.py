@@ -127,3 +127,17 @@ def test_rapor_olusturma(ornek_gorseller, tmp_path):
     )
     assert cikti.exists()
     assert cikti.stat().st_size > 0
+
+
+def test_otomatik_epsilon_bul(ornek_gorseller):
+    """Otomatik epsilon kestiriminin pozitif ve makul bir değer döndürdüğünü test eder."""
+    cikarici = GorselVektorCikarici(hedef_boyut=(32, 32))
+    X = np.array([cikarici.cikar(img) for img in ornek_gorseller])
+
+    motor = GorselKumelemeMotoru()
+    eps, k_mesafeleri = motor.otomatik_epsilon_bul(X, k=3, metric="cosine")
+
+    assert isinstance(eps, float)
+    assert eps > 0.0
+    assert len(k_mesafeleri) == len(X)
+    assert np.all(np.diff(k_mesafeleri) >= 0)  # Sıralı olmalı

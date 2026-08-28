@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple, Union
 import numpy as np
 from sklearn.cluster import KMeans, DBSCAN, AgglomerativeClustering
+from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_harabasz_score
 
 
@@ -178,3 +179,57 @@ class GorselKumelemeMotoru:
             raise RuntimeError("Geçerli bir K değeri bulunamadı!")
 
         return en_iyi_k, skorlar, en_iyi_sonuc
+
+    def otomatik_epsilon_bul(
+        self, X: np.ndarray, k: int = 4, metric: str = "cosine"
+    ) -> Tuple[float, np.ndarray]:
+        """DBSCAN için k-mesafe grafiği dirsek (elbow) noktası analiziyle optimal epsilon kestirir.
+
+        Her noktanın k. en yakın komşusuna olan mesafesini hesaplar, sıralar ve
+        başlangıç-bitiş sekant doğrusuna maksimum dikey mesafeye sahip noktayı
+        (dirsek/elbow) bularak önerilen epsilon değerini döndürür.
+
+        Args:
+            X: Embedding matrisi (N, D).
+            k: Komşu sayısı (DBSCAN min_samples ile uyumlu, varsayılan 4).
+            metric: Kullanılacak mesafe metriği (varsayılan 'cosine').
+
+        Returns:
+            Tuple[float, np.ndarray]: (Önerilen epsilon değeri, sıralı k-mesafeleri dizisi).
+        """
+        if len(X) <= k:
+            raise ValueError(f"Veri boyutu ({len(X)}) komşu sayısından ({k}) büyük olmalıdır.")
+
+        nn = NearestNeighbors(n_neighbors=k, metric=metric)
+        nn.fit(X)
+        mesafeler, _ = nn.kneighbors(X)
+
+        # k. komşu mesafesini al ve küçükten büyüğe sırala
+        k_mesafeleri = np.sort(mesafeler[:, k - 1])
+
+        # Başlangıç ve bitiş noktaları
+        n_nokta = len(k_mesafeleri)
+        x1, y1 = 0.0, float(k_mesafeleri[0])
+        x2, y2 = float(n_nokta - 1), float(k_mesafeleri[-1])
+
+        payda = np.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)
+        if payda < 1e-8:
+            # Tüm mesafeler aynı ise (örn. tamamen özdeş veri seti)
+            return max(float(k_mesafeleri[0]), 0.1), k_mesafeleri
+
+        # Her i indeksindeki noktanın doğruya olan dik uzaklığı
+        dik_mesafeler = []
+        for i in range(n_nokta):
+            x0 = float(i)
+            y0 = float(k_mesafeleri[i])
+            pay = np.abs((y2 - y1) * x0 - (x2 - x1) * y0 + x2 * y1 - y2 * x1)
+            dik_mesafeler.append(pay / payda)
+
+        dirsek_indeks = int(np.argmax(dik_mesafeler))
+        onerilen_eps = float(k_mesafeleri[dirsek_indeks])
+        if onerilen_eps <= 0.0:
+            # Sıfır mesafeli özdeş kopyalar varsa ilk sıfırdan farklı mesafeyi veya varsayılanı seç
+            sifir_olmayan = k_mesafeleri[k_mesafeleri > 0]
+            onerilen_eps = float(sifir_olmayan[0]) if len(sifir_olmayan) > 0 else 0.1
+
+        return onerilen_eps, k_mesafeleri
