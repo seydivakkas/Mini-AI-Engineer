@@ -75,7 +75,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 45:** `day-45-pandas-feature-engineering-profile-builder` — Özellik Mühendisliği, Encoding, Ölçeklendirme, Feature Store Mimarisi
 - [x] **Day 46:** `day-46-matplotlib-ai-experiment-report-generator` — Otomatik Loss/Acc, PR, ROC Grafikleri ve PDF/HTML Deney Raporlama Motoru
 - [x] **Day 47:** `day-47-sklearn-leakage-safe-ml-pipeline` — Veri Sızıntısına Karşı Güvenli Pipeline, ColumnTransformer & Nested CV
-- [ ] **Day 48:** `day-48-kmeans-unsupervised-segmentation` — Elbow & Silhouette Analizi, Uzamsal (Spatial) Piksel K-Means Bölütleme
+- [x] **Day 48:** `day-48-kmeans-unsupervised-segmentation` — Elbow & Silhouette Analizi, Uzamsal (Spatial) Piksel K-Means Bölütleme
 - [ ] **Day 49:** `day-49-xgboost-tabular-risk-classifier` — Dengesiz Tabüler Veri, scale_pos_weight, XGBoost ile Risk/Dolandırıcılık Tespiti
 - [ ] **Day 50:** `day-50-model-evaluation-threshold-engineering` — Eşik Değeri Mühendisliği, F-beta Optimizasyonu, Maliyet-Fayda Karar Matrisi
 - [ ] **Day 51:** `day-51-pillow-safe-image-loader` — Bozuk Dosya & Yanlış EXIF Yönetimi, Hataya Toleranslı Görsel Yükleyici
