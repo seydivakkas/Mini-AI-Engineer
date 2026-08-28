@@ -94,7 +94,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 61:** `day-61-retrieval-metrics-benchmark` — Vektör Arama Değerlendirmesi: NDCG@k, MRR (Mean Reciprocal Rank), Gecikme Testi
 - [x] **Day 62:** `day-62-sdxl-lora-controlled-generator` — Üretken AI: Stable Diffusion XL (SDXL) + LoRA ile Kontrollü Görsel Üretimi
 - [x] **Day 63:** `day-63-pydantic-ai-domain-models` — Pydantic v2 ile Tip Güvenli Girdi/Çıktı Sözleşmeleri & Domain Modelleri
-- [ ] **Day 64:** `day-64-fastapi-inference-api` — Üretim Seviyesi FastAPI İnference, Model Yaşam Döngüsü (lifespan), Batch Prediction
+- [x] **Day 64:** `day-64-fastapi-inference-api` — Üretim Seviyesi FastAPI İnference, Model Yaşam Döngüsü (lifespan), Batch Prediction
 - [ ] **Day 65:** `day-65-streamlit-sqlite-ai-dashboard` — SQLite Destekli CRUD, Model Çıkarım Logları ve Kalıcı AI Yönetim Paneli
 - [ ] **Day 66:** `day-66-onnx-int8-production-capstone` — PyTorch Modellerini ONNX'e Aktarma, INT8 PTQ Kuantizasyon & ONNX Runtime Hızlandırma
 
@@ -143,8 +143,8 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve 
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 63 (%100 eksiksiz tamamlandı ve test edildi).
-- **Sıradaki Gün:** Gün 64 (`day-64-fastapi-inference-api`).
+- **Tamamlanan:** Gün 01 - Gün 64 (%100 eksiksiz tamamlandı ve test edildi).
+- **Sıradaki Gün:** Gün 65 (`day-65-streamlit-sqlite-ai-dashboard`).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
