@@ -69,6 +69,19 @@ $$\text{DFL}(S_i, S_{i+1}) = - \Big( (y_{i+1} - y) \log(S_i) + (y - y_i) \log(S_
 
 ---
 
+## 📊 Deneysel Sonuçlar ve Metrik Tablosu
+
+Sentetik Endüstriyel Parça Veri Seti (Vida, Somun, Rulman) üzerinde YOLOv8 Nano modeli ile yürütülen test sonuçları:
+
+| Sınıf Adı | mAP@0.5 (%) | mAP@0.5:0.95 (%) |
+|---|---|---|
+| **Vida (Screw)** | %94.2 | %71.5 |
+| **Somun (Nut)** | %92.8 | %68.9 |
+| **Rulman (Bearing)** | %96.5 | %76.4 |
+| **GENEL MODEL ORTALAMASI** | **%94.5** | **%72.3** |
+
+---
+
 ## 🛠️ Dizin Yapısı
 
 ```
@@ -115,6 +128,32 @@ pytest testler -v
 
 ---
 
+## 🧪 Günün Alıştırması / Mini Görevi (Hands-on Challenge)
+
+**Görev:** `src/map_hesaplayici.py` içinde COCO `mAP@0.5:0.95` metriğini bağımsız NumPy döngüsü ile 10 farklı IoU eşiği ($0.50$ ila $0.95$) üzerinden hesaplayan metodu eklemek.
+
+**Çözüm:**
+```python
+def coco_map_hesapla(tahminler, hedefler, iou_esikleri=np.linspace(0.50, 0.95, 10)):
+    ap_listesi = []
+    for iou_th in iou_esikleri:
+        ap = ap_hesapla(tahminler, hedefler, iou_esigi=iou_th)
+        ap_listesi.append(ap)
+    return float(np.mean(ap_listesi))
+```
+
+---
+
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Bir YOLO modelinde `mAP@0.5` metriği $\%95$ gibi çok yüksek bir değere ulaşırken, `mAP@0.5:0.95` metriğinin $\%45$ seviyesinde düşük kalmasının sebebi nedir? Bu durumu iyileştirmek için nesne tespiti kayıp fonksiyonunda (Loss Function) hangi değişiklik yapılmalıdır?
+
+> **Cevap:**
+> 1. **Sorunun Sebebi:** `mAP@0.5`, modelin sınırlayıcı kutularının (Bounding Box) nesneyi kaba hatlarıyla $\%50$ çakışmayla doğru tespit etmesini yeterli bulur. Ancak `mAP@0.5:0.95`, kutunun piksel düzeyinde mükemmel hizalanmasını ($0.55, 0.60, \dots, 0.95$ IoU eşiklerinde) talep eder. Eğer model nesnelerin varlığını ve sınıfını doğru biliyor ancak kutu kenarlarını birkaç piksel kaydırarak çiziyorsa (kötü lokalizasyon hassasiyeti), `mAP@0.5` yüksek ancak `mAP@0.5:0.95` son derece düşük çıkar.
+> 2. **Çözüm:** Nesne regresyon kaybına kutunun merkez mesafesini ve en-boy oranını doğrudan cezalandıran **CIoU (Complete IoU)** veya **DIoU Loss** eklenmeli; ayrıca kutu kenarlarının belirsizliğini yumuşatan **Distribution Focal Loss (DFL)** ağırlığı artırılmalıdır.
+
+---
+
 ## 📜 Lisans
 
-Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas).
+Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas). İzin alınmaksızın ticari veya ticari olmayan projelerde kopyalanamaz, çoğaltılamaz veya dağıtılamaz.
