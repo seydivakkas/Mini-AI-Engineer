@@ -30,7 +30,23 @@ Görseli tanımlayan şey ortalama renk değil; **görüntüyü oluşturan bask�
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntüdeki en baskın $K$ adet rengi K-Means kümelemesi ile tespit edip alan yüzdelerini ve renk paletini çıkarmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Ürün kataloglama, moda analizi ve endüstriyel renk sınıflandırmasında manuel renk tanımlama karmaşasını ortadan kaldırır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Küme sayısı $K$ manuel belirlenmelidir; optimal $K$ seçilmezse renkler aşırı birleşebilir veya bölünebilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Mean-Shift kümeleme, Median-Cut algoritması veya Octree Kuantizasyonu.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

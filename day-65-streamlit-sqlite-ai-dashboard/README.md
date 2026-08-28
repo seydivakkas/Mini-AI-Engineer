@@ -66,7 +66,23 @@ Yapay zeka modelleri canlıya alındığında:
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Model çıkarımlarını SQLite veritabanına kaydedip Streamlit paneli üzerinden anlık görselleştirmek ve sorgulamak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- AI sisteminin geçmiş tahminlerini, denetim izlerini (audit log) ve performansını tek bir ekranda canlı izlemeyi sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Yüksek frekanslı (saniyede 10.000+ yazma) üretim ortamlarında SQLite kilitlenme (concurrency lock) yaşayabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PostgreSQL, TimescaleDB veya Grafana + Prometheus.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

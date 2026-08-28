@@ -28,7 +28,23 @@ Gerçek dünyada bir fabrika bandına bulutlu havada güneş vurabilir, robotun 
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- RGB, BGR, HSV ve LAB renk uzayları arasındaki matematiksel dönüşümleri inceleyerek ışık değişimlerinden bağımsız renk analizi yapmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- RGB uzayında gölge veya parlama nedeniyle değişen renk değerlerinin yarattığı segmentasyon hatalarını çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Dokusal desenleri veya nesne geometrilerini hesaba katmaz; yalnızca saf renk koordinatlarını dönüştürür.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- CIELUV, YCrCb veya Öznitelik Bazlı Renk Gömme (Color Embeddings).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

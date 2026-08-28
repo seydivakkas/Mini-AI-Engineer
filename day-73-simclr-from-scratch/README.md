@@ -86,6 +86,22 @@ $$\mathcal{L}_{\text{uniform}}(f; t) \triangleq \log \mathbb{E}_{x, y \stackrel{
 
 ---
 
+## 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Tek bir insan etiketi kullanmadan, stokastik artırma çiftleri ve NT-Xent (InfoNCE) kaybı ile zengin görsel temsiller öğrenmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Etiketleme maliyetini ortadan kaldırır; downstream görevler için transfer edilebilir güçlü öznitelik uzayı kurar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Büyük batch boyutu ($N=4096$) gerektirir ve aynı sınıftan gelen farklı örnekleri de negatif sanıp itebilir (False Negative sorunu).
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- MoCo v2 (Memory Queue), BYOL (Negative-free), SwAV veya Supervised Contrastive (SupCon).
+
+---
+
 ## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |

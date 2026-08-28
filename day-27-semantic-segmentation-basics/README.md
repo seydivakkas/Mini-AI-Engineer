@@ -45,7 +45,23 @@ Görsel sınıflandırma *"Görselde ne var?"*, nesne tespiti *"Nesneler nerede 
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntüdeki her bir piksele anlamsal bir sınıf etiketi atamak için Encoder-Decoder mimarisi ve Skip Connection (U-Net) bağlantılarını kullanmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Sınırlayıcı kutuların (bounding box) veremediği piksel seviyesindeki hassas alan, kontur ve lezyon sınırlarını ortaya çıkarır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Aynı sınıfa ait farklı nesneleri (örneğin yan yana duran iki arabayı) birbirinden ayıramaz; hepsini tek bir maske kabul eder.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Instance Segmentation (Mask R-CNN), Panoptic Segmentation veya Segment Anything Model (SAM).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

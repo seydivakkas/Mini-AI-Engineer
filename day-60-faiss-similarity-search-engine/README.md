@@ -53,7 +53,23 @@ Derin öğrenme modellerinden (Vision Transformer, ResNet, CLIP, LLM) çıkarıl
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Milyonlarca yüksek boyutlu vektör arasında k en yakın komşuyu (k-NN) IndexFlatIP veya IndexIVFFlat ile mikrosaniyeler içinde bulmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Klasik $O(N)$ doğrusal aramanın büyük verilerde oluşturduğu devasa gecikme darboğazını $O(\sqrt{N})$ indeksleme ile çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- IVF ve PQ yaklaşımları yaklaşık arama (ANN) yaptığı için teorik olarak %100 kesin (exact) sonuç vermeyebilir (küçük recall kaybı).
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- HNSW, ScaNN, Milvus veya Qdrant.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

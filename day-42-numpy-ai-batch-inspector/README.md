@@ -71,7 +71,23 @@ Derin öğrenme modelleri GPU üzerinde çalışırken CPU seviyesindeki gibi ay
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Yapay zeka modellerine giren çok boyutlu batch tensörlerinin şekil, tip, NaN/Inf ve aralık doğrulamalarını C hızında vektörize gerçekleştirmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Eğitim veya çıkarım sırasında sessizce yayılan ve gradyan patlamasına / çökmeye yol açan bozuk veri akışlarını anında engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Yalnızca bellek içi NumPy dizilerini denetler; dağıtık dosya akışlarında I/O seviyesinde kontrol sağlamaz.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PyTorch TorchScript assertions, Pydantic tensor validatörleri veya Great Expectations.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

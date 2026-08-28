@@ -221,3 +221,20 @@ pytest testler -v
  * License: Private - All Rights Reserved
  */
 ```
+
+
+
+## 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- PyTorch modellerini donanımdan bağımsız ONNX formatına dönüştürüp INT8 kuantizasyonu ile model boyutunu %75 küçülterek CPU çıkarımını 3 kat hızlandırmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- PyTorch bağımlılığını kaldırır, bellek tüketimini azaltır ve mikroservis yanıt sürelerini milisaniyenin altına çeker.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Hassas regresyon veya küçük kusur tespit görevlerinde INT8 kuantizasyonu %1-2 civarında doğruluk kaybı yaratabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- TensorRT (NVIDIA GPU), OpenVINO (Intel CPU) veya TorchScript.
+

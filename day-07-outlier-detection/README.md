@@ -28,7 +28,23 @@ Bu noktaları tespit etmek iki açıdan hayatidir:
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Z-Score, IQR ve İzolasyon Ormanı (Isolation Forest) yöntemleriyle veri setindeki anomali ve uç değerleri sistemden ayıklamak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Aykırı değerlerin regresyon katsayılarını ve gradyanları saptırarak modelin genelleme başarısını düşürmesini engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Aşırı temizlik yapıldığında gerçek ama nadir görülen kritik uç senaryoların (black swan) kaybolmasına yol açabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Local Outlier Factor (LOF), One-Class SVM veya Robust Mahalanobis (Elliptic Envelope).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

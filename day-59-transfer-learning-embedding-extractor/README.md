@@ -27,7 +27,23 @@ Derin öğrenmede önceden eğitilmiş (pre-trained) modeller iki temel strateji
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Eğitilmiş bir omurgadan (ResNet) sınıflandırma kafasını çıkarıp görüntüleri 512/2048 boyutlu yoğun embedding vektörlerine dönüştürmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Görsel benzerlik arama, kümeleme ve k-NN sınıflandırma için yüksek kaliteli temsil vektörleri üretir.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Hedef alan çok spesifikse (örn. mikroskopik hücreler) genel ImageNet öznitelikleri suboptimal kalabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Self-Supervised modeller (DINO, CLIP) veya Fine-Tuned ViT.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

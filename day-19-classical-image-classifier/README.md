@@ -28,7 +28,23 @@ Derin Öğrenme (CNN / ViT) modelleri milyonlarca parametreye ve devasa GPU hesa
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Öznitelik vektörlerini Support Vector Machines (SVM) ve Random Forest ile eğiterek klasik makine öğrenimi tabanlı görüntü sınıflandırıcı kurmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- GPU olmayan ortamlarda ve az sayıda eğitim verisiyle hızlı, hafif ve yorumlanabilir sınıflandırma sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Öznitelik mühendisliğinin başarısına bağımlıdır; karmaşık görsel sahnelerde derin öğrenmenin gerisinde kalır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Evrişimli Sinir Ağları (CNN), Vision Transformers veya XGBoost.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

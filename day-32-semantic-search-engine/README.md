@@ -56,7 +56,23 @@ Geleneksel anahtar kelime eşleştirme yöntemleri (BM25, TF-IDF), metinlerin **
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Metinleri yüksek boyutlu anlamsal embedding vektörlerine dönüştürerek kosinüs benzerliği ile anlamsal yakınlığa göre arama yapmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Kullanıcı farklı kelimeler kullansa dahi (ör. 'araç' ve 'otomobil') aynı anlama gelen belgelerin bulunmasını sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Nadir geçen özel kodlarda, marka isimlerinde ve sayısal değerlerde BM25 kadar keskin eşleşme yapamayabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- BM25, ColBERT, Cross-Encoder Re-ranker veya Hibrit Vektör Arama.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

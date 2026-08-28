@@ -27,7 +27,23 @@ Geleneksel derin öğrenme eğitim betiklerinde loglama, doğrulama, model kayde
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Eğitim, doğrulama, erken durdurma (Early Stopping), gradyan kırpma (Gradient Clipping) ve metrik takibini modüler tek bir çatı altında yönetmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Kod tekrarlarını engeller, eğitim sırasında gradyan patlamalarını önler ve en iyi modeli otomatik diske kaydeder.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Çoklu makine dağıtık eğitiminde (Multi-Node DDP) ileri düzey orkestrasyon kodları gerektirir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PyTorch Lightning, Hugging Face Accelerate veya Catalyst.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

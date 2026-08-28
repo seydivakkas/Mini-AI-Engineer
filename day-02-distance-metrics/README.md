@@ -23,7 +23,23 @@ Peki iki görselin "aynı halı deseni", "aynı araba" veya "aynı insan yüzü"
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Öznitelik vektörleri ve pikseller arasındaki benzerlik veya farklılığı Öklid (L2), Manhattan (L1) ve Kosinüs mesafesi ile analitik olarak ölçmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Yüksek boyutlu uzayda örneklerin birbirine ne kadar yakın/uzak olduğunu matematiksel olarak kesinleştirir.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Özellikler arası korelasyonu ve eksen varyanslarını dikkate almaz (Mahalanobis mesafesine ihtiyaç duyar).
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Mahalanobis Mesafesi, Minkowski Mesafesi veya Chebyshev Mesafesi.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

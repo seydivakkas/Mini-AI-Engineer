@@ -61,7 +61,23 @@ RAG mimarisi şu 3 temel aşamayla bu sorunu çözer:
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Geniş Dil Modellerine (LLM) harici bilgi tabanından dinamik bağlam (Context) enjekte ederek halüsinasyonu önlemek ve güncel verilerle yanıt üretmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- LLM'lerin statik eğitim verisi sınırını ve uydurma (hallucination) riskini doğrulanabilir kaynak metinlerle çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Getirilen belgeler alakasız veya gürültülü olduğunda LLM'in yanıt kalitesi düşebilir (Garbage In, Garbage Out).
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Fine-Tuned LLM, Long-Context LLMs veya GraphRAG.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

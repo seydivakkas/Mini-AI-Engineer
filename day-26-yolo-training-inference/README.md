@@ -46,7 +46,23 @@ Bu proje; endüstri standardı modern nesne tespiti mimarisi olan **Ultralytics 
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntüyü tek geçişte ızgara hücrelerine bölerek ankor/ankorsuz mekanizmalarla saniyede 100+ FPS hızında nesne tespiti yapmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- İki aşamalı algılayıcıların (Faster R-CNN) yüksek gecikme süresini çözerek kenar cihazlarda gerçek zamanlı tespiti mümkün kılar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Aşırı küçük ve birbirine çok yakın nesnelerin tespitinde bazen hassasiyet kaybı yaşayabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- RT-DETR, Faster R-CNN, EfficientDet veya Deformable DETR.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

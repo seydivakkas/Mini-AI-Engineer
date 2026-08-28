@@ -27,7 +27,23 @@ Derin yapay sinir ağları milyonlarca serbest parametreye sahiptir ve doğası 
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Döndürme, kırpma, renk titremesi ve gürültü ekleme gibi geometrik/fotometrik dönüşümlerle eğitim verisinin dağılımını sentetik olarak zenginleştirmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Aşırı öğrenmeyi (overfitting) engeller, modelin kamera açısı ve aydınlatma değişimlerine karşı dayanıklılığını (invariance) artırır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Aşırı agresif artırmalar yapıldığında sınıfın ayırt edici öznitelikleri bozulabilir (örneğin rakam 6'nın dönerek 9 olması).
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Albumentations, AutoAugment, RandAugment veya Mixup/CutMix.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

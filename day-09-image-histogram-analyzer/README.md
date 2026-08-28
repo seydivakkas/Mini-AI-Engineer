@@ -26,7 +26,23 @@ Histogram analizi, görüntünün "ışık parmak izini" çıkararak gizli detay
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntünün ton dağılımını, dinamik aralığını ve aydınlatma dengesini renk kanalları bazında histogram grafikleriyle analiz etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Aşırı pozlanmış (overexposed) veya az pozlanmış (underexposed) bölgeleri ve histogram sıkışmalarını nesnel olarak teşhis eder.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Histogram mekânsal konum bilgisi içermez; piksellerin görüntü üzerinde nerede kümelendiğini göstermez.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Yerel Kontrast Analizi, CLAHE veya Dalgacık (Wavelet) Spektrumu.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

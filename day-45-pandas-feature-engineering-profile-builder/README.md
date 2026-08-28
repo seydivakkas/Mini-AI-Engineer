@@ -67,7 +67,23 @@ Makine öğrenimi modellerinin başarısı doğrudan girdi özelliklerinin bilgi
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Tabüler verilerden etkileşim terimleri, polinomik özellikler, logaritmik dönüşümler ve istatistiksel özet profilleri otomatik türetmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Ham verinin doğrusal olmayan karmaşık ilişkilerini modellerin daha kolay yakalayabileceği zenginleştirilmiş temsil uzaylarına dönüştürür.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Aşırı fazla özellik türetilmesi durumunda boyut lanetine (Curse of Dimensionality) ve aşırı öğrenmeye yol açabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Featuretools (Automated Feature Engineering), tsfresh veya scikit-learn FeatureUnion.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

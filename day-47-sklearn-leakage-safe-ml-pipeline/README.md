@@ -71,7 +71,23 @@ Makine öğrenimi projelerinde en yaygın ve sinsi hata **Veri Sızıntısıdır
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Tüm ölçekleme, kodlama ve eksik değer tamamlama adımlarını yalnızca Train kümesi üzerinde fit edip Test kümesine dönüştürerek veri sızıntısını (Data Leakage) %100 önlemek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Test kümesi bilgilerinin eğitime sızması sonucu doğrulama aşamasında yapay yüksek başarım, canlıda ise çöküş yaşanması felaketini engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Pipeline içindeki transformatörler karmaşıklaştıkça hata ayıklama ve ara durumları denetleme zorlaşabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Feature Store mimarileri (Feast) veya scikit-learn ColumnTransformer.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

@@ -25,7 +25,23 @@ Güvenlik-kritik (otonom araçlar, medikal görüntüleme, dolandırıcılık te
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Yalnızca genel accuracy skoruna aldanmayıp Precision, Recall, F1-Score, PR-AUC ve Confusion Matrix ile sınıf bazlı zayıflıkları teşhis etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Dengesiz sınıflarda (imbalanced data) yanıltıcı yüksek doğruluk skorlarını ve modelin hangi sınıfları birbirine karıştırdığını açıkça ortaya çıkarır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Statik bir doğrulama kümesi gerektirir; canlı üretimdeki dinamik veri kaymalarını (data drift) tek başına izleyemez.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Sürekli model izleme araçları (Evidently AI, Prometheus) ve hata dilimleme (Error Slicing).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

@@ -44,7 +44,23 @@ Piksel uzayında ($1024 \times 1024 \times 3$) difüzyon işletmek $\mathcal{O}(
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Büyük Difüzyon Modellerine (SDXL) düşük dereceli adaptasyon matrisleri (LoRA) enjekte ederek spesifik konsept/tarzları bellek dostu üretmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Tüm modeli (6.6 milyar parametre) yeniden eğitmek yerine sadece 50-100 MB'lık LoRA ağırlıklarıyla tarz transferi sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Karmaşık kompozisyonlarda veya negatif promptlar yetersiz kaldığında deformasyonlar oluşabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- ControlNet, IP-Adapter veya DreamBooth.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

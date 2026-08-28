@@ -25,7 +25,23 @@ Gerçek dünya projelerinde on binlerce etiketli görsel toplamak ve sıfırdan 
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- ImageNet üzerinde milyonlarca görselle önceden eğitilmiş ResNet/MobileNet ağırlıklarını hedef dar veri kümesine uyarlamak (Fine-Tuning) için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Sıfırdan eğitim için gereken devasa veri ve hesaplama maliyetini ortadan kaldırır; birkaç yüz görselle %95+ doğruluk sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Kaynak veri dağılımı (ImageNet) ile hedef alan (ör. medikal mikroskopi) çok farklı olduğunda negatif transfer riski oluşur.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Self-Supervised ön eğitim (SimCLR, DINO) veya Vision Transformer adaptasyonu.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

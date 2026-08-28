@@ -29,7 +29,23 @@ Klasik **Öklid mesafesi**, veri noktalarının birbirine olan dairesel/küresel
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Veri dağılımının kovaryans matrisini ($S^{-1}$) hesaba katarak değişkenler arasındaki korelasyonu ve ölçek farklılıklarını nötralize eden mesafe hesaplamak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Öklid mesafesinin korelasyonlu ve eliptik saçılan verilerde ürettiği yanıltıcı mesafe ölçüm hatalarını tamamen çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Kovaryans matrisinin tekil (singular/non-invertible) olduğu durumlarda tersi alınamaz; düzenlileştirme (shrinkage) gerektirir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PCA ile beyazlatılmış (Whitened) Öklid Mesafesi veya Wasserstein Mesafesi.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

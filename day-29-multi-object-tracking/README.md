@@ -56,7 +56,23 @@ Modern çoklu nesne takibi iki bağımsız bileşenin senkronize çalışmasıyl
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Video kareleri boyunca tespit edilen nesneleri Kalman Filtresi ve Re-ID öznitelik benzerliği (DeepSORT/ByteTrack) ile kesintisiz takip etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Kareler arası kimlik değişimlerini (ID Switch), kısa süreli oklüzyonları ve hareket belirsizliklerini en aza indirir.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Uzun süreli tam oklüzyonlarda veya kameralar arası geçişte kimlik kaybı yaşanabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- ByteTrack, BoT-SORT, OC-SORT veya Transformer tabanlı Trackers (TrackFormer).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

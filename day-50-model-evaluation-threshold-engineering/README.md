@@ -71,7 +71,23 @@ Kritik 3 Adım:
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Varsayılan 0.5 sınıflandırma eşiği yerine, iş maliyet matrisini (False Positive vs False Negative maliyeti) optimize eden dinamik karar eşikleri belirlemek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Sahte negatifin (kaçırılan kusur/hastalık) sahte pozitiften çok daha pahalı olduğu senaryolarda finansal ve operasyonel kaybı minimize eder.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Eşik kalibrasyonu veri dağılımına bağımlıdır; canlıdaki veri kaymalarında periyodik olarak yeniden ayarlanmalıdır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Cost-Sensitive Learning, Platt Scaling veya Isotonic Regression.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

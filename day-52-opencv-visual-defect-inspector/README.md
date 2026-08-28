@@ -62,7 +62,23 @@ Endüstriyel üretim hatlarında saniyede 30-60 kare işleyen yüksek hızlı ka
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Üretim hattındaki parçaların referans kusursuz şablon ile yapısal farkını (SSIM / AbsDiff) ve morfolojik lezyonlarını kural tabanlı denetlemek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Eğitim verisi toplamadan deterministik tolerans sınırları içinde milisaniyeler içinde kusur kararı verir.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Doğal varyasyonlara (hafif açı/ışık değişimi) karşı derin modeller kadar toleranslı değildir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PatchCore Anomaly Detection, U-Net Segmentation veya YOLOv8.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

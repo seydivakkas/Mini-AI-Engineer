@@ -64,7 +64,23 @@
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Asenkron endpoint'ler, CORS desteği ve Pydantic validasyonu ile yüksek eşzamanlı AI çıkarım servisi sunmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Modeli frontend, mobil ve harici sistemlerin HTTP/JSON üzerinden güvenle çağırabileceği üretime hazır API'ye dönüştürür.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Çok ağır modellerde CPU worker'ları bloke olabileceğinden arka plan kuyrukları (Celery/Redis) gerekebilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Triton Inference Server, Ray Serve veya BentoML.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

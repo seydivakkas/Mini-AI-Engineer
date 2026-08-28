@@ -25,7 +25,23 @@ Standart sRGB uzayında renkler donanım odaklıdır (CRT/LCD ekranların fosfor
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Algısal olarak doğrusal CIELAB uzayında K-Means kümelemesi ile görselin dominant renk paletini ve alan yüzdelerini çıkarmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- RGB uzayındaki matematiksel mesafelerin insan gözünün algıladığı renk farkıyla uyuşmaması sorununu çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Aşırı pürüzlü ve geçişli dokularda renk küme merkezleri küçük sapmalar gösterebilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Median-Cut algoritması, Octree Color Quantization veya Mean-Shift.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

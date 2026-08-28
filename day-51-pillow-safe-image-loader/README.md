@@ -69,7 +69,23 @@ Gerçek dünya Bilgisayarlı Görü (Computer Vision) üretim ortamlarında (Fas
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntü dosyalarını güvenli EXIF yönelim düzeltmesi, bellek sızıntısı önleme ve format doğrulaması ile asenkron yüklemek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Bozuk veya kötü amaçlı (Decompression Bomb) görsel dosyalarının eğitim ve çıkarım boru hatlarını çökertmesini engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Yüksek performanslı GPU tensör dönüşümlerinde (C++ tabanlı TurboJPEG kadar) ultra hızlı değildir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- OpenCV, torchvision.io.read_image veya NVIDIA DALI.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

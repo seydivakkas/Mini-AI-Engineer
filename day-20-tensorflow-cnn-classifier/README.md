@@ -28,7 +28,23 @@ Geleneksel Tam Bağlantılı (Fully Connected / Dense) Yapay Sinir Ağları gör
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Evrişim ve yoğun katmanlardan oluşan derin sinir ağını TensorFlow/Keras ile inşa edip uçtan uca görsel sınıflandırma yapmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Manuel öznitelik çıkarma ihtiyacını ortadan kaldırarak piksellerden doğrudan sınıf olasılıklarını öğrenir.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Büyük veri ve GPU hesaplama gücü ister; küçük veri setlerinde düzenlileştirme olmadan aşırı öğrenmeye (overfitting) düşer.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PyTorch CNN, Transfer Learning (ResNet) veya Vision Transformer.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

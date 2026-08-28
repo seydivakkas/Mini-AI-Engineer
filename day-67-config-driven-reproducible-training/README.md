@@ -212,3 +212,20 @@ pytest testler -v
  * License: Private - All Rights Reserved
  */
 ```
+
+
+
+## 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Eğitim parametrelerini koddan ayırarak YAML konfigürasyonları ve deterministik tohumlarla (seed) %100 tekrarlanabilir deneyler yürütmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Farklı makinelerde ve çalıştırmalarda rastlantısal sonuç sapmalarını ve kod içinde unutulan 'hardcoded' parametre hatalarını engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Çok katmanlı devasa konfigürasyon yapılarında hiyerarşik geçersiz kılmalar (override) karmaşıklaşabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Hydra, Gin-Config, Pydantic Settings veya Click CLI.
+

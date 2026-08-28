@@ -27,7 +27,23 @@ Kullanıcının nesneyi kabaca bir dikdörtgen kutu içine almasıyla çalışan
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Kullanıcının belirlediği sınırlayıcı kutu içinde Gaussian Mixture Models (GMM) ve Graph-Cut optimizasyonu ile arka planı yok etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Basit renk maskelemesinin yetersiz kaldığı karmaşık fotoğraflarda nesne sınırlarını piksel hassasiyetinde kesip ayırır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- İteratif Graph-Cut optimizasyonu CPU yoğun çalışır ve gerçek zamanlı video akışlarında gecikme yaratır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Segment Anything Model (SAM), MODNet veya Rembg (U^2-Net).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

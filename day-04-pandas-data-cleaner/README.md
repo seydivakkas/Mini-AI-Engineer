@@ -25,7 +25,23 @@ Bu işlem **Veri Sızıntısına (Data Leakage)** yol açar. Test kümesindeki g
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Tabüler veri kümelerindeki eksik kayıtları, aykırı değerleri ve tutarsız veri tiplerini deterministik kurallarla temizlemek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Bozuk veya kirli verilerin makine öğrenimi boru hatlarına girerek modelleri zehirlemesini ve çökmelere yol açmasını engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Büyük ölçekli (100GB+) veri kümelerinde tek makine bellek kısıtlarına takılır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Polars, PySpark, Dask veya DuckDB.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

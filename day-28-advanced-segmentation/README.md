@@ -43,7 +43,23 @@ Görsel dünyayı oluşturan pikseller iki ana grupta toplanır:
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Piksel bazlı maskeleme ile nesne tespiti birleştirerek (Mask R-CNN) her bir nesne örneğine (instance) benzersiz kimlik ve maske atamak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Semantik segmentasyonun aynı sınıfa ait farklı nesneleri ayıramama eksikliğini FPN ve RoIAlign ile tamamen çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Hesaplama maliyeti ve parametre sayısı yüksektir; mobil/kenar cihazlarda gerçek zamanlı çalıştırılması zordur.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- YOLOv8-Seg, Mask2Former, SAM veya DeepLabv3+.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

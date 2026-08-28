@@ -65,6 +65,22 @@ $$\mathcal{L}_{\text{LS}}(p, q) = (1 - \epsilon) \big(-\log p_y\big) + \frac{\ep
 
 ---
 
+## 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntüleri ve etiketleri lineer harmanlayarak (Mixup/CutMix) ve etiket yumuşatma (Label Smoothing) ile modelin aşırı güvenini ve ezberlemesini önlemek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Modelin karar sınırlarını yumuşatır, oklüzyon ve arka plan karmaşasına karşı aşırı dayanıklılık sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Ön eğitim süresini (epoch ihtiyacını) bir miktar uzatır; küçük modellerde underfitting riski doğurabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- DropBlock, RandAugment veya AutoAugment.
+
+---
+
 ## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |

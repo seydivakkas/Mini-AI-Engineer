@@ -55,7 +55,23 @@ Streamlit, klasik web framework'lerinden (React, Vue) farklı olarak deklaratif 
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Yapay zeka modellerini ve teşhis metriklerini hızlıca prototipleyip interaktif bir web paneli üzerinden son kullanıcılara sunmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Frontend geliştirme maliyetine girmeden saf Python ile canlı kamera testleri, görsel yükleme ve parametre ayarı yapılmasını sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Yüksek eşzamanlı kurumsal üretim yükleri için optimize edilmemiştir; sayfa yenilemelerinde script yeniden baştan çalışır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- React / Next.js + FastAPI mimarisi, Gradio veya Dash.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

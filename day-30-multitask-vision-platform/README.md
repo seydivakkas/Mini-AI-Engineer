@@ -48,7 +48,23 @@ Geleneksel üretim sistemlerinde her görsel görev için (Sınıflandırma içi
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Sınıflandırma, nesne tespiti ve segmentasyon görevlerini paylaşımlı tek bir omurga (Shared Backbone) üzerinden eşzamanlı çalıştırmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Ayrı ayrı 3 farklı model çalıştırmanın yarattığı GPU bellek ve çıkarım süresi darboğazını tek bir ileri geçişe (forward pass) indirir.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Görevler arası gradyan çatışması (negative transfer / task interference) doğru kayıp ağırlıklandırması yapılmazsa model başarımını düşürür.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Ayrı uzman modeller (Ensemble), GradNorm optimizasyonu veya Multi-Task Transformers.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

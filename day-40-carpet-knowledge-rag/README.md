@@ -110,7 +110,23 @@ pip install -r gereksinimler.txt
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Halı yıkama, leke çıkarma, iplik türleri ve bakım talimatları içeren uzman teknik bilgi tabanını RAG mimarisiyle akıllı danışmana dönüştürmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Müşteri temsilcilerinin teknik el kitaplarında saatlerce arama yapma ihtiyacını ortadan kaldırır; doğru reçeteyi saniyeler içinde verir.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Teknik dokümanlarda bulunmayan veya çelişkili bilgiler içeren sorulara doğrudan yanıt üretemez.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Geleneksel arama motoru, Chatbot karar ağaçları veya Fine-Tuned Domain LLM.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

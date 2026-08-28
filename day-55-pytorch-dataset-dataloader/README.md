@@ -25,7 +25,23 @@ Eğer veri hazırlama ($T_{\text{veri}}$) süresi GPU hesaplama ($T_{\text{GPU}}
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Çok kanallı görsel verileri bellek sızıntısı olmadan çoklu iş parçacığı (num_workers) ve pinned_memory ile GPU'ya kesintisiz beslemek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- CPU-GPU veri transfer darboğazını (I/O bottleneck) ortadan kaldırarak GPU'nun boşta beklemesini (%0 utilization) engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Büyük veri kümelerinde disk okuma hızı çok yavaşsa CPU tarafında darboğaz devam edebilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- NVIDIA DALI, WebDataset veya FFCV yüksek hızlı veri yükleyicileri.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

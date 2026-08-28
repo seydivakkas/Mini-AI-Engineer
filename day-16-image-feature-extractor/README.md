@@ -26,7 +26,23 @@ Bu nedenle bilgisayarlı görü mühendisleri **öznitelik çıkarımı (Feature
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görsellerden renk histogramları, Haralick doku özellikleri ve kenar yoğunlukları çıkararak sayısal öznitelik vektörleri oluşturmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Büyük görüntü matrislerini makine öğrenimi modellerinin işleyebileceği kompakt 1D vektörlere dönüştürür.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- El yapımı (hand-crafted) özniteliklerdir; derin ağların öğrendiği hiyerarşik anlamsal özellikleri tam yakalayamaz.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- CNN Backbone öznitelikleri (ResNet, EfficientNet) veya Vision Transformer Gömüleri.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

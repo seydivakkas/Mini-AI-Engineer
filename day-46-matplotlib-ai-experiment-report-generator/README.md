@@ -58,7 +58,23 @@ Endüstriyel yapay zeka projelerinde (MLflow, Weights & Biases, TensorBoard orta
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Model eğitim metriklerini, kayıp eğrilerini, PR/ROC eğrilerini ve hata analizlerini otomatik olarak çok panelli yayın kalitesinde PDF/PNG raporuna dökmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Manuel grafik çizme ve deney sonuçlarını bir araya getirme operasyonel yükünü tamamen ortadan kaldırır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Dinamik/interaktif yakınlaştırma sağlamaz; statik yüksek çözünürlüklü görsel üretir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Weights & Biases, MLflow UI, TensorBoard veya Plotly.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

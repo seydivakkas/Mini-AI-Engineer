@@ -36,7 +36,23 @@ Geleneksel görüntü bölütlemede (segmentation) iki temel kümeleme yaklaşı
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Hiçbir etiket kullanmadan pikselleri renk ve konum uzayında $K$ adet kümeye ayırarak hızlı segmentasyon ve renk kuantizasyonu yapmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Görüntü sıkıştırmada palet boyutunu küçültür ve homojen renk bölgelerini etiket maliyetsiz ayırır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Kümelerin küresel (spherical) olduğunu varsayar; karmaşık geometrik şekilleri ve iç içe geçmiş dağılımları iyi kümeleyemez.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- DBSCAN, Mean-Shift, Gaussian Mixture Models veya U-Net.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

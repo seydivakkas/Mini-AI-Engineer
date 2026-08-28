@@ -62,7 +62,23 @@ JPEG sıkıştırma algoritması, görüntüyü $8 \times 8$ piksel bloklarına 
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntüdeki manipülasyonları, sahtecilikleri ve montajları Error Level Analysis (ELA) ve JPEG sıkıştırma tutarsızlıkları ile tespit etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Dijital ortamda fotoğrafların değiştirilmiş, ekleme yapılmış veya sahtelenmiş kısımlarını insan gözü görmese bile ortaya çıkarır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Ham PNG/TIFF formatlarında veya çoklu yeniden kaydedilmiş dosyalarda ELA analizi yanıltıcı olabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Noiseprint, Deepfake Tespit Ağları (MesoNet, EfficientNet-Forensics) veya PRNU analizi.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

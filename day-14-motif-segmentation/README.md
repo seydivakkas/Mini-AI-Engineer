@@ -29,7 +29,23 @@ Bir halı veya seramik fabrikasında, tekstil tasarım stüdyosunda veya dijital
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görseldeki özel desen ve motifleri renk eşikleme ve morfolojik kontur operasyonları ile arka plandan izole etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Karmaşık arka planlardan hedef motiflerin etiketli veri gerektirmeden kural tabanlı olarak çıkarılmasını sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Benzer renkteki arka plan detaylarını motife dahil edebilir; aydınlatma değişimlerine karşı hassastır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- U-Net Segmentasyonu, Watershed veya GrabCut.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

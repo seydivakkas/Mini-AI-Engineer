@@ -51,7 +51,23 @@ Tek başına ne leksikal arama ne de semantik vektör arama tek başına tüm ar
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- BM25'in anahtar kelime gücü ile Dense Retrieval'ın anlamsal derinliğini Reciprocal Rank Fusion (RRF) ile birleştirerek en dengeli arama sonucunu üretmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Tek başına vektör aramasının özel terimleri kaçırmasını, tek başına BM25'in ise anlamsal benzerliği kaçırmasını tamamen çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- İki ayrı arama motorunun çalıştırılması nedeniyle sorgu süresini ve indeksleme karmaşıklığını bir miktar artırır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Cross-Encoder Re-ranking, ColBERT v2 veya SPLADE.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

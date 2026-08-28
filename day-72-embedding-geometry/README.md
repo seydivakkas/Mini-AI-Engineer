@@ -89,6 +89,22 @@ $$\mathcal{I}(X) = \frac{\exp(\mathcal{H}(\sigma))}{d} \in (0, 1]$$
 
 ---
 
+## 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Yüksek boyutlu temsil vektörlerinin geometrisini, izotropi skorunu ve boyutsal çöküşünü (Dimensional Collapse) SVD, t-SNE ve UMAP ile denetlemek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Modelin tüm temsilleri tek bir dar koniye veya alt uzaya sıkıştırması (çöküş) tehlikesini erkenden teşhis eder.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- t-SNE ve UMAP non-lineer izdüşümler olduğu için global mesafeleri bazen yanıltıcı gösterebilir; SVD spektrumu ile desteklenmelidir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PCA, PaCMAP, Isomap veya Kernel PCA.
+
+---
+
 ## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |

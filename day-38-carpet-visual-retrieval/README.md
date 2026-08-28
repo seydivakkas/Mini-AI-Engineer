@@ -55,7 +55,23 @@ Bu proje; halı ve tekstil kataloglarında, e-ticaret platformlarında ve tasar�
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Milyonlarca halı deseni arasından çekilen bir fotoğrafa en çok benzeyen ürünleri görsel embedding ve FAISS indeksi ile milisaniyede bulmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Metinle tarif edilmesi imkansız olan karmaşık oryantal, modern ve soyut halı desenlerinin görsel benzerlik üzerinden katalogda anında bulunmasını sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Aşırı kırışık, loş ışıkta çekilmiş veya kısmen kapalı fotoğraflarda öznitelik vektörü sapabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- DINOv2 embeddingleri, CLIP visual search veya SIFT/ORB anahtar nokta eşleştirme.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

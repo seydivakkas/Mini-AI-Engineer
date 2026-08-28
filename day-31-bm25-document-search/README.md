@@ -59,7 +59,23 @@ Klasik TF-IDF (Term Frequency - Inverse Document Frequency) modelinde iki kritik
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Ters Doküman Frekansı (IDF) ve terim sıklığı doygunluğu ile anahtar kelime tabanlı hassas metin aramasını milisaniyeler içinde yapmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Spesifik ürün kodları, seri numaraları ve teknik terimlerin vektör aramasında kaybolmasını önler; sıfır eğitim maliyetiyle güçlü arama sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Eşanlamlılık (synonymy) ve bağlamsal anlamsallığı (polysemy) anlayamaz; kelime birebir geçmiyorsa sonuç bulamaz.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Dense Semantic Retrieval (Embedding-based), Splade veya Hibrit Arama (Hybrid Search).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

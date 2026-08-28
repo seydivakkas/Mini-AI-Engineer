@@ -40,7 +40,23 @@ Vektör ve semantik arama sistemlerinde binlerce veya milyonlarca belge arasınd
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Vektör arama ve tavsiye sistemlerinin kalitesini MRR, Recall@K, Precision@K ve NDCG@K metrikleriyle bilimsel olarak kıyaslamak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Arama motorunun yalnızca ilk sonucu değil, ilk K sonuçtaki sıralama kalitesini ve alaka düzeyini objektif ölçer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Kullanıcı geri bildirimi ve A/B testlerinin yerini tek başına tutamaz; çevrimdışı (offline) benchmark sağlar.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- A/B Testing, Click-Through Rate (CTR) analizi veya RankLib.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

@@ -29,7 +29,23 @@ Bir kamera ile masadaki faturanın, duvardaki tablonun, yerdeki bir halının ve
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Açılı çekilmiş belgeleri ve düzlemsel yüzeyleri 4 köşe noktası ve perspektif dönüşüm matrisi ile kuş bakışı (top-down) görünüme getirmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Kamera açısının neden olduğu yamukluk ve distorsiyonları gidererek OCR ve desen analizinin kusursuz çalışmasını sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Yüzey düzlemsel (planar) olmadığında (örneğin bükülmüş kağıt) 2D homografi matrisi yetersiz kalır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Thin Plate Spline (TPS), 3D Mesh Düzeltme veya Derin Belge Düzeltme Ağları (DocUNet).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

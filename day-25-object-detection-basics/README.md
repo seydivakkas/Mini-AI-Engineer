@@ -22,7 +22,23 @@ Sınıflandırma problemi *"Görselde ne var?"* ($y \in \{1, \dots, C\}$) sorusu
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Sınıflama ve Bounding Box regresyonunu birleştirip IoU (Intersection over Union) ve NMS (Non-Maximum Suppression) ile nesne tespit temelini kurmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Görüntüde birden fazla nesnenin var olduğu durumlarda her bir nesnenin yerini ve sınıfını tek bir model akışında çıkarır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- IoU eşiklerine ve NMS filtrelemesine aşırı hassastır; yoğun kalabalıklarda birbirine yakın nesneleri yanlışlıkla eleyebilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Soft-NMS, DIoU/CIoU NMS veya NMS gerektirmeyen Transformer modelleri (DETR).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

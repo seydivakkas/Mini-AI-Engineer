@@ -62,7 +62,23 @@ Modern yapay zeka boru hatlarında (AI Pipelines) ve mikromimari servislerde:
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Yapay zeka modellerinin girdi ve çıktılarını katı veri tipleri, sınır kontrolleri ve otomatik validasyon ile güvenceye almak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Eksik/hatalı tipteki verilerin modele girmesini ve model çıktılarının downstream sistemleri bozmasını %100 engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Çok büyük tensörlerin piksel piksel validasyonunda ek Python yükü getirebilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Python Dataclasses, Marshmallow veya Cerberus.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

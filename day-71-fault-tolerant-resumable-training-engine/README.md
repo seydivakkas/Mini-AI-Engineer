@@ -71,6 +71,22 @@ Eğer eğitim sadece $\theta_t$ ile başlatılırsa:
 
 ---
 
+## 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Eğitim sırasında oluşabilecek donanım çökmeleri, elektrik kesintileri veya OOM hatalarına karşı atomik I/O ve RNG durum korumasıyla eğitimi kesintisiz sürdürmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Günlerce süren büyük eğitimlerde bir kesinti olduğunda tüm emeğin ve hesaplama maliyetinin boşa gitmesini sıfırlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Her epoch'ta disk I/O yükü oluşturur; bu nedenle Top-K ve periyodik checkpoint budama stratejisi zorunludur.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PyTorch Lightning Checkpointing, DeepSpeed Engine veya TorchSnapshot.
+
+---
+
 ## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |

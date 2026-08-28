@@ -48,6 +48,22 @@ $$\eta_t = \begin{cases} \eta_{\text{base}} \cdot \dfrac{t}{T_{\text{warmup}}}, 
 
 ---
 
+## 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- AdamW ve bellek verimli Lion optimizer'ı CosineAnnealing ve Warmup dinamikleri ile laboratuvar ortamında kıyaslayıp optimal yakınsamayı bulmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Eğitimin başlangıcındaki gradyan şoklarını (Warmup ile) ve yerel minimumlara takılmayı (Cosine Annealing ile) çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Lion optimizer momentum işaret (sign) tabanlı çalıştığı için küçük batch boyutlarında ve aşırı gürültülü gradyanlarda kararsızlaşabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- SGD with Momentum, Sophia, Adafactor veya RMSprop.
+
+---
+
 ## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |

@@ -27,7 +27,23 @@ Kullanıcı bir mobilya mağazasında veya caddede beğendiği bir vazonun foto�
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Çıkarılan öznitelik vektörleri üzerinde k-En Yakın Komşu (k-NN) algoritması ile en benzer görselleri aramak ve tavsiye etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Eğitim parametresi gerektirmeden görsel kataloglarda 'buna benzer ürünleri bul' fonksiyonunu doğrudan çalıştırır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Veri boyutu büyüdükçe arama karmaşıklığı $O(N)$ olur; büyük veri tabanlarında doğrusal tarama yavaşlar.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- FAISS (IndexFlat / IndexIVF), HNSW veya Annoy.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

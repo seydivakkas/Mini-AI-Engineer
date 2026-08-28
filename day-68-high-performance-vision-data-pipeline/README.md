@@ -199,3 +199,20 @@ pytest testler -v
  * License: Private - All Rights Reserved
  */
 ```
+
+
+
+## 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- C++ ile optimize edilmiş Albumentations ve PyTorch Prefetcher kullanarak veri artırma ve tensör aktarımını GPU bekleme süresine paralel kılmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Veri yükleme darboğazını (Data Starvation) yok eder; GPU kullanım oranını (Utilization) %95+ seviyesine çıkarır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- CPU çekirdek sayısı yetersiz olan makinelerde çoklu worker açılması CPU darboğazı yaratabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- NVIDIA DALI veya TorchVision v2 transforms.
+

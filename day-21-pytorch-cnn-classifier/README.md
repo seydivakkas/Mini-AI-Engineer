@@ -25,7 +25,23 @@ PyTorch, dinamik hesaplama grafiği (**Dynamic Computational Graph / Eager Execu
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Evrişim (Convolution), Aktivasyon (ReLU) ve Havuzlama (Pooling) katmanlarıyla hiyerarşik görsel öznitelikleri uçtan uca öğrenmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Manuel öznitelik çıkarma zorunluluğunu ortadan kaldırarak piksellerden doğrudan sınıf olasılıklarına diferansiyellenebilir öğrenim sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Büyük ölçekli veri kümesi ve GPU donanımı gerektirir; küçük verilerde düzenlileştirme olmadan aşırı öğrenir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Pretrained Transfer Learning modelleri (ResNet, ConvNeXt) veya Vision Transformer.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

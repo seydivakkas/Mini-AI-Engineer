@@ -104,7 +104,23 @@ pip install -r gereksinimler.txt
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Renk analizi, görsel arama, kusur tespiti ve teknik danışmanlık modüllerini uçtan uca tek bir kurumsal entegre süit haline getirmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Parçalanmış yapay zeka servislerini tek bir arayüz ve paylaşımlı veri hattı üzerinde birleştirerek operasyonel sürtünmeyi sıfırlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Bileşenlerden birinde yaşanan darboğaz genel platform performansını etkileyebilir (monolitik entegrasyon riski).
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Mikroservis tabanlı bağımsız Kubernetes servis mimarisi.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

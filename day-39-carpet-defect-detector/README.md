@@ -61,7 +61,23 @@ Bu proje; jakarlı halı dokuma tezgahlarında ve konveyör bant kalite kontrol 
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Halı üretim hatlarında dokuma hatalarını, iplik kaçıklarını ve renk lekelerini morfolojik analiz ve derin öğrenme ile anında tespit etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- İnsan denetçilerin göz yorgunluğuna bağlı kaçırdığı mikro üretim kusurlarını 7/24 kesintisiz ve standart kalitede yakalar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Sentetik veya nadir görülen yeni kusur tiplerinde yeterli eğitim verisi yoksa false-negative oranı artabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Autoencoder / Anomaly Detection (PatchCore, Padim), YOLOv8-Defect veya Segmentasyon modelleri.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

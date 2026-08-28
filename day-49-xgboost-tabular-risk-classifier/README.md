@@ -69,7 +69,23 @@ Bu problemi çözmek için 4 kritik mekanizma uygulanır:
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Gradient Boosted Decision Trees ile tabüler verilerde eksik değerlere dayanıklı, yüksek performanslı ve açıklanabilir risk sınıflandırması yapmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Tabüler verilerde derin öğrenme modellerinden çok daha hızlı yakınsar ve Feature Importance ile hangi değişkenin riski artırdığını açıklar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Görsel veya serbest metin gibi yapısal olmayan (unstructured) verilerde doğrudan kullanılamaz.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- LightGBM, CatBoost, Random Forest veya TabNet.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

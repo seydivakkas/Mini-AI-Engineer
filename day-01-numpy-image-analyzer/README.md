@@ -23,7 +23,23 @@ NumPy seviyesinde piksel matrislerini yönetebilmek; özel veri artırma (augmen
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntüleri çok boyutlu NumPy tensörleri (H, W, C) olarak temsil edip piksel manipülasyonlarını, kanal ayrıştırmalarını ve matris istatistiklerini C hızında hesaplamak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Saf Python döngüleriyle piksel işlemenin neden olduğu saniyeler süren gecikmeyi vektörel SIMD optimizasyonu ile mikrosaniyelere indirir.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Yüksek seviyeli görsel semantik veya geometrik şekil algısı taşımaz; yalnızca sayısal matris cebri yürütür.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- PyTorch Tensor, CuPy (GPU tabanlı NumPy) veya OpenCV matris motoru.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

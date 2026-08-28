@@ -26,7 +26,23 @@ Birbiriyle yüksek korelasyonlu değişkenler bir regresyon veya derin öğrenme
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Korelasyon ısı haritaları, çiftli dağılımlar (pairplot) ve kutu grafikleriyle hedef değişkeni en çok etkileyen öznitelikleri görsel olarak keşfetmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Gereksiz/gürültülü özniteliklerin modele dahil edilmesini önler ve multikolinearite (çoklu doğrusal bağlantı) sorunlarını erken yakalar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Manuel yorumlama gerektirir; otomatik özellik seçim algoritmalarının yerini tek başına tutmaz.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Otomatik EDA araçları, SHAP bağımlılık analizleri veya PCA.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

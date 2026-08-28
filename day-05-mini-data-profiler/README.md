@@ -27,7 +27,23 @@ Ağır araçlar gigabaytlarca bellek tüketip CI/CD süreçlerini dakikalarca be
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Veri setinin eksiklik oranları, basıklık/çarpıklık, kardinalite ve dağılım istatistiklerini otomatik tarayıp veri sağlığı karnesi üretmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Model geliştiricinin veri setini tanımak için saatlerce manuel EDA sorguları yazma yükünü ortadan kaldırır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Yalnızca özet istatistikler sunar; özellikler arası yüksek dereceli doğrusal olmayan karmaşık ilişkileri tek başına modelleyemez.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- ydata-profiling, Sweetviz veya Great Expectations.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

@@ -69,7 +69,23 @@ Tabüler makine öğrenimi modellerinde (XGBoost, LightGBM, CatBoost, Scikit-Lea
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Tabüler veri kümelerindeki eksik değerleri, aykırı gözlemleri ve tip tutarsızlıklarını deterministik bir temizleme boru hattı ile dönüştürmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Makine öğrenimi modellerinin kirli veriler yüzünden düşük genelleme performansı göstermesini ve patlamasını engeller.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Çok büyük boyutlu (100GB+) büyük veri setlerinde tek makine bellek sınırlarına takılır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Polars, PySpark, Dask veya DuckDB.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

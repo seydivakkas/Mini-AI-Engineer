@@ -54,7 +54,23 @@ Flask veya Django gibi geleneksel senkron web çatıları, her istek için bir t
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Eğitilen yapay zeka modellerini asenkron (async/await), yüksek eşzamanlı ve OpenAPI dokümantasyonlu bir REST API servisi olarak sunmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Modelin izole edilmiş bir servis olarak mikroservis mimarilerine entegre edilmesini, girdi validasyonunu ve otomatik dokümantasyonu sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Yoğun GPU çıkarımlarında asenkron kuyruk yönetimi (dynamic batching) olmadan tekil isteklerde GPU tam verimle kullanılamaz.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Triton Inference Server, TorchServe, vLLM veya BentoML.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

@@ -26,7 +26,23 @@ Klasik görüntü işleme teknikleri; derin öğrenme öncesi **ön işleme (pre
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Görüntü filtreleme, kontrast ayarlama, kırpma ve gürültü temizleme işlevlerini yeniden kullanılabilir modüler bir araç setinde toplamak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Bilgisayarlı görü projelerinde tekrar eden temel görüntü işleme kodlarını standartlaştırır ve hata payını sıfırlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Gelişmiş derin öğrenme tabanlı restorasyon veya süper çözünürlük operasyonlarını kapsamaz.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Albumentations, torchvision.transforms veya imgaug.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

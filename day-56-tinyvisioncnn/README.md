@@ -29,7 +29,23 @@ Bu durum, kanal sayısı $M, N$ arttıkça karesel bir hesaplama patlamasına yo
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Evrişimli katmanların (Conv2D, BatchNorm, ReLU, MaxPool, GlobalAvgPool) parametre ve tensör boyut dinamiklerini sıfırdan inceleyip kavramak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Kara kutu kütüphane çağrıları yerine tensör boyut hesaplamalarını ($W_{out} = \lfloor (W - K + 2P)/S \rfloor + 1$) tam kontrol altına alır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Büyük ResNet veya ConvNeXt mimarileri kadar derin değildir; kapasitesi küçük görevlerle sınırlıdır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- ResNet-18, MobileNetV3 veya SqueezeNet.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

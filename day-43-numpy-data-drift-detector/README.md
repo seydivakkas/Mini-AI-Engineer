@@ -52,7 +52,23 @@ Bir makine öğrenimi modeli eğitildikten sonra performansı zamanla düşer (M
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Canlı üretim verisi ile eğitim referans dağılımı arasındaki istatistiksel sapmayı Kolmogorov-Smirnov ve PSI metrikleriyle tespit etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Modelin sessizce bozulan tahmin performansını (Silent Performance Degradation) kullanıcılar şikayet etmeden önce proaktif yakalar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Veri kaymasının sebebini (etiket kayması mı, özellik kayması mı) açıklamaz; yalnızca istatistiksel mesafeyi söyler.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Evidently AI, Alibi Detect veya Wasserstein Distance izleme motorları.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

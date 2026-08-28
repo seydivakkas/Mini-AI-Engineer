@@ -59,7 +59,23 @@ Bu proje; jakarlı halı dokuma, iplik boyama ve tekstil üretim hatlarında des
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Halı ve tekstil ürünlerinde insan gözünün algısal renk farkını ($\Delta E_{00}$) modelleyen CIELAB uzayında dominant renkleri ve palet oranlarını çıkarmak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- RGB uzayında renk farklarının insan algısıyla uyuşmaması sorununu uluslararası CIE standartlarıyla çözer.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Çok karmaşık desenli ve degradeli halılarda dominant renk sayısı ($K$) doğru seçilmezse mikro renk nüansları kaybolabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- K-Means++, Mean-Shift kümeleme veya Renk Histogramı Ayrıştırması.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

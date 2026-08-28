@@ -28,7 +28,23 @@ Geleneksel derin öğrenme veya metin aramaları renk tonlarının hassas uyumun
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Renk paletleri ve görseller arasındaki benzerliği $\Delta E$ (CIELAB renk farkı) ve histogram kesişimi (Histogram Intersection) ile hesaplamak için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- İnsan gözünün renk ayırt etme algısını matematiksel olarak birebir simüle eden nesnel renk eşleştirme sağlar.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Desen ve şekil benzerliğini ölçemez; tamamen renk kompozisyonuna odaklanır.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- Earth Mover's Distance (Wasserstein), Cosine Similarity veya Derin Renk Gömüleri (Color Embeddings).
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

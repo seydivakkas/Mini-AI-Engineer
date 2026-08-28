@@ -28,7 +28,23 @@ Modern yapay zeka sistemlerinde verilerin %90'ından fazlası **etiketlenmemişt
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Etiketlenmemiş görsel koleksiyonlarını K-Means ve Hiyerarşik Kümeleme ile görsel benzerliklerine göre otomatik kategorize etmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- Görsel arşivleri insan müdahalesi olmadan otomatik sınıflandırır ve veri setindeki doğal alt grupları keşfeder.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Küme sayısı $K$ önceden bilinmelidir; karmaşık manifoldlarda küresel mesafe varsayımı sapabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- DBSCAN, HDBSCAN veya T-SNE / UMAP ile Manifold Kümeleme.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|

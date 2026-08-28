@@ -33,7 +33,23 @@ BF16:  [s: 1 bit] [----- Exponent: 8 bit -----] [--- Mantissa: 7 bit ---]
 
 ---
 
-### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+### 🔍 Dondurulmuş Mimari Analizleri (Freezing Architecture Rationale)
+
+### 1. 🔍 Neden Bu Sistem Kullanılır? (Mühendislik & Bilimsel Gerekçe)
+- Model eğitimini FP16/BF16 karışık hassasiyet ve GradScaler ile hızlandırıp GPU bellek tüketimini yarıya indirmek için.
+
+### 2. 🛡️ Ne Gibi Sorunları Çözer? (Çözülen Kritik Darboğazlar)
+- FP16'daki sayısal taşma (underflow/overflow) sorununu dinamik kayıp ölçekleme ile çözerek eğitim süresini 2 kata kadar hızlandırır.
+
+### 3. ⚠️ Ne Konuda Eksik Kalır? (Sınırlar, Limitler ve Dikkat Edilmesi Gerekenler)
+- Eski nesil GPU mimarilerinde (Tensor Core olmayan kartlarda) hızlanma sağlamayabilir.
+
+### 4. 🔄 Alternatif Sistemler & Karşılaştırmalı Yaklaşımlar
+- BF16 (Bfloat16 - Ampere+ GPU'lar), FP8 Kuantizasyonu veya FP32 Tam Hassasiyet.
+
+---
+
+## 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
 
 | Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
 |---|---|---|
