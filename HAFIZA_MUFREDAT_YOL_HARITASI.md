@@ -56,11 +56,11 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 ### 🚀 Planlanan ve Sırayla İşlenecek Günler (Gün 31 - Gün 101)
 
 #### 🔹 FAZ 2B: Arama Motorları, RAG ve Sektörel Halı/Tekstil Zekası (Gün 31 - Gün 41)
-- [ ] **Day 31:** `day-31-bm25-document-search` — BM25 Leksikal Arama Algoritması, TF-IDF, Ters İndeks (Inverted Index), Tokenizasyon
-- [ ] **Day 32:** `day-32-semantic-search-engine` — Sentence Transformers ile Yoğun (Dense) Vektör Arama, Kosinüs Benzerliği
-- [ ] **Day 33:** `day-33-hybrid-search-rrf` — BM25 + Vektör Arama Birleşimi, Reciprocal Rank Fusion (RRF) Hibrit Sıralama
-- [ ] **Day 34:** `day-34-mini-rag-assistant` — Mini RAG Asistanı, Chunking, Vektör Veritabanı Sorgulama, LLM Context Injection
-- [ ] **Day 35:** `day-35-fastapi-model-service` — FastAPI Asenkron REST API, Pydantic Tip Güvenliği, Model Servisleme
+- [x] **Day 31:** `day-31-bm25-document-search` — BM25 Leksikal Arama Algoritması, TF-IDF, Ters İndeks (Inverted Index), Tokenizasyon
+- [x] **Day 32:** `day-32-semantic-search-engine` — Sentence Transformers ile Yoğun (Dense) Vektör Arama, Kosinüs Benzerliği
+- [x] **Day 33:** `day-33-hybrid-search-rrf` — BM25 + Vektör Arama Birleşimi, Reciprocal Rank Fusion (RRF) Hibrit Sıralama
+- [x] **Day 34:** `day-34-mini-rag-assistant` — Mini RAG Asistanı, Chunking, Vektör Veritabanı Sorgulama, LLM Context Injection
+- [x] **Day 35:** `day-35-fastapi-model-service` — FastAPI Asenkron REST API, Pydantic Tip Güvenliği, Model Servisleme
 - [ ] **Day 36:** `day-36-streamlit-ai-dashboard` — Streamlit ile İnteraktif AI Kontrol Paneli, Dosya Yükleme, Model Görselleştirme
 - [ ] **Day 37:** `day-37-carpet-color-intelligence` — Halı/Tekstil Renk Ayrıştırma, İplik Renk Oranları Çıkarımı, Katalog Uyumu
 - [ ] **Day 38:** `day-38-carpet-visual-retrieval` — Halı Doku ve Desenleri İçin Çoklu Özellikli (Renk+Doku) Görsel Arama
