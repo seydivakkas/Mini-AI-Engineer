@@ -1,0 +1,7 @@
+path: C:/Users/seydieryilmaz/Desktop/Github Mini AI Engineer/day-26-yolo-training-inference/veri_seti
+train: images/train
+val: images/val
+names:
+  0: Vida
+  1: Somun
+  2: Rulman
