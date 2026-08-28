@@ -109,7 +109,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 73:** `day-73-simclr-from-scratch` — Sıfırdan SimCLR Temsil Öğrenimi, Artırma Çiftleri, NT-Xent (InfoNCE) Kaybı
 - [x] **Day 74:** `day-74-supervised-contrastive-learning` — Etiketli Veride Supervised Contrastive (SupCon) Kaybı ile Sınıf Ayrıştırma
 - [x] **Day 75:** `day-75-metric-learning-triplet-hard-negative` — Triplet Margin Loss, Hard/Semi-Hard Negative Mining Stratejileri
-- [ ] **Day 76:** `day-76-representation-benchmark-suite` — Temsil Kalitesi Değerlendirmesi: Linear Probing ve k-NN Sınıflandırma Protokolü
+- [x] **Day 76:** `day-76-representation-benchmark-suite` — Temsil Kalitesi Değerlendirmesi: Linear Probing ve k-NN Sınıflandırma Protokolü
 - [ ] **Day 77:** `day-77-self-attention-from-scratch` — Sıfırdan Scaled Dot-Product & Multi-Head Self-Attention Mekanizması
 - [ ] **Day 78:** `day-78-transformer-encoder-from-scratch` — Sıfırdan Transformer Encoder Bloğu: Pozisyonel Kodlama, LayerNorm, Residual FFN
 - [ ] **Day 79:** `day-79-minivit-from-scratch` — Sıfırdan Mini Vision Transformer (Patch Projeksiyonu, CLS Token, Encoder Birleşimi)
@@ -143,8 +143,8 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve 
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 75 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2 ve FAZ 3 TAMAMLANDI; FAZ 4 devam ediyor).
-- **Sıradaki Gün:** Gün 76 (`day-76-representation-benchmark-suite` — Temsil Kalitesi Değerlendirmesi: Linear Probing ve k-NN Sınıflandırma Protokolü).
+- **Tamamlanan:** Gün 01 - Gün 76 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2 ve FAZ 3 TAMAMLANDI; FAZ 4 devam ediyor).
+- **Sıradaki Gün:** Gün 77 (`day-77-self-attention-from-scratch` — Sıfırdan Scaled Dot-Product & Multi-Head Self-Attention Mekanizması).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
