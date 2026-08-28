@@ -125,7 +125,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 86:** `day-86-robustness-domain-shift` — Görsel Bozulmalar (Bulanıklık/Gürültü) Altında Model Dayanıklılığı & Domain Shift
 - [x] **Day 87:** `day-87-experiment-registry` — MLflow / Weights & Biases ile Merkezi Deney Takibi ve Artefakt Kayıt Sistemi
 - [x] **Day 88:** `day-88-optuna-hpo` — Optuna ile Otomatik Hiperparametre Optimizasyonu (TPE Algoritması, Pruning)
-- [ ] **Day 89:** `day-89-model-registry` — Model Kayıt Sistemi, Model Sürümleme, Staging/Production Yaşam Döngüsü
+- [x] **Day 89:** `day-89-model-registry` — Model Kayıt Sistemi, Model Sürümleme, Staging/Production Yaşam Döngüsü
 - [ ] **Day 90:** `day-90-dynamic-batching-inference` — GPU Verimliliği İçin Kuyruk Tabanlı Dinamik Batching Çıkarım Motoru
 - [ ] **Day 91:** `day-91-ai-observability` — Canlı AI Sistemlerinde Gözlemlenebilirlik: Gecikme, Hacim ve Veri Kayması İzleme
 - [ ] **Day 92:** `day-92-final-training-contract` — Eğitim Öncesi Veri Sözleşmesi Testleri ve Hazır Bulunuşluk (Readiness) Kontrolleri
@@ -143,8 +143,8 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve 
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 88 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3 ve FAZ 4 TAMAMLANDI; FAZ 5 SÜRÜYOR).
-- **Sıradaki Gün:** Gün 89 (`day-89-model-registry` — Model Kayıt Sistemi, Model Sürümleme, Staging/Production Yaşam Döngüsü).
+- **Tamamlanan:** Gün 01 - Gün 89 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3 ve FAZ 4 TAMAMLANDI; FAZ 5 SÜRÜYOR).
+- **Sıradaki Gün:** Gün 90 (`day-90-dynamic-batching-inference` — GPU Verimliliği İçin Kuyruk Tabanlı Dinamik Batching Çıkarım Motoru).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
