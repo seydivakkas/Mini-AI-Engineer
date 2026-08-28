@@ -119,7 +119,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 #### 🔹 FAZ 5: Model Sıkıştırma, Güvenilirlik, MLOps ve Üretim Dağıtımı (Gün 82 - Gün 101)
 
 - [x] **Day 82:** `day-82-knowledge-distillation` — Öğretmen-Öğrenci Modeli Bilgi Damıtma, Soft Target Loss (KL-Diverjansı), Temperature
-- [ ] **Day 83:** `day-83-structured-pruning` — L1/L2 Norm Tabanlı Yapısal Filtre/Kanal Budama, Hız vs Doğruluk Dengesi
+- [x] **Day 83:** `day-83-structured-pruning` — L1/L2 Norm Tabanlı Yapısal Filtre/Kanal Budama, Hız vs Doğruluk Dengesi
 - [ ] **Day 84:** `day-84-calibration-uncertainty` — Olasılık Kalibrasyonu, Expected Calibration Error (ECE) & Temperature Scaling
 - [ ] **Day 85:** `day-85-ood-selective-prediction` — Enerji Tabanlı Dağılım Dışı (OOD) Tespiti ve Seçici Tahmin (Abstention)
 - [ ] **Day 86:** `day-86-robustness-domain-shift` — Görsel Bozulmalar (Bulanıklık/Gürültü) Altında Model Dayanıklılığı & Domain Shift
@@ -143,8 +143,8 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve 
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 82 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3 ve FAZ 4 TAMAMLANDI; FAZ 5 BAŞLADI).
-- **Sıradaki Gün:** Gün 83 (`day-83-structured-pruning` — L1/L2 Norm Tabanlı Yapısal Filtre/Kanal Budama, Hız vs Doğruluk Dengesi).
+- **Tamamlanan:** Gün 01 - Gün 83 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3 ve FAZ 4 TAMAMLANDI; FAZ 5 SÜRÜYOR).
+- **Sıradaki Gün:** Gün 84 (`day-84-calibration-uncertainty` — Olasılık Kalibrasyonu, Expected Calibration Error (ECE) & Temperature Scaling).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
