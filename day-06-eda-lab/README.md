@@ -22,7 +22,22 @@ Birbiriyle yüksek korelasyonlu değişkenler bir regresyon veya derin öğrenme
 
 ---
 
-### 2. Matematiksel ve Algoritmik Temeller
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Keşifçi Veri Analizi (EDA)** | *Exploratory Data Analysis* | Modelleme öncesinde verinin yapısını, örüntülerini, anomalilerini ve değişkenler arası ilişkileri görsel ve istatistiksel olarak anlama yöntemi. |
+| **Korelasyon Isı Haritası** | *Correlation Heatmap* | Öznitelikler arasındaki Pearson / Spearman korelasyon katsayılarını renk skalasıyla görselleştiren matris. |
+| **Çoklu Doğrusallık** | *Multicollinearity* | İki veya daha fazla bağımsız değişkenin birbiriyle aşırı yüksek korelasyonlu olması ve katsayı tahminlerini kararsızlaştırması durumu. |
+| **Hedef Değişken Sızıntısı** | *Target Leakage* | Eğitim verisine gelecekteki tahmin anında bulunamayacak olan hedef bilgi kırıntılarının sızması hatası. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Temeller
 
 #### A. Pearson vs. Spearman Korelasyonu
 - **Pearson Korelasyon Katsayısı ($r$):** İki değişken arasındaki **doğrusal (lineer)** ilişkinin gücünü ve yönünü ölçer:

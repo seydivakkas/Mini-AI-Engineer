@@ -67,7 +67,22 @@ Derin öğrenme modelleri GPU üzerinde çalışırken CPU seviyesindeki gibi ay
 
 ---
 
-### 2. Vektörize Teftiş Matematik ve Bellek Algoritmaları
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Bellek Adım Boyu (Strides)** | *Array Strides* | NumPy dizisinde bir sonraki satıra veya kanala geçmek için bellekte kaç bayt atlanması gerektiğini tanımlayan demet. |
+| **Boyut Yayınlama (Broadcasting)** | *Tensor Broadcasting Rules* | Farklı şekillerdeki tensörlerin bellek kopyalaması yapmadan sanal olarak genişletilerek eleman bazlı işlenmesi. |
+| **Sayısal Sağlık Denetimi** | *NaN/Inf Sanitization* | Eğitim veya çıkarım batch'lerinde oluşan tanımsız (`NaN`) veya sonsuz (`Inf`) değerlerin anında tespiti ve maskelenmesi. |
+| **Vektörize Batch İşlemleri** | *Vectorized Batch Statistics* | Python döngüsü kullanmadan tüm batch için eksen bazlı ortalama, varyans ve norm hesaplama. |
+
+---
+
+## 2. Vektörize Teftiş Matematik ve Bellek Algoritmaları
 
 - **Bellek Ayak İzi (Memory Footprint):**
   $$\text{Bellek (MB)} = \frac{\prod_{i=1}^{d} S_i \times \text{itemsize}}{1024^2}$$

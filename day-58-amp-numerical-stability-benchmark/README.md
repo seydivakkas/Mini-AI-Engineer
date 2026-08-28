@@ -29,7 +29,22 @@ BF16:  [s: 1 bit] [----- Exponent: 8 bit -----] [--- Mantissa: 7 bit ---]
 
 ---
 
-### 2. Format Karşılaştırma Matrisi
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Otomatik Karışık Hassasiyet (AMP)** | *Automatic Mixed Precision (`torch.amp`)* | Matris çarpımlarını hızlı 16-bit (FP16/BF16) ile, hassas toplamaları kararlı 32-bit (FP32) ile yürüterek GPU hızını 2-3x artıran teknik. |
+| **Gradyan Ölçekleyici (`GradScaler`)** | *Gradient Loss Scaler* | FP16'da gradyanların sıfıra yuvarlanmasını (Underflow) önlemek için kaybı geçici olarak büyük bir katsayıyla çarpıp geri ölçekleyen mekanizma. |
+| **Sayısal Taşma & Sıfıra İnme** | *Numerical Overflow & Underflow* | FP16'nın dar dinamik aralığında ($[6 \times 10^{-5}, 65504]$) sayıların sonsuza veya sıfıra yuvarlanması riski. |
+| **VRAM Bellek Tasarrufu** | *GPU VRAM Footprint Reduction* | Model ağırlıkları ve aktivasyon tensörlerinin bellekte %50 daha az yer kaplaması. |
+
+---
+
+## 2. Format Karşılaştırma Matrisi
 
 | Format | Toplam Bit | Üs (Exponent) | Mantis (Fraction) | Min Pozitif Normal | Maks Sonlu Sayı | Dinamik Aralık | GradScaler Zorunlu mu? |
 |---|---|---|---|---|---|---|---|

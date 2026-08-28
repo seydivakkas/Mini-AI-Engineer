@@ -32,7 +32,22 @@ Geleneksel görüntü bölütlemede (segmentation) iki temel kümeleme yaklaşı
 
 ---
 
-### 2. Optimal Küme Sayısının ($K^*$) Belirlenmesi
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Voronoi Hücreleri** | *Voronoi Tessellation* | K-Means küme merkezlerinin uzayı en yakın komşuluk prensibiyle ayrık geometrik hücrelere bölmesi. |
+| **Dirsek Yöntemi (Elbow Method)** | *Elbow Method Curve* | Farklı $K$ değerleri için küme içi hata kareleri toplamının (Inertia) kırılma noktasını tespit ederek optimum $K$ seçme. |
+| **Davies-Bouldin İndeksi** | *Davies-Bouldin Index* | Kümeler arası ayrışıklık ile küme içi sıkılığı kıyaslayan değerlendirme metriği (küçük değer daha iyidir). |
+| **Denetimsiz Öznitelik Üretimi** | *Cluster Distance as Feature* | Her veri noktasının $K$ adet küme merkezine olan mesafelerini yeni öznitelikler olarak denetimli modellere aktarma. |
+
+---
+
+## 2. Optimal Küme Sayısının ($K^*$) Belirlenmesi
 
 #### A. Elbow (Dirsek) Yöntemi ve WCSS (Inertia)
 Küme içi kareler toplamı (Within-Cluster Sum of Squares):

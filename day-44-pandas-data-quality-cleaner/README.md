@@ -65,7 +65,22 @@ Tabüler makine öğrenimi modellerinde (XGBoost, LightGBM, CatBoost, Scikit-Lea
 
 ---
 
-### 2. Kalite Skoru ve İmpütasyon Matematiksel Formülasyonları
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Veri Kalitesi Kuralları** | *Data Quality Rule Engine* | Sütunların tip, değer aralığı, boşluk oranı ve desen uyumunu otomatik denetleyen doğrulama motoru. |
+| **Winsorizasyon** | *Winsorization Truncation* | Aşırı uç aykırı değerleri silmek yerine belirli persentil sınırlarına (örn. %1 ve %99) çekerek veriyi koruma tekniği. |
+| **Boru Hattı Eşkuvvetliliği** | *Pipeline Idempotency* | Aynı veri temizleme boru hattının birden fazla kez çalıştırıldığında veri üzerinde yan etki veya bozulma yaratmaması ilkesi. |
+| **Şema Doğrulama** | *Tabular Schema Assertion* | Eğitim boru hattına giren tabloların sütun isimleri ve tiplerinin sözleşmeye uygunluğunu garanti etme. |
+
+---
+
+## 2. Kalite Skoru ve İmpütasyon Matematiksel Formülasyonları
 
 - **Veri Kalitesi Skoru ($Q$):**
   $$Q = \max\left(0, 100 - \left(\frac{N_{\text{Hatalı Hücre}}}{N_{\text{Toplam Hücre}}} \times 100\right)\right)$$

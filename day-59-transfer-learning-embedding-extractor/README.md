@@ -23,7 +23,22 @@ Derin öğrenmede önceden eğitilmiş (pre-trained) modeller iki temel strateji
 
 ---
 
-### 2. Neden L2 Normalizasyonu ($\|e\|_2 = 1$)?
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Temsil Çıkarımı (Embedding)** | *Feature Embedding Extraction* | Önceden eğitilmiş ResNet/ConvNeXt omurgasının son sınıflandırma katmanını kaldırarak görselleri yoğun vektörlere dönüştürme. |
+| **Penultimate Layer** | *Penultimate Layer Pooling* | Sınıflandırma başlığından hemen önceki son derin öznitelik katmanı; nesnenin anlamsal özetini taşır. |
+| **L2 Vektör Normalizasyonu** | *L2 Unit Normalization* | Çıkarılan öznitelik vektörünün normunu 1.0 yaparak Öklid mesafesi ile Kosinüs benzerliğini matematiksel olarak eşdeğer kılma. |
+| **Sıfır Örnekli Temsil (Zero-Shot)** | *Zero-Shot Feature Representation* | Hiçbir ek eğitim yapmadan önceden eğitilmiş omurganın zengin görsel bilgisini doğrudan benzerlik aramalarında kullanma. |
+
+---
+
+## 2. Neden L2 Normalizasyonu ($\|e\|_2 = 1$)?
 
 Ham öznitelik vektörlerinin büyüklükleri (L2 normu) görselin parlaklığından, kontrastından veya nesnenin piksel alanından doğrudan etkilenebilir. L2 normalizasyonu vektörün büyüklük bilgisini silip yalnızca **yönsel semantik bilgisini (directional semantics)** korur:
 

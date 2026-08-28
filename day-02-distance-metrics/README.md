@@ -19,7 +19,24 @@ Peki iki görselin "aynı halı deseni", "aynı araba" veya "aynı insan yüzü"
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Öklid Mesafesi (L2)** | *Euclidean Distance (L2 Norm)* | İki vektör arasındaki geometrik doğrusal uzaklığı hesaplayan, karesel farkların toplamının karekökü formülüne dayalı metrik ($d = \sqrt{\sum (x_i - y_i)^2}$). |
+| **Manhattan Mesafesi (L1)** | *Manhattan Distance (L1 Norm / Taxicab)* | Eksenler boyunca mutlak farkların toplamı ile hesaplanan ($d = \sum |x_i - y_i|$), aykırı değerlere karşı L2'ye göre daha dayanıklı metrik. |
+| **Kosinüs Benzerliği** | *Cosine Similarity* | İki vektör arasındaki açının kosinüsünü ($[-1, 1]$ aralığında) hesaplayarak vektör büyüklüklerinden bağımsız yönsel benzerliği ölçen metrik. |
+| **Minkowski Mesafesi** | *Minkowski Metric (Lp Norm)* | L1 ve L2 normlarını parametrik $p$ üssü ile genelleştiren metrik uzay formulasyonu ($d = (\sum |x_i - y_i|^p)^{1/p}$). |
+| **Boyut Laneti** | *Curse of Dimensionality* | Boyut sayısı arttıkça vektörler arasındaki mesafelerin birbirine yaklaşması ve uzayın seyrekleşerek mesafe metriklerinin ayırt ediciliğini yitirmesi problemi. |
+| **Vektör Uzay Modeli** | *Vector Space Model* | Metin, görsel veya nesnelerin çok boyutlu sayısal öznitelik vektörleri olarak temsil edildiği uzay. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Öklid Mesafesi ($L_2$ Normu)
 İki nokta arasındaki en kısa doğrusal fiziksel mesafedir. Vektör elemanlarının kareler farkının toplamının kareköküdür:

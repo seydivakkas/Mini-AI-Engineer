@@ -25,7 +25,22 @@ Bu durum, kanal sayısı $M, N$ arttıkça karesel bir hesaplama patlamasına yo
 
 ---
 
-### 2. Derinlik Ayrışımlı Konvolüsyon (Depthwise Separable Convolution)
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Edge AI / TinyML** | *Edge Artificial Intelligence* | Kısıtlı bellek ve işlem gücüne sahip mikrodenetleyici veya uç cihazlarda (mobil, IoT) çalışacak ultra hafif CNN mimarileri tasarlama. |
+| **Toplu Normalizasyon (BatchNorm)** | *Batch Normalization (`nn.BatchNorm2d`)* | Her mini-batch'in ara katman aktivasyonlarını normalize ederek iç kovaryans kaymasını önleyen ve eğitimi hızlandıran katman. |
+| **Rezidüel Atlama (Residual Shortcut)** | *Residual Identity Shortcut* | Girdiyi katman çıktısına doğrudan ekleyerek kaybolan gradyanları (Vanishing Gradients) engelleyen mimari köprü. |
+| **Global Ortalama Havuzlama (GAP)** | *Global Average Pooling (`AdaptiveAvgPool2d`)* | Öznitelik haritalarını tek bir değere indirgeyerek Flatten katmanının yol açtığı devasa parametre patlamasını önleyen yöntem. |
+
+---
+
+## 2. Derinlik Ayrışımlı Konvolüsyon (Depthwise Separable Convolution)
 
 MobileNet mimarisinin temelini oluşturan bu teknik, konvolüsyon işlemini iki bağımsız aşamaya çarpanlarına ayırır (factorization):
 

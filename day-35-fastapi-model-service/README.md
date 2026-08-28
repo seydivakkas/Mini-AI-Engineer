@@ -50,7 +50,22 @@ Flask veya Django gibi geleneksel senkron web çatıları, her istek için bir t
 
 ---
 
-### 2. Kritik Mimari Kural: CPU-Bound Model Çıkarımında Event Loop Bloklanması
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **FastAPI** | *FastAPI Framework* | Python tip ipuçlarına dayalı, asenkron (asyncio) destekli, yüksek performanslı ve otomatik OpenAPI/Swagger dokümantasyonlu web çerçevesi. |
+| **ASGI Sunucusu (Uvicorn)** | *Asynchronous Server Gateway Interface* | Eşzamanlı binlerce HTTP isteğini bloke olmadan yönetebilen modern asenkron Python web sunucusu. |
+| **Pydantic Şemaları** | *Pydantic Request/Response Models* | Gelen istek gövdelerinin ve dönen JSON yanıtlarının tip güvenliğini ve veri doğrulamasını sağlayan modeller. |
+| **Sağlık Kontrolü (`/health`)** | *Health Check Endpoint* | Kubernetes veya yük dengeleyicilerin servisin ayakta olup olmadığını ve modelin yüklendiğini kontrol ettiği uç nokta. |
+
+---
+
+## 2. Kritik Mimari Kural: CPU-Bound Model Çıkarımında Event Loop Bloklanması
 
 Derin öğrenme modellerinde ileri besleme (`model.forward()`) saf CPU/GPU matris çarpımıdır (CPU-bound).
 - **Yanlış Yaklaşım:** `async def` içine doğrudan ağır tensör işlemi koymak. Bu, Python'un tek ana event loop'unu dondurur ve sunucuya gelen diğer tüm HTTP istekleri kuyrukta bekler.

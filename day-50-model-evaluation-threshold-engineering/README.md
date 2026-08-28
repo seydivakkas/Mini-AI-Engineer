@@ -67,7 +67,22 @@ Kritik 3 Adım:
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Karar Eşiği Mühendisliği** | *Decision Threshold Optimization* | Varsayılan $0.5$ sınıflandırma eşiği yerine, iş hedeflerine ve maliyet matrisine göre optimum eşik seçimi ($T^*$). |
+| **Maliyet Duyarlı Matris** | *Cost-Sensitive Loss Matrix* | Yanlış Negatif (kaçırılan dolandırıcılık/hastalık) maliyeti ile Yanlış Pozitif maliyetini ağırlıklandıran karar çerçevesi. |
+| **Youden's J İstatistiği** | *Youden's J Statistic ($Sensitivity + Specificity - 1$)* | ROC eğrisi üzerinde yanlış pozitif oranı ile doğru pozitif oranı arasındaki farkı maksimize eden optimum eşik noktası. |
+| **Hassasiyet-Duyarlılık Eğrisi** | *Precision-Recall Curve (PR-AUC)* | Dengesiz veri setlerinde modelin başarısını değerlendirmede ROC eğrisinden çok daha güvenilir olan eğri. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Expected Calibration Error (ECE)
 $$\text{ECE} = \sum_{m=1}^{M} \frac{|B_m|}{N} \left| \text{acc}(B_m) - \text{conf}(B_m) \right|$$

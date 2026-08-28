@@ -54,7 +54,22 @@ Endüstriyel yapay zeka projelerinde (MLflow, Weights & Biases, TensorBoard orta
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Çok Eksenli Çizim Düzeni** | *Multi-Axes Grid Layout (`plt.subplots`)* | Tek bir görsel rapor içinde 4-6 farklı teşhis panelini profesyonel tipografi ve renk uyumuyla sunma. |
+| **Öğrenme Eğrileri** | *Learning & Loss Trajectories* | Eğitim ve doğrulama kayıplarının epoch bazında eğilimini ve aşırı öğrenme (overfitting) anını gösteren grafik. |
+| **Yayın Kalitesinde Rapor** | *Publication-Quality Graphics* | 300 DPI çözünürlük, vektörel netlik ve şirket standartlarına uygun renk paletleriyle otomatik grafik üretimi. |
+| **Eşik & Kalibrasyon Grafiği** | *Reliability & Calibration Plot* | Modelin tahmin olasılıklarının gerçek doğruluk oranlarıyla örtüşmesini gösteren güvenilirlik diyagramı. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Matthews Korelasyon Katsayısı (MCC)
 $$\text{MCC} = \frac{\text{TP} \cdot \text{TN} - \text{FP} \cdot \text{FN}}{\sqrt{(\text{TP}+\text{FP})(\text{TP}+\text{FN})(\text{TN}+\text{FP})(\text{TN}+\text{FN})}}$$

@@ -62,6 +62,19 @@
 
 ---
 
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Lifespan Context Manager** | *FastAPI Lifespan Lifecycle* | Uygulama ayağa kalkarken ağır AI modellerini belleğe yükleyen ve kapanırken kaynakları serbest bırakan modern yaşam döngüsü yöneticisi. |
+| **İş Parçacığı Havuzu Aktarımı** | *Threadpool Offloading (`run_in_threadpool`)* | Senkron CPU/GPU model çıkarımlarını ana asenkron döngüyü bloke etmeden thread havuzunda çalıştırma. |
+| **Dinamik Gruplama (Batching)** | *Dynamic Inference Batching* | Eşzamanlı gelen tekil istekleri mikro-kuyrukta birleştirip tek bir batch tensörü olarak modele gönderme. |
+| **OpenAPI / Swagger Entegrasyonu** | *OpenAPI Contract Integration* | API girdi ve çıktı şemalarını otomatik dokümante eden ve interaktif test imkanı sunan sözleşme standardı. |
+
+---
+
 ## 2. 💻 Üretim Seviyesinde Uygulama Mimarisi
 
 Proje modüler bir paket yapısına sahiptir:

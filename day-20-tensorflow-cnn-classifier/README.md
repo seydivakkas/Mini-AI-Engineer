@@ -24,7 +24,22 @@ Geleneksel Tam Bağlantılı (Fully Connected / Dense) Yapay Sinir Ağları gör
 
 ---
 
-### 2. Matematiksel Temeller ve Katman Dinamikleri
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Evrişim Katmanı (Conv2D)** | *2D Convolutional Layer* | Öğrenilebilir uzamsal filtrelerle görsel öznitelikleri (kenar, doku, desen) hiyerarşik olarak çıkaran katman. |
+| **Havuzlama (MaxPooling2D)** | *Max Pooling Layer* | Öznitelik haritasının uzamsal boyutlarını yarıya indirerek hesaplama yükünü azaltan ve öteleme değişmezliği (translation invariance) sağlayan katman. |
+| **Kategorik Çapraz Entropi** | *Categorical Cross-Entropy Loss* | Çok sınıflı olasılık dağılımları arasındaki farkı cezalandıran standart kayıp fonksiyonu ($-\sum y_i \log \hat{y}_i$). |
+| **Softmax Aktivasyonu** | *Softmax Function* | Modelin ham çıkışlarını (logit) toplamı 1.0 olan olasılık dağılımına dönüştüren fonksiyon. |
+
+---
+
+## 2. Matematiksel Temeller ve Katman Dinamikleri
 
 #### A. 2B Evrişim (2D Convolution) İşlemi
 Girdi görseli $I$ ile $K \times K$ boyutundaki evrişim filtresi $W$ arasındaki işlem:

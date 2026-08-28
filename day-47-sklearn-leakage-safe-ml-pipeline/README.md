@@ -67,7 +67,22 @@ Makine öğrenimi projelerinde en yaygın ve sinsi hata **Veri Sızıntısıdır
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Veri Sızıntısı (Data Leakage)** | *Data Leakage Prevention* | Test veya doğrulama verisine ait istatistiklerin (ortalama, ölçekleme) eğitim sürecine sızarak yapay yüksek başarı üretmesi hatası. |
+| **Scikit-Learn Pipeline** | *Scikit-Learn Pipeline Object* | Ön işleme (imputer, scaler, encoder) adımları ile tahminleyiciyi tek bir atomik nesnede birleştiren mimari. |
+| **ColumnTransformer** | *Heterogeneous ColumnTransformer* | Sayısal ve kategorik sütunlara bağımsız ön işleme hatları uygulayıp birleştiren yapı. |
+| **Katmanlı Çapraz Doğrulama** | *Stratified Cross-Validation* | Her katlamada sınıf dağılım oranlarını koruyarak sızıntısız model değerlendirmesi yapma. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Sızıntısız Katmanlı K-Fold Tahmini
 Her $k$. dış katman için model yalnızca $T_k$ eğitim setinde eğitilir ve $V_k$ test setinde değerlendirilir:

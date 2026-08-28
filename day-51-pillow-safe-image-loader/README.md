@@ -65,7 +65,22 @@ Gerçek dünya Bilgisayarlı Görü (Computer Vision) üretim ortamlarında (Fas
 
 ---
 
-### 2. Matematiksel Bellek ve Boyut Formülü
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Görsel Dekompresyon Bombası** | *Decompression Bomb (Pixel Flood Attack)* | Küçük dosya boyutlu ancak açıldığında gigabaytlarca RAM tüketerek sistemi çökerten kötü niyetli görsel saldırısı. |
+| **EXIF Oryantasyon Düzeltmesi** | *EXIF Orientation Transpose* | Akıllı telefon kameralarının görsele eklediği oryantasyon etiketini okuyup görüntüyü otomatik doğru yöne döndürme. |
+| **Güvenli Bellek Akışı** | *In-Memory Buffer Streaming (`BytesIO`)* | Görselleri disk yerine doğrudan bellek akışında güvenli bayt sınırları içinde işleme. |
+| **RGBA -> RGB Güvenli Dönüşüm** | *Alpha Channel Handling* | Saydam kanallı PNG görsellerini arkasına beyaz arka plan yerleştirerek kayıpsız 3 kanallı RGB formatına çevirme. |
+
+---
+
+## 2. Matematiksel Bellek ve Boyut Formülü
 
 $$\text{Açılmış Bellek (Bayt)} = \text{Genişlik } (W) \times \text{Yükseklik } (H) \times \text{Kanal Sayısı } (C) \times 1\text{ bayt (uint8)}$$
 

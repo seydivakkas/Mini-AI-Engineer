@@ -55,7 +55,22 @@ Bu proje; jakarlı halı dokuma, iplik boyama ve tekstil üretim hatlarında des
 
 ---
 
-### 2. CIE $\Delta E_{00}$ (Delta-E 2000) Renk Tolerans Standardı
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Tekstil Renk Paleti** | *Domain-Specific Color Palette* | Geleneksel ve endüstriyel halı motiflerinde kullanılan iplik renklerinin dijital kolorimetrik haritalaması. |
+| **Baskın İplik Analizi** | *Dominant Yarn Extraction* | Halı yüzeyindeki desen ve zemin renklerinin yüzdesel alan dağılımını K-Means ile çıkarma. |
+| **CIELAB Renk Uyumu** | *CIELAB Color Harmony* | İplik renklerinin algısal kontrastını ve ton uyumunu $\Delta E^*$ tolerans sınırları içinde denetleme. |
+| **Renk Standardizasyonu** | *Textile Color Quantization* | Üretim hattındaki boyahane standartlarına uygun referans renk kodlarıyla eşleştirme. |
+
+---
+
+## 2. CIE $\Delta E_{00}$ (Delta-E 2000) Renk Tolerans Standardı
 
 İki CIELAB rengi $(L_1, a_1, b_1)$ ve $(L_2, a_2, b_2)$ arasındaki algısal fark şu formülle hesaplanır:
 

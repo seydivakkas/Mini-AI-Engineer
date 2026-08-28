@@ -47,7 +47,22 @@ Tek başına ne leksikal arama ne de semantik vektör arama tek başına tüm ar
 
 ---
 
-### 2. Skor Uyuşmazlığı ve Reciprocal Rank Fusion (RRF) Formülasyonu
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Hibrit Arama** | *Hybrid Search* | Kelime tabanlı BM25 (sparse/seyrek) ile anlamsal Dense Embedding arama sonuçlarını birleştiren arama mimarisi. |
+| **RRF (Ters Sıra Birleşimi)** | *Reciprocal Rank Fusion* | Farklı arama motorlarının sıralama listelerini skor skalasından bağımsız olarak $RRF(d) = \sum \frac{1}{k + r_i(d)}$ formülüyle birleştiren algoritma. |
+| **Sıralama Sabiti ($k$)** | *RRF Rank Constant* | Üst sıralardaki belgelerin ağırlığını dengeleyen yumuşatma sabiti (genellikle $k=60$). |
+| **Kelime Dağarcığı Dışı Dayanıklılık** | *Out-of-Vocabulary (OOV) Resilience* | Kısaltmalar, ürün kodları ve özel isimlerde BM25'in, genel anlamda ise vektör aramanın avantajını harmanlama. |
+
+---
+
+## 2. Skor Uyuşmazlığı ve Reciprocal Rank Fusion (RRF) Formülasyonu
 
 #### A. Skor Normalizasyonunun Zorluğu
 BM25 skorları $[0, \infty)$ aralığında açık uçludur ve ortalama $2.0 - 20.0$ arası değerler alır. Kosinüs benzerliği ise $[-1.0, 1.0]$ aralığındadır. Min-Max normalizasyonu uygulandığında, sorgular arasındaki skor dağılımları tutarsız kalır ve bir motor diğerini haksız yere ezebilir.

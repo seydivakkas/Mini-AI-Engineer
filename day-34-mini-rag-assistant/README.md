@@ -57,7 +57,22 @@ RAG mimarisi şu 3 temel aşamayla bu sorunu çözer:
 
 ---
 
-### 2. Metin Parçalama (Chunking) ve Kayan Pencere (Sliding Window)
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **RAG Mimarisi** | *Retrieval-Augmented Generation* | Büyük dil modellerinin (LLM) yanıt üretirken harici bilgi tabanından ilgili bağlamı çekerek üretimi zenginleştirmesi mimarisi. |
+| **Metin Parçalama (Chunking)** | *Text Chunking & Overlap* | Uzun belgelerin anlamsal bütünlük korunacak şekilde örtüşmeli pencerelerle ($500$ token / $50$ overlap) küçük parçalara bölünmesi. |
+| **Bağlam Enjeksiyonu** | *Context Injection into Prompt* | Arama motorundan gelen en alakalı ilk $K$ metin parçasının sistem istemine (prompt) eklenerek modele sunulması. |
+| **Halüsinasyon Azaltma** | *Hallucination Mitigation* | Modelin eğitim verisi dışındaki güncel veya kurumsal bilgilere sadık kalarak uydurma bilgi üretmesini engelleme. |
+
+---
+
+## 2. Metin Parçalama (Chunking) ve Kayan Pencere (Sliding Window)
 
 Uzun metinleri tek parça halinde vektörleştirmek anlamsal detayı boğar. Bu nedenle metinler `chunk_size` ve `chunk_overlap` parametreleriyle parçalanır.
 

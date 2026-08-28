@@ -21,7 +21,22 @@ Gerçek dünya projelerinde on binlerce etiketli görsel toplamak ve sıfırdan 
 
 ---
 
-### 2. İki Temel Transfer Öğrenme Stratejisi
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Transfer Öğrenme** | *Transfer Learning* | ImageNet gibi devasa veri setlerinde önceden eğitilmiş omurga (backbone) ağların öznitelik temsil gücünü yeni bir alt göreve aktarma. |
+| **Katman Dondurma (Freezing)** | *Layer Freezing* | Önceden eğitilmiş ağırlıkların gradyan hesaplamasını kapatıp (`requires_grad=False`) sadece yeni sınıflandırıcı başlığı eğitme stratejisi. |
+| **İnce Ayar (Fine-Tuning)** | *Fine-Tuning* | Modelin tüm katmanlarını veya üst katmanlarını çok düşük bir öğrenme oranıyla yeni veri setine göre hassas biçimde yeniden eğitme. |
+| **Sınıflandırıcı Başlık** | *Classifier Head* | Öznitelik haritasının sonundaki global pooling ardından gelen ve hedef sınıf sayısı kadar çıktı üreten tam bağlantılı katman. |
+
+---
+
+## 2. İki Temel Transfer Öğrenme Stratejisi
 
 ```
 +-----------------------------------------------------------------------------------+

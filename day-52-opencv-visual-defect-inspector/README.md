@@ -58,7 +58,22 @@ Endüstriyel üretim hatlarında saniyede 30-60 kare işleyen yüksek hızlı ka
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **CLAHE** | *Contrast Limited Adaptive Histogram Equalization* | Görseli küçük bloklara bölerek yerel kontrastı artıran ve gürültü patlamasını sınırlandıran adaptif histogram eşitleme. |
+| **Canny Kenar Dedektörü** | *Canny Edge Detector* | Gradyan yoğunluğu, histerezis eşiklemesi ve maksimum olmayan bastırma ile ince ve kesintisiz kenarlar bulan algoritma. |
+| **Kontur Hiyerarşisi** | *Contour Hierarchy (`RETR_TREE`)* | İç içe geçmiş nesne sınırlarının ebeveyn-çocuk ilişkilerini çıkararak delik ve lekeleri sınıflandırma. |
+| **Kusur Şiddet Skoru** | *Defect Severity Scoring* | Kusurun alanı, kontrast farkı ve kenar yoğunluğunu birleştirerek üretilen kural tabanlı kalite puanı. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Laplacian Operatörü ve Varyans Odak Ölçütü
 $$\nabla^2 I = \frac{\partial^2 I}{\partial x^2} + \frac{\partial^2 I}{\partial y^2}$$

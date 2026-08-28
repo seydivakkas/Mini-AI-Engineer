@@ -57,7 +57,22 @@ Bu proje; jakarlı halı dokuma tezgahlarında ve konveyör bant kalite kontrol 
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Görsel Kusur Tespiti** | *Visual Defect Inspection* | Halı dokuma yüzeyindeki ilmek kaçığı, leke, renk sapması ve yırtık gibi üretim anomalilerini tespit etme. |
+| **Morfolojik Kusur Filtreleme** | *Morphological Defect Filtering* | Normal halı doku gürültüsünü filtreleyip yapısal süreksizlik gösteren anomali bölgelerini izole etme. |
+| **Bölge Özellikleri (Regionprops)** | *Region Property Analysis* | Tespit edilen kusur konturlarının alan, eksen uzunluğu ve dairesellik metrikleriyle şiddetini derecelendirme. |
+| **Kusur Isı Haritası** | *Defect Anomaly Heatmap* | Kusurun yoğunlaştığı koordinatları operatöre kırmızı uyarı bölgeleri olarak gösteren maske. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Morfolojik Operatörler
 * **Erozyon ($A \ominus B$):** $A \ominus B = \{z \mid (B)_z \subseteq A\}$

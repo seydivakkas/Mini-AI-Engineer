@@ -23,7 +23,22 @@ Geleneksel derin öğrenme eğitim betiklerinde loglama, doğrulama, model kayde
 
 ---
 
-### 2. Dört Ana Mühendislik Sütunu
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Eğitim Motoru (Training Engine)** | *Encapsulated Training Loop* | İleri yayılım, kayıp hesabı, geri yayılım, optimizasyon, doğrulama ve metrik kaydını tek bir modüler sınıfta toplayan çatı. |
+| **Model Checkpoint Kaydı** | *State Dict Checkpointing* | Eğitim sırasında en iyi doğrulama başarımı gösteren model ağırlıklarını ve optimizer durumunu diske kalıcı kaydetme. |
+| **Öğrenme Oranı Zamanlayıcısı** | *Learning Rate Scheduler* | Eğitim ilerledikçe öğrenme oranını dinamik olarak düşürerek (ör. Cosine, Step) ağırlıkların ince yerleşmesini sağlama. |
+| **Gradyan Sıfırlama (`zero_grad`)** | *Gradient Zeroing (`optimizer.zero_grad(set_to_none=True)`)* | PyTorch'un varsayılan gradyan biriktirme davranışını sıfırlayarak bellek tasarrufu sağlama. |
+
+---
+
+## 2. Dört Ana Mühendislik Sütunu
 
 1. **Olay Tabanlı Geri Çağırım Sistemi (Event-Driven Callback Protocol):**
    - Eğitim motoru `on_train_begin`, `on_epoch_begin`, `on_batch_end`, `on_epoch_end`, `on_train_end` yaşam döngüsü kancaları (hooks) sunar.

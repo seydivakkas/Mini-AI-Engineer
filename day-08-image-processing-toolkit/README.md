@@ -22,7 +22,23 @@ Klasik görüntü işleme teknikleri; derin öğrenme öncesi **ön işleme (pre
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Uzamsal Evrişim** | *Spatial 2D Convolution* | Bir filtre çekirdeğinin (kernel) görüntü üzerinde kaydırılarak yerel piksel pencereleriyle çarpılıp toplanması işlemi. |
+| **Gaussian Filtresi** | *Gaussian Blur Smoothing* | Görüntüdeki yüksek frekanslı gürültüleri iki boyutlu normal dağılım ağırlıklarıyla pürüzsüzleştiren alçak geçiren filtre. |
+| **Sobel Kenar Filtresi** | *Sobel Gradient Filter* | Yatay ($G_x$) ve dikey ($G_y$) yönlerde birinci derece türev alarak parlaklık gradyanlarını ve kenarları saptayan operatör. |
+| **Laplacian Filtresi** | *Laplacian Operator* | İkinci derece türev alarak görüntüdeki ani yoğunluk değişimlerini ve kenar geçişlerini tespit eden izotropik filtre. |
+| **Dolgulama (Padding)** | *Zero / Reflect Padding* | Evrişim sonrasında görsel sınırlarında boyut kaybını önlemek için kenarlara piksel ekleme tekniği. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. 2 Boyutlu Ayrık Konvolüsyon (Discrete 2D Convolution)
 Bir $K \times K$ boyutundaki çekirdek (kernel / filtre matrisi), görüntünün üzerinde piksel piksel kaydırılarak yerel komşulukların ağırlıklı toplamı hesaplanır:

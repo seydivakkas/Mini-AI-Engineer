@@ -60,6 +60,19 @@ Modern yapay zeka boru hatlarında (AI Pipelines) ve mikromimari servislerde:
 
 ---
 
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Pydantic v2 Core** | *Pydantic Rust Core (pydantic-core)* | Python veri doğrulama ve serileştirme operasyonlarını C/Rust hızında yürüten temel altyapı. |
+| **Alan Kısıtlamaları (Field Constraints)** | *Field Validation Constraints* | `ge`, `le`, `min_length`, `pattern` gibi kurallarla veri sınırlarının çalışma zamanı öncesi katı tanımlanması. |
+| **Kök Doğrulayıcı (`@model_validator`)** | *Root & Cross-Field Validator* | Model içindeki birden fazla alanın birbiriyle tutarlılığını (ör. başlangıç tarihi < bitiş tarihi) denetleyen fonksiyon. |
+| **Serileştirme (`model_dump_json`)** | *JSON Schema Serialization* | Model nesnelerinin standart JSON veya Python sözlük formatına kayıpsız dönüştürülmesi. |
+
+---
+
 ## 2. 💻 Üretim Seviyesinde Uygulama Mimarisi
 
 Proje modüler bir paket yapısına sahiptir:

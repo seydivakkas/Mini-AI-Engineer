@@ -65,7 +65,22 @@ Bu problemi çözmek için 4 kritik mekanizma uygulanır:
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Gradyan Destekli Ağaçlar** | *Gradient Boosted Decision Trees (GBDT)* | Her yeni karar ağacının önceki ağaçların yaptığı hataların (gradyan ve hessian) üzerine eğitildiği topluluk yöntemi. |
+| **Hessian & Gradyan** | *First & Second Order Gradients* | XGBoost'un kayıp fonksiyonunun Taylor açılımındaki 1. (gradyan) ve 2. (hessian) türevlerini kullanarak optimum yaprak ağırlıklarını hesaplaması. |
+| **Ölçek Pozitif Ağırlığı** | *`scale_pos_weight` Parameter* | Dengesiz tablosal veri setlerinde azınlık sınıfının kayıp fonksiyonundaki ağırlığını artırarak yakalama oranını yükseltme. |
+| **Erken Durdurma (Early Stopping)** | *Early Stopping Rounds* | Doğrulama kaybı belirli bir adım boyunca iyileşmediğinde eğitimi durdurup aşırı öğrenmeyi önleme. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Maliyet Duyarlı İkili Lojistik Kayıp (Cost-Sensitive Loss)
 $$\mathcal{L}(y, \hat{p}) = - \left[ w \cdot y \ln(\hat{p}) + (1 - y) \ln(1 - \hat{p}) \right], \quad w = \text{scale\_pos\_weight}$$

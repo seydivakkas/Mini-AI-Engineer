@@ -44,7 +44,22 @@ Geleneksel üretim sistemlerinde her görsel görev için (Sınıflandırma içi
 
 ---
 
-### 2. Homoscedastic Belirsizlik Ağırlıklı Çoklu Kayıp (Kendall et al., CVPR 2018)
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Çok Görevli Öğrenme (MTL)** | *Multi-Task Learning* | Tek bir paylaşımlı omurga ağ kullanarak sınıflandırma, nesne tespiti ve bölütleme gibi birden çok görevi eşzamanlı öğrenme mimarisi. |
+| **Paylaşımlı Temsil** | *Shared Representation Backbone* | Tüm alt görevlerin ortak yararlandığı, genel görsel öznitelikleri çıkaran merkezi konvolüsyonel omurga. |
+| **Negatif Transfer** | *Negative Transfer* | Bir görevin gradyanlarının diğer bir görevin öğrenme performansını bozması veya geriletmesi durumu. |
+| **Kayıp Ağırlıklandırması** | *Multi-Task Loss Balancing* | Farklı ölçeklerdeki görev kayıplarını ($\mathcal{L} = \sum w_i \mathcal{L}_i$) dengelemek için kullanılan ağırlıklandırma stratejisi. |
+
+---
+
+## 2. Homoscedastic Belirsizlik Ağırlıklı Çoklu Kayıp (Kendall et al., CVPR 2018)
 
 Farklı görevlerin kayıp büyüklükleri ve gradyan ölçekleri birbirinden tamamen farklıdır (Cross-Entropy $\approx 0.5$, Regresyon MSE $\approx 10.0$, Dice Loss $\approx 0.2$). Kayıpları sabit katsayılarla toplamak bir görevin diğerini ezmesine yol açar.
 

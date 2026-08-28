@@ -51,7 +51,22 @@ Bu proje; halı ve tekstil kataloglarında, e-ticaret platformlarında ve tasar�
 
 ---
 
-### 2. GLCM (Gray-Level Co-occurrence Matrix) ve Haralick İstatistikleri
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **İçerik Tabanlı Görsel Arama (CBIR)** | *Content-Based Image Retrieval* | Görselin piksel ve derin öznitelik temsilini kullanarak desen ve kompozisyon benzerliğine göre arama yapma. |
+| **Derin Öznitelik Vektörü** | *Deep Feature Embeddings* | Önceden eğitilmiş CNN omurgasından çıkarılan ve halı desenini özetleyen global öznitelik vektörü. |
+| **Kosinüs Benzerliği Sıralaması** | *Cosine Similarity Ranking* | Sorgu halısı ile katalogdaki binlerce halı arasındaki yönsel açı benzerliğini sıralayarak en yakınları getirme. |
+| **Top-K Arama Doğruluğu** | *Top-K Retrieval Precision* | Sorgulanan desenin aynı desen ailesinden gelen ilk $K$ sonuç içindeki bulunma oranı. |
+
+---
+
+## 2. GLCM (Gray-Level Co-occurrence Matrix) ve Haralick İstatistikleri
 
 GLCM, bir görüntüde aralarında $d$ mesafe ve $\theta$ açı bulunan piksel çiftlerinin gri seviye eş-oluşum frekansını sayar. Çıkarılan 5 temel istatistik:
 

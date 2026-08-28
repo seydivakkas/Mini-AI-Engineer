@@ -24,7 +24,22 @@ Modern yapay zeka sistemlerinde verilerin %90'ından fazlası **etiketlenmemişt
 
 ---
 
-### 2. Matematiksel Temeller ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **DBSCAN** | *Density-Based Spatial Clustering* | Yoğunluk temelli çalışan, küme sayısını önceden bilmeyi gerektirmeyen ve rastgele şekilli kümeler ile aykırı değerleri tespit eden algoritma. |
+| **Silüet Skoru** | *Silhouette Coefficient* | Küme içi benzerlik ile komşu kümelere olan uzaklığı kıyaslayarak kümeleme kalitesini $[-1, 1]$ aralığında ölçen metrik. |
+| **Çekirdek Noktası (Core Point)** | *DBSCAN Core Point* | $\epsilon$ yarıçaplı komşuluğunda en az `MinPts` kadar komşusu bulunan yoğun bölge noktası. |
+| **Gürültü Noktası (Noise)** | *DBSCAN Noise Point* | Hiçbir yoğun kümeye dahil edilemeyen ve aykırı değer kabul edilen izole nokta. |
+
+---
+
+## 2. Matematiksel Temeller ve Algoritmik Mantık
 
 #### A. K-Means Kümeleme (Lloyd Algoritması & WCSS)
 K-Means, veri noktalarını önceden tanımlanmış $K$ adet kümeye ayırırken **Küme İçi Kareler Toplamını (Within-Cluster Sum of Squares - WCSS)** yani **ataleti (inertia)** minimize eder:

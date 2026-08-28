@@ -23,7 +23,23 @@ Ağır araçlar gigabaytlarca bellek tüketip CI/CD süreçlerini dakikalarca be
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Veri Profili Çıkarma** | *Data Profiling* | Veri setinin eksiklik, benzersizlik, tip dağılımı ve istatistiksel momentlerini otomatik olarak özetleyen analiz süreci. |
+| **Çarpıklık (Asimetri)** | *Skewness* | Veri dağılımının ortalamaya göre asimetrisini ölçen 3. moment istatistiği ($>0$ sağa çarpık, $<0$ sola çarpık). |
+| **Basıklık** | *Kurtosis* | Veri dağılımının kuyruk kalınlığını ve tepe sivriliğini normal dağılıma göre ölçen 4. moment istatistiği. |
+| **Kardinalite** | *Categorical Cardinality* | Kategorik bir sütundaki benzersiz (unique) kategori sayısı; yüksek kardinalite one-hot encoding boyut patlamasına yol açar. |
+| **Çeyrekler Arası Açıklık (IQR)** | *Interquartile Range* | Verinin 75. persentili ($Q_3$) ile 25. persentili ($Q_1$) arasındaki fark; aykırı değer eşiklerinin temelidir. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Çarpıklık (Skewness / Üçüncü Moment)
 Veri dağılımının simetriden ne kadar saptığını ölçer:

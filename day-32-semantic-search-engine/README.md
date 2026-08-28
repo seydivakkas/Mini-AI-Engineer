@@ -52,7 +52,22 @@ Geleneksel anahtar kelime eşleştirme yöntemleri (BM25, TF-IDF), metinlerin **
 
 ---
 
-### 2. Matematiksel Formülasyon
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Yoğun Vektör Temsili** | *Dense Vector Embedding* | Metinlerin anlamsal içeriğini 384 veya 768 boyutlu sürekli uzayda temsil eden öğrenilmiş vektörler. |
+| **Sentence Transformers** | *Sentence-BERT (SBERT)* | Cümle ve paragrafları siyam ağı mimarisiyle anlamsal vektör uzayına haritalayan transformer modelleri. |
+| **Biy-Kodlayıcı (Bi-Encoder)** | *Bi-Encoder Architecture* | Sorgu ve belgeleri birbirinden bağımsız olarak vektörleştirip kosinüs benzerliği ile hızlı arama sağlayan mimari. |
+| **Anlamsal Yakınlık** | *Semantic Proximity* | Kelimeler birebir eşleşmese dahi (ör. 'otomobil' ve 'araç') anlam yakınlığı üzerinden doğru belgeleri getirebilme yeteneği. |
+
+---
+
+## 2. Matematiksel Formülasyon
 
 #### A. Ağırlıklı Ortalama Havuzlama (Attention Mask Weighted Mean Pooling)
 Bir $L$ uzunluğundaki cümle için Transformer modelinin ürettiği token gizli durumları $\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_L \in \mathbb{R}^D$ ve attention maskesi $m_1, m_2, \dots, m_L \in \{0, 1\}$ olsun:

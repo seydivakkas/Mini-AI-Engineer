@@ -58,7 +58,22 @@ JPEG sıkıştırma algoritması, görüntüyü $8 \times 8$ piksel bloklarına 
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Hata Seviyesi Analizi (ELA)** | *Error Level Analysis* | Görselin belirli bir kalitede yeniden JPEG kaydedilmesiyle oluşan hata matrisini inceleyerek montaj ve ekleme yapılan bölgeleri tespit etme. |
+| **Fourier Frekans Analizi (FFT)** | *Fast Fourier Transform Analysis* | Görselin uzamsal frekans spektrumunu çıkararak yapay zeka (GAN/Difüzyon) üretim izlerini ve ızgara anomalilerini saptama. |
+| **JPEG Sıkıştırma Artefaktları** | *JPEG Compression Artifacts* | $8 \times 8$ bloklar halindeki DCT dönüşüm izlerinin manipüle edilmiş alanlarda süreksizlik göstermesi. |
+| **Gürültü Kalıntısı (Noise Residual)** | *Noise Residual Extraction* | Yüksek geçiren filtreleme ile görseldeki sensör gürültüsü örüntüsünün tutarlılığını analiz etme. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Error Level Analysis (ELA) Hata Formülasyonu
 $$D(x,y) = |I_{\text{aday}}(x,y) - I_{\text{resaved}}(x,y, Q=90)|$$

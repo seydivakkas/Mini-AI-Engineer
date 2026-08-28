@@ -24,7 +24,23 @@ Bu noktaları tespit etmek iki açıdan hayatidir:
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Z-Skoru Filtreleme** | *Z-Score Outlier Filtering* | Noktanın ortalamadan kaç standart sapma uzakta olduğunu hesaplayarak $|Z| > 3$ olanları ayıklayan yöntem. |
+| **Medyan Mutlak Sapma (MAD)** | *Median Absolute Deviation* | Aykırı değerlerden etkilenmeyen medyan tabanlı sağlam (robust) dağılım genişliği ölçüsü. |
+| **Tukey Çitleri** | *Tukey's Fences (IQR Rule)* | $[Q_1 - 1.5 \cdot IQR, Q_3 + 1.5 \cdot IQR]$ aralığının dışında kalan noktaları aykırı değer kabul eden kural. |
+| **Isolation Forest** | *Isolation Forest Algorithm* | Aykırı değerlerin karar ağaçlarında rastgele bölmelerle normal noktalara göre çok daha sığ derinliklerde izole edilmesi prensibine dayalı denetimsiz algoritma. |
+| **Bulaşma Oranı** | *Contamination Rate* | Veri setinde bulunması beklenen aykırı değer yüzdesini belirten hiperparametre. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Klasik Z-Skoru vs. Modifiye Z-Skoru (MAD)
 - **Klasik Z-Skoru:**

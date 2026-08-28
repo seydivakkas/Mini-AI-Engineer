@@ -22,7 +22,23 @@ Histogram analizi, görüntünün "ışık parmak izini" çıkararak gizli detay
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Piksel Histogramı** | *Image Pixel Histogram* | Görüntüdeki her bir parlaklık seviyesinin ($0-255$) frekansını (kaç kez tekrarlandığını) gösteren ayrık dağılım. |
+| **Kümülatif Dağılım Fonksiyonu** | *Cumulative Distribution Function (CDF)* | Piksellerin belirli bir parlaklık seviyesine kadar olan toplam birikimli olasılığını gösteren fonksiyon. |
+| **Histogram Eşitleme** | *Histogram Equalization (HE)* | CDF dönüşümü kullanarak dar dinamik aralıktaki kontrastı tüm gri ton skalasına yayarak görsel belirginliği artıran yöntem. |
+| **Dinamik Aralık** | *Dynamic Range* | Görüntüdeki en karanlık piksel ile en aydınlık piksel arasındaki sinyal gücü oranı. |
+| **Kontrast Genişletme** | *Contrast Stretching* | Piksel değerlerini $[I_{\min}, I_{\max}]$ aralığından doğrusal olarak $[0, 255]$ aralığına açma işlemi. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Piksel Yoğunluk Histogramı ve Olasılık Dağılımı
 Bir görüntünün histogramı $H(k)$, $k \in [0, 255]$ parlaklık değerine sahip piksel adedini temsil eder. Normalleştirilmiş histogram ise piksel olasılık yoğunluk fonksiyonudur (PDF):

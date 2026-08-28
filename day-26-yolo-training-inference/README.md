@@ -42,7 +42,22 @@ Bu proje; endüstri standardı modern nesne tespiti mimarisi olan **Ultralytics 
 
 ---
 
-### 2. Modern YOLOv8/YOLO11 İnovasyonları
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Tek Aşamalı Dedektör (YOLO)** | *Single-Stage Object Detector* | Görseli tek bir ileri yayılımda ızgaralara (grid) bölerek sınıfları ve kutu koordinatlarını eşzamanlı tahmin eden yüksek hızlı dedektör. |
+| **Öznitelik Piramit Ağı (FPN/PAN)** | *Feature Pyramid Network* | Farklı ölçeklerdeki (küçük, orta, büyük) nesneleri yakalamak için derin ve sığ katman özniteliklerini birleştiren piramidal yapı. |
+| **CIoU Kaybı** | *Complete IoU Loss* | Kutu örtüşmesini, merkez noktası mesafesini ve en-boy oranı tutarlılığını birlikte optimize eden gelişmiş kutu regresyon kaybı. |
+| **Çıkarım Hızı (FPS / Latency)** | *Inference Throughput & Latency* | Modelin saniyede işleyebildiği kare sayısı (FPS) ve tek bir görsel için harcadığı milisaniye cinsinden çıkarım süresi. |
+
+---
+
+## 2. Modern YOLOv8/YOLO11 İnovasyonları
 
 #### A. Anchor-Free Mimari
 Önceden tanımlanmış sabit anchor kutularına olan bağımlılığı kaldırarak, her özellik haritası pikselini doğrudan bir nesne merkezi adayı olarak değerlendirir.

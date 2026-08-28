@@ -40,7 +40,22 @@ Piksel uzayında ($1024 \times 1024 \times 3$) difüzyon işletmek $\mathcal{O}(
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Stable Diffusion XL (SDXL)** | *Latent Diffusion Model (SDXL)* | Görsel üretimini piksel uzayı yerine sıkıştırılmış gizil (latent) uzayda yürüten iki aşamalı difüzyon modeli. |
+| **LoRA (Düşük Sıralı Uyarlama)** | *Low-Rank Adaptation (LoRA)* | Orijinal devasa ağırlıkları dondurup, katmanlara düşük ranklı matris çarpanları ($W = W_0 + rac{lpha}{r} B \cdot A$) ekleyerek hafif ve hızlı ince ayar yapma tekniği. |
+| **Çapraz Dikkat (Cross-Attention)** | *Cross-Attention Text Conditioning* | Metin istemindeki (prompt) kelime temsil vektörleri ile görsel gizil tensörlerini eşleştiren dikkat mekanizması. |
+| **Sınıflandırıcısız Yönlendirme (CFG)** | *Classifier-Free Guidance Scale* | Modelin metin istemine ne kadar sıkı bağlı kalacağını belirleyen ölçek katsayısı ($w > 1$). |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Classifier-Free Guidance (CFG)
 $$\tilde{\epsilon}_\theta(z_t, t, c) = \epsilon_\theta(z_t, t, \emptyset) + s \cdot (\epsilon_\theta(z_t, t, c) - \epsilon_\theta(z_t, t, \emptyset))$$

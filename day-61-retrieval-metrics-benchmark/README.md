@@ -36,7 +36,22 @@ Vektör ve semantik arama sistemlerinde binlerce veya milyonlarca belge arasınd
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Ortalama Karşılıklı Sıra (MRR)** | *Mean Reciprocal Rank (MRR@K)* | Doğru hedefin ilk bulunduğu sıranın çarpmaya göre tersinin ($1 / rank$) tüm sorgulardaki ortalaması. |
+| **Precision@K & Recall@K** | *Ranked Precision & Recall* | Döndürülen ilk $K$ sonuç içindeki ilgili belge oranı ve toplam ilgili belgelerin ne kadarının ilk $K$'da yakalandığı. |
+| **mAP@K** | *Mean Average Precision at K* | Her doğru belgenin geldiği sıradaki kesinlik değerlerinin ortalamasının tüm sorgular üzerinden genel ortalaması. |
+| **NDCG@K** | *Normalized Discounted Cumulative Gain* | Doğru belgelerin sıralamadaki konumunu logaritmik olarak cezalandıran (en üsttekine en yüksek puan) sıralama kalite metriği. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Precision@k ve Recall@k
 $$\text{Precision@k} = \frac{|\text{Retrieved}_k \cap \text{Relevant}|}{k}$$

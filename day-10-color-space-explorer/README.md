@@ -24,7 +24,23 @@ Gerçek dünyada bir fabrika bandına bulutlu havada güneş vurabilir, robotun 
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **RGB Renk Uzayı** | *RGB Color Space* | Kırmızı, Yeşil ve Mavi ışık bileşenlerinin toplanmasıyla oluşan aygıt bağımlı kartezyen renk küpü. |
+| **HSV Renk Uzayı** | *HSV (Hue, Saturation, Value)* | İnsan algısına daha uygun; Renk Özü ($H$), Doygunluk ($S$) ve Parlaklık ($V$) ayrımı sunan silindirik renk modeli. |
+| **CIELAB Uzayı** | *CIE L*a*b* Color Space* | Işıklılık ($L^*$), Yeşil-Kırmızı ($a^*$) ve Mavi-Sarı ($b^*$) eksenlerinden oluşan algısal olarak tekdüze (perceptually uniform) renk uzayı. |
+| **Delta E ($\Delta E$)** | *Color Difference Formula* | İki renk arasındaki algısal farkı Öklid uzayında ölçen metrik ($\Delta E < 1.0$ fark insan gözüyle ayırt edilemez). |
+| **Renk Gamutu** | *Color Gamut* | Belirli bir renk modelinin veya ekran donanımının üretebildiği toplam renk alt kümesi. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. RGB Uzayı (Donanım Bağımlı / Katmanlı Model)
 Kameraların sensör pikselleri ve ekranlar doğrudan Kırmızı (R), Yeşil (G) ve Mavi (B) fotodiyotlarla çalışır.

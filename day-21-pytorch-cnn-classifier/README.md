@@ -21,7 +21,22 @@ PyTorch, dinamik hesaplama grafiği (**Dynamic Computational Graph / Eager Execu
 
 ---
 
-### 2. Tensör Düzenleri: PyTorch ($NCHW$) vs TensorFlow ($NHWC$)
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **`nn.Module`** | *PyTorch Base Module* | Tüm sinir ağı katmanlarının, parametrelerinin ve ileri yayılım mantığının (`forward`) tanımlandığı temel PyTorch sınıfı. |
+| **Hesaplama Grafı (Autograd)** | *Dynamic Computational Graph* | Geriye doğru otomatik türev almak (`loss.backward()`) için tensor operasyonlarının dinamik olarak kaydedildiği yönlü çizge. |
+| **Ağırlık Güncelleme** | *Optimizer Step (`optimizer.step()`)* | Hesaplanan gradyanları ve öğrenme oranını kullanarak model parametrelerini güncelleyen optimizasyon adımı. |
+| **Cihaz Yönetimi** | *Device Placement (`.to(device)`)* | Tensörlerin ve model ağırlıklarının CPU veya GPU (CUDA) belleğine transfer edilmesi. |
+
+---
+
+## 2. Tensör Düzenleri: PyTorch ($NCHW$) vs TensorFlow ($NHWC$)
 Görsel tensörlerinin bellekteki ardışık yerleşimi:
 - **PyTorch Formatı ($N, C, H, W$):** Batch, Channels, Height, Width. GPU donanımları (özellikle NVIDIA cuDNN kütüphaneleri) kanal bazında evrişimi $NCHW$ bellek formatında çok daha yüksek paralel önbellek verimiyle işler.
 - **TensorFlow Formatı ($N, H, W, C$):** Batch, Height, Width, Channels.

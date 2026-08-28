@@ -49,7 +49,22 @@ Derin öğrenme modellerinden (Vision Transformer, ResNet, CLIP, LLM) çıkarıl
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **FAISS** | *Facebook AI Similarity Search* | Milyonlarca yüksek boyutlu vektör arasında milisaniye altı sürelerde k-en yakın komşu araması yapan C++/GPU kütüphanesi. |
+| **IndexFlatL2 / IndexFlatIP** | *Exact Flat Index* | Vektörleri sıkıştırmadan birebir tam tarama (brute-force) yaparak %100 kesin sonuç üreten temel indeks tipi. |
+| **IndexIVFFlat (Ters Dosya İndeksi)** | *Inverted File Index (IVF)* | Vektör uzayını Voronoi hücrelerine ($nlist$) bölerek sorgu anında yalnızca en yakın $nprobe$ kadar hücreyi arayan yaklaşık (approximate) indeks. |
+| **Geri Çağırma vs Gecikme Ödünleşimi** | *Recall vs Latency Trade-off* | Arama hızını artırırken en yakın komşuların bulunma yüzdesindeki (Recall) tolerans dengesi. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. L2-Normalize Vektörlerde Kosinüs Eşdeğerliği
 $$\text{CosineSimilarity}(q, x_i) = \frac{q \cdot x_i}{\|q\|_2 \|x_i\|_2} = \langle q_{\text{norm}}, x_{i,\text{norm}} \rangle = q_{\text{norm}} \cdot x_{i,\text{norm}}$$

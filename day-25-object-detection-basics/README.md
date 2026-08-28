@@ -18,7 +18,22 @@ Sınıflandırma problemi *"Görselde ne var?"* ($y \in \{1, \dots, C\}$) sorusu
 
 ---
 
-### 2. Bounding Box Formatları
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Sınırlayıcı Kutu (Bounding Box)** | *Bounding Box Representation* | Nesnenin konumunu belirten $[x_{\min}, y_{\min}, x_{\max}, y_{\max}]$ (Pascal VOC) veya $[x_c, y_c, w, h]$ (YOLO) formatındaki koordinat tensörü. |
+| **Kesişim / Birleşim (IoU)** | *Intersection over Union* | Tahmin edilen kutu ile gerçek etiket kutusunun kesişim alanının birleşim alanına oranı ($IoU = \frac{A \cap B}{A \cup B}$). |
+| **Maksimum Olmayan Bastırma** | *Non-Maximum Suppression (NMS)* | Aynı nesne için üretilen yüksek örtüşmeli çoklu kutular arasından en yüksek güven skorlu olanı seçip diğerlerini eleyen algoritma. |
+| **Ortalama Kesinlik (mAP)** | *Mean Average Precision (mAP@0.5)* | Farklı IoU eşiklerinde tüm sınıflar için hesaplanan kesinlik-duyarlılık eğrisi altındaki alanların ortalaması. |
+
+---
+
+## 2. Bounding Box Formatları
 
 ```
 1. Pascal VOC (xyxy)  : [x_min, y_min, x_max, y_max] -> Piksel mutlak koordinatları

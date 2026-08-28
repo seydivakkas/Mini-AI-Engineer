@@ -21,7 +21,22 @@ Standart sRGB uzayında renkler donanım odaklıdır (CRT/LCD ekranların fosfor
 - İnsan retinası **yeşil ve camgöbeği (cyan)** tonlarındaki mikro sapmalara son derece hassasken, doymuş **mavi ve kırmızı** bölgelerdeki büyük sayısal değişimleri çok daha az fark eder (MacAdam Elipsleri).
 - Standart RGB üzerinde K-Means kümelemesi yapıldığında küme merkezleri görsel olarak yanlış temsil edilir ve hesaplanan Öklid mesafesi $\sqrt{(\Delta R)^2 + (\Delta G)^2 + (\Delta B)^2}$ gerçek insan gözü renk sapmasını yansıtamaz.
 
-### 2. CIELAB ($L^*, a^*, b^*$) Algısal Olarak Üniform Renk Uzayı
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Algısal Kolorimetri** | *Perceptual Colorimetry* | İnsan gözünün renk ve parlaklık algısına matematiksel olarak en yakın olan CIELAB ($L^*a^*b^*$) renk uzayında analiz yapma. |
+| **MiniBatchKMeans** | *Mini-Batch K-Means* | Milyonlarca pikseli küçük rastgele partiler halinde kümeleyerek standart K-Means'e kıyasla 5-10x hızlı renk paleti çıkarma. |
+| **Renk İsim Çözümleme** | *Color Name Resolution* | Çıkarılan sayısal Lab merkezlerini en yakın bilinen kurumsal/doğal renk isimleriyle eşleştirme. |
+| **Delta E Tolerans Çemberi** | *Delta E Threshold Radius* | Benzer tonlardaki renklerin tek bir ana renk başlığı altında birleştirilmesini sağlayan algısal tolerans eşiği. |
+
+---
+
+## 2. CIELAB ($L^*, a^*, b^*$) Algısal Olarak Üniform Renk Uzayı
 
 1976 yılında Uluslararası Aydınlatma Komisyonu (CIE) tarafından insan algısına göre geliştirilmiştir:
 - **$L^* \in [0, 100]$:** Algılanan Açıklık / Parlaklık (0: Saf Siyah, 100: Mükemmel Beyaz).

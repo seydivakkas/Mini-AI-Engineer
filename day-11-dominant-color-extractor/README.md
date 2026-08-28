@@ -26,7 +26,23 @@ Görseli tanımlayan şey ortalama renk değil; **görüntüyü oluşturan bask�
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **K-Means Kümeleme** | *K-Means Clustering* | Piksel RGB/Lab vektörlerini en yakın $K$ adet merkez etrafında toplayarak baskın renk kümelerini bulan denetimsiz algoritma. |
+| **Küme Merkezi (Centroid)** | *Cluster Centroid* | Bir renk kümesine atanan tüm piksellerin ortalama renk vektörü. |
+| **Renk Kuantizasyonu** | *Color Quantization* | Görüntüdeki milyonlarca farklı rengi görsel kaliteyi koruyarak $K$ adet temsilci renge indirgeme işlemi. |
+| **Eylemsizlik (Inertia)** | *Cluster Inertia (WCSS)* | Her pikselin atandığı küme merkezine olan karesel mesafelerinin toplamı; $K$ seçiminde dirsek noktasını belirler. |
+| **Uzamsal Alt-Örnekleme** | *Spatial Subsampling* | K-Means hesaplama maliyetini düşürmek için görseli orantılı küçülterek kümeleme hızını onlarca kat artırma tekniği. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Renk Uzayında K-Means Kümeleme (Lloyd's Algoritması)
 Bir görüntüdeki her piksel $p_i = (R_i, G_i, B_i)$, 3 boyutlu uzayda bir veri noktasıdır.

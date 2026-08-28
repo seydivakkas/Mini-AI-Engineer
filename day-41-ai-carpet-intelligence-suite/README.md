@@ -100,7 +100,22 @@ day-41-ai-carpet-intelligence-suite/
 pip install -r gereksinimler.txt
 ```
 
-### 2. Ana Akışın Çalıştırılması
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Çok Modlu Entegre Sistem** | *End-to-End Multimodal Suite* | Renk analizi, görsel arama, kusur tespiti ve teknik RAG asistanını tek bir platformda birleştiren konsolide mimari. |
+| **Mikroservis Orkestrasyonu** | *Microservice Pipeline Orchestration* | FastAPI arka uç servisleri ile Streamlit kullanıcı arayüzü arasındaki asenkron veri iletişimi. |
+| **Uçtan Uca Kalite Güvencesi** | *Full-Stack AI Quality Assurance* | Tüm modüllerin eşzamanlı ve çökme korumalı çalıştığını doğrulayan entegrasyon testleri. |
+| **Kurumsal Dağıtım Hazırlığı** | *Production Readiness* | Büyük ölçekli tekstil fabrikalarında ve e-ticaret platformlarında canlıya alınabilir mimari tasarım. |
+
+---
+
+## 2. Ana Akışın Çalıştırılması
 ```bash
 python ana_akis.py
 ```

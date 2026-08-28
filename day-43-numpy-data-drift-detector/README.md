@@ -48,7 +48,22 @@ Bir makine öğrenimi modeli eğitildikten sonra performansı zamanla düşer (M
 
 ---
 
-### 2. İstatistiksel Testlerin Matematiksel Formülasyonları
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Veri Kayması (Data Drift)** | *Data & Covariate Shift* | Canlıya alınan modele gelen girdi verilerinin dağılımının zamanla eğitim verisi dağılımından sapması durumu. |
+| **Toplum Kararlılık İndeksi (PSI)** | *Population Stability Index* | İki dağılım arasındaki kaymayı ölçen standart MLOps metriği ($PSI < 0.1$ kararlı, $>0.25$ kritik kayma). |
+| **Kolmogorov-Smirnov (KS) Testi** | *Two-Sample KS Test* | İki sürekli dağılımın kümülatif fonksiyonları arasındaki maksimum farkı ($D$) ölçen parametrik olmayan istatistiksel test. |
+| **Referans Tabanı Dağılımı** | *Baseline Reference Distribution* | Eğitim veya doğrulama aşamasında dondurulan ve üretim verileriyle periyodik kıyaslanan altın standart dağılım. |
+
+---
+
+## 2. İstatistiksel Testlerin Matematiksel Formülasyonları
 
 #### A. 2-Örneklemli Kolmogorov-Smirnov (KS) Testi
 İki bağımsız sürekli dağılımın kümülatif olasılık fonksiyonları (CDF) arasındaki en büyük dikey mesafeyi hesaplar:

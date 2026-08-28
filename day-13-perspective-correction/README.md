@@ -25,7 +25,22 @@ Bir kamera ile masadaki faturanın, duvardaki tablonun, yerdeki bir halının ve
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Homografi Matrisi** | *Homography Matrix ($3 \times 3$)* | Düzlemsel bir yüzeyin bir kamera açısından başka bir kamera açısına projektif dönüşümünü tanımlayan 8 serbestlik dereceli matris. |
+| **Perspektif Dönüşümü** | *Perspective Warp Transform* | Açılı çekilmiş bir doküman veya halıyı dik kuşbakışı (top-down) görünümüne getiren 2D projektif haritalama. |
+| **Köşe Sıralama Algoritması** | *4-Point Convex Polygon Ordering* | Tespit edilen 4 köşe noktasını saat yönünde (Sol-Üst, Sağ-Üst, Sağ-Alt, Sol-Alt) sıralayan geometrik algoritma. |
+| **Bilineer İnterpolasyon** | *Bilinear Interpolation* | Dönüşüm sonrası kesirli piksel koordinatlarındaki renk değerini komşu 4 pikselin ağırlıklı ortalamasıyla hesaplayan enterpolasyon. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Homojen Koordinatlar ve Projektif Düzlem
 2 boyutlu Kartezyen düzlemindeki bir $(x, y)$ noktası, projektif geometride 3 boyutlu homojen koordinat vektörü olarak temsil edilir:

@@ -23,7 +23,22 @@ Derin yapay sinir ağları milyonlarca serbest parametreye sahiptir ve doğası 
 
 ---
 
-### 2. Dönüştürme Yöntemleri ve Matematiksel Dinamikler
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Veri Artırma (Augmentation)** | *Data Augmentation* | Mevcut görsellere dönme, kırpma, renk değişimi gibi dönüşümler uygulayarak eğitim verisini sanal olarak zenginleştirme tekniği. |
+| **Aşırı Öğrenme (Overfitting)** | *Overfitting Prevention* | Modelin eğitim verisini ezberlemesini engelleyip yeni ve görülmemiş verilere genelleme yapmasını sağlama. |
+| **Rastgele Kırpma & Çevirme** | *Random Crop & Flip* | Görselin belirli bölgelerini rastgele kesme ve yatayda aynalama yaparak konumsal değişmezlik kazandıran dönüşümler. |
+| **Renk Titreşimi (Color Jitter)** | *Color Jittering* | Görselin parlaklık, kontrast, doygunluk ve ton değerlerini rastgele değiştirerek ışık değişimlerine dayanıklılık kazandırma. |
+
+---
+
+## 2. Dönüştürme Yöntemleri ve Matematiksel Dinamikler
 
 #### A. Geleneksel Geometrik ve Fotometrik Dönüşümler (Albumentations & torchvision)
 1. **Rastgele Aynalama & Döndürme (Random Flip & Rotation):** Görselin yönelimine olan aşırı bağımlılığı kırar.

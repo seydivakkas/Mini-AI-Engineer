@@ -25,7 +25,22 @@ Bir halı veya seramik fabrikasında, tekstil tasarım stüdyosunda veya dijital
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Otsu Eşikleme** | *Otsu's Thresholding* | Görüntüdeki sınıflar arası varyansı maksimize ederek optimum ikili (binary) eşik değerini otomatik bulan algoritma. |
+| **Morfolojik Açma (Opening)** | *Morphological Opening (Erosion + Dilation)* | Küçük beyaz gürültü noktalarını yok ederken ana nesne boyutunu koruyan morfolojik filtre. |
+| **Morfolojik Kapama (Closing)** | *Morphological Closing (Dilation + Erosion)* | Nesneler içindeki küçük delikleri ve çatlakları dolduran morfolojik filtre. |
+| **Bağlantılı Bileşenler** | *Connected Component Labeling* | İkili maske üzerindeki birbirine komşu beyaz pikselleri gruplayarak bağımsız motif nesneleri çıkaran algoritma. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Otsu Eşikleme Algoritması (Optimal Binarization)
 Görüntüdeki arka plan ve ön plan piksellerini ayıracak sabit bir eşik seçmek yerine, histogramı inceleyerek **sınıflar arası varyansı ($\sigma_b^2$) maksimize eden** optimal $T^*$ eşiğini otomatik bulur:

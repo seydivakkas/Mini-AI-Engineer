@@ -39,7 +39,22 @@ Görsel dünyayı oluşturan pikseller iki ana grupta toplanır:
 
 ---
 
-### 2. Mask R-CNN ve RoIAlign Devrimi (He et al., ICCV 2017)
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **U-Net Mimarisi** | *U-Net Architecture* | Daralan kodlayıcı (encoder) ve genişleyen kod çözücü (decoder) kollarından oluşan 'U' biçimli bölütleme ağı. |
+| **Atlama Bağlantıları** | *Skip Connections* | Kodlayıcıdaki yüksek çözünürlüklü uzamsal detayları doğrudan kod çözücü katmanlarına aktararak ince sınırların kaybolmasını önleyen bağlantılar. |
+| **Focal Loss** | *Focal Loss* | Kolay sınıflandırılan arka plan piksellerinin gradyan ağırlığını düşürüp ($1-p_t)^\gamma$ zor ön plan piksellerine odaklanan kayıp fonksiyonu. |
+| **Sınıf Dengesizliği** | *Extreme Class Imbalance* | Arka plan piksellerinin hedef nesne piksellerine kıyasla %95+ oranında baskın olması problemi. |
+
+---
+
+## 2. Mask R-CNN ve RoIAlign Devrimi (He et al., ICCV 2017)
 
 Faster R-CNN mimarisinin üzerine her aday bölge için piksel düzeyinde ikili maske üreten bir **FCN Maske Dalı (Mask Branch)** eklenerek oluşturulmuştur.
 

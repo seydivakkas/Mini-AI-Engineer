@@ -64,6 +64,19 @@ Yapay zeka modelleri canlıya alındığında:
 
 ---
 
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **SQLite WAL Modu** | *Write-Ahead Logging (WAL)* | SQLite veritabanında okuma ve yazma işlemlerinin birbirini bloke etmeden eşzamanlı çalışmasını sağlayan yüksek performanslı günlükleme modu. |
+| **İş Parçacığı Güvenliği** | *Thread-Safe SQLite Connection* | Web arayüzünden gelen eşzamanlı sorguların veritabanı kilitlenmesine (Database Locked) yol açmasını önleyen bağlantı havuzu yönetimi. |
+| **CRUD Operasyonları** | *Create, Read, Update, Delete* | AI tahmin loglarının, geri bildirimlerin ve model metaverilerinin ilişkisel tabloda güvenle yönetilmesi. |
+| **Çıkarım Analitikleri** | *Inference Log Analytics* | Geçmiş tahminlerin gecikme (latency), güven skoru ve sınıf dağılımlarını gösteren dinamik dashboard paneli. |
+
+---
+
 ## 2. 💻 Üretim Seviyesinde Uygulama Mimarisi
 
 Proje modüler bir paket yapısına sahiptir:

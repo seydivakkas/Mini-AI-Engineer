@@ -24,7 +24,22 @@ Derin Öğrenme (CNN / ViT) modelleri milyonlarca parametreye ve devasa GPU hesa
 
 ---
 
-### 2. Matematiksel Temeller ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **HOG** | *Histogram of Oriented Gradients* | Yerel bölgelerdeki kenar ve gradyan yönelimlerinin histogramını çıkararak nesne şekil ve konturlarını yakalayan öznitelik tanımlayıcısı. |
+| **Destek Vektör Makinesi (SVM)** | *Support Vector Machine* | Sınıflar arasındaki geometrik marjini (margin) maksimize eden optimum hiper düzlemi bulan güçlü doğrusal/doğrusal olmayan sınıflandırıcı. |
+| **RBF Çekirdeği (Kernel Trick)** | *Radial Basis Function Kernel* | Veriyi açıkça hesaplamadan sonsuz boyutlu uzaya haritalayarak doğrusal olmayan sınırları ayıran çekirdek fonksiyonu. |
+| **Öznitelik Normalizasyonu** | *Feature Scaling (StandardScaler)* | SVM'in marjin hesabında büyük değerli özniteliklerin baskın gelmesini önlemek için uygulanan standartlaştırma. |
+
+---
+
+## 2. Matematiksel Temeller ve Algoritmik Mantık
 
 #### A. HOG (Histogram of Oriented Gradients)
 Nesnelerin şekil ve kenar yapılarını gradyan yönelimlerinin dağılımıyla yakalar:

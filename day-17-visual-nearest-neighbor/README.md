@@ -23,7 +23,22 @@ Kullanıcı bir mobilya mağazasında veya caddede beğendiği bir vazonun foto�
 
 ---
 
-### 2. Matematiksel Temeller ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **k-En Yakın Komşu (k-NN)** | *k-Nearest Neighbors* | Sorgu vektörüne özellik uzayında en yakın mesafedeki $k$ adet örneği bularak sınıflandırma veya arama yapan tembel (lazy) öğrenme algoritması. |
+| **Vektör İndeksleme** | *Vector Indexing* | Görsel öznitelik vektörlerinin hızlı arama için bellekte matris veya ağaç yapılarında düzenlenmesi. |
+| **Sorgu Gecikmesi (Latency)** | *Query Retrieval Latency* | Bir sorgu vektörünün veri tabanındaki binlerce vektör arasından en yakınları bulması için geçen milisaniye cinsinden süre. |
+| **Top-K Arama** | *Top-K Similarity Retrieval* | Mesafe skoruna göre en iyi $K$ adet sonucun sıralanıp döndürülmesi protokolü. |
+
+---
+
+## 2. Matematiksel Temeller ve Algoritmik Mantık
 
 #### A. Çok Modaliteli Hibrit Vektör Temsili (Hybrid Image Embedding)
 Tek bir öznitelik türü görsel aramada yanıltıcıdır:

@@ -21,7 +21,22 @@ $$T_{\text{adım}} = T_{\text{veri\_hazırlama (CPU)}} + T_{\text{bellek\_transf
 
 Eğer veri hazırlama ($T_{\text{veri}}$) süresi GPU hesaplama ($T_{\text{GPU}}$) süresinden uzunsa, GPU her iterasyonda CPU'nun yeni batch üretmesini bekler (**GPU Starvation**). Basit (`num_workers=0`, `pin_memory=False`) bir konfigürasyonda GPU kullanım oranı (GPU Utilization) $\%20 - \%40$ seviyelerine kadar çökebilir.
 
-### 2. Dört Ana Optimizasyon Sütunu
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **`torch.utils.data.Dataset`** | *PyTorch Custom Dataset* | Veri kaynaklarını soyutlayan, `__len__` ve `__getitem__` metotlarıyla indeks tabanlı tekil veri getiren sınıf. |
+| **`torch.utils.data.DataLoader`** | *PyTorch DataLoader* | Batch oluşturma, çoklu işlemcili ön yükleme (multiprocessing), karıştırma (shuffling) ve bellek aktarımını yöneten boru hattı. |
+| **Bellek Sabitleme (Pin Memory)** | *Pinned Host Memory (`pin_memory=True`)* | CPU sayfalanamaz (non-pageable) belleği kullanarak tensörlerin GPU'ya kopyalanma hızını 2x artıran optimizasyon. |
+| **Özel Birleştirici (`collate_fn`)** | *Custom Collate Function* | Farklı boyutlardaki örnekleri veya özel etiket yapılarını tek bir batch tensöründe birleştiren fonksiyon. |
+
+---
+
+## 2. Dört Ana Optimizasyon Sütunu
 
 1. **Çoklu Süreç İşleme (`num_workers > 0`):**
    - PyTorch `multiprocessing` mekanizması ile arka planda $N$ adet alt süreç açarak `__getitem__` çağrılarını paralel olarak çalıştırır.

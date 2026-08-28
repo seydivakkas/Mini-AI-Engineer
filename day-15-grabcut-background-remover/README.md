@@ -23,7 +23,22 @@ Kullanıcının nesneyi kabaca bir dikdörtgen kutu içine almasıyla çalışan
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **GrabCut Algoritması** | *GrabCut Segmentation* | Grafik kesme (Graph Cut) ve Gauss Karışım Modelleri (GMM) kullanarak ön plan ile arka planı ayıran yarı-otomatik bölütleme yöntemi. |
+| **Gauss Karışım Modeli (GMM)** | *Gaussian Mixture Model* | Ön plan ve arka plan renk dağılımlarını $K$ adet çok değişkenli Gauss dağılımının ağırlıklı toplamı olarak modelleyen olasılık yapısı. |
+| **Trimap Maskesi** | *Trimap Mask* | Pikselleri 'Kesin Ön Plan', 'Kesin Arka Plan', 'Olası Ön Plan' ve 'Olası Arka Plan' olarak 4 sınıfa ayıran durum haritası. |
+| **Minimum Kesme (Min-Cut)** | *Min-Cut / Max-Flow Algorithm* | Pikseller arasındaki benzerlik ve sınır enerjisini minimum maliyetle keserek optimum bölütleme sınırını bulan ağ akış algoritması. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Gauss Karışım Modelleri (Gaussian Mixture Models - GMM)
 Ön plan ($F$) ve arka plan ($B$) piksellerinin RGB renk dağılımları tek bir ortalama ile değil, her biri $K=5$ bileşenli tam kovaryanslı Gauss karışımları ile modellenir:

@@ -52,7 +52,22 @@ Modern çoklu nesne takibi iki bağımsız bileşenin senkronize çalışmasıyl
 
 ---
 
-### 2. Kalman Filtresi ile Durum Kestirimi (Bewley et al., SORT 2016)
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Çoklu Nesne Takibi (MOT)** | *Multi-Object Tracking* | Video kareleri boyunca birden çok nesnenin konumunu tespit edip her birine benzersiz bir kimlik (ID) atayarak izleme görevi. |
+| **Kalman Filtresi** | *Kalman Filter* | Gürültülü ölçümler altında nesnenin bir sonraki karedeki konum ve hızını tahmin eden ve güncelleyen doğrusal durum kestiricisi. |
+| **Macar Algoritması** | *Hungarian Algorithm (Munkres)* | Önceki izler (tracks) ile yeni tespitler (detections) arasındaki maliyet matrisini çözen optimum iki parçalı eşleme algoritması. |
+| **Kimlik Değişimi (ID Switch)** | *Identity Switch (IDSW)* | Takip edilen bir nesnenin kimlik numarasının başka bir nesneyle karışması veya yanlış atanması hatası. |
+
+---
+
+## 2. Kalman Filtresi ile Durum Kestirimi (Bewley et al., SORT 2016)
 
 Kalman filtresi, dedektörün ölçüm gürültüsünü ve kısa süreli hedef kaçırmalarını (Missing Detections) süzerek nesnenin gelecekteki konumunu doğrusal sabit hızlı (Constant Velocity) hareket modeliyle tahmin eder.
 

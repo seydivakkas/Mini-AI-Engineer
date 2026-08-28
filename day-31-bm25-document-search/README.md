@@ -55,7 +55,22 @@ Klasik TF-IDF (Term Frequency - Inverse Document Frequency) modelinde iki kritik
 
 ---
 
-### 2. Matematiksel Formülasyon
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **BM25 Algoritması** | *Best Matching 25* | Klasik bilgi erişiminde (Information Retrieval) terim sıklığı ve ters belge sıklığını belge uzunluğu normalizasyonuyla birleştiren sıralama fonksiyonu. |
+| **Terim Sıklığı Doygunluğu ($k_1$)** | *Term Frequency Saturation* | Bir kelimenin belgede çok fazla geçmesinin skor üzerindeki etkisini asimptotik olarak sınırlandıran hiperparametre. |
+| **Belge Uzunluğu Cezalandırması ($b$)** | *Document Length Normalization* | Uzun belgelerin yalnızca çok kelime içerdikleri için haksız yere yüksek skor almasını önleyen parametre. |
+| **Ters Belge Sıklığı (IDF)** | *Inverse Document Frequency* | Tüm külliyatta nadir geçen terimlere daha yüksek bilgi ağırlığı veren logaritmik formül. |
+
+---
+
+## 2. Matematiksel Formülasyon
 
 #### A. Okapi BM25 Uygunluk Skoru (Score)
 Bir $Q = \{q_1, q_2, \dots, q_n\}$ sorgusu ve bir $D$ belgesi için toplam skor:

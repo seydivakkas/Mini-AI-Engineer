@@ -21,7 +21,23 @@ Bu işlem **Veri Sızıntısına (Data Leakage)** yol açar. Test kümesindeki g
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Eksik Veri Doldurma** | *Missing Value Imputation* | Tablolardaki `NaN` ve `None` boşluklarının ortalama, medyan, mod veya model tabanlı tahmin yöntemleriyle doldurulması. |
+| **Tip Dönüşümü & Zorlama** | *Type Coercion & Casting* | Veri tiplerinin bellek verimliliği ve hesaplama doğruluğu için güvenli şekilde dönüştürülmesi (`astype`, `to_numeric`). |
+| **Zincirleme Atama Uyarısı** | *SettingWithCopyWarning* | Pandas'ta bir DataFrame görünümü (view) üzerinde doğrudan atama yapıldığında orijinal tablonun güncellenmeme riskini belirten uyarı. |
+| **Aykırı Değer Maskeleme** | *Outlier Masking & Clipping* | Aşırı uç değerlerin belirli persentil eşiklerine sıkıştırılması (Winsorizing) veya filtre ile temizlenmesi. |
+| **Vektörize Metin Temizleme** | *Vectorized String Operations* | Pandas `.str` erişicisi ile Python döngüleri yerine C seviyesinde optimize edilmiş regex ve metin operasyonları yürütülmesi. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Veri Sızıntısına Karşı `fit()` ve `transform()` Ayrımı
 - `fit(egitim_verisi)`: Yalnızca eğitim kümesindeki istatistikleri (medyan, mod, IQR sınırları) öğrenir ve dahili belleğinde saklar.

@@ -51,7 +51,22 @@ Streamlit, klasik web framework'lerinden (React, Vue) farklı olarak deklaratif 
 
 ---
 
-### 2. Çoklu Sekmeli (Multi-Tab) Kontrol Paneli Mimarisi
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Streamlit Reaktif Yürütme** | *Streamlit Reactive Execution* | Kullanıcı her etkileşimde (buton, slider) tüm betiği yukarıdan aşağıya yeniden koşturan reaktif UI paradigması. |
+| **Oturum Durumu (Session State)** | *Session State Management (`st.session_state`)* | Yeniden çalıştırmalar arasında değişkenlerin, model ağırlıklarının ve kullanıcı verilerinin bellekte korunması. |
+| **Önbellekleme (`@st.cache_resource`)** | *Resource Caching* | Ağır yapay zeka modellerinin belleğe yalnızca bir kez yüklenmesini ve her istekte tekrar yüklenmesini önleyen dekoratör. |
+| **İnteraktif Görselleştirme** | *Real-Time Inference Dashboard* | Kullanıcının yüklediği görsel üzerinde model çıkarımını ve metrik grafiklerini anında sunan web arayüzü. |
+
+---
+
+## 2. Çoklu Sekmeli (Multi-Tab) Kontrol Paneli Mimarisi
 
 Panomuz 4 ana işlevsel sekmeye ayrılmıştır:
 1. **📝 Metin Analizi & Sınıflandırma:** Kullanıcı metinlerini 3 ana kategoriye sınıflandırır, güven dağılımı ilerleme çubuklarını gösterir ve 64-boyutlu embedding vektörünü sunar.

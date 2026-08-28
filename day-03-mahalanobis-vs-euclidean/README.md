@@ -25,7 +25,23 @@ Klasik **Öklid mesafesi**, veri noktalarının birbirine olan dairesel/küresel
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Mahalanobis Mesafesi** | *Mahalanobis Distance* | Değişkenler arasındaki korelasyonu ve her eksendeki varyans farkını kovaryans matrisi ($\Sigma$) ile hesaba katan istatistiksel mesafe metriği ($D_M = \sqrt{(x-\mu)^T \Sigma^{-1} (x-\mu)}$). |
+| **Kovaryans Matrisi** | *Covariance Matrix* | Çok değişkenli bir veri setinde tüm öznitelik çiftlerinin birlikte nasıl değiştiklerini gösteren simetrik pozitif yarı-tanımlı matris. |
+| **Ters Kovaryans (Hassasiyet)** | *Inverse Covariance / Precision Matrix* | Kovaryans matrisinin tersi ($\Sigma^{-1}$) olup, değişkenler arasındaki koşullu bağımsızlık yapısını ve uzaydaki eksen ölçeklemesini belirler. |
+| **Korelasyon Duyarlılığı** | *Correlation Invariance* | Öznitelikler arasındaki doğrusal bağımlılıkların mesafeyi yapay olarak şişirmesini veya saptırmasını önleme yeteneği. |
+| **Çok Değişkenli Aykırı Değer** | *Multivariate Outlier* | Tekil eksenlerde normal görünen ancak özniteliklerin ortak dağılımında (eliptik sınırların dışında) kalan sinsi anomali noktaları. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Öklid vs. Mahalanobis Karşılaştırması
 - **Öklid Mesafesi:**

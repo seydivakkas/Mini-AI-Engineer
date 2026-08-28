@@ -63,7 +63,22 @@ Makine öğrenimi modellerinin başarısı doğrudan girdi özelliklerinin bilgi
 
 ---
 
-### 2. Matematiksel Formülasyonlar
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Öznitelik Mühendisliği** | *Feature Engineering* | Ham tablosal verilerden modelin tahmin gücünü artıran yeni matematiksel, zamansal ve etkileşimli değişkenler türetme. |
+| **Hedef Kodlama (Target Encoding)** | *Out-of-Fold Target Encoding* | Kategorik sütunları hedef değişkenin ortalamasıyla kodlarken veri sızıntısını önlemek için cross-validation kullanma. |
+| **Öznitelik Etkileşimi** | *Feature Interaction Terms* | İki özniteliğin çarpımı, oranı veya farkı ile doğrusal olmayan ilişkileri modele tanıtma. |
+| **Otomatik Profil Raporu** | *Automated Feature Profiler* | Türetilen özniteliklerin dağılımını, bilgi kazancını ve korelasyonlarını özetleyen sistem. |
+
+---
+
+## 2. Matematiksel Formülasyonlar
 
 #### A. Düzeltilmiş Hedef Kodlama (Smoothed Target Encoding)
 $$S(c) = \frac{n_c \cdot \bar{y}_c + m \cdot \bar{y}_{\text{global}}}{n_c + m}$$

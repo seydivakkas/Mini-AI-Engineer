@@ -22,7 +22,22 @@ Bu nedenle bilgisayarlı görü mühendisleri **öznitelik çıkarımı (Feature
 
 ---
 
-### 2. Dört Büyük Algoritmanın Matematiksel ve Algoritmik Mantığı
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **SIFT** | *Scale-Invariant Feature Transform* | Görüntülerdeki ölçek ve dönme değişimlerine dayanıklı anahtar nokta tespiti ve 128 boyutlu gradyan histogram tanımlayıcısı üreten algoritma. |
+| **ORB** | *Oriented FAST and Rotated BRIEF* | FAST köşe bulucu ile yönlendirilmiş BRIEF ikili tanımlayıcıyı birleştiren, patent kısıtı olmayan yüksek hızlı öznitelik çıkarıcı. |
+| **Ölçek Uzayı (Scale Space)** | *Scale-Space Representation* | Görüntünün ardışık Gauss piramitleriyle küçültülüp bulanıklaştırılarak farklı ölçeklerdeki detayların analiz edilmesi. |
+| **Öznitelik Eşleme** | *Feature Matching (Hamming / L2)* | İki görsel arasındaki benzer anahtar noktaların tanımlayıcı vektörleri üzerinden en yakın komşulukla eşleştirilmesi. |
+
+---
+
+## 2. Dört Büyük Algoritmanın Matematiksel ve Algoritmik Mantığı
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐

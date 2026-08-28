@@ -106,7 +106,22 @@ day-40-carpet-knowledge-rag/
 pip install -r gereksinimler.txt
 ```
 
-### 2. Ana Akışın Çalıştırılması
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Alana Özel RAG** | *Domain-Specific Knowledge RAG* | Halı dokuma teknikleri, iplik türleri, yöresel desenler ve bakım talimatlarından oluşan kurumsal bilgi tabanı RAG sistemi. |
+| **Anlamsal Parçalama** | *Semantic Document Chunking* | Teknik dokümanların paragraf ve başlık bütünlüğünü koruyarak vektörleştirilmesi. |
+| **Metaveri Filtreleme** | *Metadata-Filtered Retrieval* | Aramayı yalnızca belirli bir yöre veya iplik kategorisine sınırlayarak doğruluk artıran filtreleme. |
+| **Kaynak Gösterme (Citations)** | *Grounded Source Attribution* | Üretilen cevabın hangi katalog ve teknik kılavuz sayfasından alındığını belirten şeffaf alıntılama. |
+
+---
+
+## 2. Ana Akışın Çalıştırılması
 ```bash
 python ana_akis.py
 ```

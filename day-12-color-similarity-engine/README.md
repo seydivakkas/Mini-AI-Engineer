@@ -24,7 +24,22 @@ Geleneksel derin öğrenme veya metin aramaları renk tonlarının hassas uyumun
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Histogram Kesişimi** | *Histogram Intersection* | İki renk histogramının karşılıklı bin minimumlarının toplamı ile örtüşme oranını ölçen benzerlik fonksiyonu. |
+| **Bhattacharyya Mesafesi** | *Bhattacharyya Distance* | İki olasılık dağılımının örtüşme derecesini ölçen ve sıfıra yaklaştıkça tam benzerliği ifade eden metrik ($-\ln(BC)$). |
+| **Toprak Taşıma Mesafesi** | *Earth Mover's Distance (EMD / Wasserstein)* | Bir renk dağılımını diğerine dönüştürmek için gereken minimum taşıma işini (mesafe $\times$ kütle) hesaplayan doğrusal programlama metriği. |
+| **CIEDE2000** | *CIEDE2000 Color Difference* | İnsan gözünün renk ve doygunluk algısındaki eliptik asimetrileri düzelten en gelişmiş renk farkı standardı. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. CIELAB Renk Uzayı ve $\Delta E$ Farkı
 1. **CIE76 (Klasik Öklid Farkı):**

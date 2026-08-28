@@ -21,7 +21,22 @@ Güvenlik-kritik (otonom araçlar, medikal görüntüleme, dolandırıcılık te
 
 ---
 
-### 2. Çok Sınıflı Metrikler ve Matematiksel Temeller
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Hata Matrisi (Confusion Matrix)** | *Confusion Matrix* | Doğru Pozitif (TP), Yanlış Pozitif (FP), Doğru Negatif (TN) ve Yanlış Negatif (FN) tahmin sayılarını özetleyen tablo. |
+| **Kesinlik & Duyarlılık** | *Precision and Recall* | Kesinlik modelin pozitif dediklerinin doğruluğunu ($TP / (TP+FP)$), Duyarlılık ise gerçek pozitiflerin ne kadarının yakalandığını ($TP / (TP+FN)$) ölçer. |
+| **F1-Skoru** | *F1-Score (Harmonic Mean)* | Kesinlik ve duyarlılık arasındaki dengesizliği cezalandıran harmonik ortalama metriği ($2 \cdot (P \cdot R) / (P + R)$). |
+| **Hata Taksonomisi** | *Error Taxonomy Analysis* | Modelin yanlış sınıflandırdığı örnekleri görselleştirip sınıf karmaşalarını ve etiketleme hatalarını kategorize etme süreci. |
+
+---
+
+## 2. Çok Sınıflı Metrikler ve Matematiksel Temeller
 
 #### A. Çok Sınıflı ROC-AUC (Receiver Operating Characteristic)
 Her bir $c$ sınıfı için pozitif, diğer tüm sınıflar negatif kabul edilerek (**One-vs-Rest**) hesaplanır:

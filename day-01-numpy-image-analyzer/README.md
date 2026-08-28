@@ -19,7 +19,25 @@ NumPy seviyesinde piksel matrislerini yönetebilmek; özel veri artırma (augmen
 
 ---
 
-### 2. Matematiksel ve Algoritmik Mantık
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **ndarray** | *N-Dimensional Array* | NumPy'ın C düzeyinde bitişik bellek bloklarında tuttuğu, homojen veri tipli ve yüksek hızlı vektörize işlemleri destekleyen temel çok boyutlu dizi yapısı. |
+| **HWC vs CHW** | *Tensor Channel Order* | Görüntü tensörlerinin bellek düzenidir. OpenCV/NumPy satır-öncelikli (Yükseklik, Genişlik, Kanal - HWC) kullanırken PyTorch kanal-öncelikli (CHW) düzeni zorunlu kılar. |
+| **uint8 Taşması** | *Integer Overflow/Underflow* | 8-bit işaretsiz tamsayıların [0, 255] aralığından taşarak (ör. 200+100=44) görselde piksellerin aniden kararmasına yol açan sayısal taşma hatası. |
+| **C-Contiguous** | *C-Contiguous Memory Layout* | Dizi elemanlarının bellekte satır satır ardışık olarak dizildiği, CPU önbellek (L1/L2 cache) isabet oranını maksimize eden bellek yerleşimi. |
+| **Lüminans Ağırlığı** | *Luminance Weighting (ITU-R BT.601)* | İnsan retinasının yeşil renge olan yüksek duyarlılığını modelleyen ağırlıklı gri tonlama dönüşüm katsayıları (0.299R + 0.587G + 0.114B). |
+| **Epsilon Dengeleme** | *Epsilon Numerical Stabilization* | Bölme işlemlerinde paydanın sıfır olmasıyla oluşacak NaN veya Inf değerleri engellemek için eklenen küçük sayısal sabit (örn. 1e-7). |
+| **Z-Skoru Standartlaştırması** | *Z-Score Normalization* | Piksel dağılımının ortalamasını 0, varyansını 1 yaparak model gradyanlarının kararlı yakınsamasını sağlayan standartlaştırma tekniği. |
+
+---
+
+## 2. Matematiksel ve Algoritmik Mantık
 
 #### A. Tensör Düzeni ve Boyutlar ($H \times W \times C$)
 Renkli bir dijital görüntü 3 boyutlu bir tensördür:

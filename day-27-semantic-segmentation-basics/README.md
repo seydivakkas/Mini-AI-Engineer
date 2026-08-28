@@ -41,7 +41,22 @@ Görsel sınıflandırma *"Görselde ne var?"*, nesne tespiti *"Nesneler nerede 
 
 ---
 
-### 2. U-Net Mimari Anatomisi (Ronneberger et al., 2015)
+#
+
+---
+
+### 📚 Kapsamlı Teknik Terimler ve Ek Kavramlar Sözlüğü
+
+| Teknik Terim | İngilizce Karşılığı | Derinlemesine Açıklama ve Endüstriyel Önemi |
+|---|---|---|
+| **Semantik Bölütleme** | *Semantic Segmentation* | Görüntüdeki her bir piksele bağımsız bir sınıf etiketi atayarak nesnelerin piksel düzeyinde sınırlarını belirleme görevi. |
+| **Ters Evrişim (Transposed Conv)** | *Transposed Convolution (Deconvolution)* | Öznitelik haritasının uzamsal boyutlarını orijinal görsel çözünürlüğüne yükselten öğrenilebilir katman. |
+| **Dice Katsayısı** | *Dice Similarity Coefficient* | Tahmin edilen segmentasyon maskesi ile gerçek maskenin piksel örtüşmesini ölçen metrik ($2|A \cap B| / (|A| + |B|)$). |
+| **Piksel Doğruluğu** | *Pixel-wise Cross-Entropy Loss* | Her pikselin sınıf tahmini için ayrı ayrı hesaplanan ve uzamsal ortalaması alınan kayıp fonksiyonu. |
+
+---
+
+## 2. U-Net Mimari Anatomisi (Ronneberger et al., 2015)
 
 ```
 Giriş: (3, H, W)
