@@ -147,9 +147,17 @@ def main() -> None:
         print(f"#{r.sira:<5} | {r.etiket:<25} | {r.mesafe:<14.4f} | %{r.benzerlik_yuzdesi:<13.1f} | {eslesme}")
     print("-" * 78)
 
+    # Precision@K ve Eşik Filtreleme Gösterimi
+    precision = arama_motoru.hassasiyet_hesapla(sonuclar_cosine, "vazo")
+    print(f"\n[+] Top-5 Arama Hassasiyeti (Precision@5): %{precision * 100:.1f}")
+
+    filtrelenmis = arama_motoru.esik_ile_filtrele(sorgu, min_benzerlik_yuzdesi=50.0, metrik="cosine")
+    print(f"[+] Benzerlik Eşiği (%50.0) Üzerinde Kalan Ürün Sayısı: {len(filtrelenmis)} adet")
+
     # L2 Metriği ile Karşılaştırma
     sonuclar_l2 = arama_motoru.en_yakin_k_ara(sorgu, k=5, metrik="l2")
     print(f"\n[+] L2 Metriği Kontrolü: 1. Sıradaki Eşleşme -> {sonuclar_l2[0].etiket} (L2 Mesafe: {sonuclar_l2[0].mesafe:.4f})")
+
 
     baslik("AŞAMA 4: Görsel Arama Rapor Çizelgesinin Kaydedilmesi")
     cikti_klasoru = proje_kok / "ciktilar"

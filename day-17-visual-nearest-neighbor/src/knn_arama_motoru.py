@@ -120,3 +120,33 @@ class GorselAramaMotoru:
             ))
 
         return sonuclar
+
+    def esik_ile_filtrele(
+        self,
+        sorgu_gorseli_bgr: np.ndarray,
+        min_benzerlik_yuzdesi: float = 50.0,
+        metrik: Optional[str] = None
+    ) -> List[AramaSonucu]:
+        """Yalnızca belirlenen benzerlik yüzdesinin üzerindeki katalog ürünlerini döndürür."""
+        tum_sonuclar = self.en_yakin_k_ara(
+            sorgu_gorseli_bgr,
+            k=len(self.katalog_etiketler),
+            metrik=metrik
+        )
+        filtrelenmis = [r for r in tum_sonuclar if r.benzerlik_yuzdesi >= min_benzerlik_yuzdesi]
+        # Sıra numaralarını yeniden düzenle
+        for sira_no, r in enumerate(filtrelenmis, start=1):
+            r.sira = sira_no
+        return filtrelenmis
+
+    @staticmethod
+    def hassasiyet_hesapla(
+        sonuclar: List[AramaSonucu],
+        hedef_kategori_oneki: str
+    ) -> float:
+        """Top-K sonuçlar içerisindeki doğru kategori oranını (Precision@K) hesaplar (0.0 - 1.0)."""
+        if not sonuclar:
+            return 0.0
+        dogru_sayisi = sum(1 for r in sonuclar if r.etiket.startswith(hedef_kategori_oneki))
+        return float(dogru_sayisi / len(sonuclar))
+

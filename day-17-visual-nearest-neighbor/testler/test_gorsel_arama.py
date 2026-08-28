@@ -114,3 +114,33 @@ def test_arama_raporu_png_kaydetme(tmp_path):
     cikti = AramaGorsellestirici.arama_raporu_ciz(img, sonuclar, "Cosine", hedef_dosya)
     assert cikti.exists()
     assert cikti.stat().st_size > 0
+
+
+def test_esik_ile_filtrele():
+    """Belirli benzerlik yüzdesinin altındaki sonuçların elendiğini doğrular."""
+    motor = GorselAramaMotoru()
+    img_bgr = np.full((50, 50, 3), 100, dtype=np.uint8)
+    motor.katalog_ekle("vazo_1", img_bgr)
+    
+    # Farklı bir görsel ekle
+    img_farkli = np.full((50, 50, 3), 20, dtype=np.uint8)
+    motor.katalog_ekle("ahsap_1", img_farkli)
+
+    # %90 üzeri benzerlik arayalım, sorgu img_bgr ile aynı
+    sonuclar = motor.esik_ile_filtrele(img_bgr, min_benzerlik_yuzdesi=90.0)
+    assert len(sonuclar) >= 1
+    assert all(r.benzerlik_yuzdesi >= 90.0 for r in sonuclar)
+
+
+def test_hassasiyet_hesapla():
+    """Precision@K (hassasiyet) hesabının doğruluğunu test eder."""
+    motor = GorselAramaMotoru()
+    img = np.zeros((50, 50, 3), dtype=np.uint8)
+    motor.katalog_ekle("vazo_1", img)
+    motor.katalog_ekle("vazo_2", img)
+    motor.katalog_ekle("kumas_1", img)
+
+    sonuclar = motor.en_yakin_k_ara(img, k=3)
+    prec = motor.hassasiyet_hesapla(sonuclar, "vazo")
+    assert np.isclose(prec, 2.0 / 3.0)
+
