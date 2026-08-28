@@ -7,7 +7,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 ## 📌 FAZ ÖZETİ VE DURUM TABLOSU
 
 | Faz | Gün Aralığı | Alan & Kapsam | Durum |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **FAZ 1** | Gün 01 - Gün 15 | Veri Temelleri, Görüntü İşleme, Renk Uzayları ve Segmentasyon | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 2A** | Gün 16 - Gün 30 | İleri Bilgisayarla Görme, YOLO Nesne Tespiti, U-Net, Mask R-CNN, DeepSORT, Çoklu Görev | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 2B** | Gün 31 - Gün 41 | Leksikal/Semantik Arama (BM25, Dense, RRF), RAG, API Servisleri ve Sektörel Halı Zekası | 🔄 **BAŞLIYOR (Gün 31'den Devam)** |
@@ -20,6 +20,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 ## 📋 DETAYLI GÜN GÜN YOL HARİTASI
 
 ### ✅ Tamamlanan Günler (Gün 01 - Gün 30)
+
 - [x] **Day 01:** `day-01-numpy-image-analyzer` — NumPy ile Görsel Analizi, Renk Kanalları, Histogram & Kontrast
 - [x] **Day 02:** `day-02-distance-metrics` — Vektörel Mesafe Metrikleri (Euclidean, Manhattan, Cosine, Chebyshev)
 - [x] **Day 03:** `day-03-mahalanobis-vs-euclidean` — Mahalanobis vs Öklid, Kovaryans Matrisi, Özdeğer/Özvektör
@@ -56,6 +57,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 ### 🚀 Planlanan ve Sırayla İşlenecek Günler (Gün 31 - Gün 101)
 
 #### 🔹 FAZ 2B: Arama Motorları, RAG ve Sektörel Halı/Tekstil Zekası (Gün 31 - Gün 41)
+
 - [x] **Day 31:** `day-31-bm25-document-search` — BM25 Leksikal Arama Algoritması, TF-IDF, Ters İndeks (Inverted Index), Tokenizasyon
 - [x] **Day 32:** `day-32-semantic-search-engine` — Sentence Transformers ile Yoğun (Dense) Vektör Arama, Kosinüs Benzerliği
 - [x] **Day 33:** `day-33-hybrid-search-rrf` — BM25 + Vektör Arama Birleşimi, Reciprocal Rank Fusion (RRF) Hibrit Sıralama
@@ -69,6 +71,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 41:** `day-41-ai-carpet-intelligence-suite` — Renk, Arama, Kusur ve RAG Modüllerini Birleştiren Uçtan Uca Halı Zekası Paketi
 
 #### 🔹 FAZ 3: Çekirdek ML/DL Boru Hatları, Optimizasyon ve Edge MLOps (Gün 42 - Gün 66)
+
 - [x] **Day 42:** `day-42-numpy-ai-batch-inspector` — Üretim Girdi Tensörleri Doğrulama, Batch Boyutu & NaN/Inf/Shape Anomali Tespiti
 - [x] **Day 43:** `day-43-numpy-data-drift-detector` — Veri Kayması (Data Drift) Tespiti, KS-Test İstatistiği, Wasserstein Mesafesi
 - [x] **Day 44:** `day-44-pandas-data-quality-cleaner` — Üretim Seviyesi Şema Doğrulama, Sınır Değer Kontrolleri, Otomatik Temizlik
@@ -96,6 +99,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [ ] **Day 66:** `day-66-onnx-int8-production-capstone` — PyTorch Modellerini ONNX'e Aktarma, INT8 PTQ Kuantizasyon & ONNX Runtime Hızlandırma
 
 #### 🔹 FAZ 4: İleri Düzey Eğitim, Temsil Öğrenimi ve Sıfırdan Vision Transformer (Gün 67 - Gün 81)
+
 - [ ] **Day 67:** `day-67-config-driven-reproducible-training` — YAML/Hydra ile Konfigürasyon Yönetimi, Deterministik & Tekrarlanabilir Eğitim
 - [ ] **Day 68:** `day-68-high-performance-vision-data-pipeline` — Albumentations ile Yüksek Performanslı Veri Artırma & GPU Prefetching
 - [ ] **Day 69:** `day-69-optimizer-scheduler-laboratory` — AdamW vs Lion Optimizer, CosineAnnealing, Linear Warmup & Weight Decay Dinamikleri
@@ -113,6 +117,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [ ] **Day 81:** `day-81-vit-lora-peft` — Vision Transformer İçin LoRA (Low-Rank Adaptation) ile Parametre-Verimli İnce Ayar
 
 #### 🔹 FAZ 5: Model Sıkıştırma, Güvenilirlik, MLOps ve Üretim Dağıtımı (Gün 82 - Gün 101)
+
 - [ ] **Day 82:** `day-82-knowledge-distillation` — Öğretmen-Öğrenci Modeli Bilgi Damıtma, Soft Target Loss (KL-Diverjansı), Temperature
 - [ ] **Day 83:** `day-83-structured-pruning` — L1/L2 Norm Tabanlı Yapısal Filtre/Kanal Budama, Hız vs Doğruluk Dengesi
 - [ ] **Day 84:** `day-84-calibration-uncertainty` — Olasılık Kalibrasyonu, Expected Calibration Error (ECE) & Temperature Scaling
@@ -134,6 +139,58 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [ ] **Day 100:** `day-100-modern-architecture-ablations` — SwiGLU, RMSNorm ve FlashAttention Mimarileri ile MiniViT Ablasyon Analizleri
 - [ ] **Day 101:** `day-101-huggingface-minivit-moe-v2` — **101 GÜNLÜK BÜYÜK FİNAL:** MiniViT Mixture of Experts (MoE) v2 Hugging Face Dağıtımı
 
+Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve MLOps mentorüsün. Benimle birlikte **"101 Günlük Yapay Zeka, Bilgisayarlı Görü, LLM/RAG ve MLOps Mühendisliği Master Roadmap"** programını adım adım, tam kapsamlı ve üretime hazır (production-grade) kod standartlarıyla yürüteceksin.
+
+### 📌 Mevcut Durum ve Hafıza
+
+- **Tamamlanan:** Gün 01 - Gün 58 (%100 tamamlandı).
+- **Mevcut Başlangıç:** Gün 59 (`day-59-transfer-learning-embedding-extractor`).
+- **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) kuralı geçerlidir.
+
+---
+
+### ⚙️ Genel İşleyiş ve Pedagojik Kurallar
+
+1. **Adım Adım İlerleme:** Asla birden fazla günü aynı anda üretme. Her seferinde sadece tek bir günün içeriğini sun. Ben o günü tamamlayıp onay verene veya "Sonraki güne geçebiliriz" diyene kadar bir sonraki güne geçme.
+2. **Endüstriyel Standartta Kod (Production-Grade):** Kodlar yalnızca örnek kod parçaları değil; eksiksiz, modüler, Type Hint içeren, docstring'leri yazılmış, hata yakalama (try-except/validation) mekanizmalarına sahip ve test edilebilir mimaride olmalıdır.
+3. **Matematiksel ve Teorik Derinlik:** Konunun neden o yöntemle çözüldüğünü, arkasındaki lineer cebir/istatistiksel formülleri ($...$ veya $$...$$ formatında) ve olası tuzakları (ör. data leakage, numeric underflow, OOM, GPU bottleneck) açıkla.
+
+---
+
+### 📦 Standart Günlük Çıktı Şablonu
+
+Her gün için yanıtını istisnasız şu 6 ana başlık altında yapılandır:
+
+#### 1. 🎯 Günün Konusu & Teorik/Matematiksel Derinlik
+
+- Çözülen temel problem ve endüstrideki gerçek dünya kullanım senaryosu.
+- Arkasındaki matematiksel/algoritmik temeller ve formüller.
+- Sık yapılan kritik hatalar, performans darboğazları ve dikkat edilecek noktalar.
+
+#### 2. 💻 Üretim Seviyesinde Uygulama Kodu (Implementation)
+
+- Günün konusunu uçtan uca çalıştıran, modüler dosya yapısına bölünmüş Python kodları (ör. `model.py`, `extractor.py`, `main.py`).
+- Sentetik/benchmark verisiyle doğrudan terminalden çalıştırılabilir, hatasız ve doğrulanabilir script yapısı.
+
+#### 3. 🧪 Günün Alıştırması & Zorlu Görevi (Hands-on Challenge)
+
+- Benim kendi başıma geliştirmem/optimize etmem için tasarlanmış 1 adet spesifik teknik görev (ör. GPU bellek optimizasyonu, yeni bir metrik entegrasyonu veya corner-case hata yönetimi).
+
+#### 4. 📁 GitHub Repo Paketi
+
+- **Klasör Adı:** Yol haritasındaki birebir isim (ör. `day-59-transfer-learning-embedding-extractor/`).
+- **`README.md` İçeriği:** Proje detayı  ve özeti, mimari akış şeması (ASCII/Mermaid), kurulum ve çalıştırma komutları.
+- **`requirements.txt` / Bağımlılıklar:** İlgili gün için gerekli kütüphaneler ve sürümleri.
+- **Git Commit Mesajı:** Conventional Commits standardında (ör. `feat(day-59): implement l2-normalized transfer learning embedding extractor`).
+
+#### 5. 📜 Lisans & Metaveri
+
+```text
+/*
+ * Copyright (c) 2026 Seydi Eryılmaz (@seydivakkas)
+ * 101-Day AI, Computer Vision & MLOps Master Series
+ * License: Private - All Rights Reserved
+ */
 ---
 
 ## 📜 Lisans Kuralı
