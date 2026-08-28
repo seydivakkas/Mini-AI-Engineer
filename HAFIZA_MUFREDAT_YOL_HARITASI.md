@@ -79,7 +79,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 49:** `day-49-xgboost-tabular-risk-classifier` — Dengesiz Tabüler Veri, scale_pos_weight, XGBoost ile Risk/Dolandırıcılık Tespiti
 - [x] **Day 50:** `day-50-model-evaluation-threshold-engineering` — Eşik Değeri Mühendisliği, F-beta Optimizasyonu, Maliyet-Fayda Karar Matrisi
 - [x] **Day 51:** `day-51-pillow-safe-image-loader` — Bozuk Dosya & Yanlış EXIF Yönetimi, Hataya Toleranslı Görsel Yükleyici
-- [ ] **Day 52:** `day-52-opencv-visual-defect-inspector` — FFT Frekans Analizi, Laplacian Varyansı ile Bulanıklık & Kural Tabanlı Kusur Tespiti
+- [x] **Day 52:** `day-52-opencv-visual-defect-inspector` — FFT Frekans Analizi, Laplacian Varyansı ile Bulanıklık & Kural Tabanlı Kusur Tespiti
 - [ ] **Day 53:** `day-53-cielab-kmeans-palette-analyzer` — Perceptually Uniform LAB Uzayında K-Means & Delta-E 2000 Hassas Tolerans Analizi
 - [ ] **Day 54:** `day-54-image-forensics-inspector` — Dijital Adli Bilişim, Error Level Analysis (ELA), Görsel Manipülasyon Tespiti
 - [ ] **Day 55:** `day-55-pytorch-dataset-dataloader` — İleri PyTorch DataLoader, num_workers, pin_memory Darboğaz Optimizasyonu
