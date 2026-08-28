@@ -32,7 +32,14 @@ ENV/
 htmlcov/
 .mypy_cache/
 
-# IDEs
+# IDEs & System
 .vscode/
 .idea/
 *.swp
+.DS_Store
+Thumbs.db
+
+# Large Weights & Temporary Runs
+yolov8n.pt
+runs/
+.agents/

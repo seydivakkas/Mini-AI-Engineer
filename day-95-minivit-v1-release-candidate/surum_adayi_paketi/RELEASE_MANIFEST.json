@@ -1,0 +1,50 @@
+{
+  "surum_bilgisi": {
+    "release_tag": "v1.0.0-rc1",
+    "surum_tipi": "Release Candidate (RC1)",
+    "uretim_tarihi_utc": "2026-08-28T19:51:05.697094+00:00",
+    "model_adi": "seydivakkas/minivit-cifar10",
+    "yazar": "Seydi Eryılmaz (@seydivakkas)",
+    "lisans": "Ozel Lisans - Tum Haklari Saklidir"
+  },
+  "calisma_ortami": {
+    "pytorch_surumu": "2.11.0+cu126",
+    "transformers_surumu": "5.6.2",
+    "cuda_kullanilabilir": true,
+    "cihaz_adi": "NVIDIA GeForce RTX 4070 Laptop GPU"
+  },
+  "mimari_ozeti": {
+    "model_tipi": "minivit",
+    "goruntu_boyutu": 32,
+    "yama_boyutu": 4,
+    "gizli_boyut": 128,
+    "katman_sayisi": 4,
+    "dikkat_basliklari": 4,
+    "sinif_sayisi": 10
+  },
+  "dosya_butunluk_tablosu": {
+    "config.json": {
+      "sha256": "6762564994ed3a4a113dea934874e8dc6254c12533d180a9ab6b6d97ef9197e0",
+      "boyut_bayt": 845,
+      "boyut_kb": 0.83
+    },
+    "model.safetensors": {
+      "sha256": "f4c2a4c80683962c651ff8ffdaf0388acd8090d1c17aa100fc0177db9ede1d25",
+      "boyut_bayt": 2190216,
+      "boyut_kb": 2138.88
+    },
+    "preprocessor_config.json": {
+      "sha256": "aadde006f74cc2e422bd1453fd84c566bec9bca7436513b277d6769e4e219cb4",
+      "boyut_bayt": 418,
+      "boyut_kb": 0.41
+    },
+    "README.md": {
+      "sha256": "269dcd58ab70dc64c999b17152675eb072c92fa411a7a44efbeb80674cf4b153",
+      "boyut_bayt": 911,
+      "boyut_kb": 0.89
+    }
+  },
+  "kalite_kapisi_durumu": "BEKLEMEDE",
+  "ekstra_meta": {},
+  "manifesto_imzasi_sha256": "dab26cb404a1fda79d6ad06c7cc31876122375575f4b0d129361ab2b575a3dad"
+}

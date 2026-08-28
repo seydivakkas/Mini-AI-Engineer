@@ -127,24 +127,24 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 88:** `day-88-optuna-hpo` — Optuna ile Otomatik Hiperparametre Optimizasyonu (TPE Algoritması, Pruning)
 - [x] **Day 89:** `day-89-model-registry` — Model Kayıt Sistemi, Model Sürümleme, Staging/Production Yaşam Döngüsü
 - [x] **Day 90:** `day-90-dynamic-batching-inference` — GPU Verimliliği İçin Kuyruk Tabanlı Dinamik Batching Çıkarım Motoru
-- [ ] **Day 91:** `day-91-ai-observability` — Canlı AI Sistemlerinde Gözlemlenebilirlik: Gecikme, Hacim ve Veri Kayması İzleme
-- [ ] **Day 92:** `day-92-final-training-contract` — Eğitim Öncesi Veri Sözleşmesi Testleri ve Hazır Bulunuşluk (Readiness) Kontrolleri
-- [ ] **Day 93:** `day-93-final-evaluation-model-card` — Kapsamlı Değerlendirme, Yanlılık (Bias) Testleri ve Standart Model Card Üretimi
-- [ ] **Day 94:** `day-94-hugging-face-integration` — Hugging Face Model Hub Entegrasyonu, Konfigürasyon ve Model Paketleme
-- [ ] **Day 95:** `day-95-minivit-v1-release-candidate` — MiniViT v1 Sürüm Adayı (Release Candidate), Uçtan Uca Regresyon Testleri
-- [ ] **Day 96:** `day-96-huggingface-public-v1-release` — MiniViT v1.0 Hugging Face Canlı Dağıtımı & Canlı Model Demosu
-- [ ] **Day 97:** `day-97-reproducible-inference` — Deterministik Çıkarım, Donanımdan Bağımsız Doğrulama Testleri
-- [ ] **Day 98:** `day-98-fastapi-inference-service` — Üretime Hazır Yüksek Performanslı Asenkron API & `/health` Kontrolleri
-- [ ] **Day 99:** `day-99-container-load-testing` — Docker Konteynerleştirme ve Locust/k6 ile Eşzamanlı Yük/Stres Testleri
-- [ ] **Day 100:** `day-100-modern-architecture-ablations` — SwiGLU, RMSNorm ve FlashAttention Mimarileri ile MiniViT Ablasyon Analizleri
-- [ ] **Day 101:** `day-101-huggingface-minivit-moe-v2` — **101 GÜNLÜK BÜYÜK FİNAL:** MiniViT Mixture of Experts (MoE) v2 Hugging Face Dağıtımı
+- [x] **Day 91:** `day-91-ai-observability` — Canlı AI Sistemlerinde Gözlemlenebilirlik: Gecikme, Hacim ve Veri Kayması İzleme
+- [x] **Day 92:** `day-92-final-training-contract` — Eğitim Öncesi Veri Sözleşmesi Testleri ve Hazır Bulunuşluk (Readiness) Kontrolleri
+- [x] **Day 93:** `day-93-final-evaluation-model-card` — Kapsamlı Değerlendirme, Yanlılık (Bias) Testleri ve Standart Model Card Üretimi
+- [x] **Day 94:** `day-94-hugging-face-integration` — Hugging Face Model Hub Entegrasyonu, Konfigürasyon ve Model Paketleme
+- [x] **Day 95:** `day-95-minivit-v1-release-candidate` — MiniViT v1 Sürüm Adayı (Release Candidate), Uçtan Uca Regresyon Testleri
+- [x] **Day 96:** `day-96-huggingface-public-v1-release` — MiniViT v1.0 Hugging Face Canlı Dağıtımı & Canlı Model Demosu
+- [x] **Day 97:** `day-97-reproducible-inference` — Deterministik Çıkarım, Donanımdan Bağımsız Doğrulama Testleri
+- [x] **Day 98:** `day-98-fastapi-inference-service` — Üretime Hazır Yüksek Performanslı Asenkron API & `/health` Kontrolleri
+- [x] **Day 99:** `day-99-container-load-testing` — Docker Konteynerleştirme ve Locust/k6 ile Eşzamanlı Yük/Stres Testleri
+- [x] **Day 100:** `day-100-modern-architecture-ablations` — SwiGLU, RMSNorm ve FlashAttention Mimarileri ile MiniViT Ablasyon Analizleri
+- [x] **Day 101:** `day-101-huggingface-minivit-moe-v2` — **101 GÜNLÜK BÜYÜK FİNAL:** MiniViT Mixture of Experts (MoE) v2 Hugging Face Dağıtımı
 
 Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve MLOps mentorüsün. Benimle birlikte **"101 Günlük Yapay Zeka, Bilgisayarlı Görü, LLM/RAG ve MLOps Mühendisliği Master Roadmap"** programını adım adım, tam kapsamlı ve üretime hazır (production-grade) kod standartlarıyla yürüteceksin.
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 90 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3 ve FAZ 4 TAMAMLANDI; FAZ 5 SÜRÜYOR).
-- **Sıradaki Gün:** Gün 91 (`day-91-ai-observability` — Canlı AI Sistemlerinde Gözlemlenebilirlik: Gecikme, Hacim ve Veri Kayması İzleme).
+- **Tamamlanan:** Gün 01 - Gün 99 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3 ve FAZ 4 TAMAMLANDI; FAZ 5 SÜRÜYOR).
+- **Sıradaki Gün:** Gün 100 (`day-100-modern-architecture-ablations` — SwiGLU, RMSNorm ve FlashAttention Mimarileri ile MiniViT Ablasyon Analizleri).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---

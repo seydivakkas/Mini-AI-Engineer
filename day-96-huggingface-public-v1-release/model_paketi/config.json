@@ -1,0 +1,42 @@
+{
+  "architectures": [
+    "MiniViTForImageClassification"
+  ],
+  "dikkat_baslik_sayisi": 4,
+  "dropout": 0.1,
+  "dtype": "float32",
+  "gizli_boyut": 128,
+  "goruntu_boyutu": 32,
+  "id2label": {
+    "0": "u\u00e7ak",
+    "1": "otomobil",
+    "2": "ku\u015f",
+    "3": "kedi",
+    "4": "geyik",
+    "5": "k\u00f6pek",
+    "6": "kurba\u011fa",
+    "7": "at",
+    "8": "gemi",
+    "9": "kamyon"
+  },
+  "ileri_besleme_boyutu": 256,
+  "initializer_range": 0.02,
+  "kanal_sayisi": 3,
+  "katman_sayisi": 4,
+  "label2id": {
+    "at": 7,
+    "gemi": 8,
+    "geyik": 4,
+    "kamyon": 9,
+    "kedi": 3,
+    "kurba\u011fa": 6,
+    "ku\u015f": 2,
+    "k\u00f6pek": 5,
+    "otomobil": 1,
+    "u\u00e7ak": 0
+  },
+  "model_type": "minivit",
+  "sinif_sayisi": 10,
+  "transformers_version": "5.6.2",
+  "yama_boyutu": 4
+}

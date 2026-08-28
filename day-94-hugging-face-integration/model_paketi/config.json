@@ -1,0 +1,18 @@
+{
+  "architectures": [
+    "MiniViTForImageClassification"
+  ],
+  "dikkat_baslik_sayisi": 4,
+  "dropout_orani": 0.1,
+  "dtype": "float32",
+  "giris_kanali": 3,
+  "gizli_boyut": 128,
+  "goruntu_boyutu": 32,
+  "initializer_range": 0.02,
+  "katman_sayisi": 4,
+  "mlp_ara_boyut": 256,
+  "model_type": "minivit",
+  "sinif_sayisi": 10,
+  "transformers_version": "5.6.2",
+  "yama_boyutu": 4
+}
