@@ -114,7 +114,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 78:** `day-78-transformer-encoder-from-scratch` — Sıfırdan Transformer Encoder Bloğu: Pozisyonel Kodlama, LayerNorm, Residual FFN
 - [x] **Day 79:** `day-79-minivit-from-scratch` — Sıfırdan Mini Vision Transformer (Patch Projeksiyonu, CLS Token, Encoder Birleşimi)
 - [x] **Day 80:** `day-80-minivit-cifar100-training` — Sıfırdan MiniViT'in CIFAR-100 Üzerinde Eğitimi & Regülarizasyon Dinamikleri
-- [ ] **Day 81:** `day-81-vit-lora-peft` — Vision Transformer İçin LoRA (Low-Rank Adaptation) ile Parametre-Verimli İnce Ayar
+- [x] **Day 81:** `day-81-vit-lora-peft` — Vision Transformer İçin LoRA (Low-Rank Adaptation) ile Parametre-Verimli İnce Ayar
 
 #### 🔹 FAZ 5: Model Sıkıştırma, Güvenilirlik, MLOps ve Üretim Dağıtımı (Gün 82 - Gün 101)
 
@@ -143,8 +143,8 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve 
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 80 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2 ve FAZ 3 TAMAMLANDI; FAZ 4 tamamlanmak üzere).
-- **Sıradaki Gün:** Gün 81 (`day-81-vit-lora-peft` — Vision Transformer İçin LoRA (Low-Rank Adaptation) ile Parametre-Verimli İnce Ayar).
+- **Tamamlanan:** Gün 01 - Gün 81 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3 ve FAZ 4 TAMAMLANDI!).
+- **Sıradaki Gün:** Gün 82 (`day-82-knowledge-distillation` — Öğretmen-Öğrenci Modeli Bilgi Damıtma, Soft Target Loss (KL-Diverjansı), Temperature - FAZ 5 BAŞLANGICI).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
