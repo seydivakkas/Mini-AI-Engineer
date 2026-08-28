@@ -64,7 +64,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 36:** `day-36-streamlit-ai-dashboard` — Streamlit ile İnteraktif AI Kontrol Paneli, Dosya Yükleme, Model Görselleştirme
 - [x] **Day 37:** `day-37-carpet-color-intelligence` — Halı/Tekstil Renk Ayrıştırma, İplik Renk Oranları Çıkarımı, Katalog Uyumu
 - [x] **Day 38:** `day-38-carpet-visual-retrieval` — Halı Doku ve Desenleri İçin Çoklu Özellikli (Renk+Doku) Görsel Arama
-- [ ] **Day 39:** `day-39-carpet-defect-detector` — Halı Dokuma Hataları, Leke ve Kusur Tespiti, Kalite Kontrol Otomasyonu
+- [x] **Day 39:** `day-39-carpet-defect-detector` — Halı Dokuma Hataları, Leke ve Kusur Tespiti, Kalite Kontrol Otomasyonu
 - [ ] **Day 40:** `day-40-carpet-knowledge-rag` — Tekstil ve Üretim Teknik Dokümanları Üzerinde Sektörel RAG Sistemi
 - [ ] **Day 41:** `day-41-ai-carpet-intelligence-suite` — Renk, Arama, Kusur ve RAG Modüllerini Birleştiren Uçtan Uca Halı Zekası Paketi
 
