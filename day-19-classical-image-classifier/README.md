@@ -112,6 +112,16 @@ pytest testler -v
 
 ---
 
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Görüntü sınıflandırmada el yapımı öznitelikler (Handcrafted Features: HOG, LBP, Renk Momentleri) ile eğitilen klasik modeller (SVM/Random Forest) ile derin öğrenme (CNN) modelleri arasındaki temel fark ve trade-off nedir?
+
+> **Mentor Cevabı:**
+> 1. **Öznitelik Öğrenimi vs Manuel Mühendislik:** Klasik modellerde uzmanın hangi özniteliklerin (kenar yönelimleri için HOG, doku için LBP) ayırt edici olduğunu önceden bilmesi gerekir. CNN'ler ise hiyerarşik filtrelerle (kenar -> doku -> parça -> nesne) veriden uçtan uca öznitelik öğrenir.
+> 2. **Veri Hacmi ve Çıkarım Maliyeti:** Küçük veri setlerinde ($< 500$ örnek) ve düşük işlem gücüne sahip mikrodenetleyicilerde HOG + Linear SVM aşırı öğrenmeye (overfitting) karşı daha dirençlidir ve mikro-saniye mertebesinde CPU çıkarımı sağlar.
+
+---
+
 ## 📜 Lisans
 
 Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas).

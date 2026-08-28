@@ -105,6 +105,16 @@ pytest testler -v
 
 ---
 
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Görüntü çoğaltmada MixUp ve CutMix tekniklerinin modelin aşırı özgüvenli (over-confident) tahminlerini engellemedeki matematiksel rolü nedir ve etiket düzleştirme (label smoothing) ile ilişkisi nasıldır?
+
+> **Mentor Cevabı:**
+> 1. **Doğrusal İnterpolasyon ve Karar Sınırları (Linearity Bias):** Standart cross-entropy kaybı modeli tek bir sınıfa %100 olasılık atamaya zorlar. MixUp ($\tilde{x} = \lambda x_i + (1-\lambda) x_j, \tilde{y} = \lambda y_i + (1-\lambda) y_j$) ve CutMix, etiketleri de orantılı olarak karıştırarak modelin sınıflar arasında doğrusal ve yumuşak geçişler öğrenmesini sağlar.
+> 2. **Kalıplara Aşırı Uyumun Engellenmesi:** CutMix belirli bir bölgeyi kesip başka görüntüyle doldurduğu için modelin tek bir ayırt edici piksele (örneğin sadece göze veya logoya) bağımlı kalmasını önler ve küresel temsilleri öğrenmeye zorlar.
+
+---
+
 ## 📜 Lisans
 
 Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas).

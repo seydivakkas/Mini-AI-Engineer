@@ -110,6 +110,16 @@ pytest testler -v
 
 ---
 
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Konvolüsyonel sinir ağlarında (CNN) `BatchNormalization` katmanının konumu (Aktivasyondan önce mi sonra mı?) ve `Dropout` ile birlikte kullanımında ortaya çıkabilecek "Variance Shift" etkisi nedir?
+
+> **Mentor Cevabı:**
+> 1. **Klasik Yerleşim vs Modern Pratik:** Orijinal Ioffe & Szegedy makalesinde `Conv -> BatchNorm -> ReLU` önerilir çünkü normalizasyonun aktivasyon fonksiyonunun doyumsuz (non-saturated) bölgesinde çalışması amaçlanır. Ancak modern mimarilerde `Conv -> ReLU -> BatchNorm` da benzer kararlılıkla çalışır.
+> 2. **BatchNorm + Dropout Uyumu:** Dropout eğitim ve test aşamasında aktivasyon varyansını kaydırabilir (Variance Shift). Bu sebeple modern CNN'lerde Dropout çoğunlukla sadece en sondaki Fully Connected (Dense) katmanlarda kullanılır; evrişim bloklarında ise yalnızca BatchNorm ve ağırlık bozunumu (Weight Decay) tercih edilir.
+
+---
+
 ## 📜 Lisans
 
 Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas).

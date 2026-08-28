@@ -116,6 +116,16 @@ pytest testler -v
 
 ---
 
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Nesne tespitinde standart Non-Maximum Suppression (Hard NMS) algoritmasının kalabalık sahnelerde (örneğin yan yana duran iki insan) yaşadığı "False Negative" sorunu nedir ve Soft-NMS bu sorunu nasıl çözer?
+
+> **Mentor Cevabı:**
+> 1. **Hard NMS Problemi:** Standart NMS, en yüksek skorlu kutuyla IoU değeri eşiği ($\text{IoU} \ge N_t$) aşan tüm komşu kutuları tamamen siler ($s_i = 0$). Kalabalık sahnelerde üst üste binen gerçek iki nesneden arkada olanın kutusu yanlışlıkla yok edilir.
+> 2. **Soft-NMS Çözümü:** Soft-NMS kutuyu tamamen silmek yerine, yüksek IoU örtüşmesine sahip kutuların güven skorunu sürekli bir fonksiyonla (Lineer veya Gauss bozulması: $s_i \leftarrow s_i \cdot \exp(-\frac{\text{IoU}^2}{\sigma})$) kademeli olarak düşürür. Böylece gerçek tespitler sıralamada gerilese bile tamamen kaybolmaz.
+
+---
+
 ## 📜 Lisans
 
 Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas).

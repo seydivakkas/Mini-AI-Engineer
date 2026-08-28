@@ -116,6 +116,16 @@ pytest testler -v
 
 ---
 
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Transfer öğreniminde omurga (backbone) katmanlarını ince ayar (Fine-Tuning) yaparken neden sınıflandırma başlığından (Classification Head) $10\times$ veya $100\times$ daha düşük bir öğrenme oranı (`lr_backbone = 1e-5`, `lr_head = 1e-3`) kullanılmalıdır?
+
+> **Mentor Cevabı:**
+> 1. **Önceden Eğitilmiş Ağırlıkların Yıkımı (Catastrophic Forgetting):** Rastgele ilklendirilen yeni sınıflandırma başlığı başlangıçta çok büyük gradyanlar üretir. Eğer omurga katmanları da bu büyük gradyanlarla güncellenirse, ImageNet üzerinde milyonlarca görüntüyle öğrenilen genel görsel öznitelikler (kenarlar, dokular) birkaç adımda bozulur.
+> 2. **Ayrıştırılmış Öğrenme Oranı (Discriminative Fine-Tuning):** Başlığın hızlıca hedef alanın sınıflarına adapte olması sağlanırken, omurga katmanlarının sadece çok ince nüanslarla ayarlanması modelin aşırı öğrenmesini önler ve genelleme performansını artırır.
+
+---
+
 ## 📜 Lisans
 
 Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas).

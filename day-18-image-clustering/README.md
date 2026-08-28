@@ -138,6 +138,16 @@ pytest testler -v
 
 ---
 
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Görüntü özniteliklerini kümelemede K-Means algoritması yerine DBSCAN ne zaman tercih edilmelidir ve K-Means'in küresel (spherical) küme varsayımı hangi durumlarda başarısız olur?
+
+> **Mentor Cevabı:**
+> 1. **Dışsal / Karmaşık Şekilli Kümeler (Non-convex Clusters):** K-Means her kümenin Öklid uzayında küresel (convex/spherical) ve benzer varyansa sahip olduğunu varsayar. Eğer görüntü öznitelik uzayı hilal, halka veya manifold şeklindeyse K-Means kümeleri yanlış böler; yoğunluk tabanlı DBSCAN ise keyfi geometrik şekilleri başarıyla tespit eder.
+> 2. **Gürültü ve Aykırı Değer İzolasyonu:** K-Means tüm verileri mutlaka bir merkeze atamak zorundadır, bu da aykırı görüntülerin küme merkezlerini saptırmasına yol açar. DBSCAN ise yoğunluk eşiğini (`min_samples`) geçemeyen aykırı noktaları doğrudan gürültü (`-1`) olarak izole eder.
+
+---
+
 ## 📜 Lisans
 
 Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas). İzin alınmaksızın ticari veya ticari olmayan projelerde kopyalanamaz, çoğaltılamaz veya dağıtılamaz.

@@ -98,6 +98,16 @@ pytest testler -v
 
 ---
 
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Dengesiz (imbalanced) sınıflara sahip görüntü veri setlerinde genel Doğruluk (Accuracy) metriği neden yanıltıcıdır ve Precision-Recall AUC (PR-AUC) ne zaman ROC-AUC'ye tercih edilmelidir?
+
+> **Mentor Cevabı:**
+> 1. **Accuracy Paradoksu:** Eğer veri setinin %98'i sağlıklı, %2'si defolu dokumaysa, her şeye "sağlıklı" diyen naif bir model %98 doğruluk verir ama tüm defoları kaçırır ($0\%$ Recall).
+> 2. **PR-AUC vs ROC-AUC:** ROC-AUC negatif sınıfın çok büyük olduğu durumlarda False Positive Rate ($FPR = \frac{FP}{FP+TN}$) paydasındaki büyük $TN$ nedeniyle aşırı iyimser görünür. PR-AUC ise sadece pozitif tahminlere ($Precision = \frac{TP}{TP+FP}$) ve yakalanan pozitiflere ($Recall = \frac{TP}{TP+FN}$) odaklandığı için dengesiz veri setlerinde gerçek model başarısını doğru yansıtır.
+
+---
+
 ## 📜 Lisans
 
 Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas).

@@ -114,6 +114,16 @@ pytest testler -v
 
 ---
 
+## ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** PyTorch eğitim döngüsünde `optimizer.zero_grad()`, `loss.backward()` ve `optimizer.step()` sıralaması neden kritiktir ve `model.eval()` ile `torch.no_grad()` birlikte neden kullanılmalıdır?
+
+> **Mentor Cevabı:**
+> 1. **Gradyan Birikmesi (Gradient Accumulation):** PyTorch'ta gradyanlar varsayılan olarak her backward çağrısında toplanır (accumulate edilir). Bu nedenle her adım başında `optimizer.zero_grad()` ile sıfırlanmalıdır. `loss.backward()` ters yayılım ile gradyanları hesaplar, `optimizer.step()` ise ağırlıkları günceller.
+> 2. **`model.eval()` vs `torch.no_grad()`:** `model.eval()` Dropout ve BatchNorm gibi katmanların davranışını çıkarım moduna geçirir (BatchNorm hareketli ortalamaları kullanır, Dropout kapanır). `torch.no_grad()` ise Autograd hesaplama grafiği oluşturmayı durdurarak bellek tüketimini azaltır ve hız kazandırır. Tam çıkarım güvenliği için ikisi birlikte kullanılmalıdır.
+
+---
+
 ## 📜 Lisans
 
 Bu proje **Özel Lisans — Tüm Hakları Saklıdır** kapsamındadır. Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas).

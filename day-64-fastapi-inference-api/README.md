@@ -134,7 +134,18 @@ pytest testler -v
 
 ---
 
-## 6. 📜 Lisans & Metaveri
+## 6. ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** FastAPI'de yapay zeka model çıkarımı yaparken `async def` ile normal senkron `def` endpoint tanımları arasındaki fark nedir ve neden CPU/GPU bound modellerde dikkatli olunmalıdır?
+
+> **Mentor Cevabı:**
+> 1. **`async def` Tanımı (Non-blocking I/O):** FastAPI bu endpoint'i ana asenkron Event Loop üzerinde çalıştırır. Eğer fonksiyon içinde `torch.matmul` veya ağır bir CPU hesaplaması gibi bloklayıcı bir işlem yapılırsa, event loop kilitlenir ve sunucu diğer hiçbir HTTP isteğini (sağlık kontrolü dahil) kabul edemez.
+> 2. **Senkron `def` Tanımı (Worker Thread Pool):** FastAPI senkron `def` ile tanımlanan endpoint'leri otomatik olarak arka plandaki harici iş parçacığı havuzuna (`anyio.to_thread.run_sync`) gönderir. Böylece ana event loop bloke olmaz.
+> 3. **Üretim Standardı:** Ağır PyTorch/ONNX çıkarımları için ya senkron `def` kullanılmalı, ya da asenkron kuyruk (`asyncio.Queue`) ve GPU worker mimarisi tercih edilmelidir.
+
+---
+
+## 7. 📜 Lisans & Metaveri
 
 ```text
 /*

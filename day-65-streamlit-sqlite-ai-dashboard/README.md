@@ -143,7 +143,18 @@ pytest testler -v
 
 ---
 
-## 6. 📜 Lisans & Metaveri
+## 6. ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Streamlit ile büyük hacimli veri tabanlarından veri çekerken performans darboğazı yaşamamak ve her sayfa etkileşiminde veritabanını tekrar tekrar sorgulamamak için hangi önbellekleme (caching) mekanizması kullanılmalıdır?
+
+> **Mentor Cevabı:**
+> 1. **`@st.cache_data(ttl=60)` Kullanımı:** `db.cikarimlari_getir()` veya `db.genel_istatistikleri_al()` gibi salt-okunur fonksiyonlar `@st.cache_data` dekoratörü ile sarmalanır. Bu sayede veritabanı sonucu belleğe alınır ve belirtilen yaşam süresi (`ttl=60 saniye`) boyunca disk I/O yapılmadan anında arayüze sunulur.
+> 2. **`@st.cache_resource` Kullanımı:** Veritabanı bağlantı havuzları veya model motoru gibi oturum boyunca tekil (singleton) kalması gereken nesneler `@st.cache_resource` ile önbelleğe alınmalıdır.
+> 3. **CRUD Sonrası Önbellek Temizleme:** Yeni kayıt eklendiğinde veya bir kayıt silindiğinde `st.cache_data.clear()` çağrılarak arayüzün en güncel veriyi çekmesi sağlanır.
+
+---
+
+## 7. 📜 Lisans & Metaveri
 
 ```text
 /*

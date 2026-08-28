@@ -133,7 +133,17 @@ pytest testler -v
 
 ---
 
-## 6. 📜 Lisans & Metaveri
+## 6. ❓ Gün Sonu Kontrol Noktası & Mentorluk Soru-Cevabı
+
+> **Soru:** Pydantic v2'de `@model_validator(mode='before')` ile `@model_validator(mode='after')` arasındaki fark nedir ve LLM/AI boru hatlarında hangisi ne zaman tercih edilmelidir?
+
+> **Mentor Cevabı:**
+> 1. **`mode='before'` (Ham Veri Normalizasyonu):** Pydantic henüz hiçbir alanın tipini dönüştürmeden önce ham `dict` veya `Any` nesnesine uygulanır. LLM'lerin ürettiği Markdown bloklarını (` ```json ... ``` `), string olarak gelen sayıları veya büyük/küçük harf tutarsızlıklarını temizlemek (data sanitization) için kullanılır.
+> 2. **`mode='after'` (Geometrik ve Mantıksal Bütünlük):** Tüm alanlar kendi tiplerine başarıyla ayrıştırıldıktan sonra (`self: Model`) çalışır. Örneğin $x_{\min} < x_{\max}$ geometrik kontrolü, $L_2$-norm denetimi veya başlangıç zamanı $<$ bitiş zamanı gibi çoklu alanların birbiriyle ilişkisini doğrulamak için kullanılır.
+
+---
+
+## 7. 📜 Lisans & Metaveri
 
 ```text
 /*
