@@ -1,0 +1,40 @@
+# Day 67: Varsayılan Deterministik Eğitim Konfigürasyonu
+deney_adi: "deterministik_vision_egitimi_v1"
+versiyon: "1.0.0"
+
+veri:
+  veri_seti_adi: "sentetik_kalite_kontrol"
+  girdi_boyutu: [3, 32, 32]
+  ornek_sayisi: 500
+  batch_size: 32
+  num_workers: 0
+  pin_memory: false
+  egitim_orani: 0.8
+
+model:
+  mimari_adi: "ModulerVisionNet"
+  girdi_kanali: 3
+  sinif_sayisi: 5
+  taban_kanal: 32
+  dropout_orani: 0.15
+
+optimizer:
+  tur: "adamw"
+  lr: 0.001
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  momentum: 0.9
+
+scheduler:
+  tur: "cosine"
+  t_max: 10
+  eta_min: 0.00001
+  warmup_epochs: 2
+
+egitim:
+  epoch_sayisi: 10
+  tohum: 42
+  deterministik_mod: true
+  amp_aktif: false
+  grad_clip_norm: 1.0
+  checkpoint_araligi: 5

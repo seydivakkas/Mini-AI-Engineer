@@ -1,0 +1,40 @@
+# Day 67: Hızlı Test ve Deney Konfigürasyonu
+deney_adi: "hizli_test_deneyi"
+versiyon: "0.1.0"
+
+veri:
+  veri_seti_adi: "kucuk_sentetik_test"
+  girdi_boyutu: [3, 16, 16]
+  ornek_sayisi: 100
+  batch_size: 16
+  num_workers: 0
+  pin_memory: false
+  egitim_orani: 0.8
+
+model:
+  mimari_adi: "ModulerVisionNet"
+  girdi_kanali: 3
+  sinif_sayisi: 3
+  taban_kanal: 16
+  dropout_orani: 0.0
+
+optimizer:
+  tur: "adam"
+  lr: 0.002
+  weight_decay: 0.0
+  betas: [0.9, 0.999]
+  momentum: 0.9
+
+scheduler:
+  tur: "step"
+  t_max: 3
+  eta_min: 0.0001
+  warmup_epochs: 0
+
+egitim:
+  epoch_sayisi: 3
+  tohum: 123
+  deterministik_mod: true
+  amp_aktif: false
+  grad_clip_norm: 2.0
+  checkpoint_araligi: 1
