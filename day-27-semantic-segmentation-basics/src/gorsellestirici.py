@@ -139,7 +139,7 @@ class BolutlemeGorsellestirici:
             h = bar.get_height()
             ax6.annotate(f"%{h:.1f}", (bar.get_x() + bar.get_width() / 2, h), xytext=(0, 2), textcoords="offset points", ha="center", fontsize=7, fontweight="bold")
 
-        plt.tight_layout()
+        fig.subplots_adjust(top=0.92, bottom=0.08, left=0.06, right=0.94, hspace=0.28, wspace=0.28)
         fig.savefig(hedef_path, bbox_inches="tight")
         plt.close(fig)
         return hedef_path
