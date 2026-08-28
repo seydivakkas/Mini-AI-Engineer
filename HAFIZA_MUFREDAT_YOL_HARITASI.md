@@ -72,7 +72,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 42:** `day-42-numpy-ai-batch-inspector` — Üretim Girdi Tensörleri Doğrulama, Batch Boyutu & NaN/Inf/Shape Anomali Tespiti
 - [x] **Day 43:** `day-43-numpy-data-drift-detector` — Veri Kayması (Data Drift) Tespiti, KS-Test İstatistiği, Wasserstein Mesafesi
 - [x] **Day 44:** `day-44-pandas-data-quality-cleaner` — Üretim Seviyesi Şema Doğrulama, Sınır Değer Kontrolleri, Otomatik Temizlik
-- [ ] **Day 45:** `day-45-pandas-feature-engineering-profile-builder` — Özellik Mühendisliği, Encoding, Ölçeklendirme, Feature Store Mimarisi
+- [x] **Day 45:** `day-45-pandas-feature-engineering-profile-builder` — Özellik Mühendisliği, Encoding, Ölçeklendirme, Feature Store Mimarisi
 - [ ] **Day 46:** `day-46-matplotlib-ai-experiment-report-generator` — Otomatik Loss/Acc, PR, ROC Grafikleri ve PDF/HTML Deney Raporlama Motoru
 - [ ] **Day 47:** `day-47-sklearn-leakage-safe-ml-pipeline` — Veri Sızıntısına Karşı Güvenli Pipeline, ColumnTransformer & Nested CV
 - [ ] **Day 48:** `day-48-kmeans-unsupervised-segmentation` — Elbow & Silhouette Analizi, Uzamsal (Spatial) Piksel K-Means Bölütleme
