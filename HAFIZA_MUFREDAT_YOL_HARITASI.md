@@ -90,8 +90,8 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 57:** `day-57-pytorch-training-engine` — Modüler Eğitim Motoru, Checkpoint, Early Stopping, Gradient Clipping
 - [x] **Day 58:** `day-58-amp-numerical-stability-benchmark` — Otomatik Karma Hassasiyet (AMP), FP16 vs BF16, GradScaler & Sayısal Kararlılık
 - [x] **Day 59:** `day-59-transfer-learning-embedding-extractor` — ViT/ResNet Omurgalarından Dondurulmuş Katmanlarla L2-Normalize Embedding Çıkarımı
-- [ ] **Day 60:** `day-60-faiss-similarity-search-engine` — FAISS ile Milyonluk Vektör İndeksleme (IndexFlatIP, IndexIVFFlat, HNSW, GPU)
-- [ ] **Day 61:** `day-61-retrieval-metrics-benchmark` — Vektör Arama Değerlendirmesi: NDCG@k, MRR (Mean Reciprocal Rank), Gecikme Testi
+- [x] **Day 60:** `day-60-faiss-similarity-search-engine` — FAISS ile Milyonluk Vektör İndeksleme (IndexFlatIP, IndexIVFFlat, HNSW, GPU)
+- [x] **Day 61:** `day-61-retrieval-metrics-benchmark` — Vektör Arama Değerlendirmesi: NDCG@k, MRR (Mean Reciprocal Rank), Gecikme Testi
 - [ ] **Day 62:** `day-62-sdxl-lora-controlled-generator` — Üretken AI: Stable Diffusion XL (SDXL) + LoRA ile Kontrollü Görsel Üretimi
 - [ ] **Day 63:** `day-63-pydantic-ai-domain-models` — Pydantic v2 ile Tip Güvenli Girdi/Çıktı Sözleşmeleri & Domain Modelleri
 - [ ] **Day 64:** `day-64-fastapi-inference-api` — Üretim Seviyesi FastAPI İnference, Model Yaşam Döngüsü (lifespan), Batch Prediction
@@ -143,8 +143,8 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve 
 
 ### 📌 Mevcut Durum ve Hafıza
 
-- **Tamamlanan:** Gün 01 - Gün 58 (%100 tamamlandı).
-- **Mevcut Başlangıç:** Gün 59 (`day-59-transfer-learning-embedding-extractor`).
+- **Tamamlanan:** Gün 01 - Gün 61 (%100 tamamlandı).
+- **Sıradaki Gün:** Gün 62 (`day-62-sdxl-lora-controlled-generator`).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) kuralı geçerlidir.
 
 ---
