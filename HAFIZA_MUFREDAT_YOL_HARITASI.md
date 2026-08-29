@@ -206,8 +206,8 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 160:** `day-160-deep-reasoning-benchmark-suite` — AIME, GPQA ve ARC-Challenge Kapsamlı Akıl Yürütme Test Paketi (FAZ 8 BÜYÜK FİNALİ)
 
 #### 🔹 FAZ 9: Çok Modlu (Multimodal) Temel Modeller: VLM, Video, Ses ve Difüzyon (Gün 161 - Gün 180)
-- [ ] **Day 161:** `day-161-vlm-llava-architecture` — LLaVA Mimarisi: ViT Encoder + MLP Projector + LLM ile Uçtan Uca VLM İnşası
-- [ ] **Day 162:** `day-162-qformer-cross-attention-projector` — BLIP-2 Q-Former: Öğrenilebilir Query Token'ları ile Görsel-Dil Hizalaması
+- [x] **Day 161:** `day-161-vlm-llava-architecture` — LLaVA Mimarisi: ViT Encoder + MLP Projector + LLM ile Uçtan Uca VLM İnşası
+- [ ] **Day 162:** `day-162-vision-token-compression` — Görüntü Token Sıkıştırma: Q-Former, C-Abstractor ve Spatial Pooling
 - [ ] **Day 163:** `day-163-visual-instruction-tuning` — Görsel Komut İnce Ayarı (Visual SFT): VQA, Detaylı Açıklama ve Görsel Sohbet
 - [ ] **Day 164:** `day-164-spatial-grounding-bounding-box-vlm` — Spatial Grounding: Görseldeki Nesnelerin Koordinatlarını `[ymin, xmin, ymax, xmax]` Çıkarma
 - [ ] **Day 165:** `day-165-ocr-free-document-understanding` — Donut / Nougat Tarzı Metinsiz Doğrudan Doküman ve Tablo Görseli Ayrıştırma
