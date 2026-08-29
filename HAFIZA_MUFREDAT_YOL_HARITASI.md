@@ -15,7 +15,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | 🔄 **DEVAM EDİYOR (Gün 144 Tamamlandı, Gün 145 Sırada)** |
+| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | 🔄 **DEVAM EDİYOR (Gün 145 Tamamlandı, Gün 146 Sırada)** |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
 | **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
 
@@ -188,7 +188,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 142:** `day-142-chain-of-thought-special-tokens` — Açık Akıl Yürütme Akışı: `<think> ... </think>` Formatı, Düşünce Tokenizasyonu ve Self-Consistency (Çoğunluk Oylaması)
 - [x] **Day 143:** `day-143-self-consistency-majority-voting` — Self-Consistency: Çoklu Akıl Yürütme Yollarında Sıcaklık Örneklemesi ve Çoğunluk Oyu
 - [x] **Day 144:** `day-144-tree-of-thoughts-bfs-dfs` — Tree of Thoughts (ToT): BFS ve DFS Arama ile Düşünce Ağacı Gezintisi
-- [ ] **Day 145:** `day-145-process-reward-models-prm` — Outcome (ORM) vs Process Reward Models (PRM): Adım Adım Doğruluk Puanlama
+- [x] **Day 145:** `day-145-process-reward-models-prm` — Outcome (ORM) vs Process Reward Models (PRM): Adım Adım Doğruluk Puanlama
 - [ ] **Day 146:** `day-146-mcts-llm-reasoning-search` — Monte Carlo Tree Search (MCTS) Destekli LLM Düşünce Planlaması ve Rollout
 - [ ] **Day 147:** `day-147-test-time-compute-scaling` — Test-Time Compute Scaling Yasaları: Çıkarım Zamanı Hesaplama Bütçesi ve Arama Derinliği
 - [ ] **Day 148:** `day-148-backtracking-and-error-recovery` — Düşünce Yollarında Geri İzleme (Backtracking) ve Çıkmaz Sokakları Fark Etme
