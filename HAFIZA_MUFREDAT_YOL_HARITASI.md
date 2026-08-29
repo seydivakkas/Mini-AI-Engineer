@@ -330,7 +330,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 268:** `day-268-edge-npu-tvm-compiler-optimization` — Apache TVM & IREE ile Mobil / Edge NPU (Qualcomm / ARM Ethos) Derleme Optimizasyonu
 - [x] **Day 269:** `day-269-speculative-decoding-medusa-heads` — Medusa / Eagle Çok Başlı Spekülatif Çıkarım Çekirdeği (Tree-Attention Doğrulama)
 - [x] **Day 270:** `day-270-custom-cuda-c-extension-pytorch` — PyTorch C++ / CUDA Custom Extension: Doğrudan C++ ve CUDA C ile PyTorch Operatörü Yazımı
-- [ ] **Day 271:** `day-271-persistent-kernel-streaming-engine` — Kalıcı Çekirdek (Persistent Kernel) Mimarisi: Kernel Başlatma Ek Yükünü Sıfırlama
+- [x] **Day 271:** `day-271-persistent-kernel-streaming-engine` — Kalıcı Çekirdek (Persistent Kernel) Mimarisi: Kernel Başlatma Ek Yükünü Sıfırlama
 - [ ] **Day 272:** `day-272-sparse-linear-attention-kernel` — Seyrek ve Doğrusal Dikkat Çekirdeği (Mamba / RWKV State-Space Model Donanım Eşlemesi)
 - [ ] **Day 273:** `day-273-nvlink-cross-gpu-direct-access` — NVLink ve GPUDirect RDMA: Düğümler Arası Sıfır CPU Kopyalı Bellek Erişimi
 - [ ] **Day 274:** `day-274-int2-ternary-weight-packing` — Bit Düzeyinde Paketleme (Bit-Packing): 2-Bit / Ternary Ağırlıkları UINT32 İçinde Sıkıştırma
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 270 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 13 TAMAMLANDI, FAZ 14 Gün 261-270 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 271 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 13 TAMAMLANDI, FAZ 14 Gün 261-271 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 14: Donanım Düzeyi Kernel Geliştirme, ASIC/NPU & 1-Bit LLM (Gün 261 - Gün 280).
-- **Sıradaki Gün:** Gün 271 (`day-271-persistent-kernel-streaming-engine` — Kalıcı Çekirdek (Persistent Kernel) Mimarisi: Kernel Başlatma Ek Yükünü Sıfırlama).
+- **Sıradaki Gün:** Gün 272 (`day-272-sparse-linear-attention-kernel` — Seyrek ve Doğrusal Dikkat Çekirdeği (Mamba / RWKV State-Space Model Donanım Eşlemesi)).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
