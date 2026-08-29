@@ -313,7 +313,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 253:** `day-253-rgbd-depth-fusion-occupancy-grid` — RGB-D Derinlik Füzyonu ve 3D Doluluk Izgarası (Occupancy Grid) ile Dinamik Engel Kaçınma
 - [x] **Day 254:** `day-254-tactile-feedback-closed-loop` — Kapalı Çevrim Dokunsal Geri Bildirim Kontrolü ile Kayma Önleme ve Sertlik Ayarı
 - [x] **Day 255:** `day-255-teleoperation-imitation-learning` — Teleoperasyon ve Taklit Öğrenmesi (Behavior Cloning & ACT - Action Chunking with Transformers)
-- [ ] **Day 256:** `day-256-voice-controlled-robot-agent` — Ses Komutlu Robot Ajanı: Whisper + VLM + VLA ile Uçtan Uca Sesli Robot İdaresi
+- [x] **Day 256:** `day-256-voice-controlled-robot-agent` — Ses Komutlu Robot Ajanı: Whisper + VLM + VLA ile Uçtan Uca Sesli Robot İdaresi
 - [ ] **Day 257:** `day-257-dynamic-obstacle-avoidance-mpc` — Model Predictive Control (MPC) ile Yüksek Hızlı Dinamik Engelden Kaçınma
 - [ ] **Day 258:** `day-258-zero-shot-unseen-object-grasping` — Sıfır Örnekli (Zero-Shot) Görülmemiş Nesneleri Kavrama ve Ayırma
 - [ ] **Day 259:** `day-259-embodied-ai-real-world-benchmark` — Robotik Başarım Paketi: Grasp Success Rate, Path Efficiency ve Collision Risk Analitiği
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 255 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-255 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 256 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-256 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 13: Embodied AI & Fiziksel Yapay Zeka / Robotik (Gün 241 - Gün 260).
-- **Sıradaki Gün:** Gün 256 (`day-256-voice-controlled-robot-agent` — Ses Komutlu Robot Ajanı: Whisper + VLM + VLA ile Uçtan Uca Sesli Robot İdaresi).
+- **Sıradaki Gün:** Gün 257 (`day-257-dynamic-obstacle-avoidance-mpc` — Model Predictive Control (MPC) ile Yüksek Hızlı Dinamik Engelden Kaçınma).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
