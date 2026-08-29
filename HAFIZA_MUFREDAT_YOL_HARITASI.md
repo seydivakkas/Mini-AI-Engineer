@@ -13,8 +13,8 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 3** | Gün 42 - Gün 66 | Çekirdek ML/DL Boru Hatları, Sayısal Kararlılık, FAISS, ONNX INT8 Kuantizasyon & Edge MLOps | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 4** | Gün 67 - Gün 85 | İleri Düzey Temsil Öğrenimi (SimCLR, SupCon), Sıfırdan Vision Transformer (ViT) & LoRA | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | 🔄 **DEVAM EDİYOR (Gün 119 Tamamlandı, Gün 120 FAZ 6 FİNALİ Sırada)** |
-| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | ⏳ Sırada |
+| **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | ✅ **TAMAMLANDI (%100)** |
+| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | 🔄 **DEVAM EDİYOR (Gün 121 Sırada)** |
 | **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | ⏳ Sırada |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
 | **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
@@ -159,7 +159,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 117:** `day-117-jailbreak-red-teaming-guardrails` — LLM Red-Teaming, Prompt Injection Tespiti ve Llama Guard Güvenlik Duvarları
 - [x] **Day 118:** `day-118-llm-watermarking-detection` — LLM Çıktılarına Yeşil/Kırmızı Liste Tabanlı Kriptografik Filigran Ekleme
 - [x] **Day 119:** `day-119-self-instruct-knowledge-distill` — Büyük Modellerden (Teacher) Küçük Modellere (Student) Bilgi Damıtma (Distillation)
-- [ ] **Day 120:** `day-120-aligned-llm-benchmark-eval` — MT-Bench, AlpacaEval ve Chatbot Arena Tarzı Otomatik LLM Hakemlik (LLM-as-a-Judge)
+- [x] **Day 120:** `day-120-aligned-llm-benchmark-eval` — MT-Bench, AlpacaEval ve Chatbot Arena Tarzı Otomatik LLM Hakemlik (LLM-as-a-Judge)
 
 #### 🔹 FAZ 7: Otonom AI Ajanları, Multi-Agent Sistemleri ve Advanced GraphRAG (Gün 121 - Gün 140)
 - [ ] **Day 121:** `day-121-react-agent-scratchpad` — ReAct (Reasoning + Acting) Deseni: Düşünce-Eylem-Gözlem Döngüsü ve Scratchpad
