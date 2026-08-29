@@ -216,7 +216,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 168:** `day-168-streaming-video-understanding` — Gerçek Zamanlı Video Akışı Analizi ve Olay Tespiti (Streaming VLM)
 - [x] **Day 169:** `day-169-audio-tokenizer-soundstream-encodec` — Sinirsel Ses Sıkıştırma: EnCodec / SoundStream ile Sürekli Sesi Ayrık Tokenlara Bölme
 - [x] **Day 170:** `day-170-whisper-speech-to-text-ctc` — Whisper Mimarisi: Çok Dilli Konuşma Tanıma, Zaman Damgası Tahmini
-- [ ] **Day 171:** `day-171-speech-to-speech-llm-duallm` — Uçtan Uca Speech-to-Speech LLM: Ses Tokenı Alıp Doğrudan Ses Tokenı Üretme
+- [x] **Day 171:** `day-171-speech-to-speech-llm-duallm` — Uçtan Uca Speech-to-Speech LLM: Ses Tokenı Alıp Doğrudan Ses Tokenı Üretme
 - [ ] **Day 172:** `day-172-latent-diffusion-models-ldm` — Latent Diffusion Modelleri (LDM): VAE Uzayında Gürültü Ekleme/Kaldırma Matematiği
 - [ ] **Day 173:** `day-173-classifier-free-guidance-cfg` — Classifier-Free Guidance (CFG) & DDIM Hızlı Örnekleme Zamanlayıcıları
 - [ ] **Day 174:** `day-174-cross-attention-text-to-image` — Metinden Görüntüye: UNet / DiT (Diffusion Transformer) Cross-Attention
