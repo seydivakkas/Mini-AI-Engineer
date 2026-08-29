@@ -8,6 +8,13 @@ import os
 import torch
 import numpy as np
 
+# Windows terminali için UTF-8 stdout yapılandırması
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 # Modül yolunu ekle
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -17,9 +24,12 @@ from src.gorsellestirici import GaussianGorsellestirici
 
 
 def main():
-    print("=" * 70)
-    print(" GÜN 179: 3D GAUSSIAN SPLATTING (3DGS) GERÇEK ZAMANLI RENDER MOTORU ")
-    print("=" * 70)
+    print("=" * 110)
+    print(">>> Day 179 (FAZ 9): 3D GAUSSIAN SPLATTING (3DGS): REAL-TIME 100+ FPS RADIANCE FIELD RENDERING")
+    print("=" * 110)
+
+    cikis_dizini = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ciktilar")
+    os.makedirs(cikis_dizini, exist_ok=True)
 
     # 1. 3D Gauss Nokta Kümesini Başlat
     num_gaussians = 150
@@ -34,7 +44,7 @@ def main():
     print(f"  • Opaklık (alpha)        : {gaussians.get_opacity().shape} (Sigmoid [0, 1])")
 
     # 2. Kamera ve Bakış Açısı Matrisleri (View Matrix)
-    # Kamera [0, 0, -2.5] konumunda sahneye bakıyor
+    # Kamera [0, 0, 2.5] konumunda sahneye bakıyor
     R_cam = torch.eye(3, dtype=torch.float32)
     T_cam = torch.tensor([0.0, 0.0, 2.5], dtype=torch.float32)
 
@@ -67,17 +77,17 @@ def main():
     print(f"\n[4/4] 6 Panelli 3DGS Teşhis Panosu Oluşturuluyor...")
     gorsellestirici = GaussianGorsellestirici(dpi=300)
     mu_3d_np = gaussians.mu.detach().cpu().numpy()
-    cikti_yolu = "ciktilar/gaussian_splatting_3dgs_paneli.png"
+    cikti_resmi = os.path.join(cikis_dizini, "gaussian_splatting_3dgs_paneli.png")
     gorsellestirici.pano_olustur(
         rapor=rapor,
         rendered_data=render_out,
         mu_3d=mu_3d_np,
-        kayit_yolu=cikti_yolu,
+        kayit_yolu=cikti_resmi,
     )
 
-    print("\n" + "=" * 70)
-    print(" GÜN 179 BAŞARIYLA TAMAMLANDI! (3DGS 100+ FPS RENDER DOĞRULANDI) ")
-    print("=" * 70)
+    print("\n" + "=" * 110)
+    print("✓ Day 179: 3D GAUSSIAN SPLATTING (3DGS) BAŞARIYLA TAMAMLANDI! (100+ FPS RENDER)")
+    print("=" * 110)
 
 
 if __name__ == "__main__":

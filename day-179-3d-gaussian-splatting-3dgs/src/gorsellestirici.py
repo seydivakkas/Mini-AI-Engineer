@@ -4,11 +4,18 @@
 """
 
 import os
+import sys
 from typing import Dict, Any, Optional
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
 import torch
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 
 class GaussianGorsellestirici:
@@ -26,7 +33,7 @@ class GaussianGorsellestirici:
         kayit_yolu: str = "ciktilar/gaussian_splatting_3dgs_paneli.png",
     ):
         """6 panelli 3DGS teşhis panosunu oluşturur ve kaydeder."""
-        os.makedirs(os.path.dirname(kayit_yolu), exist_ok=True)
+        os.makedirs(os.path.dirname(os.path.abspath(kayit_yolu)), exist_ok=True)
 
         fig = plt.figure(figsize=(23, 13.5))
         fig.suptitle(
@@ -89,7 +96,7 @@ class GaussianGorsellestirici:
                 if 0 <= u <= 64 and 0 <= v <= 64:
                     ellipse = patches.Ellipse(
                         (u, v), width=6.0, height=3.5, angle=i * 15,
-                        color=plt.cm.viridis(i / max(N_pts, 1)), alpha=0.5, edgecolor="black", linewidth=0.8
+                        facecolor=plt.cm.viridis(i / max(N_pts, 1)), alpha=0.5, edgecolor="black", linewidth=0.8
                     )
                     ax3.add_patch(ellipse)
                     ax3.plot(u, v, "ro", markersize=2)
@@ -99,7 +106,7 @@ class GaussianGorsellestirici:
                 v = np.random.uniform(10, 54)
                 ellipse = patches.Ellipse(
                     (u, v), width=np.random.uniform(4, 10), height=np.random.uniform(2, 6),
-                    angle=np.random.uniform(0, 180), color=plt.cm.plasma(i / 30.0), alpha=0.45
+                    angle=np.random.uniform(0, 180), facecolor=plt.cm.plasma(i / 30.0), alpha=0.45, edgecolor="black", linewidth=0.5
                 )
                 ax3.add_patch(ellipse)
                 ax3.plot(u, v, "ko", markersize=2)
