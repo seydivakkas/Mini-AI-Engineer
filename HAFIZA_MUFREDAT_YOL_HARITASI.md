@@ -14,7 +14,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 4** | Gün 67 - Gün 85 | İleri Düzey Temsil Öğrenimi (SimCLR, SupCon), Sıfırdan Vision Transformer (ViT) & LoRA | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | 🔄 **DEVAM EDİYOR (Gün 128 Tamamlandı, Gün 129 Sırada)** |
+| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | 🔄 **DEVAM EDİYOR (Gün 129 Tamamlandı, Gün 130 Sırada)** |
 | **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | ⏳ Sırada |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
 | **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
@@ -170,7 +170,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 126:** `day-126-agent-short-long-term-memory` — Ajan Bellek Sistemleri: Episodic, Semantic ve Short-Term Vector Memory (Mem0)
 - [x] **Day 127:** `day-127-langgraph-stateful-workflows` — LangGraph / Durumsal Çizge (StateGraph) ile Döngülü ve Koşullu Ajan Akışları
 - [x] **Day 128:** `day-128-multi-agent-supervisor-worker` — Supervisor-Worker Çoklu Ajan Deseni: Görev Dağıtımı, Koordinasyon ve Birleştirme
-- [ ] **Day 129:** `day-129-agentic-debate-consensus` — Çelişkili Kararlarda Multi-Agent Tartışma (Debate) ve Konsensüs Oylama Mekanizması
+- [x] **Day 129:** `day-129-agentic-debate-consensus` — Çelişkili Kararlarda Multi-Agent Tartışma (Debate) ve Konsensüs Oylama Mekanizması
 - [ ] **Day 130:** `day-130-human-in-the-loop-hitl` — Human-in-the-Loop (HITL): Kritik Eylemlerde İnsan Onayı ve Kesme (Interrupt) Deseni
 - [ ] **Day 131:** `day-131-semantic-chunking-dynamic-rag` — İleri Düzey Parçalama: Semantik Benzerlik Tabanlı Dinamik Metin Bölümleme
 - [ ] **Day 132:** `day-132-hierarchical-parent-child-rag` — Hiyerarşik RAG: Küçük Parça ile Arama (Small Chunks), Büyük Parça ile Yanıtlama (Parent Doc)
