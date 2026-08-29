@@ -14,7 +14,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 4** | Gün 67 - Gün 85 | İleri Düzey Temsil Öğrenimi (SimCLR, SupCon), Sıfırdan Vision Transformer (ViT) & LoRA | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | 🔄 **DEVAM EDİYOR (Gün 132 Tamamlandı, Gün 133 Sırada - Advanced GraphRAG)** |
+| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | 🔄 **DEVAM EDİYOR (Gün 133 Tamamlandı, Gün 134 Sırada - Advanced GraphRAG)** |
 | **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | ⏳ Sırada |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
 | **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
@@ -174,7 +174,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 130:** `day-130-human-in-the-loop-hitl` — Human-in-the-Loop (HITL): Kritik Eylemlerde İnsan Onayı ve Kesme (Interrupt) Deseni
 - [x] **Day 131:** `day-131-semantic-chunking-dynamic-rag` — İleri Düzey Parçalama: Semantik Benzerlik Tabanlı Dinamik Metin Bölümleme
 - [x] **Day 132:** `day-132-hierarchical-parent-child-rag` — Hiyerarşik RAG: Küçük Parça ile Arama (Small Chunks), Büyük Parça ile Yanıtlama (Parent Doc)
-- [ ] **Day 133:** `day-133-hyde-hypothetical-embeddings` — HyDE (Hypothetical Document Embeddings) ile Sıfır-Atış Soru Zenginleştirme
+- [x] **Day 133:** `day-133-hyde-hypothetical-embeddings` — HyDE (Hypothetical Document Embeddings) ile Sıfır-Atış Soru Zenginleştirme
 - [ ] **Day 134:** `day-134-cross-encoder-reranking` — Bi-Encoder (Vektör) + Cross-Encoder (Re-ranker) İki Aşamalı Hassas Getirme Hattı
 - [ ] **Day 135:** `day-135-contextual-compression-retrieval` — Alınan Belgelerden Token İsrafını Önleyen Dinamik Bağlam Sıkıştırma
 - [ ] **Day 136:** `day-136-graph-rag-entity-extraction` — GraphRAG-1: Metinden Varlık (Entity) ve İlişki (Relationship) Çıkarma Boru Hattı
