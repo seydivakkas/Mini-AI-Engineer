@@ -260,7 +260,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 204:** `day-204-dpo-direct-preference-optimization` — DPO (Direct Preference Optimization): Ödül Modeli Olmadan Kapalı Form Tercih Kaybı Eğitimi
 - [x] **Day 205:** `day-205-kto-kahneman-tversky-optimization` — KTO (Kahneman-Tversky Optimization): İkili (Binary Up/Down) Tercihlerle Asimetrik Kayıp Eğitimi
 - [x] **Day 206:** `day-206-prm-process-reward-model-stepwise` — Step-Level PRM (Process Reward Model): Her Düşünce Adımını Ayrı Ayrı Skorlayan Doğrulayıcı
-- [ ] **Day 207:** `day-207-orm-outcome-reward-model` — ORM (Outcome Reward Model): Nihai Yanıt Doğruluğunu Ölçen Global Ödül Modeli
+- [x] **Day 207:** `day-207-orm-outcome-reward-model` — ORM (Outcome Reward Model): Nihai Yanıt Doğruluğunu Ölçen Global Ödül Modeli
 - [ ] **Day 208:** `day-208-rule-based-math-code-verifier` — Kural Tabanlı Doğrulayıcılar (Rule-Based Verifiers): SymPy ve Python AST ile Halüsinasyonsuz Ödül Mekanizması
 - [ ] **Day 209:** `day-209-rejection-sampling-best-of-n` — Rejection Sampling & Best-of-N: Sıcaklık Örneklemesi ve Çoklu Düşünce Filtreleme
 - [ ] **Day 210:** `day-210-self-play-rl-synthetic-data` — Self-Play RL: Modelin Kendi Kendine Zor Problemler Üretip Çözdüğü Sentetik Veri Döngüsü
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 206 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-206 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 207 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-207 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 11: İleri Post-Training, GRPO & RLHF / Akıl Yürütme Güçlendirme (Gün 202 - Gün 220).
-- **Sıradaki Gün:** Gün 207 (`day-207-orm-outcome-reward-model` — ORM (Outcome Reward Model): Nihai Yanıt Doğruluğunu Ölçen Global Ödül Modeli).
+- **Sıradaki Gün:** Gün 208 (`day-208-rule-based-math-code-verifier` — Kural Tabanlı Doğrulayıcılar (Rule-Based Verifiers): SymPy ve Python AST ile Halüsinasyonsuz Ödül Mekanizması).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
