@@ -222,7 +222,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 174:** `day-174-cross-attention-text-to-image` — Metinden Görüntüye: UNet / DiT (Diffusion Transformer) Cross-Attention
 - [x] **Day 175:** `day-175-controlnet-spatial-conditioning` — ControlNet: Kenar (Canny), Derinlik (Depth) ve Poz Rehberliğinde Koşullu Üretim
 - [x] **Day 176:** `day-176-lora-diffusion-finetuning` — Difüzyon Modellerinde LoRA / DreamBooth ile Özel Nesne ve Stil Öğretimi
-- [ ] **Day 177:** `day-177-diffusion-transformers-dit` — DiT (Diffusion Transformer - Sora / Flux temeli): Patch Tabanlı Görüntü Üretimi
+- [x] **Day 177:** `day-177-diffusion-transformers-dit` — DiT (Diffusion Transformer - Sora / Flux temeli): Patch Tabanlı Görüntü Üretimi
 - [ ] **Day 178:** `day-178-nerf-neural-radiance-fields` — NeRF (Neural Radiance Fields): Pozlandırılmış Görüntülerden 3D Sahne Hacimsel Sentezi
 - [ ] **Day 179:** `day-179-3d-gaussian-splatting-3dgs` — 3D Gaussian Splatting (3DGS): Gerçek Zamanlı (100+ FPS) Radyan ve Nokta Kümesi Renderı
 - [ ] **Day 180:** `day-180-multimodal-omni-benchmark-suite` — MME, MMBench ve MathVista ile Kapsamlı Çok Modlu Model Doğrulama Paketi
