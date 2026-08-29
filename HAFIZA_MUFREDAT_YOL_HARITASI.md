@@ -377,7 +377,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 307:** `day-307-causal-world-representation-discovery` — Denetimsiz Latent Uzayda Nedensellik ve Do-Calculus Temsil Keşfi
 - [x] **Day 308:** `day-308-self-reflective-polymath-agent` — Çok Alanlı (Polymath) Ajan: Özyinelemeli Beceri Sentezi ve Birleşimi (Self-Reflective Polymath Agent)
 - [x] **Day 309:** `day-309-dynamic-value-loading-constitutional-cot` — Dinamik Değer Yükleme ve Anayasal CoT Düşünce Optimizasyonu (Dynamic Value Loading & Constitutional CoT)
-- [ ] **Day 310:** `day-310-diffusion-based-latent-planner` — Difüzyon Tabanlı Latent Düşünce Planlaması ve Yörünge Örnekleme
+- [x] **Day 310:** `day-310-diffusion-based-latent-planner` — Difüzyon Tabanlı Latent Düşünce Planlaması ve Yörünge Örnekleme (Diffusion-Based Latent Planner)
 - [ ] **Day 311:** `day-311-automated-scientific-paradigm-discovery` — Otonom Bilimsel Teori ve Paradigma Keşif Motoru
 - [ ] **Day 312:** `day-312-infinite-context-streaming-recurrent-memory` — Sonsuz Bağlam Akışı: Sıkıştırılmış Özyinelemeli Ajan Belleği
 - [ ] **Day 313:** `day-313-contrastive-decoding-anti-hallucination` — Karşıtsal Kod Çözme (Contrastive Decoding) ile Halüsinasyon Baskılama
