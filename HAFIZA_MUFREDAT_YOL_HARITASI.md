@@ -329,7 +329,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 267:** `day-267-webgpu-wasm-browser-llm` — WebGPU & WebAssembly (Wasm): Tarayıcı İçinde Sıfır Kurulumla İstemci Taraflı LLM Çalıştırma
 - [x] **Day 268:** `day-268-edge-npu-tvm-compiler-optimization` — Apache TVM & IREE ile Mobil / Edge NPU (Qualcomm / ARM Ethos) Derleme Optimizasyonu
 - [x] **Day 269:** `day-269-speculative-decoding-medusa-heads` — Medusa / Eagle Çok Başlı Spekülatif Çıkarım Çekirdeği (Tree-Attention Doğrulama)
-- [ ] **Day 270:** `day-270-custom-cuda-c-extension-pytorch` — PyTorch C++ / CUDA Custom Extension: Doğrudan C++ ve CUDA C ile PyTorch Operatörü Yazımı
+- [x] **Day 270:** `day-270-custom-cuda-c-extension-pytorch` — PyTorch C++ / CUDA Custom Extension: Doğrudan C++ ve CUDA C ile PyTorch Operatörü Yazımı
 - [ ] **Day 271:** `day-271-persistent-kernel-streaming-engine` — Kalıcı Çekirdek (Persistent Kernel) Mimarisi: Kernel Başlatma Ek Yükünü Sıfırlama
 - [ ] **Day 272:** `day-272-sparse-linear-attention-kernel` — Seyrek ve Doğrusal Dikkat Çekirdeği (Mamba / RWKV State-Space Model Donanım Eşlemesi)
 - [ ] **Day 273:** `day-273-nvlink-cross-gpu-direct-access` — NVLink ve GPUDirect RDMA: Düğümler Arası Sıfır CPU Kopyalı Bellek Erişimi
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 269 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 13 TAMAMLANDI, FAZ 14 Gün 261-269 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 270 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 13 TAMAMLANDI, FAZ 14 Gün 261-270 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 14: Donanım Düzeyi Kernel Geliştirme, ASIC/NPU & 1-Bit LLM (Gün 261 - Gün 280).
-- **Sıradaki Gün:** Gün 270 (`day-270-custom-cuda-c-extension-pytorch` — PyTorch C++ / CUDA Custom Extension: Doğrudan C++ ve CUDA C ile PyTorch Operatörü Yazımı).
+- **Sıradaki Gün:** Gün 271 (`day-271-persistent-kernel-streaming-engine` — Kalıcı Çekirdek (Persistent Kernel) Mimarisi: Kernel Başlatma Ek Yükünü Sıfırlama).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
