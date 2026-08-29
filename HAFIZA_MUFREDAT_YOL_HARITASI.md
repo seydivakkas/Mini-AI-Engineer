@@ -14,7 +14,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 4** | Gün 67 - Gün 85 | İleri Düzey Temsil Öğrenimi (SimCLR, SupCon), Sıfırdan Vision Transformer (ViT) & LoRA | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | 🔄 **DEVAM EDİYOR (Gün 124 Tamamlandı, Gün 125 Sırada)** |
+| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | 🔄 **DEVAM EDİYOR (Gün 125 Tamamlandı, Gün 126 Sırada)** |
 | **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | ⏳ Sırada |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
 | **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
@@ -166,7 +166,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 122:** `day-122-plan-and-solve-prompting` — Plan-and-Solve / Decomposed Prompting ile Karmaşık Görevleri Alt Görevlere Bölme
 - [x] **Day 123:** `day-123-reflexion-self-evaluating-agent` — Reflexion: Dil Tabanlı Kendi Kendini Eleştirme (Self-Critique) ve Hafıza ile İterasyon
 - [x] **Day 124:** `day-124-tool-calling-json-schema` — JSON Schema Destekli Kesin Tip Güvenli Tool/Function Calling & Pydantic Validasyonu
-- [ ] **Day 125:** `day-125-sandboxed-code-execution-agent` — Güvenli İzolasyonlu Python Kod Çalıştırma ve Veri Analizi Ajanı (Code Interpreter)
+- [x] **Day 125:** `day-125-sandboxed-code-execution-agent` — Güvenli İzolasyonlu Python Kod Çalıştırma ve Veri Analizi Ajanı (Code Interpreter)
 - [ ] **Day 126:** `day-126-agent-short-long-term-memory` — Ajan Bellek Sistemleri: Episodic, Semantic ve Short-Term Vector Memory (Mem0)
 - [ ] **Day 127:** `day-127-langgraph-stateful-workflows` — LangGraph / Durumsal Çizge (StateGraph) ile Döngülü ve Koşullu Ajan Akışları
 - [ ] **Day 128:** `day-128-multi-agent-supervisor-worker` — Supervisor-Worker Çoklu Ajan Deseni: Görev Dağıtımı, Koordinasyon ve Birleştirme
