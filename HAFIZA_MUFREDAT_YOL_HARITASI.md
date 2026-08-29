@@ -300,7 +300,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 #### 🔹 FAZ 13: Embodied AI & Fiziksel Yapay Zeka / Robotik (Gün 241 - Gün 260)
 - [x] **Day 241:** `day-241-openvla-vision-language-action` — OpenVLA: Görüntü ve Dil Komutlarından Robotik Eklem Açıları Üreten VLA Mimarisi - FAZ 13 BAŞLANGICI
 - [x] **Day 242:** `day-242-diffusion-policy-robot-manipulation` — Diffusion Policy: Robotik Manipülasyon ve Yörünge Üretimi için Koşullu Difüzyon
-- [ ] **Day 243:** `day-243-3d-point-cloud-spatial-reasoning` — 3D Nokta Bulutu (Point Cloud) ve Mekansal Akıl Yürütme (Spatial AI - PointNet++)
+- [x] **Day 243:** `day-243-3d-point-cloud-spatial-reasoning` — 3D Nokta Bulutu (Point Cloud) ve Mekansal Akıl Yürütme (Spatial AI - PointNet++)
 - [ ] **Day 244:** `day-244-3d-bounding-box-pose-estimation` — 3D Sınırlayıcı Kutu ve 6-DoF Nesne Duruş Kestirimi (Pose Estimation)
 - [ ] **Day 245:** `day-245-ros2-python-node-integration` — ROS2 (Robot Operating System) Entegrasyonu: Sensör Dinleme ve Eyleyici Yayınlama Node'ları
 - [ ] **Day 246:** `day-246-isaac-sim-pybullet-digital-twin` — Simülasyonda Robotik: Isaac Sim & PyBullet ile Dijital İkiz ve Sentetik Veri Üretimi
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 242 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-242 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 243 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-243 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 13: Embodied AI & Fiziksel Yapay Zeka / Robotik (Gün 241 - Gün 260).
-- **Sıradaki Gün:** Gün 243 (`day-243-3d-point-cloud-spatial-reasoning` — 3D Nokta Bulutu (Point Cloud) ve Mekansal Akıl Yürütme (Spatial AI - PointNet++)).
+- **Sıradaki Gün:** Gün 244 (`day-244-3d-bounding-box-pose-estimation` — 3D Sınırlayıcı Kutu ve 6-DoF Nesne Duruş Kestirimi (Pose Estimation)).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
