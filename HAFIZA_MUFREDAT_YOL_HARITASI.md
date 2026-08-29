@@ -271,7 +271,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 215:** `day-215-iterative-dpo-online-preference` — İteratif / Çevrimiçi DPO: Sürekli Güncellenen Tercih Havuzu ile Online Post-Training
 - [x] **Day 216:** `day-216-reward-hacking-mitigation` — Reward Hacking / Goodhart Yasası Önleme: Ödül Modeli İstismarını Engelleyen KL Divergence Sınırlandırması
 - [x] **Day 217:** `day-217-simpo-simple-preference-optimization` — SimPO (Simple Preference Optimization): Referanssız ve Doğrudan Marjin Tabanlı Tercih Optimizasyonu
-- [ ] **Day 218:** `day-218-orpo-monolithic-sft-preference` — ORPO: SFT ve Tercih Hizalamasını Tek Bir Monolitik Kayıpta Birleştiren Eğitim
+- [x] **Day 218:** `day-218-orpo-monolithic-sft-preference` — ORPO: SFT ve Tercih Hizalamasını Tek Bir Monolitik Kayıpta Birleştiren Eğitim
 - [ ] **Day 219:** `day-219-post-training-safety-red-teaming` — Otomatik Red-Teaming: Jailbreak ve Zararlı İsteklere Karşı Güvenlik Savunma Eğitimi
 - [ ] **Day 220:** `day-220-post-training-grand-benchmark` — Post-Training Şampiyonluk Testi: GSM8K, MATH500, HumanEval ve MT-Bench Değerlendirme Paketi (FAZ 11 FİNALİ)
 
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 217 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-217 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 218 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-218 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 11: İleri Post-Training, GRPO & RLHF / Akıl Yürütme Güçlendirme (Gün 202 - Gün 220).
-- **Sıradaki Gün:** Gün 218 (`day-218-orpo-monolithic-sft-preference` — ORPO: SFT ve Tercih Hizalamasını Tek Bir Monolitik Kayıpta Birleştiren Eğitim).
+- **Sıradaki Gün:** Gün 219 (`day-219-post-training-safety-red-teaming` — Otomatik Red-Teaming: Jailbreak ve Zararlı İsteklere Karşı Güvenlik Savunma Eğitimi).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
