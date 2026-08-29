@@ -15,7 +15,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | 🔄 **DEVAM EDİYOR (Gün 150 Yarı-Yol Tamamlandı, Gün 151 Sırada)** |
+| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | 🔄 **DEVAM EDİYOR (Gün 151 Tamamlandı, Gün 152 Sırada)** |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
 | **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
 
@@ -194,7 +194,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 148:** `day-148-backtracking-and-error-recovery` — Düşünce Yollarında Geri İzleme (Backtracking) ve Çıkmaz Sokakları Fark Etme
 - [x] **Day 149:** `day-149-self-verification-critique-loop` — Kendi Kendine Doğrulama (Self-Verification): Çözümden Girdiye Ters Sağlama
 - [x] **Day 150:** `day-150-symbolic-math-z3-sympy-reasoning` — Sembolik Akıl Yürütme: LLM ile Z3 SMT Solver & SymPy Entegrasyonu (FAZ 8 YARI-YOL FİNALİ)
-- [ ] **Day 151:** `day-151-code-generation-unit-test-loop` — Test Odaklı Kod Üretimi: Kod Yazma -> PyTest Çalıştırma -> Hata Ayıklama Döngüsü
+- [x] **Day 151:** `day-151-code-generation-unit-test-loop` — Test Odaklı Kod Üretimi: Kod Yazma -> PyTest Çalıştırma -> Hata Ayıklama Döngüsü
 - [ ] **Day 152:** `day-152-formal-theorem-proving-lean4` — Biçimsel Mantık ve Teorem İspatı: LLM ile Lean4 / Isabelle Kod Üretimi
 - [ ] **Day 153:** `day-153-logical-fallacy-deductive-engine` — Tümdengelimsel ve Tümevarımsal Mantık Doğrulayıcı: Safsata Dedektörü
 - [ ] **Day 154:** `day-154-multi-step-arithmetic-gsm8k-engine` — GSM8K & MATH Benchmark'ları için Adım Adım Matematiksel Akıl Yürütme Motoru
