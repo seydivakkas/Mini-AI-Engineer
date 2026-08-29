@@ -379,7 +379,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 309:** `day-309-dynamic-value-loading-constitutional-cot` — Dinamik Değer Yükleme ve Anayasal CoT Düşünce Optimizasyonu (Dynamic Value Loading & Constitutional CoT)
 - [x] **Day 310:** `day-310-diffusion-based-latent-planner` — Difüzyon Tabanlı Latent Düşünce Planlaması ve Yörünge Örnekleme (Diffusion-Based Latent Planner)
 - [x] **Day 311:** `day-311-automated-scientific-paradigm-discovery` — Otonom Bilimsel Teori ve Paradigma Keşif Motoru (Automated Scientific Paradigm Discovery & SINDy)
-- [ ] **Day 312:** `day-312-infinite-context-streaming-recurrent-memory` — Sonsuz Bağlam Akışı: Sıkıştırılmış Özyinelemeli Ajan Belleği
+- [x] **Day 312:** `day-312-infinite-context-streaming-recurrent-memory` — Sonsuz Bağlam Akışı: Sıkıştırılmış Özyinelemeli Ajan Belleği (Infinite Context Streaming & Recurrent Memory)
 - [ ] **Day 313:** `day-313-contrastive-decoding-anti-hallucination` — Karşıtsal Kod Çözme (Contrastive Decoding) ile Halüsinasyon Baskılama
 - [ ] **Day 314:** `day-314-game-theoretic-mechanism-design` — Oyun Teorik Mekanizma Tasarımı ve Çoklu Ajan Nash Pazarlığı
 - [ ] **Day 315:** `day-315-cross-modal-latent-bridge-nonvisual` — Görsel Olmayan Modaliteler (Koku, Kızılötesi, Ultrason) Latent Köprüsü
