@@ -326,7 +326,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 264:** `day-264-fp4-microscaling-formats-e2m1` — Yeni Nesil FP4 / FP6 (Microscaling MXFP4) Kuantizasyon ve Çekirdek Simülasyonu
 - [x] **Day 265:** `day-265-triton-fused-moe-expert-routing` — Triton Fused MoE Expert Routing: Bellek Kopyalamasını Sıfırlayan Uzman Dağıtım Çekirdeği
 - [x] **Day 266:** `day-266-apple-metal-mps-gpu-acceleration` — Apple Silicon Metal (MPS) & Metal Performance Shaders ile Mac GPU Optimizasyonu
-- [ ] **Day 267:** `day-267-webgpu-wasm-browser-llm` — WebGPU & WebAssembly (Wasm): Tarayıcı İçinde Sıfır Kurulumla İstemci Taraflı LLM Çalıştırma
+- [x] **Day 267:** `day-267-webgpu-wasm-browser-llm` — WebGPU & WebAssembly (Wasm): Tarayıcı İçinde Sıfır Kurulumla İstemci Taraflı LLM Çalıştırma
 - [ ] **Day 268:** `day-268-edge-npu-tvm-compiler-optimization` — Apache TVM & IREE ile Mobil / Edge NPU (Qualcomm / ARM Ethos) Derleme Optimizasyonu
 - [ ] **Day 269:** `day-269-speculative-decoding-medusa-heads` — Medusa / Eagle Çok Başlı Spekülatif Çıkarım Çekirdeği (Tree-Attention Doğrulama)
 - [ ] **Day 270:** `day-270-custom-cuda-c-extension-pytorch` — PyTorch C++ / CUDA Custom Extension: Doğrudan C++ ve CUDA C ile PyTorch Operatörü Yazımı
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 266 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 13 TAMAMLANDI, FAZ 14 Gün 261-266 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 267 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 13 TAMAMLANDI, FAZ 14 Gün 261-267 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 14: Donanım Düzeyi Kernel Geliştirme, ASIC/NPU & 1-Bit LLM (Gün 261 - Gün 280).
-- **Sıradaki Gün:** Gün 267 (`day-267-webgpu-wasm-browser-llm` — WebGPU & WebAssembly (Wasm): Tarayıcı İçinde Sıfır Kurulumla İstemci Taraflı LLM Çalıştırma).
+- **Sıradaki Gün:** Gün 268 (`day-268-edge-npu-tvm-compiler-optimization` — Apache TVM & IREE ile Mobil / Edge NPU (Qualcomm / ARM Ethos) Derleme Optimizasyonu).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
