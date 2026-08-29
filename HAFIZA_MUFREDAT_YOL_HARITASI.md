@@ -264,7 +264,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 208:** `day-208-rule-based-math-code-verifier` — Kural Tabanlı Doğrulayıcılar (Rule-Based Verifiers): SymPy ve Python AST ile Halüsinasyonsuz Ödül Mekanizması
 - [x] **Day 209:** `day-209-rejection-sampling-best-of-n` — Rejection Sampling & Best-of-N: Sıcaklık Örneklemesi ve Çoklu Düşünce Filtreleme
 - [x] **Day 210:** `day-210-self-play-rl-synthetic-data` — Self-Play RL: Modelin Kendi Kendine Zor Problemler Üretip Çözdüğü Sentetik Veri Döngüsü
-- [ ] **Day 211:** `day-211-multi-turn-rlhf-dialogue` — Çok Turlu (Multi-Turn) Diyalog RLHF: Uzun Konuşmalarda Tutarlılık ve Hedef Odaklılık
+- [x] **Day 211:** `day-211-multi-turn-rlhf-dialogue` — Çok Turlu (Multi-Turn) Diyalog RLHF: Uzun Konuşmalarda Tutarlılık ve Hedef Odaklılık
 - [ ] **Day 212:** `day-212-constitutional-ai-self-critique` — Constitutional AI (CAI): Anayasal İlkelerle Kendi Kendini Eleştirme ve Güvenlik Hizalaması
 - [ ] **Day 213:** `day-213-rlvr-verifiable-rewards-reasoning` — RLVR (Reinforcement Learning with Verifiable Rewards): Kanıtlanabilir ve Deterministik Ödüller
 - [ ] **Day 214:** `day-214-length-bias-penalty-post-training` — Length-Bias Cezalandırma: Boş Düşünce Şişmesini (Over-thinking) Önleyen Uzunluk Düzenlileştirmesi
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 210 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-210 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 211 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-211 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 11: İleri Post-Training, GRPO & RLHF / Akıl Yürütme Güçlendirme (Gün 202 - Gün 220).
-- **Sıradaki Gün:** Gün 211 (`day-211-multi-turn-rlhf-dialogue` — Çok Turlu (Multi-Turn) Diyalog RLHF: Uzun Konuşmalarda Tutarlılık ve Hedef Odaklılık).
+- **Sıradaki Gün:** Gün 212 (`day-212-constitutional-ai-self-critique` — Constitutional AI (CAI): Anayasal İlkelerle Kendi Kendini Eleştirme ve Güvenlik Hizalaması).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
