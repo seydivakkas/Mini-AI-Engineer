@@ -218,7 +218,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 170:** `day-170-whisper-speech-to-text-ctc` — Whisper Mimarisi: Çok Dilli Konuşma Tanıma, Zaman Damgası Tahmini
 - [x] **Day 171:** `day-171-speech-to-speech-llm-duallm` — Uçtan Uca Speech-to-Speech LLM: Ses Tokenı Alıp Doğrudan Ses Tokenı Üretme
 - [x] **Day 172:** `day-172-latent-diffusion-models-ldm` — Latent Diffusion Modelleri (LDM): VAE Uzayında Gürültü Ekleme/Kaldırma Matematiği
-- [ ] **Day 173:** `day-173-classifier-free-guidance-cfg` — Classifier-Free Guidance (CFG) & DDIM Hızlı Örnekleme Zamanlayıcıları
+- [x] **Day 173:** `day-173-classifier-free-guidance-cfg` — Classifier-Free Guidance (CFG) & DDIM Hızlı Örnekleme Zamanlayıcıları
 - [ ] **Day 174:** `day-174-cross-attention-text-to-image` — Metinden Görüntüye: UNet / DiT (Diffusion Transformer) Cross-Attention
 - [ ] **Day 175:** `day-175-controlnet-spatial-conditioning` — ControlNet: Kenar (Canny), Derinlik (Depth) ve Poz Rehberliğinde Koşullu Üretim
 - [ ] **Day 176:** `day-176-lora-diffusion-finetuning` — Difüzyon Modellerinde LoRA / DreamBooth ile Özel Nesne ve Stil Öğretimi
