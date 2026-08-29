@@ -387,7 +387,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 317:** `day-317-automated-epistemology-counterfactuals` — Otonom Epistemoloji: Karşı-Olgusal Hipotez Test Laboratuvarı (Automated Epistemology & Counterfactuals)
 - [x] **Day 318:** `day-318-neuro-symbolic-continuous-logic` — Nöro-Sembolik Sürekli Mantık ve Bulanık Teorem Doğrulama (Neuro-Symbolic Continuous Logic & Differentiable Theorem Proving)
 - [x] **Day 319:** `day-319-free-energy-principle-policy-iteration` — Serbest Enerji Prensibi ile Sürekli Politika İterasyonu (Free Energy Principle & Active Inference)
-- [ ] **Day 320:** `day-320-autonomous-superalignment-asi-core` — Otonom Süper-Hizalama ve Açık Uçlu ASI Çekirdeği (FAZ 16 FİNALİ)
+- [x] **Day 320:** `day-320-autonomous-superalignment-asi-core` — Otonom Süper-Hizalama ve Açık Uçlu ASI Çekirdeği (FAZ 16 FİNALİ)
 
 #### 🔹 FAZ 17: Nöromorfik Zeka, Spiking Sinir Ağları & BCI (Gün 321 - Gün 340)
 - [ ] **Day 321:** `day-321-spiking-neural-networks-lif` — Spiking Sinir Ağları (SNN): Leaky Integrate-and-Fire (LIF) Nöron Matematiği - FAZ 17 BAŞLANGICI
