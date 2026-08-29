@@ -210,7 +210,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 162:** `day-162-vision-token-compression` — Görüntü Token Sıkıştırma: Q-Former, C-Abstractor ve Spatial Pooling
 - [x] **Day 163:** `day-163-visual-instruction-tuning` — Görsel Komut İnce Ayarı (Visual SFT): VQA, Detaylı Açıklama ve Görsel Sohbet
 - [x] **Day 164:** `day-164-spatial-grounding-bounding-box-vlm` — Spatial Grounding: Görseldeki Nesnelerin Koordinatlarını `[ymin, xmin, ymax, xmax]` Çıkarma
-- [ ] **Day 165:** `day-165-ocr-free-document-understanding` — Donut / Nougat Tarzı Metinsiz Doğrudan Doküman ve Tablo Görseli Ayrıştırma
+- [x] **Day 165:** `day-165-ocr-free-document-understanding` — Donut / Nougat Tarzı Metinsiz Doğrudan Doküman ve Tablo Görseli Ayrıştırma
 - [ ] **Day 166:** `day-166-gui-agent-web-navigation-vlm` — GUI Ajanları: Ekran Görüntüsü Analizi, Tıklanabilir Eleman Tespiti ve Web Gezintisi
 - [ ] **Day 167:** `day-167-video-llm-spatio-temporal-tokens` — Video LLM: Zamansal Kare Örnekleme (Temporal Sampling) ve 3D Attention
 - [ ] **Day 168:** `day-168-streaming-video-understanding` — Gerçek Zamanlı Video Akışı Analizi ve Olay Tespiti (Streaming VLM)
