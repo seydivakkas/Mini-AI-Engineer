@@ -290,7 +290,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 232:** `day-232-human-in-the-loop-agent-guardrails` — Human-in-the-Loop (HITL) Güvenlik Bariyeri: Kritik İşlemlerde İnsan Onay Mekanizması
 - [x] **Day 233:** `day-233-dynamic-tool-retrieval-rag` — Binlerce Araç Arasından RAG ile İlgili Fonksiyonları Dinamik Seçen Araç Geri Getirme Motoru
 - [x] **Day 234:** `day-234-multi-modal-screen-agent-osworld` — Ekran Ajanı (Computer Use): Masaüstü Ekran Görüntüsünü Okuyup Fare ve Klavye Yöneten Ajan
-- [ ] **Day 235:** `day-235-agentic-rag-sql-database-analyst` — SQL ve Veritabanı Analisti Ajan: Doğal Dilden SQL Sorgusu Üreten ve Görselleştiren Uzman
+- [x] **Day 235:** `day-235-agentic-rag-sql-database-analyst` — SQL ve Veritabanı Analisti Ajan: Doğal Dilden SQL Sorgusu Üreten ve Görselleştiren Uzman
 - [ ] **Day 236:** `day-236-hierarchical-task-delegation` — Hiyerarşik Görev Delegasyonu: Görev Yöneticisi ve Alt İşçi Ajanlar Arasında Yük Paylaşımı
 - [ ] **Day 237:** `day-237-agent-reflection-self-evaluation` — Ajan Öz-Yansıtma (Reflection): Tamamlanan Görevi Eleştirip Başarım Skoru Veren Denetçi
 - [ ] **Day 238:** `day-238-async-event-driven-agent-queue` — Asenkron Olay Güdümlü Ajan Kuyruğu: Redis/Celery ile Arka Planda Çalışan Dayanıklı Ajanlar
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 234 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 11 TAMAMLANDI, FAZ 12 Gün 221-234 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 235 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 11 TAMAMLANDI, FAZ 12 Gün 221-235 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 12: Otonom Ajanlar (Agentic AI), Araç Kullanımı (Tool-Use) & MCP Protokolü (Gün 221 - Gün 240).
-- **Sıradaki Gün:** Gün 235 (`day-235-agentic-rag-sql-database-analyst` — SQL ve Veritabanı Analisti Ajan: Doğal Dilden SQL Sorgusu Üreten ve Görselleştiren Uzman).
+- **Sıradaki Gün:** Gün 236 (`day-236-hierarchical-task-delegation` — Hiyerarşik Görev Delegasyonu: Görev Yöneticisi ve Alt İşçi Ajanlar Arasında Yük Paylaşımı).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
