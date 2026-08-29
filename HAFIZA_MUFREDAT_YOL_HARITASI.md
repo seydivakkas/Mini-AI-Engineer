@@ -303,7 +303,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 243:** `day-243-3d-point-cloud-spatial-reasoning` — 3D Nokta Bulutu (Point Cloud) ve Mekansal Akıl Yürütme (Spatial AI - PointNet++)
 - [x] **Day 244:** `day-244-3d-bounding-box-pose-estimation` — 3D Sınırlayıcı Kutu ve 6-DoF Nesne Duruş Kestirimi (Pose Estimation)
 - [x] **Day 245:** `day-245-ros2-python-node-integration` — ROS2 (Robot Operating System) Entegrasyonu: Sensör Dinleme ve Eyleyici Yayınlama Node'ları
-- [ ] **Day 246:** `day-246-isaac-sim-pybullet-digital-twin` — Simülasyonda Robotik: Isaac Sim & PyBullet ile Dijital İkiz ve Sentetik Veri Üretimi
+- [x] **Day 246:** `day-246-isaac-sim-pybullet-digital-twin` — Simülasyonda Robotik: Isaac Sim & PyBullet ile Dijital İkiz ve Sentetik Veri Üretimi
 - [ ] **Day 247:** `day-247-sim2real-domain-randomization` — Sim2Real Transferi: Domain Randomization ile Simülasyondan Gerçek Dünyaya Sıfır Hata Aktarımı
 - [ ] **Day 248:** `day-248-vlm-semantic-slam-navigation` — VLM Destekli Semantik SLAM: Doğal Dil ile Otonom İç Mekan Navigasyonu ve Haritalama
 - [ ] **Day 249:** `day-249-tactile-force-sensor-fusion` — Dokunsal (Tactile) ve Kuvvet Sensörü Füzyonu ile Hassas Nesne Tutma (Grasping)
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 245 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-245 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 246 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-246 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 13: Embodied AI & Fiziksel Yapay Zeka / Robotik (Gün 241 - Gün 260).
-- **Sıradaki Gün:** Gün 246 (`day-246-isaac-sim-pybullet-digital-twin` — Simülasyonda Robotik: Isaac Sim & PyBullet ile Dijital İkiz ve Sentetik Veri Üretimi).
+- **Sıradaki Gün:** Gün 247 (`day-247-sim2real-domain-randomization` — Sim2Real Transferi: Domain Randomization ile Simülasyondan Gerçek Dünyaya Sıfır Hata Aktarımı).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
