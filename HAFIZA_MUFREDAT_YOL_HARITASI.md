@@ -15,7 +15,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | 🔄 **DEVAM EDİYOR (Gün 158 Tamamlandı, Gün 159 Sırada)** |
+| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | 🔄 **DEVAM EDİYOR (Gün 159 Tamamlandı, Gün 160 BÜYÜK FİNAL Sırada)** |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
 | **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
 
@@ -202,8 +202,8 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 156:** `day-156-chain-of-verification-cove` — Chain of Verification (CoVe): Halüsinasyonları Kendi Ürettiği Sorularla Test Etme
 - [x] **Day 157:** `day-157-dynamic-compute-allocation` — Soru Zorluğuna Göre Dinamik Token Bütçesi Belirleme (Easy vs Hard Routing)
 - [x] **Day 158:** `day-158-reasoning-trace-distillation` — Büyük Akıl Yürüten Modelin (R1) Düşünce İncilerini Küçük Modele Damıtma
-- [ ] **Day 159:** `day-159-causal-reasoning-dag-engine` — Nedensellik Analizi (Causal Inference): Neden-Sonuç Grafı (DAG) ve Do-Calculus
-- [ ] **Day 160:** `day-160-deep-reasoning-benchmark-suite` — AIME, GPQA ve ARC-Challenge Kapsamlı Akıl Yürütme Test Paketi
+- [x] **Day 159:** `day-159-causal-reasoning-dag-engine` — Nedensellik Analizi (Causal Inference): Neden-Sonuç Grafı (DAG) ve Do-Calculus
+- [ ] **Day 160:** `day-160-deep-reasoning-benchmark-suite` — AIME, GPQA ve ARC-Challenge Kapsamlı Akıl Yürütme Test Paketi (FAZ 8 BÜYÜK FİNALİ)
 
 #### 🔹 FAZ 9: Çok Modlu (Multimodal) Temel Modeller: VLM, Video, Ses ve Difüzyon (Gün 161 - Gün 180)
 - [ ] **Day 161:** `day-161-vlm-llava-architecture` — LLaVA Mimarisi: ViT Encoder + MLP Projector + LLM ile Uçtan Uca VLM İnşası
