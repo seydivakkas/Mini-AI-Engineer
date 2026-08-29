@@ -374,7 +374,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 304:** `day-304-weak-to-strong-superalignment-bounds` — Güven Aralıklarıyla Zayıftan-Güçlüye Süper-Hizalama (Weak-to-Strong Supervision)
 - [x] **Day 305:** `day-305-cross-coder-sparse-autoencoder-sae` — Çapraz-Kodlayıcı Sparse Autoencoder ile Derin Nöron Aktivasyon Haritalama
 - [x] **Day 306:** `day-306-scalable-oversight-debate-trees` — Ölçeklenebilir Denetim: Biçimsel Doğrulamalı Ajan Tartışma Ağaçları
-- [ ] **Day 307:** `day-307-causal-world-representation-discovery` — Denetimsiz Latent Uzayda Nedensellik ve Do-Calculus Temsil Keşfi
+- [x] **Day 307:** `day-307-causal-world-representation-discovery` — Denetimsiz Latent Uzayda Nedensellik ve Do-Calculus Temsil Keşfi
 - [ ] **Day 308:** `day-308-self-reflective-polymath-agent` — Çok Alanlı (Polymath) Ajan: Özyinelemeli Beceri Sentezi ve Birleşimi
 - [ ] **Day 309:** `day-309-dynamic-value-loading-constitutional-cot` — Dinamik Değer Yükleme ve Anayasal CoT Düşünce Optimizasyonu
 - [ ] **Day 310:** `day-310-diffusion-based-latent-planner` — Difüzyon Tabanlı Latent Düşünce Planlaması ve Yörünge Örnekleme
