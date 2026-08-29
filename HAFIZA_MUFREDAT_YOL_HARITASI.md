@@ -13,7 +13,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 3** | Gün 42 - Gün 66 | Çekirdek ML/DL Boru Hatları, Sayısal Kararlılık, FAISS, ONNX INT8 Kuantizasyon & Edge MLOps | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 4** | Gün 67 - Gün 85 | İleri Düzey Temsil Öğrenimi (SimCLR, SupCon), Sıfırdan Vision Transformer (ViT) & LoRA | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | 🔄 **DEVAM EDİYOR (Gün 110 Tamamlandı, Gün 111 Sırada)** |
+| **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | 🔄 **DEVAM EDİYOR (Gün 111 Tamamlandı, Gün 112 Sırada)** |
 | **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | ⏳ Sırada |
 | **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | ⏳ Sırada |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
@@ -150,7 +150,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 108:** `day-108-reward-modeling-bradley-terry` — Bradley-Terry Tercih Modeli, Çiftli Karşılaştırma ve Reward Model Eğitimi
 - [x] **Day 109:** `day-109-rlhf-ppo-actor-critic` — PPO ile LLM Hizalama: Actor, Critic, Ref Model & KL Penalty
 - [x] **Day 110:** `day-110-dpo-direct-preference-optimization` — Direct Preference Optimization (DPO): Reward Modelsiz Doğrudan Tercih Optimizasyonu
-- [ ] **Day 111:** `day-111-kto-kahneman-tversky-optimization` — KTO: İkili (Beğenildi/Beğenilmedi) Geri Bildirimlerle Davranışsal Tercih Hizalaması
+- [x] **Day 111:** `day-111-kto-kahneman-tversky-optimization` — KTO: İkili (Beğenildi/Beğenilmedi) Geri Bildirimlerle Davranışsal Tercih Hizalaması
 - [ ] **Day 112:** `day-112-orpo-odds-ratio-preference` — ORPO (Odds Ratio Preference Optimization): Tek Aşamalı SFT + Alignment
 - [ ] **Day 113:** `day-113-simpo-simple-preference-optimization` — SimPO: Referans Modelsiz, Hedef Marjinli Hafif Tercih Optimizasyonu
 - [ ] **Day 114:** `day-114-grpo-group-relative-policy` — GRPO (Group Relative Policy Optimization - DeepSeek-R1): Critic-Free Grup Skalalama
