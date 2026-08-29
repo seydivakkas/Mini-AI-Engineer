@@ -213,7 +213,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 165:** `day-165-ocr-free-document-understanding` — Donut / Nougat Tarzı Metinsiz Doğrudan Doküman ve Tablo Görseli Ayrıştırma
 - [x] **Day 166:** `day-166-gui-agent-web-navigation-vlm` — GUI Ajanları: Ekran Görüntüsü Analizi, Tıklanabilir Eleman Tespiti ve Web Gezintisi
 - [x] **Day 167:** `day-167-video-llm-spatio-temporal-tokens` — Video LLM: Zamansal Kare Örnekleme (Temporal Sampling) ve 3D Attention
-- [ ] **Day 168:** `day-168-streaming-video-understanding` — Gerçek Zamanlı Video Akışı Analizi ve Olay Tespiti (Streaming VLM)
+- [x] **Day 168:** `day-168-streaming-video-understanding` — Gerçek Zamanlı Video Akışı Analizi ve Olay Tespiti (Streaming VLM)
 - [ ] **Day 169:** `day-169-audio-tokenizer-soundstream-encodec` — Sinirsel Ses Sıkıştırma: EnCodec / SoundStream ile Sürekli Sesi Ayrık Tokenlara Bölme
 - [ ] **Day 170:** `day-170-whisper-speech-to-text-ctc` — Whisper Mimarisi: Çok Dilli Konuşma Tanıma, Zaman Damgası Tahmini
 - [ ] **Day 171:** `day-171-speech-to-speech-llm-duallm` — Uçtan Uca Speech-to-Speech LLM: Ses Tokenı Alıp Doğrudan Ses Tokenı Üretme
