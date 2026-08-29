@@ -13,7 +13,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 3** | Gün 42 - Gün 66 | Çekirdek ML/DL Boru Hatları, Sayısal Kararlılık, FAISS, ONNX INT8 Kuantizasyon & Edge MLOps | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 4** | Gün 67 - Gün 85 | İleri Düzey Temsil Öğrenimi (SimCLR, SupCon), Sıfırdan Vision Transformer (ViT) & LoRA | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | 🔄 **DEVAM EDİYOR (Gün 117 Tamamlandı, Gün 118 Sırada)** |
+| **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | 🔄 **DEVAM EDİYOR (Gün 118 Tamamlandı, Gün 119 Sırada)** |
 | **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | ⏳ Sırada |
 | **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | ⏳ Sırada |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
@@ -157,7 +157,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 115:** `day-115-model-merging-slerp-ties` — Model Birleştirme: SLERP, TIES ve DARE Yöntemleriyle Model Füzyonu
 - [x] **Day 116:** `day-116-synthetic-data-evol-instruct` — Evol-Instruct & UltraFeedback ile Sentetik Veri Üretim ve Kalite Filtreleme Hattı
 - [x] **Day 117:** `day-117-jailbreak-red-teaming-guardrails` — LLM Red-Teaming, Prompt Injection Tespiti ve Llama Guard Güvenlik Duvarları
-- [ ] **Day 118:** `day-118-llm-watermarking-detection` — LLM Çıktılarına Yeşil/Kırmızı Liste Tabanlı Kriptografik Filigran Ekleme
+- [x] **Day 118:** `day-118-llm-watermarking-detection` — LLM Çıktılarına Yeşil/Kırmızı Liste Tabanlı Kriptografik Filigran Ekleme
 - [ ] **Day 119:** `day-119-self-instruct-knowledge-distill` — Büyük Modellerden (Teacher) Küçük Modellere (Student) Bilgi Damıtma (Distillation)
 - [ ] **Day 120:** `day-120-aligned-llm-benchmark-eval` — MT-Bench, AlpacaEval ve Chatbot Arena Tarzı Otomatik LLM Hakemlik (LLM-as-a-Judge)
 
