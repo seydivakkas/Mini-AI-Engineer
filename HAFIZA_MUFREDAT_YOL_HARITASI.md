@@ -308,7 +308,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 248:** `day-248-vlm-semantic-slam-navigation` — VLM Destekli Semantik SLAM: Doğal Dil ile Otonom İç Mekan Navigasyonu ve Haritalama
 - [x] **Day 249:** `day-249-tactile-force-sensor-fusion` — Dokunsal (Tactile) ve Kuvvet Sensörü Füzyonu ile Hassas Nesne Tutma (Grasping)
 - [x] **Day 250:** `day-250-bimanual-dual-arm-coordination` — Çift Kollu (Bimanual) Robot Koordinasyonu: İki Eyleyici Arasında Senkronize Görev Paylaşımı
-- [ ] **Day 251:** `day-251-humanoid-whole-body-control` — İnsansı (Humanoid) Robotik Bütünsel Hareket Kontrolü (Whole-Body Control & ZMP Dengesi)
+- [x] **Day 251:** `day-251-humanoid-whole-body-control` — İnsansı (Humanoid) Robotik Bütünsel Hareket Kontrolü (Whole-Body Control & ZMP Dengesi)
 - [ ] **Day 252:** `day-252-reinforcement-learning-locomotion` — Pekiştirmeli Öğrenme ile Robotik Yürüme (Quadruped / Humanoid Locomotion - Isaac Gym)
 - [ ] **Day 253:** `day-253-rgbd-depth-fusion-occupancy-grid` — RGB-D Derinlik Füzyonu ve 3D Doluluk Izgarası (Occupancy Grid) ile Dinamik Engel Kaçınma
 - [ ] **Day 254:** `day-254-tactile-feedback-closed-loop` — Kapalı Çevrim Dokunsal Geri Bildirim Kontrolü ile Kayma Önleme ve Sertlik Ayarı
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 250 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-250 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 251 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-251 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 13: Embodied AI & Fiziksel Yapay Zeka / Robotik (Gün 241 - Gün 260).
-- **Sıradaki Gün:** Gün 251 (`day-251-humanoid-whole-body-control` — İnsansı (Humanoid) Robotik Bütünsel Hareket Kontrolü: Whole-Body Control & ZMP Dengesi).
+- **Sıradaki Gün:** Gün 252 (`day-252-reinforcement-learning-locomotion` — Pekiştirmeli Öğrenme ile Robotik Yürüme: Quadruped / Humanoid Locomotion - Isaac Gym).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
