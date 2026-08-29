@@ -267,7 +267,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 211:** `day-211-multi-turn-rlhf-dialogue` — Çok Turlu (Multi-Turn) Diyalog RLHF: Uzun Konuşmalarda Tutarlılık ve Hedef Odaklılık
 - [x] **Day 212:** `day-212-constitutional-ai-self-critique` — Constitutional AI (CAI): Anayasal İlkelerle Kendi Kendini Eleştirme ve Güvenlik Hizalaması
 - [x] **Day 213:** `day-213-rlvr-verifiable-rewards-reasoning` — RLVR (Reinforcement Learning with Verifiable Rewards): Kanıtlanabilir ve Deterministik Ödüller
-- [ ] **Day 214:** `day-214-length-bias-penalty-post-training` — Length-Bias Cezalandırma: Boş Düşünce Şişmesini (Over-thinking) Önleyen Uzunluk Düzenlileştirmesi
+- [x] **Day 214:** `day-214-length-bias-penalty-post-training` — Length-Bias Cezalandırma: Boş Düşünce Şişmesini (Over-thinking) Önleyen Uzunluk Düzenlileştirmesi
 - [ ] **Day 215:** `day-215-iterative-dpo-online-preference` — İteratif / Çevrimiçi DPO: Sürekli Güncellenen Tercih Havuzu ile Online Post-Training
 - [ ] **Day 216:** `day-216-reward-hacking-mitigation` — Reward Hacking / Goodhart Yasası Önleme: Ödül Modeli İstismarını Engelleyen KL Divergence Sınırlandırması
 - [ ] **Day 217:** `day-217-simpo-simple-preference-optimization` — SimPO (Simple Preference Optimization): Referanssız ve Doğrudan Marjin Tabanlı Tercih Optimizasyonu
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 213 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-213 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 214 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-214 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 11: İleri Post-Training, GRPO & RLHF / Akıl Yürütme Güçlendirme (Gün 202 - Gün 220).
-- **Sıradaki Gün:** Gün 214 (`day-214-length-bias-penalty-post-training` — Length-Bias Cezalandırma: Boş Düşünce Şişmesini (Over-thinking) Önleyen Uzunluk Düzenlileştirmesi).
+- **Sıradaki Gün:** Gün 215 (`day-215-iterative-dpo-online-preference` — İteratif / Çevrimiçi DPO: Sürekli Güncellenen Tercih Havuzu ile Online Post-Training).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
