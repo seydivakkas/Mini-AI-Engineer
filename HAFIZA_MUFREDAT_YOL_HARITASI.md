@@ -382,7 +382,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 312:** `day-312-infinite-context-streaming-recurrent-memory` — Sonsuz Bağlam Akışı: Sıkıştırılmış Özyinelemeli Ajan Belleği (Infinite Context Streaming & Recurrent Memory)
 - [x] **Day 313:** `day-313-contrastive-decoding-anti-hallucination` — Karşıtsal Kod Çözme (Contrastive Decoding) ile Halüsinasyon Baskılama
 - [x] **Day 314:** `day-314-game-theoretic-mechanism-design` — Oyun Teorik Mekanizma Tasarımı ve Çoklu Ajan Nash Pazarlığı (Game-Theoretic Mechanism Design & Nash Bargaining)
-- [ ] **Day 315:** `day-315-cross-modal-latent-bridge-nonvisual` — Görsel Olmayan Modaliteler (Koku, Kızılötesi, Ultrason) Latent Köprüsü
+- [x] **Day 315:** `day-315-cross-modal-latent-bridge-nonvisual` — Görsel Olmayan Modaliteler (Koku, Kızılötesi, Ultrason) Latent Köprüsü (Cross-Modal Latent Bridge for Non-Visual Sensory Modalities)
 - [ ] **Day 316:** `day-316-adversarial-byzantine-fault-tolerance` — Bizans Hata Toleransı ve Düşmanca Saldırılara Karşı Öz-Düzeltme
 - [ ] **Day 317:** `day-317-automated-epistemology-counterfactuals` — Otonom Epistemoloji: Karşı-Olgusal Hipotez Test Laboratuvarı
 - [ ] **Day 318:** `day-318-neuro-symbolic-continuous-logic` — Nöro-Sembolik Sürekli Mantık ve Bulanık Teorem Doğrulama
