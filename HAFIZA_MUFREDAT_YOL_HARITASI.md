@@ -331,15 +331,15 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 269:** `day-269-speculative-decoding-medusa-heads` — Medusa / Eagle Çok Başlı Spekülatif Çıkarım Çekirdeği (Tree-Attention Doğrulama)
 - [x] **Day 270:** `day-270-custom-cuda-c-extension-pytorch` — PyTorch C++ / CUDA Custom Extension: Doğrudan C++ ve CUDA C ile PyTorch Operatörü Yazımı
 - [x] **Day 271:** `day-271-persistent-kernel-streaming-engine` — Kalıcı Çekirdek (Persistent Kernel) Mimarisi: Kernel Başlatma Ek Yükünü Sıfırlama
-- [ ] **Day 272:** `day-272-sparse-linear-attention-kernel` — Seyrek ve Doğrusal Dikkat Çekirdeği (Mamba / RWKV State-Space Model Donanım Eşlemesi)
-- [ ] **Day 273:** `day-273-nvlink-cross-gpu-direct-access` — NVLink ve GPUDirect RDMA: Düğümler Arası Sıfır CPU Kopyalı Bellek Erişimi
-- [ ] **Day 274:** `day-274-int2-ternary-weight-packing` — Bit Düzeyinde Paketleme (Bit-Packing): 2-Bit / Ternary Ağırlıkları UINT32 İçinde Sıkıştırma
-- [ ] **Day 275:** `day-275-memory-efficient-long-context-ring-attn` — Ring Attention: Sonsuz Bağlam Uzunluğu (1M+ Token) için GPU Ring İletişim Çekirdeği
-- [ ] **Day 276:** `day-276-dynamic-quantization-fp8-act-scaling` — Dinamik Aktivasyon Kuantizasyonu: Çalışma Esnasında FP8 Dinamik Ölçekleme
-- [ ] **Day 277:** `day-277-profiling-nsight-compute-roofline` — NVIDIA Nsight Compute & Roofline Modeli ile Donanım Darboğazı ve Bellek Bant Genişliği Analizi
-- [ ] **Day 278:** `day-278-amd-rocm-hip-portability` — AMD ROCm & HIP: CUDA Çekirdeklerini AMD GPU Donanımlarına Sıfır Kayıpla Taşıma
-- [ ] **Day 279:** `day-279-hardware-efficiency-benchmarks` — Donanım Verimliliği Başarım Paketi: MFU (Model FLOPs Utilization) ve TFLOPS/Watt Analitiği
-- [ ] **Day 280:** `day-280-ultra-low-bit-hardware-grand-capstone` — 1-Bit BitNet + Custom Tensor Core + FlashDecoding++ Birleşik Donanım Süiti (FAZ 14 FİNALİ)
+- [x] **Day 272:** `day-272-sparse-linear-attention-kernel` — Seyrek ve Doğrusal Dikkat Çekirdeği (Mamba / RWKV State-Space Model Donanım Eşlemesi)
+- [x] **Day 273:** `day-273-nvlink-cross-gpu-direct-access` — NVLink ve GPUDirect RDMA: Düğümler Arası Sıfır CPU Kopyalı Bellek Erişimi
+- [x] **Day 274:** `day-274-int2-ternary-weight-packing` — Bit Düzeyinde Paketleme (Bit-Packing): 2-Bit / Ternary Ağırlıkları UINT32 İçinde Sıkıştırma
+- [x] **Day 275:** `day-275-memory-efficient-long-context-ring-attn` — Ring Attention: Sonsuz Bağlam Uzunluğu (1M+ Token) için GPU Ring İletişim Çekirdeği
+- [x] **Day 276:** `day-276-dynamic-quantization-fp8-act-scaling` — Dinamik Aktivasyon Kuantizasyonu: Çalışma Esnasında FP8 Dinamik Ölçekleme
+- [x] **Day 277:** `day-277-profiling-nsight-compute-roofline` — NVIDIA Nsight Compute & Roofline Modeli ile Donanım Darboğazı ve Bellek Bant Genişliği Analizi
+- [x] **Day 278:** `day-278-amd-rocm-hip-portability` — AMD ROCm & HIP: CUDA Çekirdeklerini AMD GPU Donanımlarına Sıfır Kayıpla Taşıma
+- [x] **Day 279:** `day-279-hardware-efficiency-benchmarks` — Donanım Verimliliği Başarım Paketi: MFU (Model FLOPs Utilization) ve TFLOPS/Watt Analitiği
+- [x] **Day 280:** `day-280-ultra-low-bit-hardware-grand-capstone` — 1-Bit BitNet + Custom Tensor Core + FlashDecoding++ Birleşik Donanım Süiti (FAZ 14 FİNALİ)
 
 #### 🔹 FAZ 15: Otonom AGI Araştırma Laboratuvarı & BÜYÜK FİNAL 301 (Gün 281 - Gün 301)
 - [ ] **Day 281:** `day-281-self-evolving-ai-code-optimizer` — Self-Evolving AI: Kendi Kodunu ve Triton Çekirdeklerini Profilleyip Otomatik Yeniden Yazan Sistem - FAZ 15 BAŞLANGICI
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 271 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 13 TAMAMLANDI, FAZ 14 Gün 261-271 TAMAMLANDI).
-- **Sıradaki Büyük Faz:** FAZ 14: Donanım Düzeyi Kernel Geliştirme, ASIC/NPU & 1-Bit LLM (Gün 261 - Gün 280).
-- **Sıradaki Gün:** Gün 272 (`day-272-sparse-linear-attention-kernel` — Seyrek ve Doğrusal Dikkat Çekirdeği (Mamba / RWKV State-Space Model Donanım Eşlemesi)).
+- **Tamamlanan:** Gün 01 - Gün 280 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 14 TAMAMLANDI).
+- **Sıradaki Büyük Faz:** FAZ 15: Otonom AGI Araştırma Laboratuvarı & BÜYÜK FİNAL 301 (Gün 281 - Gün 301).
+- **Sıradaki Gün:** Gün 281 (`day-281-self-evolving-ai-code-optimizer` — Self-Evolving AI: Kendi Kodunu ve Triton Çekirdeklerini Profilleyip Otomatik Yeniden Yazan Sistem).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
