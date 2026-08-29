@@ -381,7 +381,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 311:** `day-311-automated-scientific-paradigm-discovery` — Otonom Bilimsel Teori ve Paradigma Keşif Motoru (Automated Scientific Paradigm Discovery & SINDy)
 - [x] **Day 312:** `day-312-infinite-context-streaming-recurrent-memory` — Sonsuz Bağlam Akışı: Sıkıştırılmış Özyinelemeli Ajan Belleği (Infinite Context Streaming & Recurrent Memory)
 - [x] **Day 313:** `day-313-contrastive-decoding-anti-hallucination` — Karşıtsal Kod Çözme (Contrastive Decoding) ile Halüsinasyon Baskılama
-- [ ] **Day 314:** `day-314-game-theoretic-mechanism-design` — Oyun Teorik Mekanizma Tasarımı ve Çoklu Ajan Nash Pazarlığı
+- [x] **Day 314:** `day-314-game-theoretic-mechanism-design` — Oyun Teorik Mekanizma Tasarımı ve Çoklu Ajan Nash Pazarlığı (Game-Theoretic Mechanism Design & Nash Bargaining)
 - [ ] **Day 315:** `day-315-cross-modal-latent-bridge-nonvisual` — Görsel Olmayan Modaliteler (Koku, Kızılötesi, Ultrason) Latent Köprüsü
 - [ ] **Day 316:** `day-316-adversarial-byzantine-fault-tolerance` — Bizans Hata Toleransı ve Düşmanca Saldırılara Karşı Öz-Düzeltme
 - [ ] **Day 317:** `day-317-automated-epistemology-counterfactuals` — Otonom Epistemoloji: Karşı-Olgusal Hipotez Test Laboratuvarı
