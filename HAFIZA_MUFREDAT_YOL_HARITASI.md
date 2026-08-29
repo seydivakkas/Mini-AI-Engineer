@@ -310,7 +310,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 250:** `day-250-bimanual-dual-arm-coordination` — Çift Kollu (Bimanual) Robot Koordinasyonu: İki Eyleyici Arasında Senkronize Görev Paylaşımı
 - [x] **Day 251:** `day-251-humanoid-whole-body-control` — İnsansı (Humanoid) Robotik Bütünsel Hareket Kontrolü (Whole-Body Control & ZMP Dengesi)
 - [x] **Day 252:** `day-252-reinforcement-learning-locomotion` — Pekiştirmeli Öğrenme ile Robotik Yürüme (Quadruped / Humanoid Locomotion - Isaac Gym)
-- [ ] **Day 253:** `day-253-rgbd-depth-fusion-occupancy-grid` — RGB-D Derinlik Füzyonu ve 3D Doluluk Izgarası (Occupancy Grid) ile Dinamik Engel Kaçınma
+- [x] **Day 253:** `day-253-rgbd-depth-fusion-occupancy-grid` — RGB-D Derinlik Füzyonu ve 3D Doluluk Izgarası (Occupancy Grid) ile Dinamik Engel Kaçınma
 - [ ] **Day 254:** `day-254-tactile-feedback-closed-loop` — Kapalı Çevrim Dokunsal Geri Bildirim Kontrolü ile Kayma Önleme ve Sertlik Ayarı
 - [ ] **Day 255:** `day-255-teleoperation-imitation-learning` — Teleoperasyon ve Taklit Öğrenmesi (Behavior Cloning & ACT - Action Chunking with Transformers)
 - [ ] **Day 256:** `day-256-voice-controlled-robot-agent` — Ses Komutlu Robot Ajanı: Whisper + VLM + VLA ile Uçtan Uca Sesli Robot İdaresi
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 252 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-252 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 253 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 12 TAMAMLANDI, FAZ 13 Gün 241-253 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 13: Embodied AI & Fiziksel Yapay Zeka / Robotik (Gün 241 - Gün 260).
-- **Sıradaki Gün:** Gün 253 (`day-253-rgbd-depth-fusion-occupancy-grid` — RGB-D Derinlik Füzyonu ve 3D Doluluk Izgarası (Occupancy Grid) ile Dinamik Engel Kaçınma).
+- **Sıradaki Gün:** Gün 254 (`day-254-tactile-feedback-closed-loop` — Kapalı Çevrim Dokunsal Geri Bildirim Kontrolü ile Kayma Önleme ve Sertlik Ayarı).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
