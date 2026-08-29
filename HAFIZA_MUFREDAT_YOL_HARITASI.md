@@ -1,6 +1,6 @@
-# 🧠 101 Günlük Yapay Zeka, Bilgisayarlı Görü, LLM/RAG ve MLOps Mühendisliği Master Hafıza Dosyası (Master Roadmap)
+# 🧠 201 Günlük Yapay Zeka, Bilgisayarlı Görü, LLM/RAG, Reasoning, Triton GPU & MLOps Mühendisliği Master Hafıza Dosyası (Master Roadmap)
 
-Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tamamlanan ve planlanan günleri, modül hedeflerini ve teknik derinliklerini kayıt altında tutan **merkezi hafıza (memory) belgesidir**.
+Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tamamlanan ve planlanan günleri, modül hedeflerini ve teknik derinliklerini kayıt altında tutan **merkezi hafıza (memory) belgesidir**.
 
 ---
 
@@ -8,19 +8,24 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 
 | Faz | Gün Aralığı | Alan & Kapsam | Durum |
 | --- | --- | --- | --- |
-| **FAZ 1** | Gün 01 - Gün 15 | Veri Temelleri, Görüntü İşleme, Renk Uzayları ve Segmentasyon | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 2A** | Gün 16 - Gün 30 | İleri Bilgisayarla Görme, YOLO Nesne Tespiti, U-Net, Mask R-CNN, DeepSORT, Çoklu Görev | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 2B** | Gün 31 - Gün 41 | Leksikal/Semantik Arama (BM25, Dense, RRF), RAG, API Servisleri ve Sektörel Halı Zekası | 🔄 **BAŞLIYOR (Gün 31'den Devam)** |
-| **FAZ 3** | Gün 42 - Gün 66 | Çekirdek ML/DL Boru Hatları, FAISS, Sayısal Kararlılık, ONNX INT8 Kuantizasyon & Edge MLOps | ⏳ Sırada |
-| **FAZ 4** | Gün 67 - Gün 81 | İleri Düzey Temsil Öğrenimi (SimCLR, SupCon), Sıfırdan Vision Transformer (ViT) & LoRA | ⏳ Sırada |
-| **FAZ 5** | Gün 82 - Gün 101 | Model Sıkıştırma (Distillation, Pruning), Kalibrasyon, MLOps, Hugging Face Dağıtımı & MoE | ⏳ Sırada |
+| **FAZ 1** | Gün 01 - Gün 20 | Veri Temelleri, Görüntü İşleme, Renk Uzayları, NumPy/Pandas ve CNN Mimarileri | ✅ **TAMAMLANDI (%100)** |
+| **FAZ 2** | Gün 21 - Gün 41 | İleri Bilgisayarlı Görü, YOLO Nesne Tespiti, U-Net Segmentasyon, Arama (BM25/Vektör) ve RAG | ✅ **TAMAMLANDI (%100)** |
+| **FAZ 3** | Gün 42 - Gün 66 | Çekirdek ML/DL Boru Hatları, Sayısal Kararlılık, FAISS, ONNX INT8 Kuantizasyon & Edge MLOps | ✅ **TAMAMLANDI (%100)** |
+| **FAZ 4** | Gün 67 - Gün 85 | İleri Düzey Temsil Öğrenimi (SimCLR, SupCon), Sıfırdan Vision Transformer (ViT) & LoRA | ✅ **TAMAMLANDI (%100)** |
+| **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
+| **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | 🔄 **BAŞLIYOR (Gün 102'den Devam)** |
+| **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | ⏳ Sırada |
+| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | ⏳ Sırada |
+| **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
+| **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
 
 ---
 
-## 📋 DETAYLI GÜN GÜN YOL HARİTASI
+## 📋 DETAYLI GÜN GÜN YOL HARİTASI (GÜN 01 - 201)
 
-### ✅ Tamamlanan Günler (Gün 01 - Gün 30)
+### ✅ Tamamlanan Günler: 101 Serisi (Gün 01 - Gün 101)
 
+#### 🔹 FAZ 1: Veri Temelleri, Görüntü İşleme ve Konvolüsyonel Ağlar (Gün 01 - Gün 20)
 - [x] **Day 01:** `day-01-numpy-image-analyzer` — NumPy ile Görsel Analizi, Renk Kanalları, Histogram & Kontrast
 - [x] **Day 02:** `day-02-distance-metrics` — Vektörel Mesafe Metrikleri (Euclidean, Manhattan, Cosine, Chebyshev)
 - [x] **Day 03:** `day-03-mahalanobis-vs-euclidean` — Mahalanobis vs Öklid, Kovaryans Matrisi, Özdeğer/Özvektör
@@ -41,6 +46,8 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 18:** `day-18-image-clustering` — Etiketsiz Görsel Kümeleme (K-Means, DBSCAN, Silhouette)
 - [x] **Day 19:** `day-19-classical-image-classifier` — Geleneksel Makine Öğrenmesi (HOG + LBP + SVM / Random Forest)
 - [x] **Day 20:** `day-20-tensorflow-cnn-classifier` — TensorFlow/Keras ile CNN (Conv2D, BatchNorm, Dropout)
+
+#### 🔹 FAZ 2: Bilgisayarlı Görü, Nesne Tespiti, Segmentasyon ve Arama/RAG (Gün 21 - Gün 41)
 - [x] **Day 21:** `day-21-pytorch-cnn-classifier` — PyTorch CNN (nn.Module, DataLoader, Grad-CAM XAI)
 - [x] **Day 22:** `day-22-data-augmentation` — Veri Çoğaltma (Albumentations, MixUp, CutMix)
 - [x] **Day 23:** `day-23-transfer-learning` — Transfer Öğrenme (ResNet, EfficientNet, Fine-Tuning)
@@ -51,27 +58,19 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 28:** `day-28-advanced-segmentation` — İleri Düzey Bölütleme (Mask R-CNN, SegFormer, Panoptic Quality)
 - [x] **Day 29:** `day-29-multi-object-tracking` — Çoklu Nesne Takibi (DeepSORT, Kalman Filtresi, MOTA/IDF1)
 - [x] **Day 30:** `day-30-multitask-vision-platform` — Çoklu Görev Görsel Platformu & Model Kuantizasyon Optimizasyonu
-
----
-
-### 🚀 Planlanan ve Sırayla İşlenecek Günler (Gün 31 - Gün 101)
-
-#### 🔹 FAZ 2B: Arama Motorları, RAG ve Sektörel Halı/Tekstil Zekası (Gün 31 - Gün 41)
-
-- [x] **Day 31:** `day-31-bm25-document-search` — BM25 Leksikal Arama Algoritması, TF-IDF, Ters İndeks (Inverted Index), Tokenizasyon
+- [x] **Day 31:** `day-31-bm25-document-search` — BM25 Leksikal Arama Algoritması, TF-IDF, Ters İndeks, Tokenizasyon
 - [x] **Day 32:** `day-32-semantic-search-engine` — Sentence Transformers ile Yoğun (Dense) Vektör Arama, Kosinüs Benzerliği
 - [x] **Day 33:** `day-33-hybrid-search-rrf` — BM25 + Vektör Arama Birleşimi, Reciprocal Rank Fusion (RRF) Hibrit Sıralama
 - [x] **Day 34:** `day-34-mini-rag-assistant` — Mini RAG Asistanı, Chunking, Vektör Veritabanı Sorgulama, LLM Context Injection
 - [x] **Day 35:** `day-35-fastapi-model-service` — FastAPI Asenkron REST API, Pydantic Tip Güvenliği, Model Servisleme
 - [x] **Day 36:** `day-36-streamlit-ai-dashboard` — Streamlit ile İnteraktif AI Kontrol Paneli, Dosya Yükleme, Model Görselleştirme
 - [x] **Day 37:** `day-37-carpet-color-intelligence` — Halı/Tekstil Renk Ayrıştırma, İplik Renk Oranları Çıkarımı, Katalog Uyumu
-- [x] **Day 38:** `day-38-carpet-visual-retrieval` — Halı Doku ve Desenleri İçin Çoklu Özellikli (Renk+Doku) Görsel Arama
+- [x] **Day 38:** `day-38-carpet-visual-retrieval` — Halı Doku ve Desenleri İçin Çoklu Özellikli Görsel Arama
 - [x] **Day 39:** `day-39-carpet-defect-detector` — Halı Dokuma Hataları, Leke ve Kusur Tespiti, Kalite Kontrol Otomasyonu
 - [x] **Day 40:** `day-40-carpet-knowledge-rag` — Tekstil ve Üretim Teknik Dokümanları Üzerinde Sektörel RAG Sistemi
-- [x] **Day 41:** `day-41-ai-carpet-intelligence-suite` — Renk, Arama, Kusur ve RAG Modüllerini Birleştiren Uçtan Uca Halı Zekası Paketi
+- [x] **Day 41:** `day-41-ai-carpet-intelligence-suite` — Renk, Arama, Kusur ve RAG Modüllerini Birleştiren Halı Zekası Paketi
 
 #### 🔹 FAZ 3: Çekirdek ML/DL Boru Hatları, Optimizasyon ve Edge MLOps (Gün 42 - Gün 66)
-
 - [x] **Day 42:** `day-42-numpy-ai-batch-inspector` — Üretim Girdi Tensörleri Doğrulama, Batch Boyutu & NaN/Inf/Shape Anomali Tespiti
 - [x] **Day 43:** `day-43-numpy-data-drift-detector` — Veri Kayması (Data Drift) Tespiti, KS-Test İstatistiği, Wasserstein Mesafesi
 - [x] **Day 44:** `day-44-pandas-data-quality-cleaner` — Üretim Seviyesi Şema Doğrulama, Sınır Değer Kontrolleri, Otomatik Temizlik
@@ -98,8 +97,7 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 65:** `day-65-streamlit-sqlite-ai-dashboard` — SQLite Destekli CRUD, Model Çıkarım Logları ve Kalıcı AI Yönetim Paneli
 - [x] **Day 66:** `day-66-onnx-int8-production-capstone` — PyTorch Modellerini ONNX'e Aktarma, INT8 PTQ Kuantizasyon & ONNX Runtime Hızlandırma
 
-#### 🔹 FAZ 4: İleri Düzey Eğitim, Temsil Öğrenimi ve Sıfırdan Vision Transformer (Gün 67 - Gün 81)
-
+#### 🔹 FAZ 4: İleri Düzey Temsil Öğrenimi ve Sıfırdan Vision Transformer (Gün 67 - Gün 85)
 - [x] **Day 67:** `day-67-config-driven-reproducible-training` — YAML/Hydra ile Konfigürasyon Yönetimi, Deterministik & Tekrarlanabilir Eğitim
 - [x] **Day 68:** `day-68-high-performance-vision-data-pipeline` — Albumentations ile Yüksek Performanslı Veri Artırma & GPU Prefetching
 - [x] **Day 69:** `day-69-optimizer-scheduler-laboratory` — AdamW vs Lion Optimizer, CosineAnnealing, Linear Warmup & Weight Decay Dinamikleri
@@ -115,17 +113,16 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 79:** `day-79-minivit-from-scratch` — Sıfırdan Mini Vision Transformer (Patch Projeksiyonu, CLS Token, Encoder Birleşimi)
 - [x] **Day 80:** `day-80-minivit-cifar100-training` — Sıfırdan MiniViT'in CIFAR-100 Üzerinde Eğitimi & Regülarizasyon Dinamikleri
 - [x] **Day 81:** `day-81-vit-lora-peft` — Vision Transformer İçin LoRA (Low-Rank Adaptation) ile Parametre-Verimli İnce Ayar
-
-#### 🔹 FAZ 5: Model Sıkıştırma, Güvenilirlik, MLOps ve Üretim Dağıtımı (Gün 82 - Gün 101)
-
 - [x] **Day 82:** `day-82-knowledge-distillation` — Öğretmen-Öğrenci Modeli Bilgi Damıtma, Soft Target Loss (KL-Diverjansı), Temperature
 - [x] **Day 83:** `day-83-structured-pruning` — L1/L2 Norm Tabanlı Yapısal Filtre/Kanal Budama, Hız vs Doğruluk Dengesi
 - [x] **Day 84:** `day-84-calibration-uncertainty` — Olasılık Kalibrasyonu, Expected Calibration Error (ECE) & Temperature Scaling
 - [x] **Day 85:** `day-85-ood-selective-prediction` — Enerji Tabanlı Dağılım Dışı (OOD) Tespiti ve Seçici Tahmin (Abstention)
-- [x] **Day 86:** `day-86-robustness-domain-shift` — Görsel Bozulmalar (Bulanıklık/Gürültü) Altında Model Dayanıklılığı & Domain Shift
-- [x] **Day 87:** `day-87-experiment-registry` — MLflow / Weights & Biases ile Merkezi Deney Takibi ve Artefakt Kayıt Sistemi
-- [x] **Day 88:** `day-88-optuna-hpo` — Optuna ile Otomatik Hiperparametre Optimizasyonu (TPE Algoritması, Pruning)
-- [x] **Day 89:** `day-89-model-registry` — Model Kayıt Sistemi, Model Sürümleme, Staging/Production Yaşam Döngüsü
+
+#### 🔹 FAZ 5: Model Sıkıştırma, Güvenilirlik, MLOps ve MoE Hub Dağıtımı (Gün 86 - Gün 101)
+- [x] **Day 86:** `day-86-model-pruning` — Yapısal Olmayan (Unstructured) ve Yapısal (Structured L1-Norm) Pruning
+- [x] **Day 87:** `day-87-post-training-quantization` — INT8 Dinamik ve Statik Post-Training Kuantizasyon
+- [x] **Day 88:** `day-88-quantization-aware-training` — FakeQuantize ve Straight-Through Estimator ile QAT
+- [x] **Day 89:** `day-89-onnx-tensorrt-export` — ONNX Runtime Dinamik Eksen Dışa Aktarımı ve TensorRT Optimizasyonu
 - [x] **Day 90:** `day-90-dynamic-batching-inference` — GPU Verimliliği İçin Kuyruk Tabanlı Dinamik Batching Çıkarım Motoru
 - [x] **Day 91:** `day-91-ai-observability` — Canlı AI Sistemlerinde Gözlemlenebilirlik: Gecikme, Hacim ve Veri Kayması İzleme
 - [x] **Day 92:** `day-92-final-training-contract` — Eğitim Öncesi Veri Sözleşmesi Testleri ve Hazır Bulunuşluk (Readiness) Kontrolleri
@@ -139,12 +136,128 @@ Bu dosya; projenin 1. gününden 101. gününe kadar tüm yol haritasını, tama
 - [x] **Day 100:** `day-100-modern-architecture-ablations` — SwiGLU, RMSNorm ve FlashAttention Mimarileri ile MiniViT Ablasyon Analizleri
 - [x] **Day 101:** `day-101-huggingface-minivit-moe-v2` — **101 GÜNLÜK BÜYÜK FİNAL:** MiniViT Mixture of Experts (MoE) v2 Hugging Face Dağıtımı
 
-Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve MLOps mentorüsün. Benimle birlikte **"101 Günlük Yapay Zeka, Bilgisayarlı Görü, LLM/RAG ve MLOps Mühendisliği Master Roadmap"** programını adım adım, tam kapsamlı ve üretime hazır (production-grade) kod standartlarıyla yürüteceksin.
+---
+
+### 🚀 Planlanan İleri Seviye Günler: 201 Serisi (Gün 102 - Gün 201)
+
+#### 🔹 FAZ 6: İleri LLM Mimarileri, Hizalama (Alignment) ve RLHF / DPO / GRPO (Gün 102 - Gün 120)
+- [ ] **Day 102:** `day-102-gqa-grouped-query-attention` — Grouped-Query Attention (GQA) & Multi-Query Attention (MQA) ile KV Cache Azaltma
+- [ ] **Day 103:** `day-103-mla-multi-latent-attention` — Multi-Head Latent Attention (MLA - DeepSeek V2/V3) Sıkıştırılmış KV Projeksiyonu
+- [ ] **Day 104:** `day-104-rope-yarn-context-extension` — Rotary Position Embeddings (RoPE) & YaRN ile 128k+ Bağlam Uzatma Matematiği
+- [ ] **Day 105:** `day-105-sliding-window-attention` — Sliding Window Attention (SWA - Mistral) & Chunked Memory Yönetimi
+- [ ] **Day 106:** `day-106-sft-packed-sequences` — Instruction Supervised Fine-Tuning (SFT) & Token Packing (Sıfır Padding Kaybı)
+- [ ] **Day 107:** `day-107-qlora-4bit-nf4-unsloth` — QLoRA (NF4 Kuantizasyon, Double Quantization) & Hızlı Gradyan Geri Yayılımı
+- [ ] **Day 108:** `day-108-reward-modeling-bradley-terry` — Bradley-Terry Tercih Modeli, Çiftli Karşılaştırma ve Reward Model Eğitimi
+- [ ] **Day 109:** `day-109-rlhf-ppo-actor-critic` — PPO ile LLM Hizalama: Actor, Critic, Ref Model & KL Penalty
+- [ ] **Day 110:** `day-110-dpo-direct-preference-optimization` — Direct Preference Optimization (DPO): Reward Modelsiz Doğrudan Tercih Optimizasyonu
+- [ ] **Day 111:** `day-111-kto-kahneman-tversky-optimization` — KTO: İkili (Beğenildi/Beğenilmedi) Geri Bildirimlerle Davranışsal Tercih Hizalaması
+- [ ] **Day 112:** `day-112-orpo-odds-ratio-preference` — ORPO (Odds Ratio Preference Optimization): Tek Aşamalı SFT + Alignment
+- [ ] **Day 113:** `day-113-simpo-simple-preference-optimization` — SimPO: Referans Modelsiz, Hedef Marjinli Hafif Tercih Optimizasyonu
+- [ ] **Day 114:** `day-114-grpo-group-relative-policy` — GRPO (Group Relative Policy Optimization - DeepSeek-R1): Critic-Free Grup Skalalama
+- [ ] **Day 115:** `day-115-model-merging-slerp-ties` — Model Birleştirme: SLERP, TIES ve DARE Yöntemleriyle Model Füzyonu
+- [ ] **Day 116:** `day-116-synthetic-data-evol-instruct` — Evol-Instruct & UltraFeedback ile Sentetik Veri Üretim ve Kalite Filtreleme Hattı
+- [ ] **Day 117:** `day-117-jailbreak-red-teaming-guardrails` — LLM Red-Teaming, Prompt Injection Tespiti ve Llama Guard Güvenlik Duvarları
+- [ ] **Day 118:** `day-118-llm-watermarking-detection` — LLM Çıktılarına Yeşil/Kırmızı Liste Tabanlı Kriptografik Filigran Ekleme
+- [ ] **Day 119:** `day-119-self-instruct-knowledge-distill` — Büyük Modellerden (Teacher) Küçük Modellere (Student) Bilgi Damıtma (Distillation)
+- [ ] **Day 120:** `day-120-aligned-llm-benchmark-eval` — MT-Bench, AlpacaEval ve Chatbot Arena Tarzı Otomatik LLM Hakemlik (LLM-as-a-Judge)
+
+#### 🔹 FAZ 7: Otonom AI Ajanları, Multi-Agent Sistemleri ve Advanced GraphRAG (Gün 121 - Gün 140)
+- [ ] **Day 121:** `day-121-react-agent-scratchpad` — ReAct (Reasoning + Acting) Deseni: Düşünce-Eylem-Gözlem Döngüsü ve Scratchpad
+- [ ] **Day 122:** `day-122-plan-and-solve-prompting` — Plan-and-Solve / Decomposed Prompting ile Karmaşık Görevleri Alt Görevlere Bölme
+- [ ] **Day 123:** `day-123-reflexion-self-evaluating-agent` — Reflexion: Dil Tabanlı Kendi Kendini Eleştirme (Self-Critique) ve Hafıza ile İterasyon
+- [ ] **Day 124:** `day-124-tool-calling-json-schema` — JSON Schema Destekli Kesin Tip Güvenli Tool/Function Calling & Pydantic Validasyonu
+- [ ] **Day 125:** `day-125-sandboxed-code-execution-agent` — Güvenli İzolasyonlu Python Kod Çalıştırma ve Veri Analizi Ajanı (Code Interpreter)
+- [ ] **Day 126:** `day-126-agent-short-long-term-memory` — Ajan Bellek Sistemleri: Episodic, Semantic ve Short-Term Vector Memory (Mem0)
+- [ ] **Day 127:** `day-127-langgraph-stateful-workflows` — LangGraph / Durumsal Çizge (StateGraph) ile Döngülü ve Koşullu Ajan Akışları
+- [ ] **Day 128:** `day-128-multi-agent-supervisor-worker` — Supervisor-Worker Çoklu Ajan Deseni: Görev Dağıtımı, Koordinasyon ve Birleştirme
+- [ ] **Day 129:** `day-129-agentic-debate-consensus` — Çelişkili Kararlarda Multi-Agent Tartışma (Debate) ve Konsensüs Oylama Mekanizması
+- [ ] **Day 130:** `day-130-human-in-the-loop-hitl` — Human-in-the-Loop (HITL): Kritik Eylemlerde İnsan Onayı ve Kesme (Interrupt) Deseni
+- [ ] **Day 131:** `day-131-semantic-chunking-dynamic-rag` — İleri Düzey Parçalama: Semantik Benzerlik Tabanlı Dinamik Metin Bölümleme
+- [ ] **Day 132:** `day-132-hierarchical-parent-child-rag` — Hiyerarşik RAG: Küçük Parça ile Arama (Small Chunks), Büyük Parça ile Yanıtlama (Parent Doc)
+- [ ] **Day 133:** `day-133-hyde-hypothetical-embeddings` — HyDE (Hypothetical Document Embeddings) ile Sıfır-Atış Soru Zenginleştirme
+- [ ] **Day 134:** `day-134-cross-encoder-reranking` — Bi-Encoder (Vektör) + Cross-Encoder (Re-ranker) İki Aşamalı Hassas Getirme Hattı
+- [ ] **Day 135:** `day-135-contextual-compression-retrieval` — Alınan Belgelerden Token İsrafını Önleyen Dinamik Bağlam Sıkıştırma
+- [ ] **Day 136:** `day-136-graph-rag-entity-extraction` — GraphRAG-1: Metinden Varlık (Entity) ve İlişki (Relationship) Çıkarma Boru Hattı
+- [ ] **Day 137:** `day-137-knowledge-graph-neo4j-cypher` — GraphRAG-2: Bilgi Grafını Neo4j/NetworkX üzerinde Oluşturma ve Cypher Sorgulama
+- [ ] **Day 138:** `day-138-hierarchical-community-summarization` — GraphRAG-3: Leiden Topluluk Tespiti ve Hiyerarşik Küme Özetleme (Microsoft GraphRAG)
+- [ ] **Day 139:** `day-139-hybrid-vector-graph-rag` — Hibrit RAG: Vektör Arama + Bilgi Grafı Gezintisi (Hybrid Retrieval & Fusion)
+- [ ] **Day 140:** `day-140-ragas-trulens-evaluation` — Ragas & TruLens ile RAG Değerlendirmesi: Faithfulness, Answer Relevance, Context Recall
+
+#### 🔹 FAZ 8: Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute ve Arama Ağaçları (Gün 141 - Gün 160)
+- [ ] **Day 141:** `day-141-system1-vs-system2-thinking` — System 1 (Hızlı/Sezgisel) vs System 2 (Yavaş/Akıl Yürüten) LLM Mimarisi
+- [ ] **Day 142:** `day-142-chain-of-thought-special-tokens` — Açık Akıl Yürütme Akışı: `<think> ... </think>` Formatı ve Düşünce Tokenizasyonu
+- [ ] **Day 143:** `day-143-self-consistency-majority-voting` — Self-Consistency: Çoklu Akıl Yürütme Yollarında Sıcaklık Örneklemesi ve Çoğunluk Oyu
+- [ ] **Day 144:** `day-144-tree-of-thoughts-bfs-dfs` — Tree of Thoughts (ToT): BFS ve DFS Arama ile Düşünce Ağacı Gezintisi
+- [ ] **Day 145:** `day-145-process-reward-models-prm` — Outcome (ORM) vs Process Reward Models (PRM): Adım Adım Doğruluk Puanlama
+- [ ] **Day 146:** `day-146-mcts-llm-reasoning-search` — Monte Carlo Tree Search (MCTS) Destekli LLM Düşünce Planlaması ve Rollout
+- [ ] **Day 147:** `day-147-test-time-compute-scaling` — Test-Time Compute Scaling Yasaları: Çıkarım Zamanı Hesaplama Bütçesi ve Arama Derinliği
+- [ ] **Day 148:** `day-148-backtracking-and-error-recovery` — Düşünce Yollarında Geri İzleme (Backtracking) ve Çıkmaz Sokakları Fark Etme
+- [ ] **Day 149:** `day-149-self-verification-critique-loop` — Kendi Kendine Doğrulama (Self-Verification): Çözümden Girdiye Ters Sağlama
+- [ ] **Day 150:** `day-150-symbolic-math-z3-sympy-reasoning` — Sembolik Akıl Yürütme: LLM ile Z3 SMT Solver & SymPy Entegrasyonu
+- [ ] **Day 151:** `day-151-code-generation-unit-test-loop` — Test Odaklı Kod Üretimi: Kod Yazma -> PyTest Çalıştırma -> Hata Ayıklama Döngüsü
+- [ ] **Day 152:** `day-152-formal-theorem-proving-lean4` — Biçimsel Mantık ve Teorem İspatı: LLM ile Lean4 / Isabelle Kod Üretimi
+- [ ] **Day 153:** `day-153-logical-fallacy-deductive-engine` — Tümdengelimsel ve Tümevarımsal Mantık Doğrulayıcı: Safsata Dedektörü
+- [ ] **Day 154:** `day-154-multi-step-arithmetic-gsm8k-engine` — GSM8K & MATH Benchmark'ları için Adım Adım Matematiksel Akıl Yürütme Motoru
+- [ ] **Day 155:** `day-155-long-context-needle-in-a-haystack` — Needle In A Haystack (NIAH) Testi: 128k Token İçinde Derin Bilgi Çıkarımı
+- [ ] **Day 156:** `day-156-chain-of-verification-cove` — Chain of Verification (CoVe): Halüsinasyonları Kendi Ürettiği Sorularla Test Etme
+- [ ] **Day 157:** `day-157-dynamic-compute-allocation` — Soru Zorluğuna Göre Dinamik Token Bütçesi Belirleme (Easy vs Hard Routing)
+- [ ] **Day 158:** `day-158-reasoning-trace-distillation` — Büyük Akıl Yürüten Modelin (R1) Düşünce İncilerini Küçük Modele Damıtma
+- [ ] **Day 159:** `day-159-causal-reasoning-dag-engine` — Nedensellik Analizi (Causal Inference): Neden-Sonuç Grafı (DAG) ve Do-Calculus
+- [ ] **Day 160:** `day-160-deep-reasoning-benchmark-suite` — AIME, GPQA ve ARC-Challenge Kapsamlı Akıl Yürütme Test Paketi
+
+#### 🔹 FAZ 9: Çok Modlu (Multimodal) Temel Modeller: VLM, Video, Ses ve Difüzyon (Gün 161 - Gün 180)
+- [ ] **Day 161:** `day-161-vlm-llava-architecture` — LLaVA Mimarisi: ViT Encoder + MLP Projector + LLM ile Uçtan Uca VLM İnşası
+- [ ] **Day 162:** `day-162-qformer-cross-attention-projector` — BLIP-2 Q-Former: Öğrenilebilir Query Token'ları ile Görsel-Dil Hizalaması
+- [ ] **Day 163:** `day-163-visual-instruction-tuning` — Görsel Komut İnce Ayarı (Visual SFT): VQA, Detaylı Açıklama ve Görsel Sohbet
+- [ ] **Day 164:** `day-164-spatial-grounding-bounding-box-vlm` — Spatial Grounding: Görseldeki Nesnelerin Koordinatlarını `[ymin, xmin, ymax, xmax]` Çıkarma
+- [ ] **Day 165:** `day-165-ocr-free-document-understanding` — Donut / Nougat Tarzı Metinsiz Doğrudan Doküman ve Tablo Görseli Ayrıştırma
+- [ ] **Day 166:** `day-166-gui-agent-web-navigation-vlm` — GUI Ajanları: Ekran Görüntüsü Analizi, Tıklanabilir Eleman Tespiti ve Web Gezintisi
+- [ ] **Day 167:** `day-167-video-llm-spatio-temporal-tokens` — Video LLM: Zamansal Kare Örnekleme (Temporal Sampling) ve 3D Attention
+- [ ] **Day 168:** `day-168-streaming-video-understanding` — Gerçek Zamanlı Video Akışı Analizi ve Olay Tespiti (Streaming VLM)
+- [ ] **Day 169:** `day-169-audio-tokenizer-soundstream-encodec` — Sinirsel Ses Sıkıştırma: EnCodec / SoundStream ile Sürekli Sesi Ayrık Tokenlara Bölme
+- [ ] **Day 170:** `day-170-whisper-speech-to-text-ctc` — Whisper Mimarisi: Çok Dilli Konuşma Tanıma, Zaman Damgası Tahmini
+- [ ] **Day 171:** `day-171-speech-to-speech-llm-duallm` — Uçtan Uca Speech-to-Speech LLM: Ses Tokenı Alıp Doğrudan Ses Tokenı Üretme
+- [ ] **Day 172:** `day-172-latent-diffusion-models-ldm` — Latent Diffusion Modelleri (LDM): VAE Uzayında Gürültü Ekleme/Kaldırma Matematiği
+- [ ] **Day 173:** `day-173-classifier-free-guidance-cfg` — Classifier-Free Guidance (CFG) & DDIM Hızlı Örnekleme Zamanlayıcıları
+- [ ] **Day 174:** `day-174-cross-attention-text-to-image` — Metinden Görüntüye: UNet / DiT (Diffusion Transformer) Cross-Attention
+- [ ] **Day 175:** `day-175-controlnet-spatial-conditioning` — ControlNet: Kenar (Canny), Derinlik (Depth) ve Poz Rehberliğinde Koşullu Üretim
+- [ ] **Day 176:** `day-176-lora-diffusion-finetuning` — Difüzyon Modellerinde LoRA / DreamBooth ile Özel Nesne ve Stil Öğretimi
+- [ ] **Day 177:** `day-177-diffusion-transformers-dit` — DiT (Diffusion Transformer - Sora / Flux temeli): Patch Tabanlı Görüntü Üretimi
+- [ ] **Day 178:** `day-178-nerf-neural-radiance-fields` — NeRF (Neural Radiance Fields): Pozlandırılmış Görüntülerden 3D Sahne Hacimsel Sentezi
+- [ ] **Day 179:** `day-179-3d-gaussian-splatting-3dgs` — 3D Gaussian Splatting (3DGS): Gerçek Zamanlı (100+ FPS) Radyan ve Nokta Kümesi Renderı
+- [ ] **Day 180:** `day-180-multimodal-omni-benchmark-suite` — MME, MMBench ve MathVista ile Kapsamlı Çok Modlu Model Doğrulama Paketi
+
+#### 🔹 FAZ 10: Ultra-MLOps, Dağıtık Eğitim, Triton GPU Kernel ve BÜYÜK FİNAL 201 (Gün 181 - Gün 201)
+- [ ] **Day 181:** `day-181-distributed-data-parallel-ddp` — PyTorch DDP: All-Reduce İletişimi, Gradyan Paketleme ve Çoklu GPU Eğitimi
+- [ ] **Day 182:** `day-182-fsdp-fully-sharded-data-parallel` — FSDP (Fully Sharded Data Parallel): Ağırlık, Gradyan ve Optimizer Durumlarını Bölme
+- [ ] **Day 183:** `day-183-deepspeed-zero123-offload` — DeepSpeed ZeRO-1/2/3 ve CPU/NVMe Bellek Boşaltma Mekanizması
+- [ ] **Day 184:** `day-184-tensor-parallelism-megatron` — Tensor Parallelism (TP - Megatron-LM): Matris Çarpımını Satır ve Sütun Boyutunda Bölme
+- [ ] **Day 185:** `day-185-pipeline-parallelism-1f1b` — Pipeline Parallelism (PP): 1F1B Zaman Çizelgesi ve Balon Azaltma
+- [ ] **Day 186:** `day-186-3d-parallelism-hybrid-training` — 3D Paralellik (DP + TP + PP): 70B+ Parametreli Modellerin Küme Eğitimi
+- [ ] **Day 187:** `day-187-triton-gpu-kernel-programming` — OpenAI Triton: Python ile GPU Programlama, Blok Seviyesinde Bellek Eşleme
+- [ ] **Day 188:** `day-188-custom-triton-fused-rmsnorm` — Özel Triton Kernel-1: Fused RMSNorm & Residual Ekleme Çekirdeği Yazımı
+- [ ] **Day 189:** `day-189-custom-triton-swiglu-kernel` — Özel Triton Kernel-2: Yüksek Hızlı Fused SwiGLU İleri ve Geri Geçiş Çekirdeği
+- [ ] **Day 190:** `day-190-custom-triton-flash-attention` — Özel Triton Kernel-3: Sıfırdan Parçalı (Tiled) FlashAttention-2 GPU Çekirdeği
+- [ ] **Day 191:** `day-191-vllm-paged-attention-kv-cache` — vLLM Mimarisi: PagedAttention ile Sıfır Bellek Parçalanması ve Dinamik KV Cache
+- [ ] **Day 192:** `day-192-continuous-batching-chunked-prefill` — Continuous Batching ve Chunked Prefill ile Kuyruk Bekleme Sürelerini Sıfırlama
+- [ ] **Day 193:** `day-193-speculative-decoding-draft-model` — Spekülatif Çıkarım (Speculative Decoding): Taslak Model ile 2.5x-3x Hızlanma
+- [ ] **Day 194:** `day-194-tensorrt-llm-deployment` — TensorRT-LLM Derleme, In-Flight Batching ve FP8 Tensor Core Optimizasyonu
+- [ ] **Day 195:** `day-195-awq-gptq-weight-quantization` — İleri Kuantizasyon: AWQ (Activation-aware Weight Quant) ve GPTQ 4-Bit Kuantizasyonu
+- [ ] **Day 196:** `day-196-ray-cluster-distributed-serving` — Ray Core & Ray Serve ile Dağıtık Model Ölçekleme, Çoklu Düğüm Yük Dağıtımı
+- [ ] **Day 197:** `day-197-k8s-gpu-autoscaling-vllm-hpa` — Kubernetes KEDA & HPA ile GPU Kullanımına Göre vLLM Podlarını Otomatik Ölçekleme
+- [ ] **Day 198:** `day-198-llm-observability-opentelemetry` — OpenTelemetry & Prometheus ile TTFT ve TPOT İzleme Paneli
+- [ ] **Day 199:** `day-199-canary-shadow-deployment-llm` — Üretimde Canary Dağıtımı ve Shadow-Traffic ile Sıfır Kesintili Model Güncellemesi
+- [ ] **Day 200:** `day-200-full-system-fault-injection-chaos` — Kaos Mühendisliği: GPU Arızaları, Ağ Gecikmesi ve Kurtarma Testi
+- [ ] **Day 201:** `day-201-mini-omni-reasoner-grand-finale` — **201 GÜNLÜK BÜYÜK FİNAL:** Mini-Omni Reasoner v1.0 (Multimodal + CoT Reasoning + MoE + Triton)
+
+---
+
+Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Reasoning ve MLOps mentorüsün. Benimle birlikte **"201 Günlük Yapay Zeka, Bilgisayarlı Görü, LLM/RAG, Reasoning ve MLOps Mühendisliği Master Roadmap"** programını adım adım, tam kapsamlı ve üretime hazır (production-grade) kod standartlarıyla yürüteceksin.
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 99 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3 ve FAZ 4 TAMAMLANDI; FAZ 5 SÜRÜYOR).
-- **Sıradaki Gün:** Gün 100 (`day-100-modern-architecture-ablations` — SwiGLU, RMSNorm ve FlashAttention Mimarileri ile MiniViT Ablasyon Analizleri).
+- **Tamamlanan:** Gün 01 - Gün 101 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1, FAZ 2, FAZ 3, FAZ 4 ve FAZ 5 TAMAMLANDI).
+- **Sıradaki Gün:** Gün 102 (`day-102-gqa-grouped-query-attention` — Grouped-Query Attention (GQA) & Multi-Query Attention (MQA) ile KV Cache Azaltma).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
@@ -152,7 +265,7 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG ve 
 ### ⚙️ Genel İşleyiş ve Pedagojik Kurallar (Dondurulmuş Standart)
 
 1. **Adım Adım İlerleme (Strict Step-by-Step):** Asla birden fazla günü aynı anda üretme. Her seferinde sadece tek bir günün içeriğini sun. Kullanıcı o günü tamamlayıp onay verene veya "Sonraki güne geçebiliriz" diyene kadar bir sonraki güne geçme.
-2. **Endüstriyel Standartta Kod (Production-Grade):** Kodlar yalnızca örnek kod parçaları değil; eksiksiz, modüler, Type Hint içeren, docstring'leri yazılmış, hata yakalama (try-except/validation) mekanizmalarına sahip, birim testleri (%100 PASSED) bulunan ve test edilebilir mimaride olmalıdır.
+2. **Endüstriyel Standartta Kod (Production-Grade):** Kodlar yalnızca örnek kod parçaları değil; eksiksiz, modüler, Type Hint içeren, docstring'leri yazılmış, hata yakalama mekanizmalarına sahip, birim testleri (%100 PASSED) bulunan ve test edilebilir mimaride olmalıdır.
 3. **Matematiksel ve Teorik Derinlik:** Konunun neden o yöntemle çözüldüğünü, arkasındaki lineer cebir/istatistiksel formülleri ($...$ veya $$...$$ formatında) ve olası tuzakları (ör. data leakage, numeric underflow, OOM, GPU bottleneck) açıkla.
 4. **SWOT Analizi ile Karar Matrisi:** Her günün konusunu ve mimari tercihlerini Güçlü Yönler (Strengths), Zayıf Yönler (Weaknesses), Fırsatlar (Opportunities) ve Tehditler (Threats) boyutlarıyla analiz et.
 5. **4 Zorunlu Mimari Analiz Başlığı (Dondurulmuş Standart):**
@@ -187,7 +300,7 @@ Her gün için yanıtını istisnasız şu 6 ana başlık altında yapılandır:
 - Kullanıcının kendi başına geliştirmesi/optimize etmesi için tasarlanmış 1 adet spesifik teknik görev ve hemen altında eksiksiz çalışan kod çözümü.
 
 #### 4. 📁 GitHub Repo Paketi
-- **Klasör Adı:** Yol haritasındaki birebir isim (ör. `day-74-supervised-contrastive-learning/`).
+- **Klasör Adı:** Yol haritasındaki birebir isim (ör. `day-102-gqa-grouped-query-attention/`).
 - **`README.md` İçeriği:** 4 zorunlu mimari analiz başlığı, teknik sözlük, SWOT, matematiksel formüller, benchmark tablosu, alıştırma çözümü ve mentorluk Q&A.
 - **`gereksinimler.txt` / Bağımlılıklar:** İlgili gün için gerekli kütüphaneler ve sürümleri.
 - **Git Commit Mesajı:** Conventional Commits standardında.
@@ -196,7 +309,7 @@ Her gün için yanıtını istisnasız şu 6 ana başlık altında yapılandır:
 ```text
 /*
  * Copyright (c) 2026 Seydi Eryılmaz (@seydivakkas)
- * 101-Day AI, Computer Vision & MLOps Master Series
+ * 201-Day AI, CV, LLM/RAG, Reasoning & MLOps Master Series
  * License: Private - All Rights Reserved
  */
 ```
