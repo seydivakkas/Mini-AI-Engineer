@@ -269,7 +269,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 213:** `day-213-rlvr-verifiable-rewards-reasoning` — RLVR (Reinforcement Learning with Verifiable Rewards): Kanıtlanabilir ve Deterministik Ödüller
 - [x] **Day 214:** `day-214-length-bias-penalty-post-training` — Length-Bias Cezalandırma: Boş Düşünce Şişmesini (Over-thinking) Önleyen Uzunluk Düzenlileştirmesi
 - [x] **Day 215:** `day-215-iterative-dpo-online-preference` — İteratif / Çevrimiçi DPO: Sürekli Güncellenen Tercih Havuzu ile Online Post-Training
-- [ ] **Day 216:** `day-216-reward-hacking-mitigation` — Reward Hacking / Goodhart Yasası Önleme: Ödül Modeli İstismarını Engelleyen KL Divergence Sınırlandırması
+- [x] **Day 216:** `day-216-reward-hacking-mitigation` — Reward Hacking / Goodhart Yasası Önleme: Ödül Modeli İstismarını Engelleyen KL Divergence Sınırlandırması
 - [ ] **Day 217:** `day-217-simpo-simple-preference-optimization` — SimPO (Simple Preference Optimization): Referanssız ve Doğrudan Marjin Tabanlı Tercih Optimizasyonu
 - [ ] **Day 218:** `day-218-orpo-monolithic-sft-preference` — ORPO: SFT ve Tercih Hizalamasını Tek Bir Monolitik Kayıpta Birleştiren Eğitim
 - [ ] **Day 219:** `day-219-post-training-safety-red-teaming` — Otomatik Red-Teaming: Jailbreak ve Zararlı İsteklere Karşı Güvenlik Savunma Eğitimi
@@ -370,9 +370,9 @@ Sen kıdemli bir Yapay Zeka, Bilgisayarlı Görü (Computer Vision), LLM/RAG, Re
 
 ### 📌 Mevcut Durum ve Dondurulmuş Hafıza (Freezing State)
 
-- **Tamamlanan:** Gün 01 - Gün 215 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-215 TAMAMLANDI).
+- **Tamamlanan:** Gün 01 - Gün 216 (%100 eksiksiz tamamlandı ve test edildi - FAZ 1 - FAZ 10 TAMAMLANDI, FAZ 11 Gün 202-216 TAMAMLANDI).
 - **Sıradaki Büyük Faz:** FAZ 11: İleri Post-Training, GRPO & RLHF / Akıl Yürütme Güçlendirme (Gün 202 - Gün 220).
-- **Sıradaki Gün:** Gün 216 (`day-216-reward-hacking-mitigation` — Reward Hacking / Goodhart Yasası Önleme: Ödül Modeli İstismarını Engelleyen KL Divergence Sınırlandırması).
+- **Sıradaki Gün:** Gün 217 (`day-217-simpo-simple-preference-optimization` — SimPO (Simple Preference Optimization): Referanssız ve Doğrudan Marjin Tabanlı Tercih Optimizasyonu).
 - **Lisans Kuralı:** Tüm kod ve dokümantasyon dosyalarında Telif Hakkı (c) 2026 Seydi Eryılmaz (@seydivakkas) Özel Lisans — Tüm Hakları Saklıdır kuralı geçerlidir.
 
 ---
