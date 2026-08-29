@@ -15,7 +15,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 | **FAZ 5** | Gün 86 - Gün 101 | Model Sıkıştırma, Güvenilirlik, FastAPI, Docker, SwiGLU/RMSNorm & MiniViT-MoE v2 Hub Dağıtımı | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 6** | Gün 102 - Gün 120 | İleri LLM Mimarileri (GQA/MLA/RoPE), Hizalama (Alignment), SFT, DPO, KTO, GRPO & RLHF | ✅ **TAMAMLANDI (%100)** |
 | **FAZ 7** | Gün 121 - Gün 140 | Otonom AI Ajanları (ReAct/Reflexion), Multi-Agent Sistemleri ve Advanced GraphRAG | ✅ **TAMAMLANDI (%100)** |
-| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | 🔄 **DEVAM EDİYOR (Gün 154 Tamamlandı, Gün 155 Sırada)** |
+| **FAZ 8** | Gün 141 - Gün 160 | Derin Akıl Yürütme (Reasoning LLMs), Test-Time Compute, MCTS ve Process Reward Models | 🔄 **DEVAM EDİYOR (Gün 155 Tamamlandı, Gün 156 Sırada)** |
 | **FAZ 9** | Gün 161 - Gün 180 | Çok Modlu (Multimodal) Temel Modeller: VLM (LLaVA), Video, Ses, Difüzyon ve 3DGS | ⏳ Sırada |
 | **FAZ 10** | Gün 181 - Gün 201 | Ultra-MLOps, Dağıtık Eğitim (FSDP/ZeRO), Özel Triton GPU Kernel & BÜYÜK FİNAL 201 | ⏳ Sırada |
 
@@ -198,7 +198,7 @@ Bu dosya; projenin 1. gününden 201. gününe kadar tüm yol haritasını, tama
 - [x] **Day 152:** `day-152-formal-theorem-proving-lean4` — Biçimsel Mantık ve Teorem İspatı: LLM ile Lean4 / Isabelle Kod Üretimi
 - [x] **Day 153:** `day-153-logical-fallacy-deductive-engine` — Tümdengelimsel ve Tümevarımsal Mantık Doğrulayıcı: Safsata Dedektörü
 - [x] **Day 154:** `day-154-multi-step-arithmetic-gsm8k-engine` — GSM8K & MATH Benchmark'ları için Adım Adım Matematiksel Akıl Yürütme Motoru
-- [ ] **Day 155:** `day-155-long-context-needle-in-a-haystack` — Needle In A Haystack (NIAH) Testi: 128k Token İçinde Derin Bilgi Çıkarımı
+- [x] **Day 155:** `day-155-long-context-needle-in-a-haystack` — Needle In A Haystack (NIAH) Testi: 128k Token İçinde Derin Bilgi Çıkarımı
 - [ ] **Day 156:** `day-156-chain-of-verification-cove` — Chain of Verification (CoVe): Halüsinasyonları Kendi Ürettiği Sorularla Test Etme
 - [ ] **Day 157:** `day-157-dynamic-compute-allocation` — Soru Zorluğuna Göre Dinamik Token Bütçesi Belirleme (Easy vs Hard Routing)
 - [ ] **Day 158:** `day-158-reasoning-trace-distillation` — Büyük Akıl Yürüten Modelin (R1) Düşünce İncilerini Küçük Modele Damıtma
