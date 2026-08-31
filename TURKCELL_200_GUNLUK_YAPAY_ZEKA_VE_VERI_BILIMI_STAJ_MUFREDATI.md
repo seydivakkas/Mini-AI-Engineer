@@ -31,7 +31,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 [BÖLÜM 1: GÜN 1 - 100]
 ├── Modül 01: Müşteri Analitiği, Churn, CRM & Gelir Optimizasyonu (Gün 001 - 015)
 ├── Modül 02: Şebeke, Ağ Trafiği & Zaman Serileri (Gün 016 - 030)
-├── Modül 03: Doğal Dil İşleme (NLP), Müşteri Hizmetleri & LLM (Gün 031 - 045)
+├── Modül 03: Doğal Dil İşleme (NLP), Müşteri Hizmetleri & Semantik Arama (Gün 031 - 045)
 ├── Modül 04: Bilgisayarlı Görü (Computer Vision) & Saha Denetimi (Gün 046 - 060)
 ├── Modül 05: Fintek, Paycell & Fraud / Dolandırıcılık Tespiti (Gün 061 - 075)
 ├── Modül 06: Ses İşleme & Çağrı Analitiği (Audio AI) (Gün 076 - 085)
@@ -42,7 +42,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 ├── Modül 09: Telekom Şebeke Optimizasyonu, Radyo & 5G Altyapısı (Gün 101 - 115)
 ├── Modül 10: Fintek / Paycell, Dijital Cüzdan & Alternatif Risk (Gün 116 - 130)
 ├── Modül 11: Dijital Servisler (TV+, fizy, lifebox, BiP, Dergilik) (Gün 131 - 145)
-├── Modül 12: İleri Seviye NLP, LLM, Müşteri Deneyimi & Agentic AI (Gün 146 - 160)
+├── Modül 12: İleri Seviye NLP, Semantik Arama, Metin Madenciliği & Müşteri Deneyimi (Gün 146 - 160)
 ├── Modül 13: Bilgisayarlı Görü, Saha Operasyonları & Güvenlik (Gün 161 - 175)
 ├── Modül 14: Siber Güvenlik, Ağ Savunması & Tehdit İstihbaratı (Gün 176 - 185)
 ├── Modül 15: MLOps, Veri Mühendisliği & Dağıtık Akış (Gün 186 - 195)
@@ -389,7 +389,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 
 ---
 
-## 💬 Modül 03: Doğal Dil İşleme (NLP), Müşteri Hizmetleri & LLM (Gün 031 – 045)
+## 💬 Modül 03: Doğal Dil İşleme (NLP), Müşteri Hizmetleri & Semantik Arama (Gün 031 – 045)
 
 ### Gün 031: Telekom Müşteri Şikayetleri Duygu Analizi
 - **İş Alanı:** Müşteri Deneyimi & Sosyal Medya Dinleme
@@ -1681,18 +1681,18 @@ Her proje şu standart bileşenlerle inşa edilir:
 
 ---
 
-## 🤖 Modül 12: İleri Seviye NLP, LLM, Müşteri Deneyimi & Agentic AI (Gün 146 – 160)
+## 🤖 Modül 12: İleri Seviye NLP, Semantik Arama, Metin Madenciliği & Müşteri Deneyimi (Gün 146 – 160)
 
-### Gün 146: Müşteri Temsilcisi Yanıt Kalitesi Denetleyicisi (LLM-as-a-Judge)
-- **İş Alanı:** Turkcell Global Bilgi Kalite Güvence & Temsilci Değerlendirme
-- **Veri Kaynağı:** [Customer Support Conversation Quality Dataset](https://huggingface.co/datasets)
-- **Model:** Yerel Qwen2.5-7B-Instruct / LLaMA-3.2-3B (Ollama / HuggingFace Yerel) + G-Eval Kalite Rubriği
-- **Türkçe Değişkenler:** `cagri_transkripti`, `temsilci_cevabi`, `degerlendirme_kriteri_empati_cozum_nezaket`, `kalite_puani_1_5`, `gerekce_metni`
-- **Jupyter Notebook (`gun_146_llm_as_a_judge_kalite_denetimi.ipynb`):**
-  1. Çağrı merkezi görüşme metinlerinin LLM'e değerlendirme rubriği (Empati, Doğru Bilgi, Çözüm Hızı) ile beslenmesi
-  2. G-Eval metodu ile zincirleme düşünme (Chain-of-Thought) kullanılarak 1-5 arası objektif puanlama
-  3. Temsilcilere gelişim alanlarına dair otomatik koçluk geri bildirimi üretimi
-- **Mülakat Sorusu:** LLM-as-a-Judge sistemlerinde "Position Bias" (ilk verilen cevabı kayırma) ve "Verbosity Bias" (uzun cevaba yüksek puan verme) sorunları nasıl hafifletilir?
+### Gün 146: Müşteri Temsilcisi Yanıt Kalitesi ve Çözüm Uyumu Denetleyicisi
+- **İş Alanı:** Turkcell Global Bilgi Kalite Güvence & Otomatik Değerlendirme
+- **Veri Kaynağı:** [HuggingFace - Customer Support Conversation Quality Dataset](https://huggingface.co/datasets)
+- **Model:** BERTurk Cross-Encoder + Doğal Dil Çıkarımı (NLI - Entailment/Contradiction Sınıflandırma)
+- **Türkçe Değişkenler:** `musteri_sorusu`, `temsilci_cevabi`, `mantiksal_uyum_entailment_skoru`, `nezaket_puani`, `kalite_notu_1_100`
+- **Jupyter Notebook (`gun_146_temsilci_kalite_denetimi_nli.ipynb`):**
+  1. Çağrı transkriptlerinden soru ve yanıt çiftlerinin ayrıştırılması
+  2. NLI modeli ile cevabın soruyu mantıksal olarak karşılayıp karşılamadığının (Doğruluk/Çelişki) tespiti
+  3. LLM gerektirmeyen deterministik ve milisaniyelik kalite denetim raporlaması
+- **Mülakat Sorusu:** Metin uyumunu değerlendirmede Bi-Encoder (Cosine Similarity) yerine Cross-Encoder kullanmanın dikkat mekanizması (Cross-Attention) açısından sağladığı doğruluk artışı nedir?
 
 ### Gün 147: Telekom Terimleri için Alana Özel (Domain-Specific) Word2Vec / FastText
 - **İş Alanı:** Turkcell Ar-Ge & Alana Özel NLP Altyapısı
@@ -1705,21 +1705,21 @@ Her proje şu standart bileşenlerle inşa edilir:
   3. Yazım hatalı yazılan telekom terimlerinin en yakın doğru anlamsal karşılığının bulunması
 - **Mülakat Sorusu:** Türkçe gibi sondan eklemeli dillerde kelime bazlı Word2Vec yerine karakter n-gram tabanlı FastText kullanmanın OOV (Out-of-Vocabulary) kelimelerdeki avantajı nedir?
 
-### Gün 148: Fatura PDF'lerinden Yapılandırılmış JSON Çıkaran LLM Ajanı
+### Gün 148: Fatura PDF'lerinden Yapılandırılmış JSON Veri Çıkarıcı
 - **İş Alanı:** Kurumsal Müşteri Masası & Otomatik Fatura İçe Aktarma
 - **Veri Kaynağı:** [Kaggle - Telecom Invoice PDF/Text Dataset](https://www.kaggle.com/datasets)
-- **Model:** LangChain / LlamaIndex + Pydantic Structured Output Parser
+- **Model:** PDFPlumber + Regex Kural Motoru + SpaCy / BERTurk NER (Slot Filling)
 - **Türkçe Değişkenler:** `fatura_metni`, `abone_no`, `fatura_kesim_tarihi`, `odenecek_tutar_tl`, `kdv_oiv_vergileri_json`
-- **Jupyter Notebook (`gun_148_fatura_pdf_json_llm_ajani.ipynb`):**
-  1. Karmaşık telekom fatura PDF'lerinden metin ve tablo bloklarının çıkarılması
-  2. Pydantic şeması ile zorunlu alanların (Fatura No, Vergi Kalemleri, Paket Aşım Ücreti) tanımlanması
-  3. LLM Function Calling ile sıfır şema hatasıyla doğrulanmış JSON çıktısı üretimi
-- **Mülakat Sorusu:** LLM çıktılarının JSON formatında kesin ve hatasız gelmesini garanti altına almak için JSON Mode ve Grammar-based Sampling nasıl çalışır?
+- **Jupyter Notebook (`gun_148_fatura_pdf_json_ayristirici.ipynb`):**
+  1. Fatura PDF'lerinden metin blokları ve tabloların koordinat bazlı ayrıştırılması
+  2. Regex ve Varlık İsmi Tanıma (NER) ile Fatura No, Vergi Kalemleri ve Tutar alanlarının çıkarılması
+  3. Deterministik ve sıfır hata payıyla doğrulanmış JSON çıktısı üretimi
+- **Mülakat Sorusu:** Doküman işlemede (Information Extraction) kural tabanlı Regex/NER yaklaşımlarının üretim ortamında LLM'lere göre hız ve güvenilirlik avantajları nelerdir?
 
 ### Gün 149: Canlı Sohbet Müşteri Sinir Seviyesi (Frustration) İzleyici
 - **İş Alanı:** BiP & Turkcell Web Canlı Destek Masası
-- **Veri Kaynağı:** [Customer Support Live Chat Frustration Traces](https://huggingface.co/datasets)
-- **Model:** BERTurk + Temporal Attention (Mesaj Sırası Ağırlandırma)
+- **Veri Kaynağı:** [HuggingFace - Customer Support Live Chat Frustration Traces](https://huggingface.co/datasets)
+- **Model:** BERTurk + Temporal Attention (Mesaj Sırası Ağırlıklandırma)
 - **Türkçe Değişkenler:** `oturum_mesaj_listesi`, `buyuk_harf_unlem_orani`, `cevap_bekleme_suresi_sn`, `sinirlilik_skoru_0_100`
 - **Jupyter Notebook (`gun_149_canli_sohbet_sinir_seviyesi.ipynb`):**
   1. Sohbet esnasında müşterinin yazdığı ardışık mesajlardaki öfke artışının takibi
@@ -1728,7 +1728,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 - **Mülakat Sorusu:** Canlı sohbette tek bir cümlenin bağımsız duygu analizi ile tüm konuşma akışının kümülatif sinir seviyesi (Contextual Frustration) arasındaki fark nasıl modellenir?
 
 ### Gün 150: Şikayet Metinlerinden Kök Neden Hiyerarşisi Çıkarma
-- **İş Alanı:** Şikayet Yönetimi & Operasyonel Hata Analizi (Sikayetvar / 532)
+- **İş Alanı:** Şikayet Yönetimi & Operasyonel Hata Analizi (Şikayetvar / 532)
 - **Veri Kaynağı:** [Kaggle - Turkish Telecom Complaints Dataset](https://www.kaggle.com/datasets)
 - **Model:** Hiyerarşik Metin Sınıflandırma (Hierarchical BERTurk / SetFit)
 - **Türkçe Değişkenler:** `sikayet_metni`, `ana_kategori_sebeke_fatura_kampanya`, `alt_kategori_cekmiyor_fatura_asimi`, `kok_neden_kodu`
@@ -1738,42 +1738,42 @@ Her proje şu standart bileşenlerle inşa edilir:
   3. Şebeke arızası kaynaklı şikayetlerin doğrudan ilgili bölge saha operasyon birimine yönlendirilmesi
 - **Mülakat Sorusu:** Düz çok sınıflı (Flat Multi-Class) model yerine Hiyerarşik Sınıflandırma kullanmanın sınıflar arası mantıksal tutarlılığa katkısı nedir?
 
-### Gün 151: RAG için Hibrit Vektör + BM25 Arama Motoru (Hybrid Search)
-- **İş Alanı:** Turkcell İntranet Bilgi Bankası & Müşteri Asistanı RAG
-- **Veri Kaynağı:** [Turkcell Knowledge Base & Help Articles](https://www.turkcell.com.tr/)
-- **Model:** BM25 (Sparse) + BGE-M3 / BERTurk Embeddings (Dense) + Reciprocal Rank Fusion (RRF)
-- **Türkçe Değişkenler:** `kullanici_sorusu`, `bm25_anahtar_kelime_skorlari`, `vektor_anlamsal_benzerlik_skorlari`, `rrf_birlestirilmis_siralama`
-- **Jupyter Notebook (`gun_151_hibrit_arama_rag_bm25_vektor.ipynb`):**
-  1. Telekom teknik terimleri (Örn: "VoLTE ayarı", "APN internet") içeren sorgularda BM25 ve Vektör aramasının ayrı ayrı çalıştırılması
-  2. Reciprocal Rank Fusion (RRF) formülü ile iki farklı arama sonucunun en iyi şekilde harmanlanması
-  3. Cross-Encoder Reranker ile en alakalı 3 dokümanın seçilip LLM bağlamına iletilmesi
-- **Mülakat Sorusu:** RAG mimarilerinde sadece Vektör araması (Dense Search) kullanıldığında nadir teknik ürün kodlarında ve hata numaralarında neden başarısız olunur ve BM25 bunu nasıl çözer?
+### Gün 151: RAG için Hibrit Vektör + BM25 Telekom Arama Motoru
+- **İş Alanı:** Turkcell İntranet Bilgi Bankası & Teknik Doküman Arama
+- **Veri Kaynağı:** [HuggingFace - Turkish Tech Documentation & FAQ](https://huggingface.co/datasets)
+- **Model:** BM25 (Sparse) + BGE-M3 / Sentence-Transformers (Dense) + Reciprocal Rank Fusion (RRF) + Cross-Encoder Reranker
+- **Türkçe Değişkenler:** `kullanici_sorusu`, `bm25_anahtar_kelime_skorlari`, `vektor_anlamsal_benzerlik_skorlari`, `rrf_birlestirilmis_siralama`, `en_uygun_pasajlar`
+- **Jupyter Notebook (`gun_151_hibrit_arama_bm25_vektor.ipynb`):**
+  1. Teknik dökümanlarda hem birebir anahtar kelime (BM25) hem de anlamsal kavram (Dense Embeddings) araması çalıştırma
+  2. Reciprocal Rank Fusion (RRF) formülü ile sparse ve dense arama skorlarının ağırlıklı birleştirilmesi
+  3. Cross-Encoder Reranker ile en alakalı ilk 3 teknik dokümanın milisaniyeler içinde listelenmesi
+- **Mülakat Sorusu:** Teknik telekom kodları ve hata terimleri aramasında neden tek başına vektör araması yetersiz kalır ve BM25 ile hibritleme şarttır?
 
 ### Gün 152: Çağrı Metninden Kampanya Kabul İhtimali Puanlama
 - **İş Alanı:** Dış Arama (Outbound Telemarketing) & Paket Satış Masası
-- **Veri Kaynağı:** [Telemarketing Call Transcripts & Campaign Success](https://www.kaggle.com/datasets)
-- **Model:** TabNet / CatBoost (Metin Embedding + Müşteri CRM Verisi Füzyonu)
+- **Veri Kaynağı:** [Kaggle - Telemarketing Call Transcripts & Campaign Success](https://www.kaggle.com/datasets)
+- **Model:** TabNet / CatBoost (Metin TF-IDF/Embedding + Müşteri CRM Verisi Füzyonu)
 - **Türkçe Değişkenler:** `gorusme_transkripti_embedding`, `musteri_mevcut_tarife_tutari`, `onerilen_kampanya_fiyati`, `teklifi_kabul_etme_olasiligi`
 - **Jupyter Notebook (`gun_152_kampanya_kabul_ihtimali_nlp.ipynb`):**
-  1. Görüşmenin ilk 30 saniyesinde müşterinin konuşma tarzı ve itiraz cümlelerinin analizi
+  1. Görüşmenin ilk 30 saniyesinde müşterinin konuşma tarzı ve itiraz kelimelerinin analizi
   2. Müşteri demografisi ile konuşma metni gömmelerinin birleştirilerek teklif başarı ihtimali tahmini
   3. Kabul ihtimali düşük olduğunda temsilcinin ekranına alternatif indirimli paket önerisi düşürülmesi
 - **Mülakat Sorusu:** Tabular veriler ile serbest metin verilerini (Multimodal Tabular-NLP) aynı modelde birleştirmede Late Fusion ve Early Fusion mimarileri nasıl tasarlanır?
 
-### Gün 153: Otomatik Tarife Detay Özeti Üretici
+### Gün 153: Abonelik Taahhütnameleri için Ekstraktif (Çıkarıcı) Metin Özetleme
 - **İş Alanı:** Dijital Kanallar & Web/Mobil Tarife Karşılaştırma Sayfası
-- **Veri Kaynağı:** [Telecom Tariff Terms & Conditions Contracts](https://www.kaggle.com/datasets)
-- **Model:** mT5-Base / Turkish BART (Soyutlayıcı Özetleme - Abstractive Summarization)
-- **Türkçe Değişkenler:** `uzun_tarife_yasal_metni`, `uretilen_3_maddelik_ozet`, `rouge_1_rouge_2_rouge_l_skorlari`
-- **Jupyter Notebook (`gun_153_tarife_ozetleme_mt5.ipynb`):**
-  1. 10 sayfalık hukuki ve teknik tarife taahhütnamelerinin özetleme modeline beslenmesi
-  2. Müşterinin bilmesi gereken kritik maddeleri (Cayma bedeli, İnternet kotası, Aşım ücreti) madde madde çıkaran özetleme
-  3. ROUGE ve BLEU metrikleri ile özet kalitesinin ve olgusal doğruluğunun (Factuality) ölçümü
-- **Mülakat Sorusu:** Hukuki ve finansal metin özetlemede LLM halüsinasyonlarını (Hallucination) önlemek ve olgusal doğruluğu denetlemek için hangi Guardrails sistemleri kullanılır?
+- **Veri Kaynağı:** [Kaggle - Telecom Tariff Terms & Conditions Contracts](https://www.kaggle.com/datasets)
+- **Model:** Extractive TextRank / LexRank + BERTurk Cümle Gömmeleri (Halüsinasyonsuz Özetleyici)
+- **Türkçe Değişkenler:** `uzun_tarife_yasal_metni`, `cumle_onem_skorlari`, `cikarilan_3_maddelik_ozet`, `rouge_1_rouge_2_rouge_l_skorlari`
+- **Jupyter Notebook (`gun_153_tarife_ekstraktif_ozetleme.ipynb`):**
+  1. 10 sayfalık hukuki ve teknik tarife taahhütnamelerinin cümlelere ayrıştırılması
+  2. TextRank graf algoritması ile metnin en bilgilendirici ve kritik 3 cümlesinin doğrudan metinden çekilmesi
+  3. Üretken model kullanmadan sıfır halüsinasyon riskiyle anında özet çıkarma
+- **Mülakat Sorusu:** Hukuki ve finansal sözleşmelerde Abstractive (Üretici) özetleme yerine Extractive (Çıkarıcı) özetleme kullanmanın yasal uyumluluk avantajı nedir?
 
 ### Gün 154: Sosyal Medya Rakip Operatör Kampanya Karşılaştırma Analizörü
 - **İş Alanı:** Pazarlama Stratejisi & Rekabet İstihbaratı Masası
-- **Veri Kaynağı:** [Twitter / X Telecom Mentions & Campaign Feedback](https://www.kaggle.com/datasets)
+- **Veri Kaynağı:** [Kaggle - Twitter / X Telecom Mentions & Campaign Feedback](https://www.kaggle.com/datasets)
 - **Model:** RoBERTa-Turkish Aspect-Based Sentiment + Named Entity Recognition (NER)
 - **Türkçe Değişkenler:** `tweet_metni`, `bahsedilen_operator_turkcell_vodafone_telekom`, `karsilastirma_kriteri_fiyat_kapsama_hiz`, `duygu_kutbu`
 - **Jupyter Notebook (`gun_154_rakip_kampanya_analizoru.ipynb`):**
@@ -1784,8 +1784,8 @@ Her proje şu standart bileşenlerle inşa edilir:
 
 ### Gün 155: Sesli Yanıt (IVR) Fonetik Benzerlik Eşleştirici
 - **İş Alanı:** 532 Sesli Yanıt Menüsü & Şive/Aksan/Yazım Hatası Toleransı
-- **Veri Kaynağı:** [Turkish Phonetic Pronunciation & Voice Queries](https://huggingface.co/datasets)
-- **Model:** Double Metaphone / Soundex Turkish Adaptation + Levenshtein Distance
+- **Veri Kaynağı:** [HuggingFace - Turkish ASR Transcriptions](https://huggingface.co/datasets)
+- **Model:** Double Metaphone / Soundex Turkish Adaptation + Levenshtein / Jaro-Winkler Distance
 - **Türkçe Değişkenler:** `kullanici_sesli_ifadesi_metni`, `fonetik_kod_uretilen`, `eslesen_menu_komutu`, `fonetik_benzerlik_orani`
 - **Jupyter Notebook (`gun_155_ivr_fonetik_eslestirici.ipynb`):**
   1. Kullanıcının şiveli veya yanlış telaffuz ettiği komutların (Örn: "patura", "fatıra", "kontur") fonetik kodlarının çıkarılması
@@ -1795,8 +1795,8 @@ Her proje şu standart bileşenlerle inşa edilir:
 
 ### Gün 156: Abonelik Sözleşmesi Cayma Bedeli ve Taahhüt Maddesi Bulucu
 - **İş Alanı:** Hukuk Masası & Dijital Sözleşme Analizi
-- **Veri Kaynağı:** [Telecom Legal Contracts & Addendums](https://www.kaggle.com/datasets)
-- **Model:** LayoutLMv3 / DeBERTa-v3 Question Answering (Extractive QA)
+- **Veri Kaynağı:** [Kaggle - Telecom Legal Contracts & Addendums](https://www.kaggle.com/datasets)
+- **Model:** LayoutLMv3 / DeBERTa-v3 Question Answering (Extractive QA - Metin İçi Konum Bulucu)
 - **Türkçe Değişkenler:** `sozlesme_pdf_goruntusu`, `soru_cayma_bedeli_nasil_hesaplanir`, `cevap_metin_kesiti`, `guven_skoru`
 - **Jupyter Notebook (`gun_156_sozlesme_cayma_bedeli_qa.ipynb`):**
   1. Taranmış sözleşme sayfalarındaki görsel yerleşim ve metinlerin LayoutLMv3 ile işlenmesi
@@ -1806,19 +1806,19 @@ Her proje şu standart bileşenlerle inşa edilir:
 
 ### Gün 157: Chatbot için Few-Shot Niyet Genişletici Sentetik Veri Pipeline'ı
 - **İş Alanı:** BiP Dijital Asistan Eğitimi & Veri Artırma (Data Augmentation)
-- **Veri Kaynağı:** [Turkish Chatbot Intent Dataset](https://huggingface.co/datasets)
-- **Model:** Yerel Qwen2.5-3B-Instruct / LLaMA-3.2-1B (Ollama / HuggingFace Yerel) + Cosine Similarity Filtresi
-- **Türkçe Değişkenler:** `ornek_niyet_cumlesi`, `uretilen_sentetik_varyasyonlar`, `anlamsal_benzerlik_esigi`, `filtrelenmis_egitim_verisi`
-- **Jupyter Notebook (`gun_157_few_shot_sentetik_niyet_verisi.ipynb`):**
-  1. 5 adet örnek kullanıcı cümlesinden yola çıkarak LLM ile 50 farklı alternatif soru varyasyonu üretme
-  2. Üretilen cümlelerin özgünlük ve semantik kayma kontrolünden (Sentence Embeddings ile) geçirilmesi
-  3. NLU niyet sınıflandırıcısının eğitim veri setinin 10 katına çıkarılması
-- **Mülakat Sorusu:** Sentetik veri üretiminde "Model Collapse" ve semantik kayma (Semantic Drift) riskleri nasıl engellenir?
+- **Veri Kaynağı:** [HuggingFace - Turkish Intent Expansion](https://huggingface.co/datasets)
+- **Model:** EDA (Easy Data Augmentation - Synonym Replacement via WordNet/FastText) + Back-Translation (Helsinki-NLP Opus-MT tr-en-tr)
+- **Türkçe Değişkenler:** `ornek_3_niyet_cumlesi`, `uretilen_50_varyasyon`, `anlamsal_benzerlik_esigi`, `zenginlestirilmis_egitim_seti`
+- **Jupyter Notebook (`gun_157_few_shot_niyet_genisletici_eda.ipynb`):**
+  1. 3 adet örnek kullanıcı cümlesinden yola çıkarak Eş Anlamlı Değiştirme (Synonym Replacement) ve Rastgele Ekleme/Silme uygulama
+  2. Geriye Çeviri (Back-Translation: Türkçe -> İngilizce -> Türkçe) ile doğal ve çeşitli alternatif cümleler üretme
+  3. Üretilen 50 cümlenin Sentence-Transformers ile semantik kayma filtresinden geçirilip eğitim setine eklenmesi
+- **Mülakat Sorusu:** NLP'de Kural Tabanlı Veri Artırma (EDA) ve Back-Translation tekniklerinin model genelleme kabiliyetine (Generalization) etkisi nedir?
 
 ### Gün 158: Boyut Tabanlı Müşteri Memnuniyetsizliği (Aspect-Based Sentiment)
 - **İş Alanı:** Müşteri Deneyimi Ölçümleme (NPS / CSAT Masası)
-- **Veri Kaynağı:** [Customer Feedback & Review Survey Dataset](https://www.kaggle.com/datasets)
-- **Model:** DeBERTa-v3 Multi-Task Learning (Aspect + Sentiment Classification)
+- **Veri Kaynağı:** [Kaggle - Aspect Based Sentiment Telecom](https://www.kaggle.com/datasets)
+- **Model:** DeBERTa-v3 / BERTurk Multi-Task Learning (Aspect Extraction + Sentiment Polarity)
 - **Türkçe Değişkenler:** `anket_yorumu`, `tespit_edilen_boyutlar_fiyat_hiz_musteri_hizmetleri`, `boyut_duygu_skorlari`
 - **Jupyter Notebook (`gun_158_aspect_based_sentiment_deberta.ipynb`):**
   1. "İnternetiniz çok hızlı ama faturalar çok pahalı" gibi çoklu duygu içeren cümlelerin ayrıştırılması
@@ -1828,25 +1828,25 @@ Her proje şu standart bileşenlerle inşa edilir:
 
 ### Gün 159: E-posta Destek Talebi Otomatik Cevap Taslağı Üretici
 - **İş Alanı:** Turkcell Global Bilgi E-posta Destek Masası
-- **Veri Kaynağı:** [Customer Support Email Dataset](https://huggingface.co/datasets)
-- **Model:** RAG + Yerel Qwen2.5-7B-Instruct / LLaMA-3.2-3B (Ollama / HuggingFace Yerel) + Türkçe Kurumsal Şablon Motoru
-- **Türkçe Değişkenler:** `gelen_musteri_epostasi`, `ilgili_cozum_dokumani`, `uretilen_cevap_taslagi`, `temsilci_onayladi_mi`
-- **Jupyter Notebook (`gun_159_eposta_otomatik_cevap_taslagi.ipynb`):**
-  1. Müşteriden gelen e-postanın konusunun, abone bilgilerinin ve talebinin tespiti
-  2. Şirket içi çözüm rehberinden ilgili politikanın çekilerek kurumsal dilde kişiselleştirilmiş yanıt taslağı hazırlanması
-  3. Temsilcinin tek tıkla inceleyip onaylayabileceği e-posta arayüzü entegrasyonu
-- **Mülakat Sorusu:** Müşteri destek botlarında "Human-in-the-Loop" (insan onaylı yapay zeka) yaklaşımının marka güvenilirliğindeki rolü nedir?
+- **Veri Kaynağı:** [HuggingFace - Customer Email Response Generation](https://huggingface.co/datasets)
+- **Model:** BERTurk Niyet & Varlık Çıkarıcı (Slot Filling) + Jinja2 Kurumsal Şablon Motoru
+- **Türkçe Değişkenler:** `gelen_musteri_epostasi`, `tespit_edilen_talep_turu`, `cikarilan_parametreler_fatura_tarih_tutar`, `uretilen_cevap_taslagi`
+- **Jupyter Notebook (`gun_159_eposta_sablon_cevap_motoru.ipynb`):**
+  1. Gelen e-postanın konusunun, abone bilgilerinin ve talebinin BERTurk ile sınıflandırılması
+  2. Müşteri parametrelerinin (İsim, Fatura Tutarı, Paket Adı) şablondaki yerlerine (Slots) otomatik yerleştirilmesi
+  3. Temsilcinin tek tıkla inceleyip onaylayabileceği kurumsal dilde hatasız e-posta taslağı üretimi
+- **Mülakat Sorusu:** Müşteri destek sistemlerinde serbest metin üreten kontrolsüz modeller yerine Slot-Filling ve Şablon Motoru (Template Engine) kullanmanın marka güvenliği avantajı nedir?
 
 ### Gün 160: Müşteri İletişim Dili (Resmi vs Samimi) Belirleme ve Ton Eşleme
 - **İş Alanı:** Dijital İletişim & Kişiselleştirilmiş İletişim Tonu (Tone of Voice)
-- **Veri Kaynağı:** [Turkish Formality & Register Dataset](https://huggingface.co/datasets)
-- **Model:** BERTurk Formality Classifier + Style Transfer Prompting
-- **Türkçe Değişkenler:** `musteri_mesaji`, `resmiyet_puani_0_100`, `uygun_cevap_stili_resmi_kurumsal_genc_samimi`, `uyarlanan_cevap`
+- **Veri Kaynağı:** [HuggingFace - Formality Classification](https://huggingface.co/datasets)
+- **Model:** BERTurk Formality Classifier + Kural Tabanlı Şablon Eşleme (Formal / Informal Response Selector)
+- **Türkçe Değişkenler:** `musteri_mesaji`, `resmiyet_puani_0_100`, `uygun_cevap_stili_resmi_kurumsal_genc_samimi`, `secilen_cevap_sablonu`
 - **Jupyter Notebook (`gun_160_iletisim_dili_ton_esleme.ipynb`):**
   1. Kullanıcının hitap şeklinden ("Merhabalar efendim" vs "selam naber") resmiyet derecesinin tespiti
-  2. Genç kullanıcıya enerjik/samimi, kurumsal kullanıcıya resmi/saygılı dilde yanıt üreten stil transferi
+  2. Genç kullanıcıya enerjik/samimi, kurumsal kullanıcıya resmi/saygılı dilde yanıt şablonu seçimi
   3. Müşteri memnuniyetini ve iletişim bağını güçlendiren dinamik ton uyarlaması
-- **Mülakat Sorusu:** NLP'de Formality Classification ve Text Style Transfer için kullanılan metrikler (BLEU, Formality Accuracy, PPL) nelerdir?
+- **Mülakat Sorusu:** NLP'de Formality Classification için kullanılan öznitelikler (kibar ekler, emoji kullanımı, argo/jargon sıklığı) modelde nasıl ağırlıklandırılır?
 
 ---
 
