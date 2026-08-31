@@ -56,132 +56,169 @@ Her proje şu standart bileşenlerle inşa edilir:
 ## 📊 Modül 01: Müşteri Analitiği, Churn & CRM (Gün 001 – 015)
 
 ### Gün 001: Telco Müşteri Kayıp (Churn) Tahmini
-- **İş Alanı:** Turkcell Bireysel Müşteri Analitiği
+- **İş Alanı:** Turkcell Bireysel Müşteri Analitiği & Terk Önleme Masası
 - **Veri Kaynağı:** [Kaggle - Telco Customer Churn (IBM)](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 - **Model:** CatBoostClassifier / XGBoost + SHAP Açıklanabilirlik
 - **Türkçe Değişkenler:** `musteri_id`, `sozlesme_turu`, `aylik_odeme_tutari`, `toplam_harcama`, `ayrilma_riski_orani`, `model_tahmini`
 - **Jupyter Notebook (`gun_001_telco_churn_tahmini.ipynb`):**
-  1. Veri yükleme ve eksik değerlerin imputasyonu
-  2. Kategorik değişkenlerin One-Hot & Target Encoding dönüşümleri
-  3. Sınıf dengesizliği yönetimi (SMOTE / Scale_pos_weight)
-  4. CatBoost eğitimi ve ROC-AUC optimizasyonu
-  5. Müşteri bazlı churn risk skorlama çıktısının CSV olarak kaydedilmesi
-- **Mülakat Sorusu:** Dengesiz churn veri setinde neden Accuracy yerine PR-AUC veya F1-Score kullanılır?
+  1. Telekom abonelik, tarife ve fatura verilerinin yüklenip eksik değerlerin imputasyonu
+  2. Kategorik değişkenlerin One-Hot & Target Encoding dönüşümleri ve SMOTE sınıf dengelemesi
+  3. CatBoost eğitimi, ROC-AUC / PR-AUC optimizasyonu ve SHAP değişken önem sıralaması
+- **Mülakat Sorusu:** Aşırı dengesiz churn veri setlerinde neden doğruluk (Accuracy) metriği yerine PR-AUC ve F1-Score tercih edilmelidir?
 
 ### Gün 002: Müşteri Yaşam Boyu Değeri (CLTV) Modellemesi
-- **İş Alanı:** Pazarlama & Gelir Planlama
+- **İş Alanı:** Pazarlama & Abone Değeri Gelir Planlama
 - **Veri Kaynağı:** [Kaggle - Online Retail & Customer Analytics](https://www.kaggle.com/datasets/vijayuv/onlineretail)
 - **Model:** BG/NBD (Beta-Geometric / Negative Binomial) + Gamma-Gamma Monetization Modeli
 - **Türkçe Değişkenler:** `abone_id`, `islem_sikligi`, `musteri_yasi_hafta`, `ortalama_fatura_tutari`, `beklenen_gelecek_gelir`
 - **Jupyter Notebook (`gun_002_musteri_yasam_boyu_degeri.ipynb`):**
-  1. RFM (Recency, Frequency, Monetary) öznitelik türetimi
+  1. RFM (Recency, Frequency, Monetary) telekom özniteliklerinin çıkarılması
   2. BG/NBD ile 3 ve 6 aylık beklenen işlem frekansı tahmini
-  3. Gamma-Gamma ile ortalama marjinal kâr hesabı
-  4. Abone değer segmentasyonu (VIP, Sadık, Riskli)
+  3. Gamma-Gamma modeli ile müşteri başına net marjinal kâr hesabı ve değer segmentasyonu
+- **Mülakat Sorusu:** BG/NBD modelinde "Müşterinin Canlı Olma Olasılığı" (Probability of Being Alive - P_Alive) formülü nasıl çalışır?
 
 ### Gün 003: RFM Tabanlı Abone Segmentasyonu
-- **İş Alanı:** Turkcell CRM & Kampanya Yönetimi
+- **İş Alanı:** Turkcell CRM & Hedefli Kampanya Yönetimi
 - **Veri Kaynağı:** [Kaggle - Credit Card Customer Segmentation](https://www.kaggle.com/datasets/arjunbhasin2005/ccdata)
 - **Model:** K-Means Kümeler + UMAP / PCA Boyut İndirgeme
 - **Türkçe Değişkenler:** `son_islem_gunu`, `islem_adedi`, `toplam_odeme_tutari`, `kume_etiketi`, `segment_adi`
 - **Jupyter Notebook (`gun_003_rfm_abone_segmentasyonu.ipynb`):**
-  1. Logaritmik ölçekleme ve StandardScaler normalizasyonu
-  2. Elbow yöntemi ve Silhouette skoru ile optimal K seçimi
-  3. Segment profilleme (Şampiyonlar, Uyuyanlar, Kaybedilmemesi Gerekenler)
+  1. Logaritmik dönüşüm ve StandardScaler normalizasyonu ile veri önişleme
+  2. Elbow yöntemi ve Silhouette skoru ile optimal K küme sayısının seçimi
+  3. Segment profilleme (Şampiyonlar, Sadık Aboneler, Uyuyanlar, Riskli Grup) ve görselleştirme
+- **Mülakat Sorusu:** K-Means kümelemesinde aykırı değerlerin (Outliers) küme merkezlerini saptırmasını engellemek için K-Medoids veya DBSCAN nasıl tercih edilir?
 
 ### Gün 004: Faturasızdan Faturalıya Tarife Terfi (Upselling) Modeli
-- **İş Alanı:** Satış & Kanal Yönetimi
+- **İş Alanı:** Satış & Dijital Kanal Gelir Artırma Masası
 - **Veri Kaynağı:** [Kaggle - Bank Marketing / Product Upsell](https://www.kaggle.com/datasets/henriqueyama/bank-marketing)
 - **Model:** LightGBM + Optuna Hiperparametre Optimizasyonu
 - **Türkçe Değişkenler:** `faturasiz_kullanim_suresi_ay`, `ortalama_tl_yukleme`, `kota_asimi_sikligi`, `faturali_gecis_egilimi`
 - **Jupyter Notebook (`gun_004_tarife_terfi_upsell.ipynb`):**
-  1. Paket doluluk oranı ve veri tüketim trend analizi
-  2. Optuna ile LightGBM hiperparametre araması
-  3. Kampanya hedef kitlesi için olasılık eşik optimizasyonu
+  1. Faturasız hatların paket doluluk oranı ve veri tüketim trend analizi
+  2. Optuna ile LightGBM hiperparametre araması ve Cross-Validation
+  3. Faturalıya geçiş ihtimali en yüksek %10'luk kitle için hedefli kampanya eşik optimizasyonu
+- **Mülakat Sorusu:** Pazarlama kampanyalarında "Cumulative Gains Chart" ve "Decile Table" analizi hedef kitle seçiminde nasıl kullanılır?
 
 ### Gün 005: Net Promoter Score (NPS) / Memnuniyet Tahmini
-- **İş Alanı:** Müşteri Deneyimi Yönetimi (CEM)
+- **İş Alanı:** Müşteri Deneyimi Yönetimi (CEM) & Memnuniyetsizlik Erken Teşhisi
 - **Veri Kaynağı:** [Kaggle - Customer Satisfaction Dataset](https://www.kaggle.com/datasets/santander-customer-satisfaction)
 - **Model:** Random Forest Regressor & Ordinal Regression
 - **Türkçe Değişkenler:** `cagri_merkezi_arama_sayisi`, `baglanti_kopma_adedi`, `fatura_itiraz_durumu`, `tahmini_nps_puani`
 - **Jupyter Notebook (`gun_005_nps_memnuniyet_tahmini.ipynb`):**
-  1. Çok değişkenli korelasyon ve VIF (Multicollinearity) analizi
-  2. Öznitelik önem derecelerinin belirlenmesi
-  3. Memnuniyetsiz aboneler için erken uyarı raporu
+  1. Çağrı merkezi kayıtları, şebeke kopma logları ve fatura itirazlarının birleştirilmesi
+  2. Random Forest Regressor ile 0-10 arası tahmini NPS puanı modellemesi
+  3. Memnuniyetsiz (Detractor: 0-6 puan) aboneler için müşteri hizmetlerine otomatik alarm düşürme
+- **Mülakat Sorusu:** NPS gibi sıralı kategorik (Ordinal) hedef değişkenlerde standart Regresyon yerine Ordinal Logistic Regression kullanmanın avantajı nedir?
 
 ### Gün 006: Faturasız Hat TL/Paket Yükleme Zamanı Tahmini
-- **İş Alanı:** Paycell & Dijital Operatör
+- **İş Alanı:** Paycell & Dijital Operatör TL Yükleme Masası
 - **Veri Kaynağı:** [Kaggle - Mobile Money Transaction](https://www.kaggle.com/datasets/ealaxi/paysim1)
-- **Model:** Survival Analysis (Cox Proportional Hazards) / XGBoost Regressor
-- **Türkçe Değişkenler:** `kalan_tl_bakiyesi`, `son_yukleme_uzerinden_gecen_gun`, `tahmini_gelecek_yukleme_gunu`
-- **Jupyter Notebook (`gun_006_tl_yukleme_zamani_tahmini.ipynb`)**
+- **Model:** Yaşam Analizi (Survival Analysis - Cox Proportional Hazards) / XGBoost Regressor
+- **Türkçe Değişkenler:** `kalan_tl_bakiyesi`, `son_yukleme_uzerinden_gecen_gun`, `ortalama_harcama_hizi`, `tahmini_gelecek_yukleme_gunu`
+- **Jupyter Notebook (`gun_006_tl_yukleme_zamani_tahmini.ipynb`):**
+  1. Abonenin günlük bakiye erime hızı ve geçmiş yükleme aralıklarının hesaplanması
+  2. Cox PH yaşam analizi ile bakiyenin sıfırlanacağı günün tahmini
+  3. Hat kapanmadan 24 saat önce aboneye kişiselleştirilmiş indirimli paket teklif SMS'i tetikleme
+- **Mülakat Sorusu:** Faturasız abonelerin paket yenileme döngüsünde "Sağdan Sansürlü Veri" (Censored Data) kavramı nasıl ele alınır?
 
 ### Gün 007: Fatura Ödeme Gecikmesi Tahminleyicisi
-- **İş Alanı:** Finans & Alacak Yönetimi
+- **İş Alanı:** Finans & Alacak Risk Yönetimi
 - **Veri Kaynağı:** [Kaggle - Default of Credit Card Clients](https://www.kaggle.com/datasets/uciml/default-of-credit-card-clients-dataset)
-- **Model:** XGBoost + Cost-Sensitive Learning
-- **Türkçe Değişkenler:** `gecikmis_fatura_adedi`, `son_3_ay_ortalama_fatura`, `gecikme_olasiligi_skoru`
-- **Jupyter Notebook (`gun_007_fatura_odeme_gecikmesi.ipynb`)**
+- **Model:** XGBoost + Cost-Sensitive Learning (Maliyet Duyarlı Öğrenme)
+- **Türkçe Değişkenler:** `gecikmis_fatura_adedi`, `son_3_ay_ortalama_fatura`, `fatura_tutari`, `gecikme_olasiligi_skoru`
+- **Jupyter Notebook (`gun_007_fatura_odeme_gecikmesi.ipynb`):**
+  1. Geçmiş fatura ödeme disiplini, gecikme gün sayıları ve son fatura tutarının modellenmesi
+  2. Borcunu geciktirecek abonelerin sınıflandırılmasında maliyet matrisi optimizasyonu
+  3. Riskli abonelere vade gününden 2 gün önce otomatik hatırlatma bildirimi gönderilmesi
+- **Mülakat Sorusu:** Cost-Sensitive Learning yaklaşımında yanlış negatif (gecikecek faturayı tahmin edememe) maliyeti modele nasıl ağırlık olarak verilir?
 
 ### Gün 008: Müşteri İtiraz (Dispute) Olasılığı Modeli
-- **İş Alanı:** Fatura İtiraz & Şikayet Yönetimi
+- **İş Alanı:** Fatura İtiraz & Şikayet Önleme Masası
 - **Veri Kaynağı:** [Kaggle - Consumer Complaint Database](https://www.kaggle.com/datasets/selener/consumer-complaint-database)
-- **Model:** Logistic Regression & Gradient Boosting
-- **Türkçe Değişkenler:** `aylik_fatura_artis_orani`, `yurt_disi_roaming_harcamasi`, `itiraz_riski_puani`
-- **Jupyter Notebook (`gun_008_musteri_itiraz_modeli.ipynb`)**
+- **Model:** Logistic Regression & Gradient Boosting (GBDT)
+- **Türkçe Değişkenler:** `aylik_fatura_artis_orani`, `yurt_disi_roaming_harcamasi`, `paket_asimi_tutari`, `itiraz_riski_puani`
+- **Jupyter Notebook (`gun_008_musteri_itiraz_modeli.ipynb`):**
+  1. Beklenmedik yüksek fatura (Bill Shock - Roaming / Kota Aşımı) yaşayan abonelerin tespiti
+  2. Fatura kesim anında itiraz etme olasılığının hesaplanması
+  3. İtiraz riski yüksek müşterilere fatura açıklandığında otomatik açıklayıcı harcama dökümü iletilmesi
+- **Mülakat Sorusu:** "Bill Shock" (Fatura Şoku) vakalarında açıklanabilirlik için SHAP Force Plot grafikleri temsilci ekranında nasıl kullanılır?
 
 ### Gün 009: Cihaz Yenileme (Handset Upgrade) Eğilimi
-- **İş Alanı:** Pasaj (Turkcell E-Ticaret)
+- **İş Alanı:** Pasaj (Turkcell E-Ticaret) & Cihaz Kampanyaları
 - **Veri Kaynağı:** [Kaggle - Mobile Phone Usage Dataset](https://www.kaggle.com/datasets/valakhorasani/mobile-device-usage-and-user-behavior-dataset)
-- **Model:** Random Forest Classifier
-- **Türkçe Değişkenler:** `mevcut_cihaz_yasi_ay`, `batarya_saglik_skoru`, `veri_kullanim_artisi`, `yeni_cihaz_alacagi_tarih`
-- **Jupyter Notebook (`gun_009_cihaz_yenileme_egilimi.ipynb`)**
+- **Model:** Random Forest Classifier + Feature Importance
+- **Türkçe Değişkenler:** `mevcut_cihaz_yasi_ay`, `batarya_saglik_skoru`, `veri_kullanim_artisi`, `cihaz_yenileme_olasiligi`
+- **Jupyter Notebook (`gun_009_cihaz_yenileme_egilimi.ipynb`):**
+  1. Abonenin şebekeye bağlandığı telefonun model yılı, donanım yetersizlikleri ve kullanım süresinin analizi
+  2. 24 aydan eski telefon kullanan abonelerin yeni model alma eğilimlerinin sınıflandırılması
+  3. Pasaj üzerinde bütçesine uygun taksitli cihaz teklifinin kişiselleştirilmesi
+- **Mülakat Sorusu:** Cihaz yenileme tahmininde "Look-alike Modeling" (yeni telefon alan müşterilere benzer profilleri bulma) tekniği nasıl uygulanır?
 
 ### Gün 010: Abonelik İptal Nedenlerini Sınıflandırma
-- **İş Alanı:** Müşteri Kazanım ve İkna Masası
+- **İş Alanı:** Müşteri Kazanım & İkna / Retention Masası
 - **Veri Kaynağı:** [Kaggle - Subscription Churn Telecom](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
-- **Model:** Multi-Class LightGBM
-- **Türkçe Değişkenler:** `iptal_gerekce_kodu`, `rakip_operatore_gecis`, `fiyat_kaynakli_iptal`, `cekim_gucu_sorunu`
-- **Jupyter Notebook (`gun_010_iptal_nedenleri_siniflandirma.ipynb`)**
+- **Model:** Multi-Class LightGBM (Çok Sınıflı Ayrıştırma)
+- **Türkçe Değişkenler:** `iptal_gerekce_kodu`, `rakip_operatore_gecis`, `fiyat_kaynakli_iptal`, `cekim_gucu_sorunu`, `hizmet_memnuniyetsizligi`
+- **Jupyter Notebook (`gun_010_iptal_nedenleri_siniflandirma.ipynb`):**
+  1. Ayrılmak isteyen müşterilerin iptal gerekçelerinin (Fiyat, Şebeke, Rakip Kampanya) çok sınıflı etiketlenmesi
+  2. LightGBM Multi-Class modeli ile ayrılma nedeninin önceden tahmini
+  3. İkna temsilcisine müşterinin asıl rahatsızlığına özel (Örn: Şebeke sorunuysa ek anten/indirim, fiyatsa alt tarife) teklif sunulması
+- **Mülakat Sorusu:** Multi-class sınıflandırmada Log-Loss (Cross-Entropy) kaybı ile One-vs-Rest (OvR) yaklaşımı arasındaki hesaplama ve ayrım gücü farkı nedir?
 
 ### Gün 011: Çapraz Satış (Cross-Selling) Modeli (TV+, Superonline, Paycell)
-- **İş Alanı:** Çoklu Ürün Stratejisi
+- **İş Alanı:** Çoklu Ürün Stratejisi & Müşteri Başına Ortalama Gelir (ARPU)
 - **Veri Kaynağı:** [Kaggle - Multi-Product Financial/Telecom Data](https://www.kaggle.com/datasets)
 - **Model:** Multi-Output Classifier / Stacking Ensemble
 - **Türkçe Değişkenler:** `ev_interneti_aktif`, `fizy_kullanimi_saat`, `paycell_islem_hacmi`, `tvplus_satin_alma_ihtimali`
-- **Jupyter Notebook (`gun_011_capraz_satis_cross_sell.ipynb`)**
+- **Jupyter Notebook (`gun_011_capraz_satis_cross_sell.ipynb`):**
+  1. Sadece GSM kullanan abonelerin dijital servis (TV+, fizy, Superonline) kullanım potansiyelinin analizi
+  2. Multi-Output Classifier ile her bir yan ürün için ayrı ayrı satın alma olasılığı üretimi
+  3. Sepet analizi (Market Basket Analysis) ile birlikte satılma olasılığı yüksek ikili ürün paketleri tasarımı
+- **Mülakat Sorusu:** Çapraz satışta "Next Best Action" (NBA) karar motoru oluştururken ürün kâr marjı ile satın alma olasılığı nasıl ağırlıklandırılır?
 
 ### Gün 012: Müşteri Kayıp Riski Erken Uyarı Motoru
-- **İş Alanı:** Gerçek Zamanlı CRM
+- **İş Alanı:** Gerçek Zamanlı CRM & Davranışsal Değişim Dedektörü
 - **Veri Kaynağı:** [Kaggle - Telecom Churn BigML](https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-dataset)
 - **Model:** Z-Score Anomalisi + Karar Ağacı
-- **Türkçe Değişkenler:** `son_30_gun_veri_degisimi`, `arama_suresi_dusus_orani`, `erken_uyari_tetiklendi`
-- **Jupyter Notebook (`gun_012_churn_erken_uyari_motoru.ipynb`)**
+- **Türkçe Değişkenler:** `son_30_gun_veri_degisimi`, `arama_suresi_dusus_orani`, `sms_sayisi_azalma`, `erken_uyari_tetiklendi`
+- **Jupyter Notebook (`gun_012_churn_erken_uyari_motoru.ipynb`):**
+  1. Abonenin geçmiş 6 aylık ortalama tüketimi ile son 2 haftalık tüketimi arasındaki Z-Score sapmalarının hesaplanması
+  2. İkinci SIM kart takarak Turkcell hattını pasifleştiren kullanıcıların anında tespiti
+  3. Hat tamamen kapatılmadan 15 gün önce proaktif müdahale mekanizması
+- **Mülakat Sorusu:** Zaman serisinde hareketli ortalama (Rolling Average) sapmalarını takip ederek trend kırılmalarını tespit etmenin avantajı nedir?
 
 ### Gün 013: Fiyat Esnekliği (Price Elasticity of Demand) Analizi
-- **İş Alanı:** Gelir Yönetimi & Fiyatlandırma
+- **İş Alanı:** Gelir Yönetimi & Dinamik Tarife Fiyatlandırma
 - **Veri Kaynağı:** [Kaggle - Telecom Pricing & Demand](https://www.kaggle.com/datasets)
-- **Model:** Log-Log OLS Regresyonu
-- **Türkçe Değişkenler:** `paket_fiyat_artisi_yuzde`, `talep_degisimi_yuzde`, `fiyat_esneklik_katsayisi`
-- **Jupyter Notebook (`gun_013_fiyat_esnekligi_analizi.ipynb`)**
+- **Model:** Log-Log OLS Regresyonu (Ekonometrik Talep Eğrisi)
+- **Türkçe Değişkenler:** `paket_fiyat_artisi_yuzde`, `talep_degisimi_yuzde`, `fiyat_esneklik_katsayisi`, `gelir_maksimizasyon_fiyati`
+- **Jupyter Notebook (`gun_013_fiyat_esnekligi_analizi.ipynb`):**
+  1. Geçmiş tarife zamları ve paket satış adetlerinin logaritmik dönüşümü
+  2. Log-Log regresyon eğimi ile esneklik katsayısının ($E_d = \% \Delta Q / \% \Delta P$) hesaplanması
+  3. Toplam geliri maksimize eden optimum paket fiyat noktasının simülasyonu
+- **Mülakat Sorusu:** Fiyat esnekliği $E_d < -1$ (Esnek Talep) olan bir pakette fiyat artışı yapıldığında şirketin toplam gelirine ne olur?
 
 ### Gün 014: Pasifleşen (Dormant) Hatları Geri Kazanım Modeli
-- **İş Alanı:** Yeniden Etkinleştirme Kampanyaları
+- **İş Alanı:** Yeniden Etkinleştirme & Causal Inference
 - **Veri Kaynağı:** [Kaggle - Subscription Reactivation](https://www.kaggle.com/datasets)
 - **Model:** Uplift Modeling (CausalML / Two-Model Approach)
-- **Türkçe Değişkenler:** `inaktif_gun_sayisi`, `kampanya_teklifi`, `uplift_skoru`, `kazanim_ihtimali`
-- **Jupyter Notebook (`gun_014_inaktif_hat_kazanim.ipynb`)**
+- **Türkçe Değişkenler:** `inaktif_gun_sayisi`, `kampanya_teklifi`, `uplift_skoru`, `ikna_edilebilir_musteri_mi`
+- **Jupyter Notebook (`gun_014_inaktif_hat_kazanim.ipynb`):**
+  1. A/B test verisinde kampanya alan ve almayan pasif kullanıcıların modellenmesi
+  2. Two-Model ve X-Learner yaklaşımlarıyla salt kampanyanın yarattığı net etki (Uplift) skorlaması
+  3. Sadece kampanya verildiğinde geri dönecek "İkna Edilebilir" (Persuadables) kitlenin seçilip bütçe israfının önlenmesi
+- **Mülakat Sorusu:** Uplift modellemede "Uyuyan Köpekler" (Sleeping Dogs - kampanya verildiğinde rahatsız olup hattını tamamen kapatanlar) nasıl elenir?
 
 ### Gün 015: Dijital Kanallara Geçiş Eğilimi Modeli
-- **İş Alanı:** Turkcell Dijital Operatör Dönüşümü
+- **İş Alanı:** Turkcell Dijital Operatör Dönüşümü & Maliyet Azaltma
 - **Veri Kaynağı:** [Kaggle - Digital Channel Adoption](https://www.kaggle.com/datasets)
-- **Model:** XGBoost Classifier
-- **Türkçe Değişkenler:** `fiziksel_magaza_ziyaret_sayisi`, `web_giris_sikligi`, `dijitale_gecis_skoru`
-- **Jupyter Notebook (`gun_015_dijital_kanal_donusum.ipynb`)**
-
----
-
-## 📡 Modül 02: Şebeke, Ağ Trafiği & Zaman Serileri (Gün 016 – 030)
+- **Model:** XGBoost Classifier + ROC-AUC
+- **Türkçe Değişkenler:** `fiziksel_magaza_ziyaret_sayisi`, `web_giris_sikligi`, `dijital_uygulama_kullanim_puani`, `dijitale_gecis_skoru`
+- **Jupyter Notebook (`gun_015_dijital_kanal_donusum.ipynb`):**
+  1. Fiziksel mağazadan ve çağrı merkezinden işlem yapan abonelerin demografik ve işlem alışkanlıklarının incelenmesi
+  2. Dijital kanallara (Turkcell Uygulaması) geçiş potansiyeli yüksek kitlelerin sınıflandırılması
+  3. Uygulamayı ilk kez indirenlere özel hediye internet kampanyası yönlendirmesi
+- **Mülakat Sorusu:** Dijital kanal benimseme modellerinde dijitalleşen müşterinin şirkete sağladığı işlem başı maliyet (Cost-per-Contact) tasarrufu nasıl hesaplanır?
 
 ### Gün 016: Baz İstasyonu İnternet Trafik Tahmini
 - **İş Alanı:** Şebeke Planlama & Kapasite Yönetimi
@@ -189,38 +226,55 @@ Her proje şu standart bileşenlerle inşa edilir:
 - **Model:** LSTM / Facebook Prophet / Temporal Fusion Transformer
 - **Türkçe Değişkenler:** `hucre_id`, `zaman_damgasi`, `saatlik_indirilen_veri_gb`, `yuklenen_veri_gb`, `tahmin_edilen_trafik_gb`
 - **Jupyter Notebook (`gun_016_baz_istasyonu_trafik_tahmini.ipynb`):**
-  1. Spatio-temporal ızgara verisini hücre bazında ayrıştırma
-  2. Saatlik ve haftalık mevsimsellik (Seasonality) çıkarımı
-  3. LSTM ile 24 saatlik ileri yönlü trafik tahmini
-  4. Aşırı yüklenme (Congestion) eşik kontrolleri
+  1. Spatio-temporal ızgara telemetri verisini hücre bazında ayrıştırma
+  2. Saatlik ve haftalık mevsimsellik (Seasonality) ve trend çıkarımı
+  3. LSTM ile 24 saatlik ileri yönlü trafik tahmini ve aşırı yüklenme (Congestion) eşik kontrolleri
+- **Mülakat Sorusu:** Telekom zaman serilerinde tatil, maç veya afet anlarındaki ani trafik sıçramalarını (Traffic Spikes) LSTM modellerine dışsal değişken (Exogenous Feature) olarak nasıl beslersiniz?
 
 ### Gün 017: Ağ İhlal ve Dağıtık Hizmet Engelleme (DDoS) Tespiti
 - **İş Alanı:** Turkcell Siber Güvenlik Operasyon Merkezi (SOC)
 - **Veri Kaynağı:** [Kaggle - CICIDS2017 / NSL-KDD](https://www.kaggle.com/datasets/cicdataset/cicids2017)
 - **Model:** Random Forest & Autoencoder Anomali Tespiti
 - **Türkçe Değişkenler:** `kaynak_ip`, `hedef_port`, `paket_uzunluk_ortalamasi`, `saniyedeki_istek_adedi`, `saldiri_etiketi`
-- **Jupyter Notebook (`gun_017_ddos_saldiri_tespiti.ipynb`)**
+- **Jupyter Notebook (`gun_017_ddos_saldiri_tespiti.ipynb`):**
+  1. Ağ akış (Flow) verilerinden paket frekansı, bayt oranı ve TCP bayraklarının (SYN, ACK) çıkarılması
+  2. Random Forest ve Autoencoder ile DDoS, Port Tarama ve Brute Force saldırılarının tespiti
+  3. Siber güvenlik duvarında saldırgan IP'lerin saniyeler içinde otomatik karantinaya alınması
+- **Mülakat Sorusu:** DDoS saldırılarında hacimsel (Volumetric - SYN Flood) ile uygulama katmanı (Layer 7 - HTTP Flood) saldırılarını ayırt etmede hangi akış öznitelikleri kritiktir?
 
 ### Gün 018: Şebeke Gecikme (Latency) Anomali Dedektörü
-- **İş Alanı:** 4.5G/5G Hizmet Kalitesi (QoS)
+- **İş Alanı:** 4.5G/5G Hizmet Kalitesi (QoS) & Kesintisiz İletişim Masası
 - **Veri Kaynağı:** [Kaggle - Numenta Anomaly Benchmark (NAB)](https://www.kaggle.com/datasets/boltzmannbrain/nab)
-- **Model:** Isolation Forest & DBSCAN
+- **Model:** İzolasyon Ormanı (Isolation Forest) & DBSCAN
 - **Türkçe Değişkenler:** `ping_gecikme_ms`, `jitter_sapmasi_ms`, `paket_kayip_orani`, `anomali_durumu`
-- **Jupyter Notebook (`gun_018_gecikme_anomali_dedektoru.ipynb`)**
+- **Jupyter Notebook (`gun_018_gecikme_anomali_dedektoru.ipynb`):**
+  1. Baz istasyonları ve omurga yönlendiricilerden toplanan milisaniyelik ping ve jitter telemetrilerinin işlenmesi
+  2. İzolasyon Ormanı ile ağdaki ani gecikme ve paket kaybı anomalilerinin tespiti
+  3. Şebeke operasyon merkezine (NOC) otomatik kök neden inceleme alarmı tetikleme
+- **Mülakat Sorusu:** Gerçek zamanlı akış verisinde İzolasyon Ormanı ile Z-Score anomali tespitinin hesaplama karmaşıklığı ve çok değişkenli duyarlılık farkı nedir?
 
 ### Gün 019: Baz İstasyonu Enerji Tüketimi Optimizasyonu
 - **İş Alanı:** Yeşil Şebeke & Enerji Yönetimi
 - **Veri Kaynağı:** [Kaggle - Smart Grid Energy Consumption](https://www.kaggle.com/datasets)
 - **Model:** Ridge Regression / LightGBM Regressor
 - **Türkçe Değişkenler:** `baz_istasyonu_turu`, `sicaklik_derecesi`, `gece_trafik_yuku`, `harcanan_guc_kwh`
-- **Jupyter Notebook (`gun_019_baz_istasyonu_enerji_optimizasyonu.ipynb`)**
+- **Jupyter Notebook (`gun_019_baz_istasyonu_enerji_optimizasyonu.ipynb`):**
+  1. Baz istasyonunun soğutma, radyo frekans yükseltici ve dijital işlem ünitelerinin güç tüketimlerinin ayrıştırılması
+  2. Dış hava sıcaklığı ve anlık veri trafiğine bağlı güç regresyon modelinin eğitilmesi
+  3. Gece trafiği düşen saatlerde kapatılabilecek yedek taşıyıcıların enerji tasarruf potansiyeli simülasyonu
+- **Mülakat Sorusu:** Baz istasyonu enerji optimizasyonunda şebeke kalitesinden (QoS / çağrı düşme oranı) ödün vermeden güç tasarrufu sağlamak için kısıtlı optimizasyon (Constrained Optimization) nasıl kurulur?
 
 ### Gün 020: 4G/5G Hücre Tıkanıklığı (Cell Congestion) Tahmini
-- **İş Alanı:** Radyo Erişim Şebekesi (RAN)
+- **İş Alanı:** Radyo Erişim Şebekesi (RAN) & Trafik Yönetimi
 - **Veri Kaynağı:** [Kaggle - Cellular Network QoS Data](https://www.kaggle.com/datasets)
 - **Model:** CatBoost Multi-Classification
-- **Türkçe Değişkenler:** `rrc_baglanti_sayisi`, `prb_kullanim_orani`, `tikaniklik_seviyesi`
-- **Jupyter Notebook (`gun_020_hucre_tikaniklik_tahmini.ipynb`)**
+- **Türkçe Değişkenler:** `rrc_baglanti_sayisi`, `prb_kullanim_orani`, `aktif_kullanici_adedi`, `tikaniklik_seviyesi`
+- **Jupyter Notebook (`gun_020_hucre_tikaniklik_tahmini.ipynb`):**
+  1. Fiziksel Kaynak Blokları (PRB - Physical Resource Block) doluluk oranları ve RRC bağlantı telemetrilerinin işlenmesi
+  2. CatBoost ile hücrenin 1 saat sonra "Normal", "Yoğun", "Kritik Tıkalı" durumuna geçme olasılığının tahmini
+  3. Tıkanıklık öncesinde komşu hücrelere otomatik yük aktarma (Load Balancing) kararı
+- **Mülakat Sorusu:** 4G/5G şebekelerinde PRB (Physical Resource Block) kullanım oranı ile kullanıcı indirme hızı (Throughput) arasındaki ters orantılı ilişki modelde nasıl kullanılır?
+
 
 ### Gün 021: Mobil Ağ Hız Testi (QoE) Analizi
 - **İş Alanı:** Mobil Şebeke Performans Değerlendirmesi & Müşteri Deneyimi (QoE)
