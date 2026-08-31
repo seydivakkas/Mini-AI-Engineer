@@ -660,36 +660,169 @@ Her proje şu standart bileşenlerle inşa edilir:
 ## 💳 Modül 05: Fintek, Paycell & Fraud / Dolandırıcılık Tespiti (Gün 061 – 075)
 
 ### Gün 061: Kredi Kartı Dolandırıcılık Tespiti (Aşırı Dengesiz Veri)
-- **İş Alanı:** Paycell Risk İzleme Masası
+- **İş Alanı:** Paycell Risk İzleme Masası & Sahtekarlık Önleme
 - **Veri Kaynağı:** [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 - **Model:** XGBoost + Focal Loss / Autoencoder Reconstruction Error
 - **Türkçe Değişkenler:** `islem_tutari`, `pca_bilesenleri`, `sahte_islem_etiketi`, `rekonstruksiyon_hatasi`
 - **Jupyter Notebook (`gun_061_kredi_karti_fraud_tespiti.ipynb`):**
-  1. %0.17 sınıf oranına sahip dengesiz verinin incelenmesi
+  1. %0.17 sınıf oranına sahip dengesiz verinin incelenmesi ve SMOTE/ADASYN sentetik örnekleme
   2. Autoencoder ile normal işlemlerin öğrenilmesi ve hata eşiği belirlenmesi
-  3. Precision-Recall Curve (PR-AUC) optimizasyonu
+  3. Precision-Recall Curve (PR-AUC) optimizasyonu ve maliyet matrisi değerlendirmesi
+- **Mülakat Sorusu:** Aşırı dengesiz (%0.1) fraud veri setlerinde ROC-AUC metriği neden yanıltıcıdır ve neden PR-AUC (Average Precision) tercih edilmelidir?
 
 ### Gün 062: Mobil Para Transferi Sahtekarlık Modeli
-- **İş Alanı:** Paycell P2P Transfer Güvenliği
+- **İş Alanı:** Paycell P2P (Kişiden Kişiye) Transfer Güvenliği
 - **Veri Kaynağı:** [Kaggle - PaySim Synthetic Financial Dataset](https://www.kaggle.com/datasets/ealaxi/paysim1)
-- **Model:** CatBoost Classifier + Anomali Skorlama
-- **Türkçe Değişkenler:** `gonderen_bakiye_oncesi`, `gonderen_bakiye_sonrasi`, `transfer_tutari`, `supheli_islem`
-- **Jupyter Notebook (`gun_062_mobil_transfer_sahtekarlik.ipynb`)**
+- **Model:** CatBoost Classifier + İzolasyon Ormanı (Isolation Forest) Anomali Skoru
+- **Türkçe Değişkenler:** `gonderen_bakiye_oncesi`, `gonderen_bakiye_sonrasi`, `transfer_tutari`, `supheli_islem_etiketi`, `islem_turu_p2p_nakit_odeme`
+- **Jupyter Notebook (`gun_062_mobil_transfer_sahtekarlik.ipynb`):**
+  1. Bakiyeyi tamamen sıfırlayan ani para boşaltma transferlerinin öznitelik mühendisliği
+  2. Alıcı ve gönderici hesap hareketleri hız (velocity) metrikleri
+  3. Anlık para transfer onay mekanizmasında milisaniyelik risk skorlama modeli
+- **Mülakat Sorusu:** Hesap ele geçirme (Account Takeover - ATO) sonrası yapılan "hesabı boşaltma" işlemlerini tespit etmede Feature Store üzerinde hesaplanan hangi zaman pencereli (Rolling Window) değişkenler en etkilidir?
 
-### Gün 063 – Gün 075 Hızlı Liste:
-- **Gün 063:** Paycell Hazır Limit Kredi Risk Skoru (Home Credit Default Risk)
-- **Gün 064:** Kara Para Aklama (AML) Şüpheli İşlem Ağ Analizi (IBM AML Data)
-- **Gün 065:** Fiziksel Kiosk / ATM Nakit Talebi Tahmini (ATM Cash Forecasting)
-- **Gün 066:** Mobil Ödeme Hata ve Reddetme Tahminleyici (Online Payment Failure)
-- **Gün 067:** Üye İşyeri (Merchant) Chargeback Risk Puanlaması (Merchant Risk Data)
-- **Gün 068:** Alternatif Telekom Verileriyle Kredi Notu Üretme (Credit Score Classification)
-- **Gün 069:** Çoklu / Sahte Hesap (Sybil Attack) Tespiti (Fraudulent Account Clustering)
-- **Gün 070:** Dijital Varlık / Kripto Volatilite Tahmini (G-Research Crypto Data)
-- **Gün 071:** B2B Kurumsal Bayi Tahsilat Gecikmesi Tahmini (B2B Invoice Payment Delay)
-- **Gün 072:** POS Harcama Coğrafi Anomali Dedektörü (Spatial Transaction Outliers)
-- **Gün 073:** Otomatik Banka/Paycell Slip Harcama Kategorizasyonu (Transaction Tagging)
-- **Gün 074:** Sadakat Puanı / Cashback İstismarı Tespiti (Loyalty Program Abuse)
-- **Gün 075:** SIM Swap Sonrası Finansal İşlem Riski Modeli (Telecom-Banking Fraud)
+### Gün 063: Paycell Hazır Limit Kredi Risk Skoru
+- **İş Alanı:** Paycell Tüketici Finansmanı & Mikro Kredi Skorlama
+- **Veri Kaynağı:** [Kaggle - Home Credit Default Risk](https://www.kaggle.com/datasets/c/home-credit-default-risk)
+- **Model:** LightGBM Classifier + Optuna Hiperparametre Optimizasyonu + WoE (Weight of Evidence)
+- **Türkçe Değişkenler:** `talep_edilen_limit_tutari`, `gelir_duzeyi`, `gecmis_gecikme_gunu`, `temerrut_riski_skoru`, `kredi_notu_puani`
+- **Jupyter Notebook (`gun_063_paycell_hazir_limit_kredi_skoru.ipynb`):**
+  1. Başvuru, kredi bürosu geçmişi ve taksit ödeme tablolarının birleştirilmesi
+  2. WoE ve Information Value (IV) ile değişken eleme ve filtreleme
+  3. Gini katsayısı ve Kolmogorov-Smirnov (KS) istatistiği ile kredi risk modeli validasyonu
+- **Mülakat Sorusu:** Kredi risk modellerinde modelin ayrım gücünü ölçmek için kullanılan Kolmogorov-Smirnov (KS) istatistiği nedir ve bankacılıkta ideal KS değeri kaçtır?
+
+### Gün 064: Kara Para Aklama (AML) Şüpheli İşlem Ağ Analizi
+- **İş Alanı:** Mevzuat Uyumu (Compliance), MASAK Raporlaması & AML Masası
+- **Veri Kaynağı:** [Kaggle / IBM - Synthetic AML Transactions](https://www.kaggle.com/datasets)
+- **Model:** Graf Sinir Ağları (GNN - Graph Convolutional Network / Node2Vec) + NetworkX
+- **Türkçe Değişkenler:** `gonderen_hesap_id`, `alici_hesap_id`, `graf_derece_merkeziyeti`, `dairesel_transfer_halkasi_var_mi`, `aml_risk_skoru`
+- **Jupyter Notebook (`gun_064_kara_para_aklama_aml_graf.ipynb`):**
+  1. Finansal transferlerin yönlü ve ağırlıklı graf olarak modellenmesi (Nodes: Hesaplar, Edges: Transferler)
+  2. Yapılandırma (Smurfing/Structuring) ve dairesel para dolaştırma (Layering) halkalarının tespiti
+  3. Node2Vec düğüm gömmeleri ile şüpheli hesap kümelemesi ve MASAK şüpheli işlem bildirimi
+- **Mülakat Sorusu:** Kara para aklamada "Smurfing" (parçalayarak yatırma) paternini klasik tabular ML yerine Graf Sinir Ağları (GNN) ile yakalamanın avantajı nedir?
+
+### Gün 065: Fiziksel Kiosk / Paycell Noktası Nakit Talebi Tahmini
+- **İş Alanı:** Fiziksel Ödeme Noktaları & Kiosk Lojistiği
+- **Veri Kaynağı:** [Kaggle - ATM Cash Demand Forecasting](https://www.kaggle.com/datasets)
+- **Model:** Prophet + SARIMAX + Takvim/Maaş Günü Dışsal Değişkenleri
+- **Türkçe Değişkenler:** `kiosk_id`, `tarih_damgasi`, `gunluk_cekilen_nakit_tl`, `maas_gunu_mu`, `tahmini_gerekli_nakit`
+- **Jupyter Notebook (`gun_065_kiosk_nakit_talebi_tahmini.ipynb`):**
+  1. Kiosk bazlı günlük nakit çekim zaman serisinin mevsimsellik ve trend ayrışımı
+  2. Maaş günleri, bayramlar ve resmi tatillerin dışsal regresör (Exogenous Variables) olarak eklenmesi
+  3. Kiosklarda nakit bitmesini (Cash-out) önleyen optimum lojistik ikmal planlaması
+- **Mülakat Sorusu:** Nakit optimizasyonunda maliyet fonksiyonu asimetriktir (nakit bitmesi cezası > fazla nakit bulundurma faiz kaybı). Bu asimetri modelde nasıl cezalandırılır?
+
+### Gün 066: Mobil Ödeme Hata ve Reddetme Tahminleyici
+- **İş Alanı:** Paycell Ödeme Ağ Geçidi (Payment Gateway) & Banka Entegrasyonları
+- **Veri Kaynağı:** [Kaggle - Online Payment Failure & Gateway Logs](https://www.kaggle.com/datasets)
+- **Model:** Random Forest Classifier + Banka Yanıt Kodu Sınıflandırıcı
+- **Türkçe Değişkenler:** `kart_bin_kodu`, `banka_kodu`, `pos_ag_gecidi`, `islem_red_kodu`, `basarisizlik_olasiligi`
+- **Jupyter Notebook (`gun_066_odeme_reddetme_tahmini.ipynb`):**
+  1. Banka provizyon gecikmeleri ve kart limit yetersizliği loglarının incelenmesi
+  2. İşlem anında banka pos arızasını öngörüp alternatif banka sanal POS'una dinamik yönlendirme (Smart Routing)
+  3. Ödeme başarı oranının (Authorization Rate) %3-5 artırılması simülasyonu
+- **Mülakat Sorusu:** Ödeme orkestrasyonunda (Smart Payment Routing) başarısızlık tahmin modeli ile komisyon maliyet optimizasyonu birlikte nasıl çözülür?
+
+### Gün 067: Üye İşyeri (Merchant) Chargeback Risk Puanlaması
+- **İş Alanı:** Paycell Sanal POS Üye İşyeri Risk Yönetimi
+- **Veri Kaynağı:** [Kaggle - Merchant Risk & Fraud Chargeback Dataset](https://www.kaggle.com/datasets)
+- **Model:** CatBoost Classifier + Bayesian Target Encoding
+- **Türkçe Değişkenler:** `uye_isyeri_id`, `sektor_mcc_kodu`, `aylik_ciro`, `ters_ibraz_chargeback_orani`, `isyeri_risk_kategorisi`
+- **Jupyter Notebook (`gun_067_uye_isyeri_chargeback_riski.ipynb`):**
+  1. Yeni ve mevcut üye işyerlerinin işlem hacmi, ortalama sepet büyüklüğü ve iade oranlarının analizi
+  2. Visa/Mastercard kurallarına göre chargeback oranı kritik eşiği (%1) aşabilecek üye işyerlerinin tahmini
+  3. Riskli işyerlerine bloke gün sayısı ve teminat tutarı artırma aksiyonlarının belirlenmesi
+- **Mülakat Sorusu:** Yüksek riskli MCC kodlarına sahip işyerlerinde "Cold Start" (yeni açılan işyeri) durumunda risk skoru nasıl hesaplanır?
+
+### Gün 068: Alternatif Telekom Verileriyle Kredi Notu Üretme
+- **İş Alanı:** Finansal Kapsayıcılık & Bankacılık Geçmişi Olmayan (Unbanked) Kullanıcılar
+- **Veri Kaynağı:** [Kaggle - Telco-based Credit Scoring / Financial Inclusion](https://www.kaggle.com/datasets)
+- **Model:** Explainable Boosting Machine (EBM) / XGBoost + SHAP Değerleri
+- **Türkçe Değişkenler:** `faturali_hat_yasi_ay`, `duzenli_fatura_odeme_skoru`, `aylik_ortalama_paket_tutari`, `alternatif_kredi_skoru_300_900`
+- **Jupyter Notebook (`gun_068_telekom_alternatif_kredi_notu.ipynb`):**
+  1. Telekom kullanım alışkanlıkları (düzenli fatura ödeme, hat yaşı, mobil ödeme sıklığı) öznitelik çıkarımı
+  2. Açıklanabilir Yapay Zeka (XAI) ile BDDK ve KKB standartlarına uygun şeffaf kredi skor kartı üretimi
+  3. Kredi kartı olmayan genç ve unbanked kitleye mikro kredi limiti açma simülasyonu
+- **Mülakat Sorusu:** Finansal kredi skorlamada "Adversarial Disparate Impact" (etik önyargı ve adalet) analizi neden zorunludur ve nasıl test edilir?
+
+### Gün 069: Çoklu / Sahte Hesap (Sybil Attack) ve Bonus Avcılığı Tespiti
+- **İş Alanı:** Paycell Kampanya & Kazan Güvenliği
+- **Veri Kaynağı:** [Kaggle - Fraudulent Account Registration & Identity Clustering](https://www.kaggle.com/datasets)
+- **Model:** DBSCAN / HDBSCAN Yoğunluk Tabanlı Kümeleme + Device Fingerprinting
+- **Türkçe Değişkenler:** `cihaz_parmak_izi_hash`, `ip_alt_agi`, `kayit_zaman_araligi_sn`, `ayni_cihazdaki_hesap_sayisi`, `sahte_kullanici_mi`
+- **Jupyter Notebook (`gun_069_sahte_hesap_kampanya_istismari.ipynb`):**
+  1. Kampanya bonuslarını (ilk kayda 50 TL vb.) suistimal etmek için aynı cihazdan açılan çoklu hesapların tespiti
+  2. IP, MAC, IMEI ve kullanım paterni benzerliği üzerinden yoğunluk kümelemesi
+  3. Sahte hesap çiftliklerinin anlık kampanya bloke listesine alınması
+- **Mülakat Sorusu:** Cihaz parmak izi (Device Fingerprint) sürekli değişen veya emülatör kullanan gelişmiş bot hesaplar davranışsal biyometri ile nasıl yakalanır?
+
+### Gün 070: Dijital Varlık / Kripto Volatilite ve Likidite Tahmini
+- **İş Alanı:** Paycell Kripto & Yatırım Servisleri Masası
+- **Veri Kaynağı:** [Kaggle - G-Research Crypto Forecasting Dataset](https://www.kaggle.com/datasets/c/g-research-crypto-forecasting)
+- **Model:** Temporal Fusion Transformer (TFT) / LightGBM Regressor
+- **Türkçe Değişkenler:** `varlik_kodu_btc_eth`, `emir_defteri_derinligi`, `gerceklesen_volatilite_15dk`, `tahmini_fiyat_getirisi`
+- **Jupyter Notebook (`gun_070_kripto_volatilite_tahmini.ipynb`):**
+  1. Yüksek frekanslı (High-Frequency) işlem ve emir defteri (Order Book) verisi öznitelik mühendisliği
+  2. Alış-satış makası (Bid-Ask Spread) ve volatilite tahmini
+  3. Kullanıcı alım-satım emirlerinde kayma (Slippage) maliyetini minimize eden likidite tahmini
+- **Mülakat Sorusu:** Finansal zaman serilerinde "GARCH" modelleri ile Derin Öğrenme (TFT/LSTM) modelleri volatilite tahmininde nasıl hibritlenir?
+
+### Gün 071: B2B Kurumsal Bayi Tahsilat Gecikmesi Tahmini
+- **İş Alanı:** Turkcell Finans & Kurumsal Alacak Yönetimi
+- **Veri Kaynağı:** [Kaggle - B2B Invoice Payment Delay & Default Dataset](https://www.kaggle.com/datasets)
+- **Model:** Survival Analysis (Cox Proportional Hazards / Random Survival Forests)
+- **Türkçe Değişkenler:** `kurumsal_musteri_id`, `fatura_tutari`, `vade_gun_sayisi`, `gecikme_olasiligi`, `tahmini_tahsilat_gunu`
+- **Jupyter Notebook (`gun_071_b2b_tahsilat_gecikmesi.ipynb`):**
+  1. B2B kurumsal faturaların vadesinde ödenmeme riskinin Yaşam Analizi (Survival Analysis) ile modellenmesi
+  2. Erken nakit iskontosu veya yasal takip öncesi hatırlatma aksiyonlarının tetiklenmesi
+  3. Şirket nakit akış tahminine (Cash Flow Forecast) dinamik girdi sağlanması
+- **Mülakat Sorusu:** Fatura tahsilat tahmininde klasik regresyon yerine Yaşam Analizi (Survival Analysis) kullanmanın "sağdan sansürlü veri" (Censored Data) açısından avantajı nedir?
+
+### Gün 072: POS Harcama Coğrafi Anomali Dedektörü (Spatial Outliers)
+- **İş Alanı:** Paycell Kart Güvenliği & Çalıntı Kart Kullanım Tespiti
+- **Veri Kaynağı:** [Kaggle - Spatial Transaction & Geolocation Fraud](https://www.kaggle.com/datasets)
+- **Model:** Haversine Hız Hesaplayıcı + Isolation Forest
+- **Türkçe Değişkenler:** `kart_id`, `onceki_islem_sehri`, `su_anki_islem_sehri`, `gecen_sure_dakika`, `imkansiz_hiz_kmh`, `anomali_skoru`
+- **Jupyter Notebook (`gun_072_pos_cografi_anomali_tespiti.ipynb`):**
+  1. İki ardışık kart harcaması arasındaki mesafe (Haversine Distance) ve geçen sürenin oranlanması
+  2. "İmkansız Seyahat Hızı" (>900 km/s - örn: 10 dk arayla İstanbul ve Berlin harcaması) tespiti
+  3. Şüpheli coğrafi atlamalarda karta anında otomatik SMS onay teyidi düşürülmesi
+- **Mülakat Sorusu:** Coğrafi mesafe hesaplarken düzlemsel Euclidean mesafe yerine neden Haversine / Vincenty formülü kullanılmalıdır?
+
+### Gün 073: Otomatik Banka/Paycell Slip Harcama Kategorizasyonu
+- **İş Alanı:** Paycell Bütçe Yönetimi & Harcama Analitiği ("Nereye Harcadım?")
+- **Veri Kaynağı:** [Kaggle - Bank Transaction Classification & Merchant Tagging](https://www.kaggle.com/datasets)
+- **Model:** TF-IDF + RoBERTa / FastText Metin Sınıflandırma
+- **Türkçe Değişkenler:** `slip_aciklama_metni`, `harcama_kategorisi_market_benzin_eglence`, `kategori_guven_skoru`
+- **Jupyter Notebook (`gun_073_harcama_slip_kategorizasyonu.ipynb`):**
+  1. POS slip açıklamalarındaki anlamsız kısaltmaların (örn: "BIM MAG 1234 IST" -> Market) temizlenmesi
+  2. Metin sınıflandırma ile işlemlerin 15 ana harcama kategorisine atanması
+  3. Kullanıcıya aylık grafiksel harcama özeti ve kişisel bütçe önerileri sunulması
+- **Mülakat Sorusu:** Harcama açıklama metinlerindeki gürültülü kısaltmaları çözmek için Regex kuralları ile NLP modelleri nasıl kademeli (Cascade) pipeline oluşturur?
+
+### Gün 074: Sadakat Puanı / Cashback İstismarı Tespiti
+- **İş Alanı:** Paycell Sadakat Programı & Hediye Dünyası
+- **Veri Kaynağı:** [Kaggle - Loyalty Program Abuse & Synthetic Fraud](https://www.kaggle.com/datasets)
+- **Model:** K-Means Kümeleme + Mahalanobis Mesafe Anomali Skoru
+- **Türkçe Değişkenler:** `kullanici_id`, `kazanilan_puan_adedi`, `puan_harcama_orani`, `iptal_iade_orani`, `istismar_riski_etiketi`
+- **Jupyter Notebook (`gun_074_sadakat_puani_istismari.ipynb`):**
+  1. Cashback kazanıp ardından siparişi iade eden veya sahte işlemlerle puan biriktiren kullanıcıların tespiti
+  2. Normal kullanıcı harcama dağılımı ile fırsatçı istismarcıların çok boyutlu ayrıştırılması
+  3. Haksız kazanılan puanların dondurulması ve promosyon kural motorunun güncellenmesi
+- **Mülakat Sorusu:** Çok değişkenli anomali tespitinde Mahalanobis mesafesi, değişkenler arasındaki korelasyonu nasıl hesaba katar?
+
+### Gün 075: SIM Swap Sonrası Finansal İşlem Riski Modeli
+- **İş Alanı:** Telekom & Bankacılık Ortak Güvenlik Masası (SIM Swap Fraud)
+- **Veri Kaynağı:** [Kaggle - Telecom SIM Swap & Banking Fraud Correlation](https://www.kaggle.com/datasets)
+- **Model:** XGBoost Classifier + Zaman Kısıtlı Risk Matrisi
+- **Türkçe Değişkenler:** `sim_kart_degisim_saati`, `ilk_finansal_islem_saati`, `gecen_sure_saat`, `cihaz_degisti_mi`, `sim_swap_dolandiricilik_riski`
+- **Jupyter Notebook (`gun_075_sim_swap_finansal_risk.ipynb`):**
+  1. SIM kartın yedek SIM ile yenilenmesi sonrası ilk 48 saatteki yüksek tutarlı transferlerin incelenmesi
+  2. Cihaz IMEI değişimi, şifre sıfırlama talepleri ve havale işlemlerinin ortak skorlanması
+  3. Bankalara ve Paycell'e anlık "SIM Swap Alarmı" API entegrasyonu simülasyonu
+- **Mülakat Sorusu:** SIM Swap dolandırıcılığında telekom operatörü ile finans kuruluşları arasındaki gerçek zamanlı sinyal paylaşımı (Open Gateway API / CAMARA standardı) nasıl çalışır?
 
 ---
 
