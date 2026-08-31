@@ -20,7 +20,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 
 > [!TIP]
 > **💻 %100 YEREL (LOCAL), ÜCRETSİZ VE AÇIK KAYNAK GÜVENCESİ:**
-> Bu müfredattaki 200 projenin tamamı, öğrencinin/mühendisin kendi yerel bilgisayarında (CPU veya standart GPU) ve ücretsiz Google Colab / Kaggle ortamlarında **sıfır maliyetle ($0)** çalışacak şekilde tasarlanmıştır. Hiçbir projede ücretli API anahtarı (OpenAI, Anthropic, Google Cloud Paid API vb.) veya harici ücretli donanım/bulut kaynağı gerekmez. Tüm LLM ve NLP görevleri açık kaynak yerel modeller (Ollama, HuggingFace Transformers, Qwen2.5, LLaMA-3.2, BERTurk) ile yürütülür.
+> Bu müfredattaki 200 projenin tamamı, öğrencinin/mühendisin kendi yerel bilgisayarında (CPU veya standart GPU) ve ücretsiz Google Colab / Kaggle ortamlarında **sıfır maliyetle ($0)** çalışacak şekilde tasarlanmıştır. Hiçbir projede ücretli API anahtarı (OpenAI, Anthropic, Google Cloud Paid API vb.) veya ağır üretken LLM donanım/çalışma gereksinimi yoktur. Tüm NLP ve veri bilimi görevleri açık kaynak, deterministik, hafif modeller (BERTurk, DeBERTa, Sentence-Transformers, FastText, Scikit-learn, Regex) ile doğrudan CPU/GPU üzerinde milisaniyeler içinde yürütülür.
 
 ---
 
@@ -426,16 +426,16 @@ Her proje şu standart bileşenlerle inşa edilir:
   3. KVKK uyumu için hassas kişisel verilerin (PII) otomatik maskelenmesi ve anonimizasyon pipeline'ı
 - **Mülakat Sorusu:** Türkçe gibi eklemeli (agglutinative) dillerde Token-Level NER yaparken subword tokenizasyonunda BIO etiketleri nasıl hizalanır?
 
-### Gün 035: Şirket İçi Dokümanlar için RAG (Retrieval-Augmented Generation) Asistanı
+### Gün 035: Şirket İçi Dokümanlar için Semantik Vektör Arama Motoru
 - **İş Alanı:** Turkcell Akademi & Şirket İçi Bilgi Yönetimi
 - **Veri Kaynağı:** [HuggingFace - BilgiQA / Turkish Telecom FAQs](https://huggingface.co/datasets)
-- **Model:** LangChain + ChromaDB + `sentence-transformers/paraphrase-multilingual-mpnet-base-v2` + Llama-3-8B-Instruct
-- **Türkçe Değişkenler:** `kullanici_sorusu`, `getirilen_dokuman_parcalari`, `vektor_benzerlik_skoru`, `uretilen_yanit`
-- **Jupyter Notebook (`gun_035_dokuman_rag_asistani.ipynb`):**
+- **Model:** `sentence-transformers/paraphrase-multilingual-mpnet-base-v2` + ChromaDB / FAISS Vektör İndeksi + Cosine Similarity
+- **Türkçe Değişkenler:** `kullanici_sorusu`, `getirilen_dokuman_parcalari`, `vektor_benzerlik_skoru`, `en_uygun_pasaj`
+- **Jupyter Notebook (`gun_035_dokuman_semantik_arama.ipynb`):**
   1. PDF/Markdown telekom politika dokümanlarının recursive character splitter ile parçalanması (Chunking)
   2. ChromaDB vektör veritabanında embedding indeksleme
-  3. Semantik arama (Cosine Similarity) ve LLM bağlam enjeksiyonu ile halüsinasyonsuz yanıt üretimi
-- **Mülakat Sorusu:** RAG mimarisinde "Lost in the Middle" problemi nedir ve context reranking (Cohere Rerank / Cross-Encoder) ile nasıl çözülür?
+  3. Kullanıcı sorusuna en uygun ilk 3 teknik kılavuz pasajının milisaniyeler içinde Cosine Similarity ile sıralanıp getirilmesi
+- **Mülakat Sorusu:** Vektör aramasında Dense Retrieval ile Sparse Retrieval (TF-IDF/BM25) arasındaki fark nedir ve hangi senaryolarda hangisi üstündür?
 
 ### Gün 036: Kullanıcı Yorumları Konu Modellemesi (Topic Modeling)
 - **İş Alanı:** Ürün Yönetimi (fizy, TV+, BiP, Paycell App Store Yorumları)
@@ -525,16 +525,16 @@ Her proje şu standart bileşenlerle inşa edilir:
 3. Yapısal JSON çıktısı üreterek ERP/CRM sistemine otomatik kontrat veri aktarımı
 - **Mülakat Sorusu:** Doküman AI modellerinde (LayoutLM) sadece metin yerine görsel yerleşim (bounding box) koordinatlarının kullanılmasının önemi nedir?
 
-### Gün 044: Müşteri Temsilcisi Yanıt Kalitesi Skorlama (LLM-as-a-Judge)
-- **İş Alanı:** Kalite Güvence (QA) & Müşteri Deneyimi Denetimi
+### Gün 044: Müşteri Temsilcisi Yanıt Kalitesi ve Nezaket Skorlama Modeli
+- **İş Alanı:** Kalite Güvence (QA) & Müşteri Deneyimi Denetimi (Global Bilgi Masası)
 - **Veri Kaynağı:** [HuggingFace - Turkish Customer Service Multi-Turn Conversations](https://huggingface.co/datasets)
-- **Model:** LLM-as-a-Judge (Yerel Qwen2.5-7B-Instruct / LLaMA-3.2-3B (Ollama / HuggingFace Transformers) + G-Eval Prompting)
-- **Türkçe Değişkenler:** `temsilci_cevabi`, `nezaket_puani_1_5`, `dogruluk_puani_1_5`, `cozum_odaklilik_puani`, `denetim_gerekcesi`
-- **Jupyter Notebook (`gun_044_temsilci_kalite_skorlama_llm.ipynb`):**
-  1. Temsilci yanıtlarının "Nezaket", "Kurumsal Bilgi Doğruluğu", "Çözüm Hızı" rubriklerine göre puanlanması
-  2. Chain-of-Thought (CoT) prompting ile LLM hakemlik değerlendirmesi
-  3. İnsan denetçi puanları ile LLM puanları arasındaki Pearson/Spearman korelasyon analizi
-- **Mülakat Sorusu:** "LLM-as-a-Judge" yaklaşımında karşılaşılan pozisyonel önyargı (Position Bias) ve uzunluk önyargısı (Verbosity Bias) nasıl engellenir?
+- **Model:** BERTurk (`dbmdz/bert-base-turkish-cased`) + Nezaket/Empati Kural Sözlüğü (Politeness Lexicon) + Cosine Semantik Relevans
+- **Türkçe Değişkenler:** `temsilci_cevabi`, `nezaket_sozluk_skoru`, `cozum_anlamsal_uyum_skoru`, `nihai_kalite_puani_1_100`
+- **Jupyter Notebook (`gun_044_temsilci_kalite_skorlama.ipynb`):**
+  1. Çağrı transkriptlerinden müşteri sorusu ile temsilci cevabının ayrıştırılması
+  2. Kural ve sözlük tabanlı nezaket/profesyonellik belirteçlerinin taranması
+  3. BERTurk ile temsilci yanıtının standart kurumsal çözüm rehberiyle semantik benzerliğinin hesaplanıp 1-100 arası puanlanması
+- **Mülakat Sorusu:** Doğal Dil İşlemede kural tabanlı sözlük (Lexicon-based) yaklaşımları ile derin öğrenme embedding skorlarını birleştirmenin açıklanabilirlik ve hesaplama hızı avantajı nedir?
 
 ### Gün 045: IVR (Sesli Yanıt) Menü Yönlendirme Niyet Modeli
 - **İş Alanı:** 532 Sesli Yanıt Sistemi (IVR) Otomasyonu
