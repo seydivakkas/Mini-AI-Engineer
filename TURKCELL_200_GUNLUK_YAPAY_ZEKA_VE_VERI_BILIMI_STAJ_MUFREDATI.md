@@ -463,7 +463,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 - **Jupyter Notebook (`gun_043_sozlesme_madde_cikarimi.ipynb`):**
   1. OCR ve PDF parser ile kurumsal abonelik sözleşmelerinin dijitalleştirilmesi
   2. LayoutLM ve QA modeliyle "Taahhüt Süresi", "Ceza Bedeli", "Yetkili İmza" alanlarının tespiti
-  3. Yapısal JSON çıktısı üreterek ERP/CRM sistemine otomatik kontrat veri aktarımı
+3. Yapısal JSON çıktısı üreterek ERP/CRM sistemine otomatik kontrat veri aktarımı
 - **Mülakat Sorusu:** Doküman AI modellerinde (LayoutLM) sadece metin yerine görsel yerleşim (bounding box) koordinatlarının kullanılmasının önemi nedir?
 
 ### Gün 044: Müşteri Temsilcisi Yanıt Kalitesi Skorlama (LLM-as-a-Judge)
@@ -488,8 +488,6 @@ Her proje şu standart bileşenlerle inşa edilir:
   3. Güven skoru %80'in altında kaldığında teyit sorusu soran karar mekanizması
 - **Mülakat Sorusu:** Hiyerarşik Niyet Sınıflandırmasında (Hierarchical Intent Classification) Flat Multiclass modele göre ne gibi mimari avantajlar elde edilir?
 
----
-
 ## 👁️ Modül 04: Bilgisayarlı Görü (Computer Vision) & Saha Denetimi (Gün 046 – 060)
 
 ### Gün 046: Baz İstasyonu Kule & Anten Nesne Tespiti
@@ -498,31 +496,164 @@ Her proje şu standart bileşenlerle inşa edilir:
 - **Model:** YOLOv8n / YOLOv11 Object Detection
 - **Türkçe Değişkenler:** `kule_goruntusu`, `tespit_edilen_anten_sayisi`, `sinirlayici_kutu_koordinatlari`, `guven_orani`
 - **Jupyter Notebook (`gun_046_kule_anten_tespiti.ipynb`):**
-  1. Roboflow üzerinden veri seti çekme ve YAML konfigürasyonu
-  2. YOLOv8 ile kule ve anten nesneleri üzerinde model eğitimi
-  3. mAP@0.5 ve mAP@0.5:0.95 metrik değerlendirmesi
+  1. Roboflow üzerinden veri seti indirme ve YAML konfigürasyonu
+  2. YOLOv8 ile kule, sektör anteni ve mikrodalga çanak nesneleri üzerinde eğitim
+  3. mAP@0.5 ve mAP@0.5:0.95 metrik değerlendirmesi ve test görüntülerinde inference
+- **Mülakat Sorusu:** Farklı hava koşullarında (sis, yoğun güneş, kar) drone fotoğraflarından küçük antenleri tespit ederken mAP düşüşünü önlemek için hangi veri artırma (Augmentation) yöntemleri kullanılır?
 
 ### Gün 047: Kimlik Kartı & Pasaport Köşe Tespiti ve Segmentasyonu
 - **İş Alanı:** Dijital Hat Açılış Süreci (e-KYC)
 - **Veri Kaynağı:** [Roboflow - ID Card & Passport Segmentation](https://universe.roboflow.com/)
-- **Model:** YOLOv8-Seg / OpenCV Perspective Warp
-- **Türkçe Değişkenler:** `ham_kimlik_fotografi`, `kose_noktalari`, `perspektif_duzeltilmis_kimlik`
-- **Jupyter Notebook (`gun_047_kimlik_segmentasyon_kyc.ipynb`)**
+- **Model:** YOLOv8-Seg / OpenCV Perspective Warp (Dört Köşe Homografi)
+- **Türkçe Değişkenler:** `ham_kimlik_fotografi`, `kose_noktalari`, `perspektif_duzeltilmis_kimlik`, `parlama_orani`
+- **Jupyter Notebook (`gun_047_kimlik_segmentasyon_kyc.ipynb`):**
+  1. Kullanıcının cep telefonuyla açılı çektiği kimlik fotoğrafının köşe segmentasyonu
+  2. 4 köşe koordinatı üzerinden OpenCV `getPerspectiveTransform` ve `warpPerspective` ile kuşbakışı düzeltme
+  3. Parlama ve yansımaları filtreleyerek OCR öncesi netleştirme pipeline'ı
+- **Mülakat Sorusu:** Kimlik kartının perspektif dönüşümünde homografi matrisi $H$ kaç serbestlik derecesine sahiptir ve en az kaç köşe noktası gereklidir?
 
-### Gün 048 – Gün 060 Hızlı Liste:
-- **Gün 048:** Fatura / Fiş Bounding Box OCR Tespiti (Roboflow Invoice Extraction)
-- **Gün 049:** Saha Ekibi İş Güvenliği (Baret / Yelek) Denetimi (Worker PPE Safety)
-- **Gün 050:** Veri Merkezi Sunucu Kablo Hasar & Karmaşa Tespiti (Server Cable Defects)
-- **Gün 051:** Turkcell Bayi İçi Müşteri Sayma & Yoğunluk Isı Haritası (People Counter)
-- **Gün 052:** Baz İstasyonu Çevresi Yangın & Duman Erken Uyarısı (Wildfire & Smoke YOLO)
-- **Gün 053:** SIM Kart Barkod & ICCID Seri Numarası Konumlandırma (Barcode/QR Detection)
-- **Gün 054:** Güneş Enerjili İstasyonlarda Panel Kirlilik/Kırık Tespiti (Solar Panel Defects)
-- **Gün 055:** Saha Araçları Otomatik Plaka Tanıma (ANPR YOLO + Tesseract OCR)
-- **Gün 056:** Taranan Sözleşmelerde Islak İmza Eksikliği Denetimi (Signature Area Detection)
-- **Gün 057:** Antenlerde Kuş Yuvası ve Engel Tespiti (Bird Nest & Hazard Detection)
-- **Gün 058:** Mobil Uygulama Arayüz Hata (UI Glitch / Buton Kayması) Tespiti (UI Elements)
-- **Gün 059:** Yüz Canlılık (Liveness / Anti-Spoofing) Tespiti (CelebA-Spoof / MiniFASNet)
-- **Gün 060:** Açık Hava Billboard & Reklam Panosu Doğrulama (Billboard Verification)
+### Gün 048: Fatura / Fiş Bounding Box OCR Tespiti
+- **İş Alanı:** Paycell Fatura Ödeme & Masraf Yönetimi
+- **Veri Kaynağı:** [Roboflow - Invoice & Receipt OCR Key Information Extraction](https://universe.roboflow.com/)
+- **Model:** PaddleOCR / CRAFT Text Detector + LayoutLM
+- **Türkçe Değişkenler:** `fatura_gorseli`, `kurum_adi_kutusu`, `odenecek_tutar_kutusu`, `son_odeme_tarihi_kutusu`
+- **Jupyter Notebook (`gun_048_fatura_ocr_bilgi_cikarimi.ipynb`):**
+  1. Karmaşık fatura ve makbuz görsellerinde metin bloklarının kutulanması (Bounding Box)
+  2. Türkçe karakter destekli PaddleOCR ile fatura tutarı, abone no ve son ödeme tarihinin ayrıştırılması
+  3. Yapısal JSON çıktısı üreterek Paycell tek tıkla fatura ödeme API'sine aktarım
+- **Mülakat Sorusu:** OCR metin tespitinde CRAFT (Character Region Awareness for Text Detection) algoritmasının klasik kenar buluculara göre üstünlüğü nedir?
+
+### Gün 049: Saha Ekibi İş Güvenliği (Baret / Yelek) Denetimi
+- **İş Alanı:** Saha İSG (İş Sağlığı ve Güvenliği) Otomasyonu
+- **Veri Kaynağı:** [Roboflow - Construction & Worker PPE Safety Dataset](https://universe.roboflow.com/)
+- **Model:** YOLOv8x + Custom Safety Compliance Rules
+- **Türkçe Değişkenler:** `saha_kamera_karesi`, `baret_takili_mi`, `reflektorlu_yelek_var_mi`, `isg_ihlal_alarmi`
+- **Jupyter Notebook (`gun_049_is_guvenligi_baret_yelek.ipynb`):**
+  1. Baz istasyonu montaj ve kule tırmanışlarında işçi, baret ve reflektörlü yelek tespiti
+  2. Bounding box kesişimi (IoU) ile bareti takan kişinin eşleştirilmesi
+  3. İhlal durumunda anlık alarm ve kule tırmanış durdurma bildirim mekanizması
+- **Mülakat Sorusu:** Baret ile işçi gövdesini doğru eşleştirmek için iki bounding box arasındaki spatial overlap (IoU) ilişkisi nasıl kurgulanır?
+
+### Gün 050: Veri Merkezi Sunucu Kablo Hasar & Karmaşa Tespiti
+- **İş Alanı:** Turkcell Veri Merkezi Kablolama & Rack Denetimi
+- **Veri Kaynağı:** [Roboflow - Server Rack Cable Management & Defect Dataset](https://universe.roboflow.com/)
+- **Model:** Mask R-CNN / YOLOv8-Seg Instance Segmentation
+- **Türkçe Değişkenler:** `rack_sunucu_gorseli`, `ezilmis_kablo_segmenti`, `kablo_duzen_puani_1_100`, `hava_akisi_engeli_var_mi`
+- **Jupyter Notebook (`gun_050_sunucu_kablo_hasar_tespiti.ipynb`):**
+  1. Sunucu kabinlerindeki fiber ve ethernet kablolarının piksel düzeyinde segmentasyonu
+  2. Bükülmüş, ezilmiş veya hava akışını engelleyen karmaşık kablo demetlerinin sınıflandırılması
+  3. Kabin düzen skoru ve revizyon gereken portların işaretlenmesi
+- **Mülakat Sorusu:** Semantik Segmentasyon (FCN/U-Net) ile Instance Segmentasyon (Mask R-CNN) arasındaki temel fark kablo ayrıştırmada neden kritiktir?
+
+### Gün 051: Turkcell Bayi İçi Müşteri Sayma & Yoğunluk Isı Haritası
+- **İş Alanı:** Perakende Mağazacılık & Bayi Kanalı Analitiği
+- **Veri Kaynağı:** [Roboflow - Retail Store Customer Tracking & Density](https://universe.roboflow.com/)
+- **Model:** YOLOv8-Pose / ByteTRACK + Kernel Density Estimation (KDE) Isı Haritası
+- **Türkçe Değişkenler:** `magaza_kamera_akisi`, `anlik_musteri_sayisi`, `reyon_kalma_suresi_sn`, `yogunluk_isi_haritasi`
+- **Jupyter Notebook (`gun_051_bayi_musteri_sayma_isi_haritasi.ipynb`):**
+  1. Giriş/çıkış sanal çizgileri üzerinden geçen müşterilerin yönlü sayımı (In/Out Counter)
+  2. ByteTRACK ile müşteri izleme (Tracking) ve telefon/aksesuar stantlarında geçirilen sürenin ölçülmesi
+  3. Mağaza yerleşim planı üzerine yoğunluk ısı haritası (Heatmap) bindirme
+- **Mülakat Sorusu:** Çoklu kamera veya kalabalık sahnelerde müşteri takibinde ID Switch (kimlik karışması) problemi ByteTRACK ile nasıl önlenir?
+
+### Gün 052: Baz İstasyonu Çevresi Yangın & Duman Erken Uyarısı
+- **İş Alanı:** Kırsal Altyapı Güvenliği & Afet Yönetimi
+- **Veri Kaynağı:** [Roboflow - Wildfire Smoke & Flame Detection](https://universe.roboflow.com/)
+- **Model:** YOLOv8 Small + Temporal Smoothing Filter (Yanlış Alarm Engelleyici)
+- **Türkçe Değişkenler:** `kamera_goruntusu`, `duman_olasiligi`, `alev_olasiligi`, `yangin_alarmi_tetiklendi_mi`
+- **Jupyter Notebook (`gun_052_baz_istasyonu_yangin_duman.ipynb`):**
+  1. Ormanlık alanlardaki kule kameralarından duman bulutu ve alev tespiti
+  2. Bulut, toz veya sis kaynaklı sahte pozitifleri elemek için ardışık 5 karelik zaman filtresi
+  3. İtfaiye ve kriz masasına GPS koordinatlı acil MMS/BiP bildirimi
+- **Mülakat Sorusu:** Duman gibi sınırları belirsiz ve amorf nesnelerin tespitinde bounding box regülarizasyonu nasıl optimize edilir?
+
+### Gün 053: SIM Kart Barkod & ICCID Seri Numarası Konumlandırma
+- **İş Alanı:** Lojistik & SIM Kart Paketleme Kalite Kontrolü
+- **Veri Kaynağı:** [Roboflow - Barcode & QR Code Localization](https://universe.roboflow.com/)
+- **Model:** YOLOv8-Nano + PyZbar / OpenCV QR Detector
+- **Türkçe Değişkenler:** `sim_kart_kutusu`, `barkod_alani_koordinatlari`, `okunan_iccid_seri_no`, `kod_okunabilir_mi`
+- **Jupyter Notebook (`gun_053_sim_kart_barkod_iccid.ipynb`):**
+  1. Hareketli konveyör banttaki SIM kartlar üzerinde barkod ve QR kodların bulunması
+  2. Bounding box kırpılarak görüntü netleştirme ve ICCID numarasının okunması
+  3. Bozuk, çizik veya eksik basılmış SIM kartların otomatik reddedilmesi
+- **Mülakat Sorusu:** Düşük çözünürlüklü veya hareket bulanıklığı (Motion Blur) olan görüntülerde barkod okuma başarısı nasıl artırılır?
+
+### Gün 054: Güneş Enerjili İstasyonlarda Panel Kirlilik/Kırık Tespiti
+- **İş Alanı:** Yeşil Şebeke & Saha Yenilenebilir Enerji Bakımı
+- **Veri Kaynağı:** [Roboflow - Solar Panel Defect & Dust Detection](https://universe.roboflow.com/)
+- **Model:** YOLOv8 Classification & Segmentation / EfficientNet-B4
+- **Türkçe Değişkenler:** `panel_termal_goruntusu`, `kirlilik_orani_yuzde`, `sicak_nokta_hotspot_var_mi`, `temizlik_bakim_onerisi`
+- **Jupyter Notebook (`gun_054_gunes_paneli_kirlilik_tespiti.ipynb`):**
+  1. Drone ile çekilen termal ve RGB panel fotoğraflarının analizi
+  2. Kuş pisliği, tozlanma veya hücre kırığı (Hotspot) kaynaklı verim kayıplarının tespiti
+  3. Saha ekiplerine önleyici temizlik ve panel değişim görev emri oluşturulması
+- **Mülakat Sorusu:** Güneş panellerindeki mikro çatlakları tespit etmede RGB kamera ile Termal (FLIR) kamera füzyonunun katkısı nedir?
+
+### Gün 055: Saha Araçları Otomatik Plaka Tanıma (ANPR)
+- **İş Alanı:** Turkcell Plaza & Saha Filo Giriş-Çıkış Yönetimi
+- **Veri Kaynağı:** [Roboflow - Turkish License Plate Detection & Character OCR](https://universe.roboflow.com/)
+- **Model:** YOLOv8 (Plaka Tespiti) + CRNN / Tesseract (Karakter Tanıma)
+- **Türkçe Değişkenler:** `arac_on_goruntusu`, `plaka_alani`, `okunan_plaka_metni`, `filo_yetkili_arac_mi`
+- **Jupyter Notebook (`gun_055_otomatik_plaka_tanima_anpr.ipynb`):**
+  1. Hareket halindeki araçlardan Türk formatına uygun (34 ABC 123) plaka tespiti
+  2. Plaka bölgesinin kırpılması, gri tonlama ve adaptif eşikleme (Otsu Thresholding)
+  3. Karakter dizisi tanıma ve bariyer otomatik açılış lojiği
+- **Mülakat Sorusu:** ANPR sistemlerinde iki aşamalı (Two-Stage: Detection + Recognition) mimari neden End-to-End OCR modellerine göre pratikte daha stabildir?
+
+### Gün 056: Taranan Sözleşmelerde Islak İmza Eksikliği Denetimi
+- **İş Alanı:** Müşteri Kabul & Sözleşme Arşiv Denetimi
+- **Veri Kaynağı:** [Roboflow - Signature Area & Stamp Detection on Documents](https://universe.roboflow.com/)
+- **Model:** Faster R-CNN / YOLOv8 Object Detection
+- **Türkçe Değişkenler:** `taranmis_sozlesme_sayfasi`, `imza_kutusu_koordinati`, `imza_mevcut_mu`, `sahte_fotokopi_suphesi`
+- **Jupyter Notebook (`gun_056_sozlesme_imza_denetimi.ipynb`):**
+  1. PDF sözleşme sayfalarının yüksek çözünürlüklü imajlara dönüştürülmesi
+  2. "Müşteri İmzası" ve "Bayi Kaşesi" alanlarının tespiti
+  3. Boş bırakılan veya fotokopiyle çoğaltılmış imzasız evrakların otomatik bayiye iade edilmesi
+- **Mülakat Sorusu:** Dokümanlarda ıslak mürekkepli imza ile dijital yapıştırılmış imza arasındaki doku (texture) farkı ML ile nasıl ayrıştırılır?
+
+### Gün 057: Antenlerde Kuş Yuvası ve Engel Tespiti
+- **İş Alanı:** Radyo Şebeke Kule Bakımı & Sinyal Engeli Önleme
+- **Veri Kaynağı:** [Roboflow - Bird Nest & Transmission Line Hazard Detection](https://universe.roboflow.com/)
+- **Model:** YOLOv8 Object Detection + Sinyal Kaybı Korelasyonu
+- **Türkçe Değişkenler:** `anten_yakin_cekimi`, `kus_yuvasi_tespit_edildi_mi`, `engel_kapatma_yuzdesi`, `tahmini_db_zayiflama`
+- **Jupyter Notebook (`gun_057_anten_kus_yuvasi_engeli.ipynb`):**
+  1. Periyodik drone uçuş fotoğraflarında mikrodalga çanak ve panel antenlerin incelenmesi
+  2. Kuş yuvası, yabani sarmaşık veya metalik korozyon engellerinin tespiti
+  3. Sinyal yayılımını bozan fiziksel engeller için saha ekibi yönlendirmesi
+- **Mülakat Sorusu:** Yabancı cisim tespitinde dengesiz ve az sayıda pozitif örnek içeren sınıflar için Synthetic Data Generation (Diffusion/GAN) nasıl kullanılır?
+
+### Gün 058: Mobil Uygulama Arayüz Hata (UI Glitch / Buton Kayması) Tespiti
+- **İş Alanı:** Mobil QA (Quality Assurance) & TV+, fizy, Paycell Test Masası
+- **Veri Kaynağı:** [Roboflow - Mobile UI Elements & Layout Glitch Dataset](https://universe.roboflow.com/)
+- **Model:** YOLOv8 Object Detection + Layout Bounding Overlap Checker
+- **Türkçe Değişkenler:** `uygulama_ekran_goruntusu`, `ust_uste_binen_butonlar`, `metin_tasma_durumu`, `ui_hata_skoru`
+- **Jupyter Notebook (`gun_058_mobil_ui_glitch_tespiti.ipynb`):**
+  1. Farklı ekran çözünürlüklerindeki (iOS/Android tablet, telefon) ekran görüntülerinin taranması
+  2. Buton, metin alanı ve görsellerin koordinat tespiti
+  3. Üst üste binen (Overlap) veya ekrandan taşan UI hatalarının otomatik CI/CD pipeline'ında yakalanması
+- **Mülakat Sorusu:** UI otomasyon testlerinde piksel piksel görsel karşılaştırma (Pixel Diff) yerine neden Nesne Tespiti (Object Detection) tercih edilir?
+
+### Gün 059: Yüz Canlılık (Liveness / Anti-Spoofing) Tespiti
+- **İş Alanı:** Paycell & Dijital Kimlik Biyometrik Doğrulama
+- **Veri Kaynağı:** [Kaggle - CelebA-Spoof / Face Anti-Spoofing Dataset](https://www.kaggle.com/datasets)
+- **Model:** MiniFASNet / FeatherNets + 2D-Fourier Spektrum Analizi
+- **Türkçe Değişkenler:** `selfie_videosu_karesi`, `canlilik_skoru_0_1`, `saldiri_turu_ekran_maske_kagit`, `islem_onaylandi_mi`
+- **Jupyter Notebook (`gun_059_yuz_canlilik_anti_spoofing.ipynb`):**
+  1. Kamera önündeki kişinin gerçek canlı mı yoksa ekrandan gösterilen fotoğraf/video mu olduğunun tespiti
+  2. Ekran pikselleri moiré paterni ve derinlik analizi
+  3. Dijital onaylarda sahteciliği engelleyen milisaniyelik liveness kontrolü
+- **Mülakat Sorusu:** Yüz tanıma sistemlerine yapılan Presentation Attack (baskılı kağıt, tablet ekranı, 3D maske) türleri yazılımsal olarak nasıl engellenir?
+
+### Gün 060: Açık Hava Billboard & Reklam Panosu Doğrulama
+- **İş Alanı:** Turkcell Pazarlama & Açık Hava Reklam Denetimi
+- **Veri Kaynağı:** [Roboflow - Billboard & Outdoor Advertising Dataset](https://universe.roboflow.com/)
+- **Model:** YOLOv8 + SIFT / ORB Feature Matching / CLIP Zero-Shot Classification
+- **Türkçe Değişkenler:** `saha_sokak_fotografi`, `billboard_alani`, `reklam_kampanya_eslesme_orani`, `kampanya_dogrulandi_mi`
+- **Jupyter Notebook (`gun_060_billboard_reklam_dogrulama.ipynb`):**
+  1. Şehir içi araç kameralarından billboard ve otobüs durak reklamlarının tespiti
+  2. Tespit edilen panodaki görselin aktif Turkcell reklam afişiyle CLIP / SIFT ile eşleştirilmesi
+  3. Reklam ajanslarının afiş asma taahhütlerinin otomatik fatura doğrulaması
+- **Mülakat Sorusu:** Değişen açı, ışık ve kısmi gölgelenme altında kurumsal reklam afişini doğrulamak için Feature Matching ile Zero-Shot CLIP nasıl birleştirilir?
 
 ---
 
