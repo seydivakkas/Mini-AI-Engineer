@@ -18,7 +18,12 @@ Her proje şu standart bileşenlerle inşa edilir:
 4. **Jupyter Notebook (`.ipynb`) Yapısı ve Çalışma Akışı**
 5. **Turkcell Staj & Mülakat Odaklı Değerlendirme Sorusu**
 
+> [!TIP]
+> **💻 %100 YEREL (LOCAL), ÜCRETSİZ VE AÇIK KAYNAK GÜVENCESİ:**
+> Bu müfredattaki 200 projenin tamamı, öğrencinin/mühendisin kendi yerel bilgisayarında (CPU veya standart GPU) ve ücretsiz Google Colab / Kaggle ortamlarında **sıfır maliyetle ($0)** çalışacak şekilde tasarlanmıştır. Hiçbir projede ücretli API anahtarı (OpenAI, Anthropic, Google Cloud Paid API vb.) veya harici ücretli donanım/bulut kaynağı gerekmez. Tüm LLM ve NLP görevleri açık kaynak yerel modeller (Ollama, HuggingFace Transformers, Qwen2.5, LLaMA-3.2, BERTurk) ile yürütülür.
+
 ---
+
 
 # 📚 200 GÜNLÜK MÜFREDAT MODÜL DAĞILIMI
 
@@ -469,7 +474,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 ### Gün 044: Müşteri Temsilcisi Yanıt Kalitesi Skorlama (LLM-as-a-Judge)
 - **İş Alanı:** Kalite Güvence (QA) & Müşteri Deneyimi Denetimi
 - **Veri Kaynağı:** [HuggingFace - Turkish Customer Service Multi-Turn Conversations](https://huggingface.co/datasets)
-- **Model:** LLM-as-a-Judge (Llama-3-70B / GPT-4o-mini Evaluation Prompting)
+- **Model:** LLM-as-a-Judge (Yerel Qwen2.5-7B-Instruct / LLaMA-3.2-3B (Ollama / HuggingFace Transformers) + G-Eval Prompting)
 - **Türkçe Değişkenler:** `temsilci_cevabi`, `nezaket_puani_1_5`, `dogruluk_puani_1_5`, `cozum_odaklilik_puani`, `denetim_gerekcesi`
 - **Jupyter Notebook (`gun_044_temsilci_kalite_skorlama_llm.ipynb`):**
   1. Temsilci yanıtlarının "Nezaket", "Kurumsal Bilgi Doğruluğu", "Çözüm Hızı" rubriklerine göre puanlanması
@@ -831,7 +836,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 ### Gün 076: Türkçe Konuşma Tanıma (ASR - Automatic Speech Recognition)
 - **İş Alanı:** 532 Çağrı Merkezi Ses Kayıt Transkripsiyonu
 - **Veri Kaynağı:** [HuggingFace - Mozilla Common Voice Turkish](https://huggingface.co/datasets/mozilla-foundation/common_voice_11_0)
-- **Model:** OpenAI Whisper-Small / Wav2Vec2-XLSR-Turkish + CTC Loss
+- **Model:** Açık Kaynak Yerel Whisper-Small (HuggingFace / CPU-GPU) / Wav2Vec2-XLSR-Turkish + CTC Loss
 - **Türkçe Değişkenler:** `ses_dosyasi_yolu`, `ornekleme_frekansi_hz`, `metne_dokulen_transkript`, `kelime_hata_orani_wer`, `karakter_hata_orani_cer`
 - **Jupyter Notebook (`gun_076_turkce_asr_whisper.ipynb`):**
   1. MP3/WAV ses dosyalarının 16 kHz mono formatına dönüştürülmesi ve Log-Mel spektrogram çıkarımı
@@ -1627,7 +1632,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 ### Gün 146: Müşteri Temsilcisi Yanıt Kalitesi Denetleyicisi (LLM-as-a-Judge)
 - **İş Alanı:** Turkcell Global Bilgi Kalite Güvence & Temsilci Değerlendirme
 - **Veri Kaynağı:** [Customer Support Conversation Quality Dataset](https://huggingface.co/datasets)
-- **Model:** LLaMA-3-8B-Instruct / GPT-4o-mini + G-Eval Kalite Rubriği
+- **Model:** Yerel Qwen2.5-7B-Instruct / LLaMA-3.2-3B (Ollama / HuggingFace Yerel) + G-Eval Kalite Rubriği
 - **Türkçe Değişkenler:** `cagri_transkripti`, `temsilci_cevabi`, `degerlendirme_kriteri_empati_cozum_nezaket`, `kalite_puani_1_5`, `gerekce_metni`
 - **Jupyter Notebook (`gun_146_llm_as_a_judge_kalite_denetimi.ipynb`):**
   1. Çağrı merkezi görüşme metinlerinin LLM'e değerlendirme rubriği (Empati, Doğru Bilgi, Çözüm Hızı) ile beslenmesi
@@ -1748,7 +1753,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 ### Gün 157: Chatbot için Few-Shot Niyet Genişletici Sentetik Veri Pipeline'ı
 - **İş Alanı:** BiP Dijital Asistan Eğitimi & Veri Artırma (Data Augmentation)
 - **Veri Kaynağı:** [Turkish Chatbot Intent Dataset](https://huggingface.co/datasets)
-- **Model:** GPT-4o-mini / LLaMA-3 Prompt Engineering + Cosine Similarity Filtresi
+- **Model:** Yerel Qwen2.5-3B-Instruct / LLaMA-3.2-1B (Ollama / HuggingFace Yerel) + Cosine Similarity Filtresi
 - **Türkçe Değişkenler:** `ornek_niyet_cumlesi`, `uretilen_sentetik_varyasyonlar`, `anlamsal_benzerlik_esigi`, `filtrelenmis_egitim_verisi`
 - **Jupyter Notebook (`gun_157_few_shot_sentetik_niyet_verisi.ipynb`):**
   1. 5 adet örnek kullanıcı cümlesinden yola çıkarak LLM ile 50 farklı alternatif soru varyasyonu üretme
@@ -1770,7 +1775,7 @@ Her proje şu standart bileşenlerle inşa edilir:
 ### Gün 159: E-posta Destek Talebi Otomatik Cevap Taslağı Üretici
 - **İş Alanı:** Turkcell Global Bilgi E-posta Destek Masası
 - **Veri Kaynağı:** [Customer Support Email Dataset](https://huggingface.co/datasets)
-- **Model:** RAG + Claude-3.5-Sonnet / LLaMA-3 + Türkçe Kurumsal Şablon Motoru
+- **Model:** RAG + Yerel Qwen2.5-7B-Instruct / LLaMA-3.2-3B (Ollama / HuggingFace Yerel) + Türkçe Kurumsal Şablon Motoru
 - **Türkçe Değişkenler:** `gelen_musteri_epostasi`, `ilgili_cozum_dokumani`, `uretilen_cevap_taslagi`, `temsilci_onayladi_mi`
 - **Jupyter Notebook (`gun_159_eposta_otomatik_cevap_taslagi.ipynb`):**
   1. Müşteriden gelen e-postanın konusunun, abone bilgilerinin ve talebinin tespiti
