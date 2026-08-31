@@ -356,19 +356,137 @@ Her proje şu standart bileşenlerle inşa edilir:
 - **Türkçe Değişkenler:** `tweet_icerigi`, `ilgili_departman_fatura_sebeke_cihaz`, `atanan_oncelik`
 - **Jupyter Notebook (`gun_033_sosyal_medya_yonlendirme.ipynb`)**
 
-### Gün 034 – Gün 045 Hızlı Liste:
-- **Gün 034:** Çağrı Metinlerinden Varlık İsmi Çıkarımı (NER) (BERTurk NER)
-- **Gün 035:** Şirket İçi Dokümanlar için RAG Asistanı (LangChain + ChromaDB + BilgiQA)
-- **Gün 036:** Kullanıcı Yorumları Konu Modellemesi (BERTopic / LDA)
-- **Gün 037:** SMS Oltalama (Phishing) ve Sahte Kampanya Filtresi (SMS Spam Collection)
-- **Gün 038:** Müşteri Temsilcisi Çağrı Özeti Çıkarıcı (Turkish Text Summarization T5/BART)
-- **Gün 039:** Sosyal Medya Marka Kriz Dedektörü (Anomaly Detection on Sentiment Volatility)
-- **Gün 040:** SSS (FAQ) Semantik Soru Eşleştirme Motoru (Sentence-Transformers cosine similarity)
-- **Gün 041:** Çok Dilli Destek Talebi Ayrıştırma (Opus-100 / Multilingual DialoGPT)
-- **Gün 042:** Toksik ve Hakaret İçeren Yorum Moderasyonu (Turkish Toxicity Classifier)
-- **Gün 043:** PDF Abonelik Sözleşmesi Madde Çıkarımı (Legal Contract Extraction)
-- **Gün 044:** Müşteri Temsilcisi Yanıt Kalitesi Skorlama (LLM Evaluation Framework)
-- **Gün 045:** IVR (Sesli Yanıt) Menü Yönlendirme Niyet Modeli (Conversational Intent)
+### Gün 034: Çağrı Metinlerinden Varlık İsmi Çıkarımı (NER - Named Entity Recognition)
+- **İş Alanı:** Müşteri Deneyimi & KVKK / PII Maskeleme Masası
+- **Veri Kaynağı:** [HuggingFace - wikiann / tr (Turkish NER)](https://huggingface.co/datasets/wikiann)
+- **Model:** BERTurk-NER (`dbmdz/bert-base-turkish-cased-ner`) / TokenClassification
+- **Türkçe Değişkenler:** `cagri_transkripti`, `bulunan_varlik_etiketi`, `kisi_kurum_lokasyon_turu`, `maskelenmis_metin`
+- **Jupyter Notebook (`gun_034_cagri_metinleri_ner.ipynb`):**
+  1. Ses transkripti metinlerinin BIO (Begin-Inside-Outside) tokenizasyonu
+  2. BERTurk ile ad, soyad, şehir, telefon ve TC kimlik no gibi varlıkların (Entity) tespiti
+  3. KVKK uyumu için hassas kişisel verilerin (PII) otomatik maskelenmesi ve anonimizasyon pipeline'ı
+- **Mülakat Sorusu:** Türkçe gibi eklemeli (agglutinative) dillerde Token-Level NER yaparken subword tokenizasyonunda BIO etiketleri nasıl hizalanır?
+
+### Gün 035: Şirket İçi Dokümanlar için RAG (Retrieval-Augmented Generation) Asistanı
+- **İş Alanı:** Turkcell Akademi & Şirket İçi Bilgi Yönetimi
+- **Veri Kaynağı:** [HuggingFace - BilgiQA / Turkish Telecom FAQs](https://huggingface.co/datasets)
+- **Model:** LangChain + ChromaDB + `sentence-transformers/paraphrase-multilingual-mpnet-base-v2` + Llama-3-8B-Instruct
+- **Türkçe Değişkenler:** `kullanici_sorusu`, `getirilen_dokuman_parcalari`, `vektor_benzerlik_skoru`, `uretilen_yanit`
+- **Jupyter Notebook (`gun_035_dokuman_rag_asistani.ipynb`):**
+  1. PDF/Markdown telekom politika dokümanlarının recursive character splitter ile parçalanması (Chunking)
+  2. ChromaDB vektör veritabanında embedding indeksleme
+  3. Semantik arama (Cosine Similarity) ve LLM bağlam enjeksiyonu ile halüsinasyonsuz yanıt üretimi
+- **Mülakat Sorusu:** RAG mimarisinde "Lost in the Middle" problemi nedir ve context reranking (Cohere Rerank / Cross-Encoder) ile nasıl çözülür?
+
+### Gün 036: Kullanıcı Yorumları Konu Modellemesi (Topic Modeling)
+- **İş Alanı:** Ürün Yönetimi (fizy, TV+, BiP, Paycell App Store Yorumları)
+- **Veri Kaynağı:** [Kaggle - Google Play Store Turkcell Apps Reviews](https://www.kaggle.com/datasets)
+- **Model:** BERTopic + UMAP Boyut İndirgeme + HDBSCAN Kümeleme
+- **Türkçe Değişkenler:** `magaza_yorumu`, `atanan_konu_id`, `konu_anahtar_kelimeleri`, `kullanici_yildiz_puani`
+- **Jupyter Notebook (`gun_036_uygulama_yorumlari_bertopic.ipynb`):**
+  1. App Store ve Google Play yorumlarının c-TF-IDF ile ağırlıklandırılması
+  2. BERTopic ile dinamik konu kümelerinin (örn: "Fatura İtirazı", "Giriş Hatası", "Yavaşlama") çıkarımı
+  3. Zaman içindeki konu popülarite trendlerinin görselleştirilmesi
+- **Mülakat Sorusu:** Klasik LDA (Latent Dirichlet Allocation) yerine transformer tabanlı BERTopic tercih edilmesinin temel avantajları nelerdir?
+
+### Gün 037: SMS Oltalama (Phishing) ve Sahte Kampanya Filtresi
+- **İş Alanı:** Bilgi Güvenliği & Siber Savunma Masası
+- **Veri Kaynağı:** [Kaggle - SMS Spam Collection / Turkish Smishing Dataset](https://www.kaggle.com/datasets)
+- **Model:** TF-IDF + Multinomial Naive Bayes / RoBERTa Sequence Classification
+- **Türkçe Değişkenler:** `sms_govde_metni`, `icerdigi_url_sayisi`, `tehdit_turu_oltalama_normal`, `guvenlik_skoru`
+- **Jupyter Notebook (`gun_037_sms_oltalama_filtresi.ipynb`):**
+  1. SMS metinlerindeki aciliyet tetikleyicileri ("Hemen tıkla", "Hattınız kapanacak") ve sahte link çıkarımı
+  2. Karakter seviyesi N-Gram ve kelime vektörleriyle spam/phishing sınıflandırma
+  3. Şebeke SMS Gateway üzerinde gecikmesiz (<5ms) kural ve model inference entegrasyonu
+- **Mülakat Sorusu:** Oltalama SMS'i tespitinde yüksek Recall mı yoksa yüksek Precision mı hedeflenir? Müşterinin normal SMS'inin engellenmesi işi nasıl etkiler?
+
+### Gün 038: Müşteri Temsilcisi Çağrı Özeti Çıkarıcı (Abstractive Summarization)
+- **İş Alanı:** 532 Çağrı Merkezi Operasyonel Verimlilik
+- **Veri Kaynağı:** [HuggingFace - Turkish Text Summarization / TR-News / DialogSum](https://huggingface.co/datasets)
+- **Model:** mT5 (`google/mt5-base`) / Turkish-BART İnce Ayar (Fine-Tuning)
+- **Türkçe Değişkenler:** `uzun_cagri_diyalogu`, `temsilci_aksiyonu`, `uretilen_kisa_ozet`, `rouge_skoru`
+- **Jupyter Notebook (`gun_038_cagri_ozeti_mt5.ipynb`):**
+  1. Müşteri ve temsilci arasındaki çok turlu konuşma diyaloğu formatlaması
+  2. Seq2Seq mT5 modelinin ROUGE-1, ROUGE-2 ve ROUGE-L metrikleriyle eğitimi
+  3. Çağrı sonrasında CRM sistemine otomatik 2 cümlelik özet ve aksiyon kartı basılması
+- **Mülakat Sorusu:** Metin özetlemede Extractive (Çıkarımsal) ve Abstractive (Soyutlamalı) yaklaşımlar arasındaki fark nedir? Çağrı merkezi için hangisi uygundur?
+
+### Gün 039: Sosyal Medya Marka Kriz Dedektörü (Sentiment Volatility & Anomaly)
+- **İş Alanı:** Kurumsal İletişim & Sosyal Medya Kriz Yönetimi
+- **Veri Kaynağı:** [Kaggle - Twitter Brand Sentiment Stream](https://www.kaggle.com/datasets)
+- **Model:** Exponential Moving Average (EMA) + Z-Score Volatilite Anomali Dedektörü
+- **Türkçe Değişkenler:** `saatlik_olumsuz_tweet_orani`, `hareketli_ortalama_z_skoru`, `kriz_alarmi_seviyesi`, `trend_hashtagler`
+- **Jupyter Notebook (`gun_039_sosyal_medya_kriz_dedektoru.ipynb`):**
+  1. Canlı Twitter/X akışından saatlik duygu skorlarının (Sentiment Score) hesaplanması
+  2. Standart sapma dışına çıkan ani negatif duygu patlamalarının tespiti
+  3. Kriz anında öne çıkan anahtar kelimelerin anlık kelime bulutu (WordCloud) analizi
+- **Mülakat Sorusu:** Zaman serisinde mevsimsel duygu dalgalanmalarını (gece/gündüz farkı) gerçek bir kriz patlamasından ayırt etmek için hangi istatistiksel filtreler kullanılır?
+
+### Gün 040: SSS (FAQ) Semantik Soru Eşleştirme Motoru
+- **İş Alanı:** Turkcell Web & Dijital Operatör Arama Motoru
+- **Veri Kaynağı:** [HuggingFace - Turkish Semantic Similarity / STS-tr](https://huggingface.co/datasets)
+- **Model:** Sentence-Transformers (`sentence-transformers/all-MiniLM-L6-v2`) + Cosine Similarity
+- **Türkçe Değişkenler:** `kullanici_arama_ifadesi`, `veritabani_sss_sorusu`, `semantik_benzerlik_orani`, `onerilen_cevap_id`
+- **Jupyter Notebook (`gun_040_sss_semantik_eslestirme.ipynb`):**
+  1. Farklı yazılmış ancak aynı anlama gelen soruların (örn: "Faturamı nasıl öderim?" vs "Borç yatırma kanalları") vektörleştirilmesi
+  2. Siameze Sinir Ağları ve Cosine Similarity ile en yakın SSS eşleşmesinin bulunması
+  3. Arama kutusunda anlık otomatik tamamlama ve cevap kartı getirme pipeline'ı
+- **Mülakat Sorusu:** Semantik aramada Cross-Encoder ile Bi-Encoder arasındaki performans ve gecikme (latency) ödünleşimi (trade-off) nedir?
+
+### Gün 041: Çok Dilli Destek Talebi Ayrıştırma ve Tercüme
+- **İş Alanı:** Turkcell Global Bilgi & Turist/Yabancı Müşteri Destek Masası
+- **Veri Kaynağı:** [HuggingFace - Opus-100 Multilingual Parallel Dataset](https://huggingface.co/datasets/opus100)
+- **Model:** FastText Dil Tanıma (`lid.176.bin`) + MarianMT (`Helsinki-NLP/opus-mt-en-tr`, `ar-tr`)
+- **Türkçe Değişkenler:** `gelen_mesaj_metni`, `tespit_edilen_dil_kodu`, `turkce_tercume_metni`, `guvenilirlik_skoru`
+- **Jupyter Notebook (`gun_041_cok_dilli_destek_tercume.ipynb`):**
+  1. Gelen mesajın dilinin (İngilizce, Arapça, Rusça, Almanca vb.) milisaniyeler içinde tespiti
+  2. Nöral Makine Çevirisi (NMT) ile müşteri mesajının temsilci ekranına Türkçe çevrilmesi
+  3. Temsilcinin Türkçe yanıtının anında hedef dile geri çevrilmesi (Bidirectional Pipeline)
+- **Mülakat Sorusu:** Dil tespiti (Language Identification) modelleri kısa metinlerde neden zorlanır ve hibrit kurallarla doğruluk nasıl artırılır?
+
+### Gün 042: Toksik ve Hakaret İçeren Yorum Moderasyonu
+- **İş Alanı:** BiP Kanalları & Topluluk İletişim Moderasyonu
+- **Veri Kaynağı:** [Kaggle - Turkish Toxic / Offensive Language Dataset](https://www.kaggle.com/datasets)
+- **Model:** BERTurk Text Classification (`dbmdz/bert-base-turkish-cased`) + Multi-Label BCEWithLogitsLoss
+- **Türkçe Değişkenler:** `mesaj_icerigi`, `hakaret_olasiligi`, `tehdit_olasiligi`, `otomatik_engellendi_mi`
+- **Jupyter Notebook (`gun_042_toksik_yorum_moderasyonu.ipynb`):**
+  1. Argo, hakaret, nefret söylemi ve tehdit içeren çok etiketli veri temizliği
+  2. Dengesiz veri dağılımında Focal Loss / Class Weights ile model optimizasyonu
+  3. Gerçek zamanlı sohbet akışlarında küfür ve toksisite filtreleme API'si
+- **Mülakat Sorusu:** Multi-label metin sınıflandırmada Binary Cross Entropy ile Categorical Cross Entropy arasındaki fark nedir?
+
+### Gün 043: PDF Abonelik Sözleşmesi Madde ve Taahhüt Çıkarımı
+- **İş Alanı:** Hukuk & Kurumsal Satış Sözleşme Otomasyonu
+- **Veri Kaynağı:** [HuggingFace - Contract Understanding / CUAD Dataset Adapted to TR](https://huggingface.co/datasets)
+- **Model:** LayoutLMv3 / PDFplumber + Regex + Turkish Question Answering BERT
+- **Türkçe Değişkenler:** `sozlesme_pdf_yolu`, `taahhut_suresi_ay`, `cayma_bedeli_tutari`, `tespit_edilen_madde_metni`
+- **Jupyter Notebook (`gun_043_sozlesme_madde_cikarimi.ipynb`):**
+  1. OCR ve PDF parser ile kurumsal abonelik sözleşmelerinin dijitalleştirilmesi
+  2. LayoutLM ve QA modeliyle "Taahhüt Süresi", "Ceza Bedeli", "Yetkili İmza" alanlarının tespiti
+  3. Yapısal JSON çıktısı üreterek ERP/CRM sistemine otomatik kontrat veri aktarımı
+- **Mülakat Sorusu:** Doküman AI modellerinde (LayoutLM) sadece metin yerine görsel yerleşim (bounding box) koordinatlarının kullanılmasının önemi nedir?
+
+### Gün 044: Müşteri Temsilcisi Yanıt Kalitesi Skorlama (LLM-as-a-Judge)
+- **İş Alanı:** Kalite Güvence (QA) & Müşteri Deneyimi Denetimi
+- **Veri Kaynağı:** [HuggingFace - Turkish Customer Service Multi-Turn Conversations](https://huggingface.co/datasets)
+- **Model:** LLM-as-a-Judge (Llama-3-70B / GPT-4o-mini Evaluation Prompting)
+- **Türkçe Değişkenler:** `temsilci_cevabi`, `nezaket_puani_1_5`, `dogruluk_puani_1_5`, `cozum_odaklilik_puani`, `denetim_gerekcesi`
+- **Jupyter Notebook (`gun_044_temsilci_kalite_skorlama_llm.ipynb`):**
+  1. Temsilci yanıtlarının "Nezaket", "Kurumsal Bilgi Doğruluğu", "Çözüm Hızı" rubriklerine göre puanlanması
+  2. Chain-of-Thought (CoT) prompting ile LLM hakemlik değerlendirmesi
+  3. İnsan denetçi puanları ile LLM puanları arasındaki Pearson/Spearman korelasyon analizi
+- **Mülakat Sorusu:** "LLM-as-a-Judge" yaklaşımında karşılaşılan pozisyonel önyargı (Position Bias) ve uzunluk önyargısı (Verbosity Bias) nasıl engellenir?
+
+### Gün 045: IVR (Sesli Yanıt) Menü Yönlendirme Niyet Modeli
+- **İş Alanı:** 532 Sesli Yanıt Sistemi (IVR) Otomasyonu
+- **Veri Kaynağı:** [Kaggle - Conversational Intent / Spoken Dialog Dataset](https://www.kaggle.com/datasets)
+- **Model:** ConvBERT / Bi-LSTM + Attention Mekanizması
+- **Türkçe Değişkenler:** `sesli_komut_metni`, `ana_menu_hedefi_fatura_tarife_puk`, `alt_aksiyon_kodu`, `yonlendirme_guveni`
+- **Jupyter Notebook (`gun_045_ivr_sesli_yanit_niyet.ipynb`):**
+  1. ASR (Otomatik Konuşma Tanıma) çıktısı olan gürültülü metinlerin normalizasyonu
+  2. Hiyerarşik sınıflandırma ile önce Ana Menü, ardından Alt Menü tespiti
+  3. Güven skoru %80'in altında kaldığında teyit sorusu soran karar mekanizması
+- **Mülakat Sorusu:** Hiyerarşik Niyet Sınıflandırmasında (Hierarchical Intent Classification) Flat Multiclass modele göre ne gibi mimari avantajlar elde edilir?
 
 ---
 
