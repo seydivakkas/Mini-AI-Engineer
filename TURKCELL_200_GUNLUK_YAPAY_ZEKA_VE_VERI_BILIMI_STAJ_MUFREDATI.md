@@ -828,45 +828,229 @@ Her proje şu standart bileşenlerle inşa edilir:
 
 ## 🎧 Modül 06: Ses İşleme & Çağrı Analitiği (Audio AI) (Gün 076 – 085)
 
-### Gün 076: Türkçe Konuşma Tanıma (ASR)
+### Gün 076: Türkçe Konuşma Tanıma (ASR - Automatic Speech Recognition)
 - **İş Alanı:** 532 Çağrı Merkezi Ses Kayıt Transkripsiyonu
 - **Veri Kaynağı:** [HuggingFace - Mozilla Common Voice Turkish](https://huggingface.co/datasets/mozilla-foundation/common_voice_11_0)
-- **Model:** OpenAI Whisper-Small / Wav2Vec2-XLSR-Turkish
-- **Türkçe Değişkenler:** `ses_dosyasi_yolu`, `ornekleme_frekansi_hz`, `metne_dokulen_transkript`, `kelime_hata_orani_wer`
-- **Jupyter Notebook (`gun_076_turkce_asr_whisper.ipynb`)**
+- **Model:** OpenAI Whisper-Small / Wav2Vec2-XLSR-Turkish + CTC Loss
+- **Türkçe Değişkenler:** `ses_dosyasi_yolu`, `ornekleme_frekansi_hz`, `metne_dokulen_transkript`, `kelime_hata_orani_wer`, `karakter_hata_orani_cer`
+- **Jupyter Notebook (`gun_076_turkce_asr_whisper.ipynb`):**
+  1. MP3/WAV ses dosyalarının 16 kHz mono formatına dönüştürülmesi ve Log-Mel spektrogram çıkarımı
+  2. Whisper-Small modelinin Türkçe telekom çağrı verisiyle LoRA / Fine-Tuning eğitimi
+  3. Word Error Rate (WER) ve Character Error Rate (CER) metrikleri ile model başarımı
+- **Mülakat Sorusu:** Gürültülü telekom çağrılarında (8 kHz bant genişliği) ASR modellerinde WER değerini düşürmek için hangi ses önişleme ve Spectral Augmentation (SpecAugment) yöntemleri uygulanır?
 
-### Gün 077 – Gün 085 Hızlı Liste:
-- **Gün 077:** Çağrıda Müşteri Sesinden Duygu & Stres Tespiti (RAVDESS / CREMA-D)
-- **Gün 078:** Ses Biyometrisi ile Müşteri Kimlik Doğrulama (VoxCeleb Speaker Verification)
-- **Gün 079:** Ağ Arka Plan Gürültüsü Sınıflandırma (UrbanSound8K)
-- **Gün 080:** VoLTE/VoIP Hatlarında Ses Kalitesi MOS Puanı Tahmini (NISQA Speech Quality)
-- **Gün 081:** IVR Tek Kelimelik Sesli Komut Algılama (Speech Commands Dataset)
-- **Gün 082:** Müşteri Temsilcisi Botu için Türkçe TTS (Metinden Sese) Sentezleme
-- **Gün 083:** Çağrıda Konuşmacı Ayrıştırma (Speaker Diarization PyAnnote)
-- **Gün 084:** Çağrı Merkezine Gelen Sentetik / Klon Ses (Deepfake Voice) Tespiti (ASVspoof)
-- **Gün 085:** Çağrı Bekleme Müziği ve Sessizlik Süresi Ölçer (Music vs Speech)
+### Gün 077: Çağrıda Müşteri Sesinden Duygu & Stres Tespiti (Speech Emotion Recognition)
+- **İş Alanı:** Müşteri Deneyimi & Öfkeli Müşteri Erken Uyarı Masası
+- **Veri Kaynağı:** [Kaggle - RAVDESS & CREMA-D Audio Dataset](https://www.kaggle.com/datasets)
+- **Model:** 1D-CNN + Bi-LSTM / HuBERT + Mel-Frequency Cepstral Coefficients (MFCC)
+- **Türkçe Değişkenler:** `ses_dalga_boyu`, `mfcc_katsayilari`, `ses_tonu_perdesi_pitch`, `ofke_stres_seviyesi_0_100`
+- **Jupyter Notebook (`gun_077_ses_duygu_stres_analizi.ipynb`):**
+  1. Ses sinyalinden MFCC, Chroma, Spectral Contrast ve Pitch (F0) özniteliklerinin çıkarılması
+  2. Öfkeli, stresli, sakin ve mutlu duygu durumlarının sınıflandırılması
+  3. Çağrı esnasında müşteri öfkesi %80'i aştığında amir (supervisor) ekranına canlı uyarı düşürülmesi
+- **Mülakat Sorusu:** Metin tabanlı duygu analizi ile ses dalgası tabanlı duygu analizi (Multimodal SER) arasındaki fark nedir ve ses tonu neden daha dürüst bir duygu sinyalidir?
+
+### Gün 078: Ses Biyometrisi ile Müşteri Kimlik Doğrulama (Speaker Verification)
+- **İş Alanı:** 532 Sesli İmza & Şifresiz Kimlik Doğrulama
+- **Veri Kaynağı:** [HuggingFace - VoxCeleb1 / VoxCeleb2 Speaker Recognition](https://huggingface.co/datasets)
+- **Model:** ECAPA-TDNN / ResNetSE34V2 + Angular Additive Margin Softmax (ArcFace Loss)
+- **Türkçe Değişkenler:** `kayitli_ses_vektoru_embedding`, `gelen_cagri_sesi`, `kosinus_benzerlik_skoru`, `kimlik_dogrulandi_mi`
+- **Jupyter Notebook (`gun_078_ses_biyometrisi_dogrulama.ipynb`):**
+  1. Müşterinin "Turkcell beni sesimden tanır" ses örneğinden 192 boyutlu d-vector / x-vector çıkarımı
+  2. Gelen çağrıdaki ses gömmesi ile kayıtlı gömme arasındaki Cosine Similarity karşılaştırması
+  3. EER (Equal Error Rate) eğrisi analizi ile güvenlik eşiği optimizasyonu
+- **Mülakat Sorusu:** Ses biyometrisinde Text-Dependent (sabit cümle) ile Text-Independent (serbest konuşma) sistemler arasındaki fark ve güvenlik ödünleşimi nedir?
+
+### Gün 079: Ağ Arka Plan Gürültüsü Sınıflandırma ve Gürültü Engelleme
+- **İş Alanı:** Çağrı Kalitesi İyileştirme & Ortam Gürültüsü Filtreleme
+- **Veri Kaynağı:** [Kaggle - UrbanSound8K Dataset](https://www.kaggle.com/datasets/chrisfilo/urbansound8k)
+- **Model:** U-Net tabanlı Spektrogram Maskeleme / Deep Complex UNet (DCUNet)
+- **Türkçe Değişkenler:** `gurultulu_ses_girisi`, `ortam_turu_trafik_kafe_siren_ruzgar`, `temizlenmis_ses_ciktisi`, `snr_iyilesme_orani_db`
+- **Jupyter Notebook (`gun_079_arka_plan_gurultu_filtreleme.ipynb`):**
+  1. Kısa Zamanlı Fourier Dönüşümü (STFT) ile sesin frekans-zaman düzlemine aktarılması
+  2. Arka plandaki trafik, korna, bebek ağlaması, rüzgar gibi gürültülerin sınıflandırılması
+  3. U-Net ile gürültü maskesi tahmin edilerek müşteri sesinin netleştirilmesi (Signal-to-Noise Ratio artırımı)
+- **Mülakat Sorusu:** Spektral maskelemede Ideal Ratio Mask (IRM) ile Complex Ratio Mask (cRM) arasındaki faz (phase) koruma farkı nedir?
+
+### Gün 080: VoLTE/VoIP Hatlarında Ses Kalitesi MOS Puanı Tahmini
+- **İş Alanı:** Şebeke Ses İletimi Kalitesi (QoS / QoE) Masası
+- **Veri Kaynağı:** [HuggingFace - NISQA Non-Intrusive Speech Quality Assessment](https://huggingface.co/datasets)
+- **Model:** NISQA (CNN-Self-Attention) / PESQ Referanssız MOS Regresyonu
+- **Türkçe Değişkenler:** `paket_kayip_orani`, `ses_gecikmesi_jitter_ms`, `kodek_turu_amr_wb_evs`, `tahmini_mos_puani_1_5`
+- **Jupyter Notebook (`gun_080_ses_kalitesi_mos_tahmini.ipynb`):**
+  1. VoLTE/VoIP aramalarındaki paket kaybı, jitter ve kodek sıkıştırma bozulmalarının modellenmesi
+  2. Referans ses olmadan (Non-Intrusive) yapay zeka ile 1.0 - 5.0 arası Mean Opinion Score (MOS) tahmini
+  3. Ses kalitesi 3.5'in altına düşen baz istasyonlarının otomatik şebeke optimizasyonuna bildirilmesi
+- **Mülakat Sorusu:** Geleneksel ITU-T P.862 PESQ (Intrusive) ölçümü ile Derin Öğrenme tabanlı NISQA (Non-Intrusive) MOS tahmini arasındaki operasyonel fark nedir?
+
+### Gün 081: IVR Tek Kelimelik Sesli Komut Algılama (Keyword Spotting - KWS)
+- **İş Alanı:** 532 Sesli Yanıt Menüsü (IVR) & Edge Cihaz Komut Algılama
+- **Veri Kaynağı:** [HuggingFace - Google Speech Commands Dataset](https://huggingface.co/datasets/speech_commands)
+- **Model:** Temporal Convolutional Network (TCN) / Squeeze-and-Excitation 1D-CNN (<50 KB Model)
+- **Türkçe Değişkenler:** `kisa_ses_kesiti_1sn`, `algilanan_komut_evet_hayir_fatura_iptal`, `komut_olasiligi`
+- **Jupyter Notebook (`gun_081_sesli_komut_algilama_kws.ipynb`):**
+  1. 1 saniyelik ses pencerelerinden MFCC öznitelik haritası çıkarılması
+  2. "Evet", "Hayır", "Fatura", "İptal", "Temsilci" gibi anahtar kelimelerin milisaniyeler içinde tespiti
+  3. Edge cihazlarda ve düşük güçlü sunucularda ultra düşük CPU/RAM tüketimiyle inference
+- **Mülakat Sorusu:** Keyword Spotting sistemlerinde "Streaming Inference" yaparken kayan pencere (Sliding Window) ve False Trigger önleme mantığı nasıl kurulur?
+
+### Gün 082: Müşteri Temsilcisi Botu için Türkçe TTS (Metinden Sese) Sentezleme
+- **İş Alanı:** Turkcell Sesli Dijital Asistan & Çağrı Merkezi Botu
+- **Veri Kaynağı:** [HuggingFace - Turkish Single-Speaker Speech Dataset / Common Voice](https://huggingface.co/datasets)
+- **Model:** VITS (Variational Inference with adversarial learning for Text-to-Speech) / FastSpeech2
+- **Türkçe Değişkenler:** `bot_yanit_metni`, `uretilen_spektrogram`, `sentetik_ses_dalgasi_wav`, `dogallik_mos_skoru`
+- **Jupyter Notebook (`gun_082_turkce_tts_ses_sentezleme.ipynb`):**
+  1. Türkçe metinlerin fonem (Phoneme) dizilimine dönüştürülmesi
+  2. VITS mimarisi ile uçtan uca spektrogram ve dalga formu (Vocoder) üretimi
+  3. Doğal tonlamalı, akıcı ve kurumsal Turkcell marka ses karakterinde gerçek zamanlı ses sentezleme
+- **Mülakat Sorusu:** TTS modellerinde autoregressive mimariler (Tacotron) yerine non-autoregressive (FastSpeech2/VITS) modellerin tercih edilmesinin gerçek zamanlı çağrı merkezi botlarındaki önemi nedir?
+
+### Gün 083: Çağrıda Konuşmacı Ayrıştırma (Speaker Diarization - Kim Ne Zaman Konuştu?)
+- **İş Alanı:** 532 Çağrı Analitiği Masası & Temsilci Müşteri Konuşma Oranı
+- **Veri Kaynağı:** [HuggingFace - AMI Meeting Corpus / CallHome Adapted](https://huggingface.co/datasets)
+- **Model:** PyAnnote.Audio / Spectral Clustering + Voice Activity Detection (VAD)
+- **Türkçe Değişkenler:** `cagri_ses_kaydi`, `konusmaci_etiketi_temsilci_musteri`, `konusma_baslangic_sn`, `konusma_bitis_sn`, `ust_uste_konusma_orani`
+- **Jupyter Notebook (`gun_083_konusmaci_ayristirma_diarization.ipynb`):**
+  1. Ses sinyalinde konuşma bölgelerinin VAD ile tespiti ve sessizliklerin kırpılması
+  2. Kayan pencerelerden ses embedding'leri çıkarılarak Spektral Kümeleme ile ayrıştırma
+  3. Temsilcinin müşterinin sözünü kesme (Overlapping Speech) ve müşteri sessizlik sürelerinin analizi
+- **Mülakat Sorusu:** Diarization Error Rate (DER) metriği hangi üç alt bileşenden (Speaker Confusion, False Alarm, Missed Detection) oluşur?
+
+### Gün 084: Çağrı Merkezine Gelen Sentetik / Klon Ses (Deepfake Voice) Tespiti
+- **İş Alanı:** Paycell & 532 Sesli İşlem Dolandırıcılık Önleme
+- **Veri Kaynağı:** [Kaggle - ASVspoof 2021 / Synthetic Speech & Voice Clone Dataset](https://www.kaggle.com/datasets)
+- **Model:** RawNet2 / LFCC (Linear Frequency Cepstral Coefficients) + ResNet-18
+- **Türkçe Değişkenler:** `cagri_sesi_akisi`, `lfcc_spektrogrami`, `derin_sahtecilik_deepfake_olasiligi`, `islem_guvenlik_blokesi`
+- **Jupyter Notebook (`gun_084_deepfake_ses_tespiti.ipynb`):**
+  1. TTS ve Voice Conversion algoritmalarının ürettiği faz uyuşmazlıkları ve yüksek frekans kalıntılarının LFCC ile çıkarımı
+  2. Canlı insan sesi ile yapay zeka tarafından üretilen klon seslerin ayrıştırılması
+  3. Sesli bankacılık/Paycell işlemlerinde deepfake ses saldırısını milisaniyeler içinde bloke etme
+- **Mülakat Sorusu:** Deepfake ses tespitinde MFCC yerine neden yüksek frekans detaylarını koruyan LFCC (Linear Frequency Cepstral Coefficients) tercih edilir?
+
+### Gün 085: Çağrı Bekleme Müziği ve Sessizlik Süresi Ölçer (Music vs Speech Segmentation)
+- **İş Alanı:** 532 Çağrı Merkezi Operasyonel Verimlilik (AHT - Average Handling Time Analizi)
+- **Veri Kaynağı:** [Kaggle - GTZAN Music Speech Classification](https://www.kaggle.com/datasets)
+- **Model:** CRNN (Convolutional Recurrent Neural Network) + Zero-Crossing Rate & Spectral Flatness
+- **Türkçe Değişkenler:** `cagri_sesi`, `bekleme_muzigi_suresi_sn`, `net_konusma_suresi_sn`, `temsilci_bekletme_orani`
+- **Jupyter Notebook (`gun_085_muzik_sessizlik_ayristirma.ipynb`):**
+  1. Ses akışının 0.5 saniyelik pencerelerde "Konuşma", "Müzik", "Sessizlik/Gürültü" olarak etiketlenmesi
+  2. Müşterinin beklemede (Hold) kaldığı sürelerin otomatik ölçümü
+  3. Çağrı sürelerini şişiren gereksiz bekleme müziklerinin ve sessiz anların tespiti
+- **Mülakat Sorusu:** Müzik ve konuşma sinyallerini ayırt etmede Spectral Centroid, Spectral Rolloff ve Zero Crossing Rate özniteliklerinin fiziksel anlamı nedir?
 
 ---
 
 ## 🎬 Modül 07: Öneri Sistemleri, TV+, fizy & Dijital Servisler (Gün 086 – 095)
 
 ### Gün 086: fizy Kişiselleştirilmiş Çalma Listesi Öneri Motoru
-- **İş Alanı:** fizy Müzik Servisi
+- **İş Alanı:** fizy Müzik Servisi & Kullanıcı Tutundurma
 - **Veri Kaynağı:** [Kaggle - Spotify Million Playlist Dataset](https://www.kaggle.com/datasets)
-- **Model:** Implicit Collaborative Filtering (ALS / LightFM) + Matrix Factorization
+- **Model:** Implicit Collaborative Filtering (Alternating Least Squares - ALS) + LightFM
 - **Türkçe Değişkenler:** `kullanici_id`, `sarki_id`, `dinleme_sayisi`, `oneri_listesi`, `benzerlik_skoru`
-- **Jupyter Notebook (`gun_086_fizy_muzik_oneri_motoru.ipynb`)**
+- **Jupyter Notebook (`gun_086_fizy_muzik_oneri_motoru.ipynb`):**
+  1. Kullanıcı-şarkı örtük geri bildirim (Implicit Feedback - dinleme sayısı, tamamlama oranı) matrisi inşası
+  2. ALS matris çarpanlarına ayırma ile gizli özellik (Latent Factors) vektörlerinin çıkarımı
+  3. Precision@K, Recall@K ve MAP@K metrikleri ile öneri kalitesinin ölçümü
+- **Mülakat Sorusu:** Örtük geri bildirimde (Implicit Feedback) kullanıcıların "dinlememiş olması" negatif geri bildirim midir? ALS formülündeki güven katsayısı ($c_{ui} = 1 + lpha r_{ui}$) bunu nasıl çözer?
 
-### Gün 087 – Gün 095 Hızlı Liste:
-- **Gün 087:** TV+ İçerik Tabanlı Film ve Dizi Öneri Sistemi (MovieLens / TMDB)
-- **Gün 088:** Müzik Atlama (Skip) Davranışı Tahminleyici (Spotify Sequential Skip)
-- **Gün 089:** BiP Çıkartma (Sticker) & Popülerlik Modeli (Social Media Virality)
-- **Gün 090:** Video Akışında Uyarlanabilir Bant Genişliği ve QoS Optimizasyonu
-- **Gün 091:** fizy Otomatik Spektrogram Tabanlı Müzik Türü & Mod Çıkarımı (GTZAN CNN)
-- **Gün 092:** Oturum Tabanlı (Session-based) TV Programı Önerisi (GRU4Rec / RecSys)
-- **Gün 093:** Game+ Bulut Oyun Ping ve En Yakın Sunucu Eşleme Modeli
-- **Gün 094:** Dinleyici Yaş ve İlgi Alanı Demografik Tahmini (Last.fm Listening Habits)
-- **Gün 095:** Podcast Bölümünden İlgi Çekici Anları Özetleme (Spotify Podcast Transcripts)
+### Gün 087: TV+ İçerik Tabanlı Film ve Dizi Öneri Sistemi
+- **İş Alanı:** TV+ Dijital Televizyon Servisi
+- **Veri Kaynağı:** [Kaggle - The Movies Dataset / TMDB 5000](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
+- **Model:** TF-IDF + BERTurak İçerik Embedding'leri + Cosine Similarity
+- **Türkçe Değişkenler:** `film_id`, `film_ozeti_metni`, `tur_yonetmen_oyuncular`, `icerik_benzerlik_matrisi`, `onerilen_filmler`
+- **Jupyter Notebook (`gun_087_tv_plus_icerik_tabanli_oneri.ipynb`):**
+  1. Film özetleri, türleri, yönetmen ve oyuncu kadrolarının birleşik metin haline getirilmesi
+  2. Vektörleştirme ile içerik benzerlik matrisinin hesaplanması
+  3. İzlenen bir filmden yola çıkarak benzer temalı 10 içeriğin milisaniyeler içinde listelenmesi
+- **Mülakat Sorusu:** İçerik tabanlı öneri sistemlerinde "Filter Bubble" (Kullanıcıyı sürekli benzer içeriğe hapsetme) problemi nedir ve Serendipity / Diversity metrikleriyle nasıl aşılır?
+
+### Gün 088: Müzik Atlama (Skip) Davranışı Tahminleyici
+- **İş Alanı:** fizy Kullanıcı Deneyimi & Çalma Listesi Sıralama Optimizasyonu
+- **Veri Kaynağı:** [Kaggle - Spotify Sequential Skip Prediction](https://www.kaggle.com/datasets)
+- **Model:** CatBoost Classifier + Sıralı Oturum Öznitelikleri
+- **Türkçe Değişkenler:** `oturum_id`, `sarki_sira_no`, `kullanici_onceki_sarkiyi_atladi_mi`, `sarki_enerji_seviyesi`, `atlama_olasiligi`
+- **Jupyter Notebook (`gun_088_muzik_atlama_skip_tahmini.ipynb`):**
+  1. Dinleme oturumundaki şarkı geçiş dinamiklerinin analizi
+  2. Şarkının ilk 30 saniyesinde atlanma riskini artıran akustik ve bağlamsal faktörlerin tespiti
+  3. Atlama riski yüksek şarkıları çalma listesinde alt sıralara kaydıran dinamik sıralama motoru
+- **Mülakat Sorusu:** Müzik atlama davranışında "Context Awareness" (kullanıcının o an arabada, sporda veya gece dinlemesi) model başarımını nasıl etkiler?
+
+### Gün 089: BiP Çıkartma (Sticker) & Popülerlik Modeli
+- **İş Alanı:** BiP Anlık Mesajlaşma & Sosyal Etkileşim
+- **Veri Kaynağı:** [Kaggle - Social Media Virality & Sticker Usage](https://www.kaggle.com/datasets)
+- **Model:** GBDT / Poisson Regresyonu + Zaman Serisi Eğilim Analizi
+- **Türkçe Değişkenler:** `cikartma_paketi_id`, `gunluk_gonderim_sayisi`, `viral_yayilim_katsayisi`, `trend_cikartma_mi`
+- **Jupyter Notebook (`gun_089_bip_cikartma_trend_modeli.ipynb`):**
+  1. BiP kullanıcılarının gönderdiği çıkartma (sticker) ve emoji kullanım frekanslarının analizi
+  2. Trend olan ve viralleşen yeni çıkartma paketlerinin erken tespiti
+  3. BiP mağazasında popüler çıkartmaların öne çıkarılması ve öneri şeridine eklenmesi
+- **Mülakat Sorusu:** Sayım verisi (Count Data - çıkartma kullanım adedi) modellerken neden Linear Regression yerine Poisson / Negative Binomial Regresyon tercih edilir?
+
+### Gün 090: Video Akışında Uyarlanabilir Bant Genişliği ve QoS Optimizasyonu
+- **İş Alanı:** TV+ Video Streaming & DASH / HLS Uyarlanabilir Akış
+- **Veri Kaynağı:** [Kaggle - Video Streaming QoS & Buffer Telemetry](https://www.kaggle.com/datasets)
+- **Model:** Derin Pekiştirmeli Öğrenme (Deep Q-Network - DQN / A3C)
+- **Türkçe Değişkenler:** `anlik_ag_hizi_mbps`, `video_arabellek_dolulugu_sn`, `secilen_cozunurluk_bitrate_kbps`, `donma_orani_rebuffer`
+- **Jupyter Notebook (`gun_090_video_akis_qos_dqn.ipynb`):**
+  1. 4G/5G dalgalı mobil ağlarda tampon bellek (Buffer) doluluk telemetrisinin simülasyonu
+  2. DQN ajanı ile video donmasını (Rebuffering) sıfırlarken maksimum görüntü kalitesi (4K/1080p/720p) seçimi
+  3. Kullanıcı QoE skorunu maksimize eden ödül fonksiyonu tasarımı
+- **Mülakat Sorusu:** Video streaming ABR (Adaptive Bitrate) kontrolünde kural tabanlı BOLA/Pensieve algoritmalarına karşı Reinforcement Learning'in avantajı nedir?
+
+### Gün 091: fizy Otomatik Spektrogram Tabanlı Müzik Türü & Mod Çıkarımı
+- **İş Alanı:** fizy Müzik Kataloğu Otomatik Etiketleme (Auto-Tagging)
+- **Veri Kaynağı:** [Kaggle - GTZAN Music Genre Classification](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification)
+- **Model:** 2D-CNN (ResNet-34) / Mel-Spektrogram Görsel Sınıflandırma
+- **Türkçe Değişkenler:** `sarki_ses_kesiti`, `mel_spektrogram_gorseli`, `tahmini_muzik_turu_rock_pop_caz`, `muzik_modu_enerjik_huzunlu`
+- **Jupyter Notebook (`gun_091_muzik_turu_mod_cnn.ipynb`):**
+  1. Ses dosyalarının 3 saniyelik Mel-Spektrogram görüntülerine dönüştürülmesi
+  2. Bilgisayarlı Görü CNN mimarisiyle spektrogram doku ve ritim paternlerinin öğrenilmesi
+  3. fizy kataloğuna yeni eklenen bağımsız şarkıların otomatik tür ve mod etiketlemesi
+- **Mülakat Sorusu:** Ses sinyallerini 2D Spektrogram haline getirip Görü (Vision) modelleriyle eğitmenin 1D Waveform modellerine göre avantajları ve hesaplama maliyeti nedir?
+
+### Gün 092: Oturum Tabanlı (Session-based) TV Programı Önerisi
+- **İş Alanı:** TV+ Canlı Yayın & Giriş Yapmamış Ziyaretçi Önerileri
+- **Veri Kaynağı:** [Kaggle - RecSys Challenge Session Dataset](https://www.kaggle.com/datasets)
+- **Model:** GRU4Rec / Graph Neural Network (SR-GNN - Session-based RecSys)
+- **Türkçe Değişkenler:** `anonim_oturum_id`, `izlenen_kanallar_dizisi`, `kanal_kalma_suresi_sn`, `siradaki_kanal_onerisi`
+- **Jupyter Notebook (`gun_092_oturum_tabanli_tv_onerisi.ipynb`):**
+  1. Geçmiş kullanıcı profili olmadan sadece o anki ardışık kanal geçişleri üzerinden oturum modelleme
+  2. GRU4Rec ile kullanıcının anlık moduna uygun canlı TV kanalı tahmini
+  3. TV kumandası kanal değiştirme anında sıradaki en uygun 3 kanalın ekranda önerilmesi
+- **Mülakat Sorusu:** Kullanıcı kimliği bilinmeyen anonim oturumlarda (Cold-Start Sessions) klasik Matris Faktörizasyonu neden çalışmaz ve GRU4Rec bunu nasıl çözer?
+
+### Gün 093: Game+ Bulut Oyun Ping ve En Yakın Sunucu Eşleme Modeli
+- **İş Alanı:** Turkcell Game+ Bulut Oyun Platformu (GeForce NOW)
+- **Veri Kaynağı:** [Kaggle - Cloud Gaming Network Latency & Server Telemetry](https://www.kaggle.com/datasets)
+- **Model:** K-Nearest Neighbors (KNN) Regressor / XGBoost Ping Tahmini
+- **Türkçe Değişkenler:** `oyuncu_ip_bloğu`, `kullanici_isp_operatoru`, `sunucu_lokasyonu_istanbul_ankara_izmir`, `tahmini_gecikme_ping_ms`
+- **Jupyter Notebook (`gun_093_game_plus_sunucu_esleme.ipynb`):**
+  1. Oyuncunun IP adresi, ISP routing rotası ve şebeke tipi (Fiber/DSL/5G) öznitelikleri
+  2. Her veri merkezi sunucusu için oyun başlamadan önce milisaniye cinsinden ping süresi tahmini
+  3. Oyuncuyu en düşük gecikmeye (<15ms) ve en stabil FPS değerine sahip Game+ sunucusuna otomatik atama
+- **Mülakat Sorusu:** Bulut oyunda "Jitter" (gecikme dalgalanması) ve paket kaybının FPS stabilitesine etkisi ortalama ping değerinden neden daha kritiktir?
+
+### Gün 094: Dinleyici Yaş ve İlgi Alanı Demografik Tahmini
+- **İş Alanı:** fizy & TV+ Hedefli Reklamcılık Masası
+- **Veri Kaynağı:** [Kaggle - Last.fm User Demographic & Listening Habits](https://www.kaggle.com/datasets)
+- **Model:** Multi-Layer Perceptron (MLP) / CatBoost Classifier
+- **Türkçe Değişkenler:** `sanatci_cesitlilik_orani`, `gece_dinleme_yuzdesi`, `dinlenen_turler_vektoru`, `tahmini_yas_grubu_18_25_35`
+- **Jupyter Notebook (`gun_094_dinleyici_demografi_tahmini.ipynb`):**
+  1. Dinlenen müzik türleri, sanatçılar ve gün içi dinleme saatlerinden demografik öznitelik çıkarımı
+  2. Yaş grubu, müzik zevki ve ilgi alanı segmentasyonu (Persona Çıkarımı)
+  3. Müşteriye özel reklam ve kişiselleştirilmiş kampanya eşleştirmesi
+- **Mülakat Sorusu:** Kullanıcıların açıkça yaşını beyan etmediği durumlarda davranışsal verilerden demografik tahmin yaparken KVKK ve gizlilik (Privacy-Preserving AI) sınırları nasıl korunur?
+
+### Gün 095: Podcast Bölümünden İlgi Çekici Anları Özetleme ve Klipleme
+- **İş Alanı:** fizy Podcast Servisi & Sosyal Medya Paylaşım Otomasyonu
+- **Veri Kaynağı:** [HuggingFace - Spotify Podcast Dataset](https://huggingface.co/datasets)
+- **Model:** Whisper ASR + BERTurk TextRank / Sentence-Transformers Embeddings
+- **Türkçe Değişkenler:** `podcast_sesi_yolu`, `bolum_transkripti`, `en_onemli_cumleler_skoru`, `klip_baslangic_bitis_sn`
+- **Jupyter Notebook (`gun_095_podcast_one_cikan_anlar.ipynb`):**
+  1. 1 saatlik podcast kaydının transkripte dönüştürülmesi ve anlamsal paragraflara bölünmesi
+  2. TextRank algoritması ve semantik yoğunluk skorlarıyla en vurucu 60 saniyelik kısmın tespiti
+  3. fizy uygulamasında ve sosyal medyada paylaşılmak üzere otomatik 60 saniyelik sesli klip (Highlight Reel) üretimi
+- **Mülakat Sorusu:** Uzun ses kayıtlarında öne çıkan anları (Highlights) belirlemede metinsel TextRank ile akustik enerji/kahkaha/ton yükselmesi füzyonu nasıl yapılır?
 
 ---
 
