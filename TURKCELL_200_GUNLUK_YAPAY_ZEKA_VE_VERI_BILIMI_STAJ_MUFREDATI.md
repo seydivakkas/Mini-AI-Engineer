@@ -392,28 +392,38 @@ Her proje şu standart bileşenlerle inşa edilir:
 ## 💬 Modül 03: Doğal Dil İşleme (NLP), Müşteri Hizmetleri & Semantik Arama (Gün 031 – 045)
 
 ### Gün 031: Telekom Müşteri Şikayetleri Duygu Analizi
-- **İş Alanı:** Müşteri Deneyimi & Sosyal Medya Dinleme
+- **İş Alanı:** Müşteri Deneyimi & Sosyal Medya Dinleme Masası
 - **Veri Kaynağı:** [Kaggle - Turkish Sentiment Analysis / Şikayetvar Dataset](https://www.kaggle.com/datasets)
-- **Model:** BERTurk (`dbmdz/bert-base-turkish-cased`) / RoBERTa
-- **Türkçe Değişkenler:** `sikayet_metni`, `duygu_sinifi_pozitif_notr_negatif`, `guven_skoru`
+- **Model:** BERTurk (`dbmdz/bert-base-turkish-cased`) / RoBERTa + Focal Loss
+- **Türkçe Değişkenler:** `sikayet_metni`, `duygu_sinifi_pozitif_notr_negatif`, `guven_skoru`, `tahmin_edilen_etiket`
 - **Jupyter Notebook (`gun_031_sikayet_duygu_analizi.ipynb`):**
-  1. Türkçe metin ön işleme (Zemberek/NLTK kök bulma, stop-words temizleme)
-  2. HuggingFace Transformers ile BERTurk ince ayarı (Fine-tuning)
-  3. Confusion Matrix ve F1 değerlendirmesi
+  1. Türkçe metin ön işleme (Noktalama, stop-words temizleme, küçük harfe çevirme)
+  2. HuggingFace Transformers ile BERTurk modelinin 3 sınıflı duygu sınıflandırması için ince ayarı (Fine-Tuning)
+  3. Dengesiz veri dağılımında Confusion Matrix, PR-AUC ve F1-Score değerlendirmesi
+- **Mülakat Sorusu:** Türkçe gibi morfolojik olarak zengin ve sondan eklemeli dillerde WordPiece/BPE tokenizasyonu kök-ek ayrımını nasıl ele alır?
 
 ### Gün 032: Müşteri Talebi Intent (Niyet) Sınıflandırma
-- **İş Alanı:** Turkcell Dijital Asistan (Chatbot)
+- **İş Alanı:** Turkcell Dijital Asistan & Çağrı Botu (NLU Masası)
 - **Veri Kaynağı:** [HuggingFace - Banking77 / Turkish Intent](https://huggingface.co/datasets/banking77)
-- **Model:** SetFit (Few-Shot Text Classification) / DistilBERTurk
-- **Türkçe Değişkenler:** `kullanici_cumlesi`, `tespit_edilen_niyet`, `niyet_olasiligi`
-- **Jupyter Notebook (`gun_032_chatbot_niyet_siniflandirma.ipynb`)**
+- **Model:** SetFit (Few-Shot Sentence-Transformers) / DistilBERTurk
+- **Türkçe Değişkenler:** `kullanici_cumlesi`, `tespit_edilen_niyet`, `niyet_olasiligi`, `yonlendirilen_islem_kodu`
+- **Jupyter Notebook (`gun_032_chatbot_niyet_siniflandirma.ipynb`):**
+  1. Kullanıcının yazdığı serbest metin mesajlarının ("faturamı ödemek istiyorum", "kalan internetim kaç GB") tokenizasyonu
+  2. SetFit mimarisi ile az sayıda örnekle (Few-Shot) 77 farklı niyet sınıfının eğitilmesi
+  3. Chatbot akışında eşik değerin (%85) üzerindeki niyetlerin ilgili servis API'sine yönlendirilmesi
+- **Mülakat Sorusu:** Chatbot niyet sınıflandırmasında "Out-of-Scope / Fallback" (kapsam dışı veya anlaşılamayan niyet) tespiti için Softmax olasılığı dışında hangi güvenilirlik metrikleri kullanılır?
 
 ### Gün 033: Twitter Destek Taleplerini Otomatik Departmana Yönlendirme
-- **İş Alanı:** @TurkcellHizmet Sosyal Medya Masası
+- **İş Alanı:** @TurkcellHizmet Sosyal Medya Masası & Akıllı Bilet Yönlendirme (Ticket Routing)
 - **Veri Kaynağı:** [Kaggle - Customer Support on Twitter](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter)
-- **Model:** TF-IDF + LinearSVC / FastText
-- **Türkçe Değişkenler:** `tweet_icerigi`, `ilgili_departman_fatura_sebeke_cihaz`, `atanan_oncelik`
-- **Jupyter Notebook (`gun_033_sosyal_medya_yonlendirme.ipynb`)**
+- **Model:** TF-IDF (N-Gram) + LinearSVC / FastText Çok Sınıflı Yönlendirici
+- **Türkçe Değişkenler:** `tweet_icerigi`, `ilgili_departman_fatura_sebeke_cihaz_paket`, `atanan_oncelik_seviyesi`, `tahmini_cozum_ekibi`
+- **Jupyter Notebook (`gun_033_sosyal_medya_yonlendirme.ipynb`):**
+  1. @TurkcellHizmet etiketli tweetlerin temizlenmesi, kullanıcı adlarının ve emojilerin işlenmesi
+  2. TF-IDF unigram/bigram matrisi ile LinearSVC ve FastText modellerinin eğitilmesi
+  3. Gelen tweetin saniyeler içinde doğru operasyon kuyruğuna (Fatura, Şebeke, Pasaj vb.) yönlendirilmesi
+- **Mülakat Sorusu:** Yüksek hacimli çağrı/destek metinlerini departmanlara yönlendirirken LinearSVC/FastText gibi hafif modellerin derin transformatörlere göre gecikme (Latency) ve CPU maliyeti avantajları nelerdir?
+
 
 ### Gün 034: Çağrı Metinlerinden Varlık İsmi Çıkarımı (NER - Named Entity Recognition)
 - **İş Alanı:** Müşteri Deneyimi & KVKK / PII Maskeleme Masası
