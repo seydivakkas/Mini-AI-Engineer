@@ -11,26 +11,32 @@
 
 ---
 
-## 📸 Canlı Sistem & Simülasyon Ekran Görüntüleri
+## 📸 Canlı Sistem & Simülasyon Ekran Görüntüleri Galerisi
 
 <div align="center">
-  <img src="ciktilar/tesla_cv_nf_driving_arena.png" width="85%" alt="Tesla CV-NF 3D Driving Arena & 8-Camera HW4 Surround" />
-  <p><em>Şekil 1: Tesla HW4 8-Kameralı Surround PiP, 360° LiDAR Ring ve 3D HJI Güvenlik Tüpü ile Gerçek Zamanlı Sürüş Arenası.</em></p>
+  <img src="ciktilar/tesla_cv_nf_rain_lidar_arena.png" width="95%" alt="Tesla CV-NF 3D Driving Arena & 8-Camera HW4 Surround" />
+  <p><em>Şekil 1: Tesla HW4 8-Kameralı Surround PiP, 360° LiDAR Ring (600 RPM), HJI Güvenlik Bariyeri (+246.75m Korumalı), Epistemik/Aleatorik Belirsizlik ve 420 Hz Canlı NPU Telemetri Paneli.</em></p>
 </div>
 
-<div align="center">
-  <img src="ciktilar/tesla_cv_nf_diagnostic_dashboard.png" width="85%" alt="Tesla CV-NF Diagnostik Analiz Paneli" />
-  <p><em>Şekil 2: PyTorch NPU Profiler, ASTES Olay Yoğunluğu, 4D Voxel Kesiti ve Normal-Inverse-Gamma Belirsizlik Ayrışımı.</em></p>
-</div>
+<br/>
 
 <div align="center">
-  <img src="ciktilar/tesla_cv_nf_xai_saliency.png" width="85%" alt="XAI Differentiable Saliency & Attention Cone" />
-  <p><em>Şekil 3: Diferansiyellenebilir XAI Saliency Isı Haritası ve Otonom Dikkat Konisi (&lt; 1.0 ms).</em></p>
+  <img src="ciktilar/tesla_cv_nf_xai_tunnel_rays.png" width="95%" alt="XAI Saliency Isı Haritası ve Tünel Girişi" />
+  <p><em>Şekil 2: Diferansiyellenebilir XAI Saliency Isı Haritası (%85 Yoğunluk), Tünel Girişinde Otonom Dikkat Işınları ve 3D HJI Güvenlik Tüpü.</em></p>
 </div>
 
+<br/>
+
 <div align="center">
-  <img src="ciktilar/tesla_cv_nf_tunnel_hdr.png" width="85%" alt="Tünel İçi HDR Patlaması ve Acil Alarm" />
-  <p><em>Şekil 4: Tünel Girişi HDR Aydınlatma Değişimi, Kırmızı Acil Engel Uyarısı ve Otomatik Evasion Spline.</em></p>
+  <img src="ciktilar/tesla_cv_nf_camera_inspector_modal.png" width="95%" alt="Tesla HW4 Yüksek Çözünürlüklü Kamera İnceleme Modalı" />
+  <p><em>Şekil 3: Tesla HW4 Ön Ana (50° FOV) Kamera İnceleme Modalı: Sony IMX490 CMOS + ASTES DVS (1.9M Olay/s NPU), 140 dB HDR ve 118m AI Hedef Algılama Kutusu.</em></p>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="ciktilar/tesla_cv_nf_diagnostic_dashboard.png" width="95%" alt="Tesla CV-NF Diagnostik Analiz Paneli" />
+  <p><em>Şekil 4: PyTorch NPU Profiler, ASTES Olay Yoğunluğu, 4D Voxel Kesiti ve Normal-Inverse-Gamma Belirsizlik Ayrışımı.</em></p>
 </div>
 
 ---
