@@ -217,17 +217,116 @@ Her proje şu standart bileşenlerle inşa edilir:
 - **Türkçe Değişkenler:** `rrc_baglanti_sayisi`, `prb_kullanim_orani`, `tikaniklik_seviyesi`
 - **Jupyter Notebook (`gun_020_hucre_tikaniklik_tahmini.ipynb`)**
 
-### Gün 021 – Gün 030 Hızlı Liste:
-- **Gün 021:** Mobil Ağ Hız Testi (QoE) Analizi (Ookla Speedtest Data)
-- **Gün 022:** Veri Merkezi Sunucu CPU/RAM Aşırı Yükleme Öngörüsü (Google Cluster Traces)
-- **Gün 023:** Fiber Optik Sinyal Bozulması Tespiti (Optical Network Telemetry)
-- **Gün 024:** DNS Tünelleme ve Zararlı İstek Tespiti (DNS Exfiltration Logs)
-- **Gün 025:** Radyo Sinyali Yayılım Kaybı (Path Loss) Tahmini (Radio Propagation Data)
-- **Gün 026:** Hücresel Geçiş (Handover) Başarısızlık Modeli (Wireless Handover Logs)
-- **Gün 027:** Ağ Trafiği Protokol Sınıflandırması (ISCX VPN/Non-VPN Traffic)
-- **Gün 028:** BGP Yönlendirme Anomalileri Tespiti (BGP Routing Logs)
-- **Gün 029:** Dağıtık Mikroservis Yanıt Süresi (p99) Sapma Analizi (Telemetry Traces)
-- **Gün 030:** Şebeke Alarm Kök Neden Analizi (RCA) (Telco Alarm Correlation)
+### Gün 021: Mobil Ağ Hız Testi (QoE) Analizi
+- **İş Alanı:** Mobil Şebeke Performans Değerlendirmesi & Müşteri Deneyimi (QoE)
+- **Veri Kaynağı:** [Kaggle - Ookla Open Network Speedtest Data](https://www.kaggle.com/datasets/kylehatch/ookla-open-network-speedtest-data)
+- **Model:** LightGBM Regressor + Coğrafi Hiyerarşik Kümeleme (Spatial K-Fold)
+- **Türkçe Değişkenler:** `enlem_boylam_koordinati`, `sinyal_gucu_rsrp_dbm`, `baglanti_tipi_4g_5g`, `tahmini_indirme_hizi_mbps`, `gecikme_suresi_ms`
+- **Jupyter Notebook (`gun_021_mobil_ag_hiz_testi_qoe.ipynb`):**
+  1. Coğrafi H3/Hexagon ızgara koordinatlarının dönüştürülmesi
+  2. Sinyal kalitesi (RSRP/RSRQ) ve baz istasyonu mesafesi öznitelikleri
+  3. Spatial K-Fold ile veri sızıntısını (Data Leakage) önleyerek model eğitimi
+  4. Hız düşüklüğü yaşanan kör bölgelerin harita üzerinde ısı haritası olarak görselleştirilmesi
+- **Mülakat Sorusu:** Coğrafi telekom verilerini eğitirken rastgele K-Fold yerine neden Spatial / Group K-Fold kullanılır?
+
+### Gün 022: Veri Merkezi Sunucu CPU/RAM Aşırı Yükleme Öngörüsü
+- **İş Alanı:** Turkcell Bulut & Veri Merkezi Altyapı Yönetimi
+- **Veri Kaynağı:** [Kaggle - Google Cloud Cluster Workload Traces](https://www.kaggle.com/datasets)
+- **Model:** Gated Recurrent Unit (GRU) / WaveNet + Anomali Eşik Dedektörü
+- **Türkçe Değişkenler:** `sunucu_id`, `anlik_cpu_kullanimi_yuzde`, `bellek_kullanimi_mb`, `disk_okuma_yazma_iops`, `asiri_yuklenme_riski_15dk`
+- **Jupyter Notebook (`gun_022_sunucu_kaynak_asiri_yuklenme.ipynb`):**
+  1. Çoklu sunucu telemetri zaman serisi pencerelenmesi (Rolling Window)
+  2. GRU modeli ile 15 dakika sonrasının CPU/RAM kullanım tahmini
+  3. Kaynak tükenmesi (Resource Exhaustion) öncesi otomatik pod/konteyner ölçekleme tetikleyicisi
+- **Mülakat Sorusu:** Aşırı yükleme tahmininde false negative (yükü kaçırma) riskini minimize etmek için loss fonksiyonu nasıl modifiye edilir?
+
+### Gün 023: Fiber Optik Sinyal Bozulması Tespiti
+- **İş Alanı:** Superonline Fiber Omurga & İletim Şebekesi
+- **Veri Kaynağı:** [Kaggle - Optical Network Performance](https://www.kaggle.com/datasets)
+- **Model:** 1D-CNN (Evrişimli Sinir Ağı) / Support Vector Classifier (SVC)
+- **Türkçe Değişkenler:** `fiber_hat_id`, `optik_guc_seviyesi_dbm`, `polarizasyon_mod_dagilimi_pmd`, `kromatik_dagilim_cd`, `kablo_hasar_durumu`
+- **Jupyter Notebook (`gun_023_fiber_sinyal_bozulmasi.ipynb`):**
+  1. Optik spektral telemetri sinyallerinin Fourier dönüşümü (FFT) ile frekans analizi
+  2. 1D-CNN ile fiziksel bükülme, kırılma ve zayıflama sınıflandırması
+  3. Erken arıza tespitinde Precision-Recall eğrisi analizi
+- **Mülakat Sorusu:** Fiber optik ağlarda PMD ve CD parametreleri sinyal zayıflamasını nasıl etkiler ve ML ile nasıl modellenir?
+
+### Gün 024: DNS Tünelleme ve Zararlı İstek Tespiti
+- **İş Alanı:** Şebeke Güvenliği & Tehdit Avcılığı (Threat Hunting)
+- **Veri Kaynağı:** [Kaggle - DNS Exfiltration & Tunneling Dataset](https://www.kaggle.com/datasets)
+- **Model:** Random Forest + Karakter Düzeyi N-Gram & Shannon Entropi Hesaplayıcı
+- **Türkçe Değişkenler:** `sorgulanan_alan_adi`, `alan_adi_uzunlugu`, `shannon_entropi_degeri`, `alt_alan_adi_sayisi`, `dns_tunelleme_riski`
+- **Jupyter Notebook (`gun_024_dns_tunelleme_tespiti.ipynb`):**
+  1. DNS sorgu metinlerinden entropi, sesli/sessiz harf oranı ve N-gram çıkarma
+  2. Zararlı veri sızdırma (Data Exfiltration) tünellerinin tespit edilmesi
+  3. Düşük yanlış pozitif (False Positive) oranıyla gerçek zamanlı engelleme kuralları
+- **Mülakat Sorusu:** DNS tünelleme saldırısında sorgulanan alan adının Shannon Entropisi neden normal alan adlarından belirgin şekilde yüksektir?
+
+### Gün 025: Radyo Sinyali Yayılım Kaybı (Path Loss) Tahmini
+- **İş Alanı:** Radyo Frekans (RF) Planlama & Kule Konumlandırma
+- **Veri Kaynağı:** [Kaggle - Radio Propagation Dataset](https://www.kaggle.com/datasets)
+- **Model:** XGBoost Regressor / Çok Katmanlı Algılayıcı (MLP)
+- **Türkçe Değişkenler:** `anten_yuksekligi_m`, `kullanici_mesafesi_km`, `bina_yogunlugu_morfoloji`, `tasiyici_frekans_mhz`, `tahmini_yol_kaybi_db`
+- **Jupyter Notebook (`gun_025_radyo_sinyali_yayilim_kaybi.ipynb`):**
+  1. Standart Okumura-Hata ve Cost-231 ampirik modelleriyle karşılaştırma
+  2. Coğrafi ve bina morfolojisi özniteliklerinin modele beslenmesi
+  3. RMSE ve MAE metrikleri ile klasik formüllere kıyasla doğruluk kazancı analizi
+- **Mülakat Sorusu:** Klasik ampirik RF yayılım formülleri yerine Makine Öğrenmesi kullanmanın kentsel alanlardaki en büyük avantajı nedir?
+
+### Gün 026: Hücresel Geçiş (Handover) Başarısızlık Modeli
+- **İş Alanı:** Mobilite Yönetimi & Otoyol Kapsama Analitiği
+- **Veri Kaynağı:** [Kaggle / UCI - Wireless Handover Analytics](https://archive.ics.uci.edu/ml/datasets.php)
+- **Model:** CatBoost Classifier + Zaman Pencereli Öznitelikler
+- **Türkçe Değişkenler:** `arac_hizi_kmh`, `kaynak_hucre_sinyali_rsrp`, `hedef_hucre_sinyali_rsrp`, `zaman_histerezis_farki`, `gecis_basarisiz_mi`
+- **Jupyter Notebook (`gun_026_handover_gecis_basarisizligi.ipynb`):**
+  1. Hızlı araç hareketlerinde sinyal düşüm eğrilerinin analizi
+  2. Ping-pong handover (sürekli istasyon değiştirme) tespiti
+  3. Başarısız geçişleri önleyici dinamik eşik optimizasyonu
+- **Mülakat Sorusu:** Hızlı tren veya otoyollarda gerçekleşen "Too-Late Handover" arızası ML ile nasıl tahmin edilir?
+
+### Gün 027: Ağ Trafiği Protokol ve Uygulama Sınıflandırması
+- **İş Alanı:** Derin Paket İnceleme (DPI) & Bant Genişliği Yönetimi
+- **Veri Kaynağı:** [Kaggle - ISCX VPN-nonVPN Network Traffic](https://www.kaggle.com/datasets)
+- **Model:** 1D-CNN + Random Forest Hibrit Sınıflandırıcı
+- **Türkçe Değişkenler:** `paket_akis_suresi_ms`, `ileri_yonlu_paket_boyutu`, `paketler_arasi_sure_iat`, `uygulama_tipi_video_oyun_ses`
+- **Jupyter Notebook (`gun_027_ag_trafigi_protokol_siniflandirma.ipynb`):**
+  1. PCAP / NetFlow akış özelliklerinin (Flow Statistics) çıkarımı
+  2. Şifreli (HTTPS/VPN) trafikte paket boyutu ve zamanlama paternleriyle sınıflandırma
+  3. QoS önceliklendirmesi için akış etiketleme pipeline'ı
+- **Mülakat Sorusu:** Şifreli ağ trafiğinde (HTTPS/TLS) paket içeriğine bakmadan video veya oyun trafiği nasıl ayırt edilir?
+
+### Gün 028: BGP Yönlendirme Anomalileri ve Rota Sızıntısı Tespiti
+- **İş Alanı:** Uluslararası İnternet Omurgası & Rota Güvenliği
+- **Veri Kaynağı:** [Kaggle - BGP Routing Anomaly Dataset](https://www.kaggle.com/datasets)
+- **Model:** Isolation Forest & One-Class SVM
+- **Türkçe Değişkenler:** `as_yol_uzunlugu`, `duyuru_guncelleme_sayisi`, `geri_cekme_mesaji_adedi`, `bgp_anomali_skoru`
+- **Jupyter Notebook (`gun_028_bgp_yonlendirme_anomalileri.ipynb`):**
+  1. BGP güncelleme mesajlarının (Announce/Withdrawal) zaman serisi analizi
+  2. Rota ele geçirme (BGP Hijacking) ve rota sızıntısı (Route Leak) anomali tespiti
+  3. Otomatik alarm ve prefix filtreleme öneri motoru
+- **Mülakat Sorusu:** BGP Prefix Hijacking saldırısının telekom operatörü üzerindeki etkisi nedir ve anomali tespitiyle nasıl yakalanır?
+
+### Gün 029: Dağıtık Mikroservis Yanıt Süresi (p99) Sapma Analizi
+- **İş Alanı:** Turkcell Dijital Servisler Altyapısı & SRE (Site Reliability)
+- **Veri Kaynağı:** [Kaggle - Microservices Telemetry Trace](https://www.kaggle.com/datasets)
+- **Model:** Quantile Regression Gradient Boosting (p50, p95, p99)
+- **Türkçe Değişkenler:** `servis_adi`, `gelen_istek_sayisi_rps`, `veritabani_sorgu_suresi_ms`, `kuyruk_bekleme_suresi`, `tahmini_p99_yanit_ms`
+- **Jupyter Notebook (`gun_029_mikroservis_p99_sapma_analizi.ipynb`):**
+  1. Dağıtık OpenTelemetry izleme (trace) kayıtlarının analizi
+  2. Kuyruk gecikmesi ve veritabanı kilitlerinin p99 kuyruk sapmalarına etkisinin modellenmesi
+  3. SLA ihlali oluşmadan önce erken ikaz üretimi
+- **Mülakat Sorusu:** Neden ortalama yanıt süresi yerine p99/p99.9 gecikme süreleri optimize edilir?
+
+### Gün 030: Şebeke Alarm Kök Neden Analizi (RCA - Root Cause Analysis)
+- **İş Alanı:** Şebeke Yönetim Merkezi (NOC)
+- **Veri Kaynağı:** [Kaggle - Telco Telemetry Alert Correlation](https://www.kaggle.com/datasets)
+- **Model:** Birliktelik Kuralı Madenciliği (FP-Growth / Apriori) + Graf Tabanlı Nedensellik (Causal Discovery)
+- **Türkçe Değişkenler:** `alarm_kodu`, `etkilenen_cihaz_id`, `alarm_zaman_damgasi`, `kok_neden_alarm_mi`, `tetiklenen_alt_alarm_sayisi`
+- **Jupyter Notebook (`gun_030_sebeke_alarm_kok_neden_analizi.ipynb`):**
+  1. Birbirini tetikleyen yüzlerce alt alarmın (Alarm Storm) filtrelenmesi
+  2. Zamansal birliktelik analizi ile ana arıza kaynağının izolasyonu
+  3. Saha ekiplerine doğrudan kök arıza noktasını bildiren akıllı bilet (ticket) sistemi
+- **Mülakat Sorusu:** Bir fiber kopmasında oluşan yüzlerce ikincil alarm arasından kök nedeni saniyeler içinde izole etmek için hangi algoritmalar kullanılır?
 
 ---
 
